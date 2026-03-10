@@ -1,0 +1,65 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build, packaging, and test artifacts
+.coverage
+.hypothesis/
+.mypy_cache/
+.nox/
+.pytest_cache/
+.ruff_cache/
+.tox/
+build/
+dist/
+htmlcov/
+pip-wheel-metadata/
+site/
+*.egg-info/
+.eggs/
+
+# Virtual environments and local Python config
+.python-version
+.venv/
+ENV/
+env/
+venv/
+
+# Editor, notebook, and OS cruft
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local secrets and logs
+.env
+.env.*
+*.log
+
+# Large model artifacts, serialized objects, and archives
+*.7z
+*.arrow
+*.bin
+*.bz2
+*.ckpt
+*.gguf
+*.gz
+*.h5
+*.joblib
+*.npy
+*.npz
+*.onnx
+*.parquet
+*.pickle
+*.pkl
+*.pt
+*.pth
+*.safetensors
+*.tar
+*.tgz
+*.xz
+*.zip
+
+# Keep analysis outputs under runs/ tracked by default.
