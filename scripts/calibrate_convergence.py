@@ -65,19 +65,44 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Calibrate choice-relative convergence")
     parser.add_argument("--model", default="openai/gpt-oss-20b")
     parser.add_argument("--output", default="runs/convergence_calibration")
+    parser.add_argument(
+        "--task-names",
+        default=None,
+        help="Optional comma-separated task names to include (default: all tasks)",
+    )
+    parser.add_argument(
+        "--case-ids",
+        default=None,
+        help="Optional comma-separated case IDs to include (default: all cases in selected tasks)",
+    )
     args = parser.parse_args()
 
     from gpt_oss_interp.backends.transformers_gpt_oss import GPTOSSTransformersBackend
     from gpt_oss_interp.benchmarks.tasks import all_tasks
 
-    print(f"Initializing backend: {args.model}")
+    selected_task_names = None
+    if args.task_names:
+        selected_task_names = {
+            name.strip() for name in args.task_names.split(",") if name.strip()
+        }
+    selected_case_ids = None
+    if args.case_ids:
+        selected_case_ids = {
+            case_id.strip() for case_id in args.case_ids.split(",") if case_id.strip()
+        }
+
+    print(f"Initializing backend: {args.model}", flush=True)
     backend = GPTOSSTransformersBackend(model_name=args.model)
 
     rows: list[dict[str, object]] = []
 
     for task in all_tasks():
-        print(f"\nTask family: {task.name}")
+        if selected_task_names is not None and task.name not in selected_task_names:
+            continue
+        print(f"\nTask family: {task.name}", flush=True)
         for case in task.cases:
+            if selected_case_ids is not None and case.case_id not in selected_case_ids:
+                continue
             layer_scores = backend.score_case_by_layer(case)
             ordered_layers = sorted(layer_scores)
             if not ordered_layers:
@@ -126,7 +151,8 @@ def main() -> int:
 
             print(
                 f"  {case.case_id}: expected={expected_convergence} "
-                f"final={final_choice_convergence} final_winner={final_winner}"
+                f"final={final_choice_convergence} final_winner={final_winner}",
+                flush=True,
             )
 
     family_summary: dict[str, dict[str, object]] = {}
@@ -162,6 +188,8 @@ def main() -> int:
 
     payload = {
         "model": args.model,
+        "task_names": sorted(selected_task_names) if selected_task_names is not None else None,
+        "case_ids": sorted(selected_case_ids) if selected_case_ids is not None else None,
         "family_summary": family_summary,
         "cases": rows,
     }
@@ -199,8 +227,8 @@ def main() -> int:
         )
 
     (output_dir / "convergence_calibration.md").write_text("\n".join(lines) + "\n")
-    print(f"\nWrote {output_dir / 'convergence_calibration.json'}")
-    print(f"Wrote {output_dir / 'convergence_calibration.md'}")
+    print(f"\nWrote {output_dir / 'convergence_calibration.json'}", flush=True)
+    print(f"Wrote {output_dir / 'convergence_calibration.md'}", flush=True)
     return 0
 
 

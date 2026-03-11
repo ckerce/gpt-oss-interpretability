@@ -38,6 +38,22 @@ Thumbs.db
 .env.*
 *.log
 
+# LaTeX build byproducts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+
 # Large model artifacts, serialized objects, and archives
 *.7z
 *.arrow

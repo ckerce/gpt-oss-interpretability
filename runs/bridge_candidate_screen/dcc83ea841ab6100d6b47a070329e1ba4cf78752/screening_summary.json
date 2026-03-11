@@ -1,0 +1,117 @@
+{
+  "model": "hf-cache/models--google--gemma-3-1b-it/snapshots/dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "num_candidates": 16,
+  "task_names": [
+    "capitalization",
+    "coreference",
+    "induction"
+  ],
+  "counts": {
+    "accepted_local_support": 6,
+    "rejected_pre_audit": 6,
+    "rejected_tail_rescued": 4
+  },
+  "accepted_candidates": [
+    {
+      "case_id": "caps_005",
+      "task_name": "capitalization",
+      "screening_outcome": "accepted_local_support"
+    },
+    {
+      "case_id": "caps_006",
+      "task_name": "capitalization",
+      "screening_outcome": "accepted_local_support"
+    },
+    {
+      "case_id": "caps_007",
+      "task_name": "capitalization",
+      "screening_outcome": "accepted_local_support"
+    },
+    {
+      "case_id": "induction_008",
+      "task_name": "induction",
+      "screening_outcome": "accepted_local_support"
+    },
+    {
+      "case_id": "induction_009",
+      "task_name": "induction",
+      "screening_outcome": "accepted_local_support"
+    },
+    {
+      "case_id": "coref_010",
+      "task_name": "coreference",
+      "screening_outcome": "accepted_local_support"
+    }
+  ],
+  "accepted_by_task": {
+    "capitalization": [
+      "caps_005",
+      "caps_006",
+      "caps_007"
+    ],
+    "coreference": [
+      "coref_010"
+    ],
+    "induction": [
+      "induction_008",
+      "induction_009"
+    ]
+  },
+  "rejected_or_tagged_candidates": [
+    {
+      "case_id": "caps_008",
+      "task_name": "capitalization",
+      "screening_outcome": "rejected_pre_audit"
+    },
+    {
+      "case_id": "induction_005",
+      "task_name": "induction",
+      "screening_outcome": "rejected_pre_audit"
+    },
+    {
+      "case_id": "induction_006",
+      "task_name": "induction",
+      "screening_outcome": "rejected_tail_rescued"
+    },
+    {
+      "case_id": "induction_007",
+      "task_name": "induction",
+      "screening_outcome": "rejected_tail_rescued"
+    },
+    {
+      "case_id": "induction_010",
+      "task_name": "induction",
+      "screening_outcome": "rejected_pre_audit"
+    },
+    {
+      "case_id": "coref_005",
+      "task_name": "coreference",
+      "screening_outcome": "rejected_tail_rescued"
+    },
+    {
+      "case_id": "coref_006",
+      "task_name": "coreference",
+      "screening_outcome": "rejected_pre_audit"
+    },
+    {
+      "case_id": "coref_007",
+      "task_name": "coreference",
+      "screening_outcome": "rejected_tail_rescued"
+    },
+    {
+      "case_id": "coref_008",
+      "task_name": "coreference",
+      "screening_outcome": "rejected_pre_audit"
+    },
+    {
+      "case_id": "coref_009",
+      "task_name": "coreference",
+      "screening_outcome": "rejected_pre_audit"
+    }
+  ],
+  "artifacts": {
+    "convergence_calibration": "runs/bridge_candidate_screen/dcc83ea841ab6100d6b47a070329e1ba4cf78752/convergence_calibration/convergence_calibration.json",
+    "analysis_set_stratification": "runs/bridge_candidate_screen/dcc83ea841ab6100d6b47a070329e1ba4cf78752/analysis_set_stratification/analysis_set_stratification.json",
+    "decision_audit": "runs/bridge_candidate_screen/dcc83ea841ab6100d6b47a070329e1ba4cf78752/decision_audit/decision_audit.json"
+  }
+}

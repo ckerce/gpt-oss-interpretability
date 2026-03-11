@@ -21,9 +21,12 @@ Companion repository to `symbolic-transformer`. This repo demonstrates that insp
 
 ## Results
 
-### Intervention benchmark (320 cases, 5 task families)
+### Intervention benchmark (legacy 320-case sweep, original 20-case benchmark)
 
-Baseline accuracy at scale=1.0 is 0.650 across 20 cases (5 tasks x 4 cases each).
+Baseline accuracy at scale=1.0 is 0.650 across the original 20-case benchmark
+(5 tasks x 4 cases each). The current task library is larger because it now
+includes extra bridge-experiment candidates for capitalization, induction, and
+coreference.
 
 | Run | Accuracy | Mean Margin | Signal |
 | --- | ---: | ---: | --- |
@@ -106,7 +109,7 @@ gpt_oss_interp/
 ├── readouts/
 │   └── logit_lens.py            # Per-layer token prediction readouts
 ├── benchmarks/
-│   ├── tasks.py                 # Task library (5 families, 20 cases)
+│   ├── tasks.py                 # Task library (5 families; expanded bridge-candidate pool)
 │   └── runner.py                # Benchmark orchestration and scoring
 ├── interventions/
 │   └── specs.py                 # Intervention sweep expansion
@@ -136,12 +139,14 @@ configs/
 
 ## Task families
 
+Current built-in task counts after bridge-pool expansion:
+
 | Task | Cases | Behavior | Baseline |
 | --- | ---: | --- | --- |
 | recency_bias | 4 | Attributive adjective resolution | Partial |
-| capitalization | 4 | Proper noun formatting | Strong |
-| induction | 4 | Pattern copying | Strong |
-| coreference | 4 | Pronoun resolution | Strong |
+| capitalization | 8 | Proper noun formatting | Strong |
+| induction | 10 | Pattern copying | Strong |
+| coreference | 10 | Pronoun resolution | Strong |
 | syntax_agreement | 4 | Subject-verb agreement across attractors | Partial |
 
 ## Feature extraction and geometric analysis

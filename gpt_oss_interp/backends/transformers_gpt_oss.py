@@ -298,11 +298,15 @@ class GPTOSSTransformersBackend(BaseBackend):
         model_name: str = "openai/gpt-oss-20b",
         device: str | None = None,
         dtype: str = "auto",
+        local_files_only: bool = False,
+        trust_remote_code: bool = False,
         **kwargs: Any,
     ):
         self.model_name = model_name
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self._hooks: list[torch.utils.hooks.RemovableHook] = []
+        self.local_files_only = local_files_only
+        self.trust_remote_code = trust_remote_code
 
         self._load_model(dtype)
         self.structure = ModelStructure(self.model)
@@ -312,13 +316,19 @@ class GPTOSSTransformersBackend(BaseBackend):
         from transformers import AutoModelForCausalLM, AutoTokenizer
 
         print(f"Loading tokenizer: {self.model_name}")
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            self.model_name,
+            local_files_only=self.local_files_only,
+            trust_remote_code=self.trust_remote_code,
+        )
 
         print(f"Loading model: {self.model_name} (dtype={dtype})")
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_name,
             dtype=dtype,
             device_map="auto",
+            local_files_only=self.local_files_only,
+            trust_remote_code=self.trust_remote_code,
         )
         self.model.eval()
         print(f"Model loaded. Device map: {getattr(self.model, 'hf_device_map', 'single device')}")
