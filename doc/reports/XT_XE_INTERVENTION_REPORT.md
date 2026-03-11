@@ -56,8 +56,8 @@ Important limitation:
   or composite channelized `x_t` interventions
 
 That larger intervention family is documented in
-[CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/CHANNELIZED_XT_INTERVENTION_NOTE.md), with the concrete follow-up protocol in
-[PER_CHANNEL_XT_INTERVENTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
+[CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md), with the concrete follow-up protocol in
+[PER_CHANNEL_XT_INTERVENTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/plans/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
 
 Artifacts:
 

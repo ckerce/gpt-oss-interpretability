@@ -27,7 +27,7 @@ The demo uses exact token-pair directions taken from the model's output embeddin
 
 The intervention is applied to the contextual stream `x_e`, not to the token-identity stream. The key measurement is the local first-divergent-token gap, with total choice-score gap used as a behavioral check.
 
-One important explicit limitation: all current interventions use a **whole-vector** vocabulary direction. We did **not** yet use the full channelized symbolic intervention space of the dual-stream architecture, where `x_t` can be treated head-by-head. That missing intervention family is documented in [CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/CHANNELIZED_XT_INTERVENTION_NOTE.md), and the concrete follow-up plan is in [PER_CHANNEL_XT_INTERVENTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
+One important explicit limitation: all current interventions use a **whole-vector** vocabulary direction. We did **not** yet use the full channelized symbolic intervention space of the dual-stream architecture, where `x_t` can be treated head-by-head. That missing intervention family is documented in [CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md), and the concrete follow-up plan is in [PER_CHANNEL_XT_INTERVENTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/plans/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
 
 Implementation note:
 

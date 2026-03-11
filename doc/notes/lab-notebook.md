@@ -72,8 +72,8 @@ Each entry should include, when applicable:
   - `x_e* = A^+ b`
 
 `Artifacts`
-- [EXECUTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/EXECUTION_PLAN.md)
-- [CASCADE_DISTILLATION.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/CASCADE_DISTILLATION.md)
+- [EXECUTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/plans/EXECUTION_PLAN.md)
+- [CASCADE_DISTILLATION.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/reference/CASCADE_DISTILLATION.md)
 
 `Results`
 - Added explicit CASCADE prerequisites:
@@ -1909,9 +1909,9 @@ Choose the next CASCADE-centered experiment:
   - only do more benchmark-side work if it directly helps interpret a CASCADE result
 
 ### Files To Reopen First
-- [lab-notebook.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/lab-notebook.md)
-- [CASCADE_DISTILLATION.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/CASCADE_DISTILLATION.md)
-- [EXECUTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/EXECUTION_PLAN.md)
+- [lab-notebook.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/notes/lab-notebook.md)
+- [CASCADE_DISTILLATION.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/reference/CASCADE_DISTILLATION.md)
+- [EXECUTION_PLAN.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/plans/EXECUTION_PLAN.md)
 - [decision_audit.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/runs/retained_case_decision_audit/decision_audit.md)
 - [summary.json](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/runs/soft_main_component_decomposition_delta/summary.json)
 

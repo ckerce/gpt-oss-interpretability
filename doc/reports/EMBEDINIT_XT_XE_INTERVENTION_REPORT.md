@@ -25,7 +25,7 @@ Important scope note:
   `x_t`
 
 That untested intervention family is now tracked in
-[CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/CHANNELIZED_XT_INTERVENTION_NOTE.md).
+[CHANNELIZED_XT_INTERVENTION_NOTE.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md).
 
 ## Setup
 

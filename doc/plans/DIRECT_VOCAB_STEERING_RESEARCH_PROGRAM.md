@@ -85,7 +85,7 @@ Questions to answer:
 Current status:
 - The local-support / tail-rescue workflow exists.
 - A provisional 14-case bridge pool exists in
-  [PROVISIONAL_BRIDGE_POOL.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/PROVISIONAL_BRIDGE_POOL.md).
+  [PROVISIONAL_BRIDGE_POOL.md](/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/doc/plans/PROVISIONAL_BRIDGE_POOL.md).
 
 Deliverables:
 - one canonical checked-in clean pool
