@@ -1,0 +1,258 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "set_name": "main_analysis_soft",
+  "layer": 23,
+  "summary": {
+    "local_support": 8,
+    "tail_rescued": 1
+  },
+  "rows": [
+    {
+      "case_id": "caps_002",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "expected_text_A": " Carolina",
+      "expected_text_B": " carolina",
+      "layer": 23,
+      "num_diff_positions": 2,
+      "same_len": false,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " Carolina",
+      "local_token_B": " car",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "olina",
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 6.059023857116699,
+      "total_diff_A_minus_B": 4.832434608659241,
+      "tail_contribution": -1.2265892484574579,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "caps_003",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "expected_text_A": " York",
+      "expected_text_B": " york",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " York",
+      "local_token_B": " york",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 1.3927334547042847,
+      "total_diff_A_minus_B": 1.2961411476135254,
+      "tail_contribution": -0.09659230709075928,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "coref_002",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " teacher",
+      "expected_text_B": " student",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " teacher",
+      "local_token_B": " student",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 2.559229612350464,
+      "total_diff_A_minus_B": 9.996699333190918,
+      "tail_contribution": 7.437469720840454,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "coref_003",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " Mary",
+      "expected_text_B": " John",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " Mary",
+      "local_token_B": " John",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 0.2895100712776184,
+      "total_diff_A_minus_B": 12.918832302093506,
+      "tail_contribution": 12.629322230815887,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "coref_004",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " mother",
+      "expected_text_B": " child",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " mother",
+      "local_token_B": " child",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 2.3738081455230713,
+      "total_diff_A_minus_B": 5.828716278076172,
+      "tail_contribution": 3.4549081325531006,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "induction_001",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " D4",
+      "expected_text_B": " E5",
+      "layer": 23,
+      "num_diff_positions": 2,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " D",
+      "local_token_B": " E",
+      "tail_a_tokens": [
+        "4",
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "5",
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 0.3153940439224243,
+      "total_diff_A_minus_B": 5.192817330360413,
+      "tail_contribution": 4.877423286437988,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "induction_002",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " green",
+      "expected_text_B": " red",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " green",
+      "local_token_B": " red",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": -7.9853668212890625,
+      "total_diff_A_minus_B": 2.8290958404541016,
+      "tail_contribution": 10.814462661743164,
+      "classification": "tail_rescued"
+    },
+    {
+      "case_id": "induction_003",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " 4",
+      "expected_text_B": " 5",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>",
+        " "
+      ],
+      "local_token_A": "4",
+      "local_token_B": "5",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 1.3823869228363037,
+      "total_diff_A_minus_B": 3.923858642578125,
+      "tail_contribution": 2.5414717197418213,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "induction_004",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " gamma",
+      "expected_text_B": " delta",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [
+        "<|channel|>",
+        "final",
+        "<|message|>"
+      ],
+      "local_token_A": " gamma",
+      "local_token_B": " delta",
+      "tail_a_tokens": [
+        "<|return|>"
+      ],
+      "tail_b_tokens": [
+        "<|return|>"
+      ],
+      "local_diff_A_minus_B": 5.684074401855469,
+      "total_diff_A_minus_B": 14.694129467010498,
+      "tail_contribution": 9.01005506515503,
+      "classification": "local_support"
+    }
+  ]
+}

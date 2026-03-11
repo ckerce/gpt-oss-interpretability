@@ -1,0 +1,14 @@
+{
+  "position": 13,
+  "prompt": "A7 B2 C9 D4 A7 B2 C9",
+  "model": "openai/gpt-oss-20b",
+  "target_token_id": 415,
+  "target_token": " D",
+  "relative_residual": 0.002950425037122956,
+  "teacher_top_logprob": -0.21948276460170746,
+  "reconstructed_top_logprob": -0.21275471150875092,
+  "kl_teacher_to_reconstructed": 0.0001179423852590844,
+  "solution_norm": 255.1942138671875,
+  "rhs_norm": 1170.7064208984375,
+  "rank_upper_bound": 2880
+}

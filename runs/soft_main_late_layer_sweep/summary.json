@@ -1,0 +1,320 @@
+{
+  "config": {
+    "backend_kind": "gpt_oss_transformers",
+    "backend_params": {
+      "model_name": "openai/gpt-oss-20b"
+    },
+    "tasks": [
+      {
+        "name": "capitalization",
+        "behavior": "capitalization",
+        "cases": [
+          {
+            "case_id": "caps_002",
+            "prompt": "Write the US state in normal headline style: north",
+            "choices": {
+              "A": " Carolina",
+              "B": " carolina"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          },
+          {
+            "case_id": "caps_003",
+            "prompt": "Complete the name of the city: new",
+            "choices": {
+              "A": " York",
+              "B": " york"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          }
+        ],
+        "description": "Formatting behavior: title case and proper noun capitalization."
+      },
+      {
+        "name": "induction",
+        "behavior": "induction",
+        "cases": [
+          {
+            "case_id": "induction_001",
+            "prompt": "A7 B2 C9 D4 A7 B2 C9",
+            "choices": {
+              "A": " D4",
+              "B": " E5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_002",
+            "prompt": "red blue green red blue green red blue",
+            "choices": {
+              "A": " green",
+              "B": " red"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_003",
+            "prompt": "1 2 3 4 1 2 3 4 1 2 3",
+            "choices": {
+              "A": " 4",
+              "B": " 5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_004",
+            "prompt": "alpha beta gamma alpha beta gamma alpha beta",
+            "choices": {
+              "A": " gamma",
+              "B": " delta"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          }
+        ],
+        "description": "Induction-style copying: repeat a previously observed pattern."
+      },
+      {
+        "name": "coreference",
+        "behavior": "coreference",
+        "cases": [
+          {
+            "case_id": "coref_002",
+            "prompt": "The teacher praised the student because the student got every answer right. Later, the teacher said he would recommend the student for the award. The word 'he' refers to the",
+            "choices": {
+              "A": " teacher",
+              "B": " student"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_003",
+            "prompt": "John called Mary and told her about the meeting. The word 'her' refers to",
+            "choices": {
+              "A": " Mary",
+              "B": " John"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_004",
+            "prompt": "The mother picked up the child because she was strong enough to carry him. The word 'she' refers to the",
+            "choices": {
+              "A": " mother",
+              "B": " child"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          }
+        ],
+        "description": "Simple pronoun coreference resolution."
+      }
+    ],
+    "interventions": [
+      {
+        "name": "late_layer_L18",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            18
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 18 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 18",
+        "params": {}
+      },
+      {
+        "name": "late_layer_L19",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            19
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 19 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 19",
+        "params": {}
+      },
+      {
+        "name": "late_layer_L20",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 20 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 20",
+        "params": {}
+      },
+      {
+        "name": "late_layer_L21",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            21
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 21 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 21",
+        "params": {}
+      },
+      {
+        "name": "late_layer_L22",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            22
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 22 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 22",
+        "params": {}
+      },
+      {
+        "name": "late_layer_L23",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            23
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Zero layer 23 output on retained soft-main cases"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Late-layer ablation at layer 23",
+        "params": {}
+      }
+    ],
+    "sweep": {
+      "repeats": 1,
+      "max_examples": null,
+      "record_case_outputs": true
+    },
+    "seed": 7,
+    "experiment_name": "SoftMain_LateLayer_Sweep",
+    "output_dir": "./runs/soft_main_late_layer_sweep",
+    "notes": "Focused late-layer ablation sweep on the soft main-analysis cases only."
+  },
+  "summary": {
+    "late_layer_L18@0": {
+      "accuracy": 0.6666666666666666,
+      "mean_margin": 2.1261281967163086,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_layer_L19@0": {
+      "accuracy": 0.4444444444444444,
+      "mean_margin": 0.725584348042806,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_layer_L20@0": {
+      "accuracy": 0.4444444444444444,
+      "mean_margin": 0.9452672534518771,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_layer_L21@0": {
+      "accuracy": 0.4444444444444444,
+      "mean_margin": 0.6069830788506402,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_layer_L22@0": {
+      "accuracy": 0.3333333333333333,
+      "mean_margin": 1.2579053243001301,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_layer_L23@0": {
+      "accuracy": 1.0,
+      "mean_margin": 1.3568331400553386,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    }
+  }
+}

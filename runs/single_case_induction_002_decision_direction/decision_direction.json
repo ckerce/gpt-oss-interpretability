@@ -1,0 +1,276 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "task": {
+    "name": "induction",
+    "behavior": "induction",
+    "description": "Induction-style copying: repeat a previously observed pattern."
+  },
+  "case": {
+    "case_id": "induction_002",
+    "prompt": "red blue green red blue green red blue",
+    "choices": {
+      "A": " green",
+      "B": " red"
+    },
+    "expected_label": "A"
+  },
+  "layers": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "decision_prefix": {
+    "shared_completion_prefix_ids": [
+      200005,
+      17196,
+      200008
+    ],
+    "shared_completion_prefix_tokens": [
+      "<|channel|>",
+      "final",
+      "<|message|>"
+    ],
+    "choice_token_ids": {
+      "A": 8851,
+      "B": 3592
+    },
+    "choice_tokens": {
+      "A": " green",
+      "B": " red"
+    },
+    "shared_suffix_ids": [
+      200002
+    ],
+    "shared_suffix_tokens": [
+      "<|return|>"
+    ],
+    "decision_position_index": 77
+  },
+  "baseline": {
+    "layers": {
+      "20": {
+        "logit_A": -0.10591596364974976,
+        "logit_B": 4.306753158569336,
+        "logit_diff_A_minus_B": -4.412669122219086,
+        "direction_norm": 0.38647037744522095,
+        "projection_on_direction": -4.412668704986572,
+        "local_logit_diff_A_minus_B": -4.412669122219086,
+        "total_choice_diff_A_minus_B": 3.741313934326172,
+        "suffix_contribution": 8.153983056545258
+      },
+      "21": {
+        "logit_A": 3.6004984378814697,
+        "logit_B": 9.47508430480957,
+        "logit_diff_A_minus_B": -5.874585866928101,
+        "direction_norm": 0.38647037744522095,
+        "projection_on_direction": -5.87458610534668,
+        "local_logit_diff_A_minus_B": -5.874585866928101,
+        "total_choice_diff_A_minus_B": 2.626431465148926,
+        "suffix_contribution": 8.501017332077026
+      },
+      "22": {
+        "logit_A": 2.973296880722046,
+        "logit_B": 6.896537780761719,
+        "logit_diff_A_minus_B": -3.923240900039673,
+        "direction_norm": 0.38647037744522095,
+        "projection_on_direction": -3.9232404232025146,
+        "local_logit_diff_A_minus_B": -3.923240900039673,
+        "total_choice_diff_A_minus_B": 5.034280776977539,
+        "suffix_contribution": 8.957521677017212
+      },
+      "23": {
+        "logit_A": 5.980445861816406,
+        "logit_B": 13.965812683105469,
+        "logit_diff_A_minus_B": -7.9853668212890625,
+        "direction_norm": 0.38647037744522095,
+        "projection_on_direction": -7.9853668212890625,
+        "local_logit_diff_A_minus_B": -7.9853668212890625,
+        "total_choice_diff_A_minus_B": 2.829108715057373,
+        "suffix_contribution": 10.814475536346436
+      }
+    }
+  },
+  "interventions": [
+    {
+      "name": "late_delta_L20@0",
+      "layers": {
+        "20": {
+          "logit_A": -0.823794424533844,
+          "logit_B": 4.069711685180664,
+          "logit_diff_A_minus_B": -4.893506109714508,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.893505573272705,
+          "local_logit_diff_A_minus_B": -4.893506109714508,
+          "total_choice_diff_A_minus_B": 2.3816757202148438,
+          "suffix_contribution": 7.275181829929352
+        },
+        "21": {
+          "logit_A": 0.3770286440849304,
+          "logit_B": 5.157039642333984,
+          "logit_diff_A_minus_B": -4.780010998249054,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.780011177062988,
+          "local_logit_diff_A_minus_B": -4.780010998249054,
+          "total_choice_diff_A_minus_B": 1.6017189025878906,
+          "suffix_contribution": 6.381729900836945
+        },
+        "22": {
+          "logit_A": 0.6686457395553589,
+          "logit_B": 4.0760884284973145,
+          "logit_diff_A_minus_B": -3.4074426889419556,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -3.4074435234069824,
+          "local_logit_diff_A_minus_B": -3.4074426889419556,
+          "total_choice_diff_A_minus_B": 3.433375358581543,
+          "suffix_contribution": 6.8408180475234985
+        },
+        "23": {
+          "logit_A": 4.209177494049072,
+          "logit_B": 12.527262687683105,
+          "logit_diff_A_minus_B": -8.318085193634033,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -8.318085670471191,
+          "local_logit_diff_A_minus_B": -8.318085193634033,
+          "total_choice_diff_A_minus_B": -1.3378353118896484,
+          "suffix_contribution": 6.980249881744385
+        }
+      }
+    },
+    {
+      "name": "all_experts_L20@0",
+      "layers": {
+        "20": {
+          "logit_A": -0.8847959041595459,
+          "logit_B": 5.147745609283447,
+          "logit_diff_A_minus_B": -6.032541513442993,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -6.0325422286987305,
+          "local_logit_diff_A_minus_B": -6.032541513442993,
+          "total_choice_diff_A_minus_B": 3.018282890319824,
+          "suffix_contribution": 9.050824403762817
+        },
+        "21": {
+          "logit_A": 0.6911646127700806,
+          "logit_B": 5.9581098556518555,
+          "logit_diff_A_minus_B": -5.266945242881775,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -5.266945838928223,
+          "local_logit_diff_A_minus_B": -5.266945242881775,
+          "total_choice_diff_A_minus_B": 2.208829879760742,
+          "suffix_contribution": 7.475775122642517
+        },
+        "22": {
+          "logit_A": 0.8991152048110962,
+          "logit_B": 4.704288959503174,
+          "logit_diff_A_minus_B": -3.8051737546920776,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -3.8051741123199463,
+          "local_logit_diff_A_minus_B": -3.8051737546920776,
+          "total_choice_diff_A_minus_B": 4.04992151260376,
+          "suffix_contribution": 7.855095267295837
+        },
+        "23": {
+          "logit_A": 4.244742393493652,
+          "logit_B": 12.715847969055176,
+          "logit_diff_A_minus_B": -8.471105575561523,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -8.471105575561523,
+          "local_logit_diff_A_minus_B": -8.471105575561523,
+          "total_choice_diff_A_minus_B": -0.20644378662109375,
+          "suffix_contribution": 8.26466178894043
+        }
+      }
+    },
+    {
+      "name": "late_delta_L21@0",
+      "layers": {
+        "20": {
+          "logit_A": -0.10591596364974976,
+          "logit_B": 4.306753158569336,
+          "logit_diff_A_minus_B": -4.412669122219086,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.412668704986572,
+          "local_logit_diff_A_minus_B": -4.412669122219086,
+          "total_choice_diff_A_minus_B": 3.741313934326172,
+          "suffix_contribution": 8.153983056545258
+        },
+        "21": {
+          "logit_A": -0.10591596364974976,
+          "logit_B": 4.306753158569336,
+          "logit_diff_A_minus_B": -4.412669122219086,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.412668704986572,
+          "local_logit_diff_A_minus_B": -4.412669122219086,
+          "total_choice_diff_A_minus_B": 3.741313934326172,
+          "suffix_contribution": 8.153983056545258
+        },
+        "22": {
+          "logit_A": -0.08170783519744873,
+          "logit_B": 2.972615957260132,
+          "logit_diff_A_minus_B": -3.0543237924575806,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -3.05432391166687,
+          "local_logit_diff_A_minus_B": -3.0543237924575806,
+          "total_choice_diff_A_minus_B": 3.1704721450805664,
+          "suffix_contribution": 6.224795937538147
+        },
+        "23": {
+          "logit_A": 3.7024946212768555,
+          "logit_B": 13.231621742248535,
+          "logit_diff_A_minus_B": -9.52912712097168,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -9.52912712097168,
+          "local_logit_diff_A_minus_B": -9.52912712097168,
+          "total_choice_diff_A_minus_B": -2.0402932167053223,
+          "suffix_contribution": 7.488833904266357
+        }
+      }
+    },
+    {
+      "name": "all_heads_L21@0",
+      "layers": {
+        "20": {
+          "logit_A": -0.10591596364974976,
+          "logit_B": 4.306753158569336,
+          "logit_diff_A_minus_B": -4.412669122219086,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.412668704986572,
+          "local_logit_diff_A_minus_B": -4.412669122219086,
+          "total_choice_diff_A_minus_B": 3.741313934326172,
+          "suffix_contribution": 8.153983056545258
+        },
+        "21": {
+          "logit_A": -0.17271223664283752,
+          "logit_B": 3.863906145095825,
+          "logit_diff_A_minus_B": -4.036618381738663,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -4.036618709564209,
+          "local_logit_diff_A_minus_B": -4.036618381738663,
+          "total_choice_diff_A_minus_B": 2.992816925048828,
+          "suffix_contribution": 7.029435306787491
+        },
+        "22": {
+          "logit_A": 0.527983546257019,
+          "logit_B": 3.303152561187744,
+          "logit_diff_A_minus_B": -2.775169014930725,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -2.7751691341400146,
+          "local_logit_diff_A_minus_B": -2.775169014930725,
+          "total_choice_diff_A_minus_B": 4.377070426940918,
+          "suffix_contribution": 7.152239441871643
+        },
+        "23": {
+          "logit_A": 4.9466471672058105,
+          "logit_B": 13.98095703125,
+          "logit_diff_A_minus_B": -9.03430986404419,
+          "direction_norm": 0.38647037744522095,
+          "projection_on_direction": -9.034310340881348,
+          "local_logit_diff_A_minus_B": -9.03430986404419,
+          "total_choice_diff_A_minus_B": -0.14776134490966797,
+          "suffix_contribution": 8.886548519134521
+        }
+      }
+    }
+  ]
+}

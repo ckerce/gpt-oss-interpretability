@@ -1,0 +1,14 @@
+{
+  "position": 11,
+  "prompt": "The keys to the cabinet are on the table, so they",
+  "model": "openai/gpt-oss-20b",
+  "target_token_id": 665,
+  "target_token": " can",
+  "relative_residual": 0.002944351194247872,
+  "teacher_top_logprob": -1.4410992860794067,
+  "reconstructed_top_logprob": -1.435649037361145,
+  "kl_teacher_to_reconstructed": 8.864954725140706e-05,
+  "solution_norm": 279.0220947265625,
+  "rhs_norm": 1102.3349609375,
+  "rank_upper_bound": 2880
+}
