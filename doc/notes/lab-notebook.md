@@ -72,8 +72,8 @@ Each entry should include, when applicable:
   - `x_e* = A^+ b`
 
 `Artifacts`
-- [EXECUTION_PLAN.md](EXECUTION_PLAN.md)
-- [CASCADE_DISTILLATION.md](CASCADE_DISTILLATION.md)
+- [EXECUTION_PLAN.md](doc/plans/EXECUTION_PLAN.md)
+- [CASCADE_DISTILLATION.md](doc/reference/CASCADE_DISTILLATION.md)
 
 `Results`
 - Added explicit CASCADE prerequisites:
@@ -1909,9 +1909,9 @@ Choose the next CASCADE-centered experiment:
   - only do more benchmark-side work if it directly helps interpret a CASCADE result
 
 ### Files To Reopen First
-- [lab-notebook.md](lab-notebook.md)
-- [CASCADE_DISTILLATION.md](CASCADE_DISTILLATION.md)
-- [EXECUTION_PLAN.md](EXECUTION_PLAN.md)
+- [lab-notebook.md](doc/notes/lab-notebook.md)
+- [CASCADE_DISTILLATION.md](doc/reference/CASCADE_DISTILLATION.md)
+- [EXECUTION_PLAN.md](doc/plans/EXECUTION_PLAN.md)
 - [decision_audit.md](runs/retained_case_decision_audit/decision_audit.md)
 - [summary.json](runs/soft_main_component_decomposition_delta/summary.json)
 

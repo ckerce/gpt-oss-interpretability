@@ -56,8 +56,8 @@ Important limitation:
   or composite channelized `x_t` interventions
 
 That larger intervention family is documented in
-[CHANNELIZED_XT_INTERVENTION_NOTE.md](CHANNELIZED_XT_INTERVENTION_NOTE.md), with the concrete follow-up protocol in
-[PER_CHANNEL_XT_INTERVENTION_PLAN.md](PER_CHANNEL_XT_INTERVENTION_PLAN.md).
+[CHANNELIZED_XT_INTERVENTION_NOTE.md](doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md), with the concrete follow-up protocol in
+[PER_CHANNEL_XT_INTERVENTION_PLAN.md](doc/plans/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
 
 Artifacts:
 

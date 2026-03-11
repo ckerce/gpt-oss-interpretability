@@ -101,7 +101,7 @@ That is a sharper dual-stream-specific question than many of the earlier ablatio
 ## Practical Next Steps
 
 The most direct follow-up experiments are now laid out in
-[PER_CHANNEL_XT_INTERVENTION_PLAN.md](PER_CHANNEL_XT_INTERVENTION_PLAN.md).
+[PER_CHANNEL_XT_INTERVENTION_PLAN.md](doc/plans/PER_CHANNEL_XT_INTERVENTION_PLAN.md).
 
 The short version is:
 

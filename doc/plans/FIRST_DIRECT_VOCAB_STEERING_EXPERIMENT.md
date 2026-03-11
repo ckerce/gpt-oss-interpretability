@@ -95,12 +95,12 @@ Scope note: this first experiment treats `Δv` as one whole `d_model`
 vector. It does **not** yet use the full dual-stream-specific intervention
 family in which `x_t` is channelized by head and token embeddings can be
 written head-by-head or composed across heads. That omission is now tracked in
-[CHANNELIZED_XT_INTERVENTION_NOTE.md](CHANNELIZED_XT_INTERVENTION_NOTE.md).
+[CHANNELIZED_XT_INTERVENTION_NOTE.md](doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md).
 
 That was intentional for the first pass. The point of this experiment was to
 establish that direct vocabulary steering exists at all before opening the much
 larger intervention space. The proper follow-up is now specified in
-[PER_CHANNEL_XT_INTERVENTION_PLAN.md](PER_CHANNEL_XT_INTERVENTION_PLAN.md):
+[PER_CHANNEL_XT_INTERVENTION_PLAN.md](doc/plans/PER_CHANNEL_XT_INTERVENTION_PLAN.md):
 
 - differential probing to identify candidate channel roles
 - one-channel symbolic interventions

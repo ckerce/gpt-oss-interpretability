@@ -4,6 +4,10 @@ Mechanistic interpretability toolkit for OpenAI's gpt-oss-20b. Provides causal i
 
 Companion repository to `symbolic-transformer`. This repo demonstrates that inspection and intervention methods developed for interpretable-by-design architectures transfer to external production models.
 
+Documentation is organized under `doc/`. Start with
+[DOC_INDEX.md](DOC_INDEX.md)
+for the current map.
+
 The repo is now in the middle of a light structural refactor:
 
 - `gpt_oss_interp/steering/` is the intended home for intervention, probing,

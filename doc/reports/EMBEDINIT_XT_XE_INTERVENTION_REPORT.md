@@ -25,7 +25,7 @@ Important scope note:
   `x_t`
 
 That untested intervention family is now tracked in
-[CHANNELIZED_XT_INTERVENTION_NOTE.md](CHANNELIZED_XT_INTERVENTION_NOTE.md).
+[CHANNELIZED_XT_INTERVENTION_NOTE.md](doc/notes/CHANNELIZED_XT_INTERVENTION_NOTE.md).
 
 ## Setup
 
