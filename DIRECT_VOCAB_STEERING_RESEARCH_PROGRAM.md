@@ -21,6 +21,26 @@ Primary teachers:
 Primary student:
 - a CASCADE / symbolic-transformer student trained by distillation
 
+## Repo Structure
+
+The repo now has a scaffolded split between the two major work streams:
+
+- `gpt_oss_interp/steering/`
+- `gpt_oss_interp/distillation/`
+- `gpt_oss_interp/common/`
+
+Working rule:
+
+- new intervention, probing, readout, and steering-control code belongs in
+  `steering/`
+- new teacher-student and CASCADE-target code belongs in `distillation/`
+- only artifact schemas, shared run types, shared JSON I/O, and shared model
+  metadata interfaces belong in `common/`
+
+This split is intentional. It is meant to prevent direct-vocabulary /
+mechanistic steering work from being mixed together with distillation training
+in an undifferentiated scripts layer.
+
 ## Headline Questions
 
 ### Scientific questions
@@ -41,6 +61,10 @@ Primary student:
 4. What evaluation pipeline distinguishes local steering from suffix-mediated
    behavior?
 5. What training and reporting artifacts need to be standardized?
+6. How do we identify the roles of individual symbolic channels before trying
+   channel-composite interventions in `x_t`?
+7. How do we keep steering and distillation codepaths separated while
+   preserving shared artifact schemas?
 
 ## Research Program
 
@@ -52,6 +76,8 @@ Purpose:
 
 Questions to answer:
 - Which benchmark cases are clean enough to support direct-vocabulary steering
+- Does whole-vector vocabulary steering miss a dual-stream-specific intervention family
+  based on head-sliced symbolic writes in `x_t`
   claims?
 - Which cases should be excluded because they are tail-rescued or otherwise
   mechanistically dirty?
@@ -87,7 +113,10 @@ Experiment set:
 1. `Local token-direction steering`
    - Choose a clean binary decision case with one semantic first-divergent token.
    - Construct the exact vocabulary direction:
-     - `W[token_A] - W[token_B]`
+- `W[token_A] - W[token_B]`
+- whole-vector `W[token_A] - W[token_B]`
+- head-sliced symbolic interventions in `x_t`, where token embeddings are split by
+  head/channel and intervened on per slice or compositionally
    - Apply this direction inside the student at the candidate steering site.
    - Measure:
      - local answer-token logit shift
@@ -104,6 +133,17 @@ Experiment set:
      - shared-tail contribution
    - Reject any result whose apparent success is mostly tail-mediated.
 
+4. `Channelized symbolic follow-up`
+   - For dual-stream models, treat `x_t` as head-sliced symbolic state rather
+     than only as one `d_model` vector.
+   - First run differential probing to rank channels by task-relevant behavior.
+   - Then test:
+     - one-channel symbolic writes
+     - vertical same-channel interventions across layers
+     - informed mixed-token composites
+   - Only make strong compositional claims if composite interventions are built
+     from role-labeled channels rather than arbitrary head mixes.
+
 Success criteria:
 - positive steering on a nontrivial subset of clean cases
 - effect visible locally at the answer token
@@ -117,6 +157,11 @@ Engineering requirements:
 - symbolic-transformer / CASCADE model with inspectable internal streams
 - exact vocabulary-direction intervention interface
 - token-local decomposition report
+- channelwise probing interface for `x_t`
+- vertical-channel analysis artifact set
+- shared artifact schema in `gpt_oss_interp/common/artifacts.py`
+- steering-native implementation in `gpt_oss_interp/steering/`, not new logic
+  in `scripts/`
 
 ### Phase 2: First teacher-scale validation on Gemma 3 1B
 
@@ -157,6 +202,9 @@ Success criteria:
 Current status:
 - Gemma candidate screen is running path is implemented and has already accepted
   six new candidates.
+- the repo scaffold now supports a clean separation between steering analysis
+  and distillation code, but the actual per-channel probing implementation has
+  not been written yet
 
 Deliverables:
 - accepted-case artifact set for Gemma
@@ -228,6 +276,12 @@ Training stages:
 
 5. `Steering evaluation`
    - evaluate direct vocabulary steering on the student
+
+Implementation note:
+- new distillation code should be written directly into
+  `gpt_oss_interp/distillation/`
+- avoid building new teacher-student logic in `scripts/` first and moving it
+  later
 
 Success criteria:
 - student reaches acceptable teacher-relative benchmark accuracy

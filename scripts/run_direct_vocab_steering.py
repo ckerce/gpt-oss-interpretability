@@ -31,7 +31,7 @@ if str(SYMBOLIC_SRC) not in sys.path:
     sys.path.insert(0, str(SYMBOLIC_SRC))
 
 from gpt_oss_interp.benchmarks.tasks import all_tasks
-from symbolic_transformer.model.config import SymbolicTransformerConfig
+from symbolic_transformer.model.config import SymbolicTransformerConfig, StreamUpdateMode
 from symbolic_transformer.model.transformer import SymbolicTransformer
 
 
@@ -65,6 +65,14 @@ class ChoicePrefix:
     choice_b_token: int
     suffix_a: list[int]
     suffix_b: list[int]
+
+
+def _position_index(prefix: ChoicePrefix, intervention_position: str) -> int:
+    if intervention_position == "decision":
+        return prefix.decision_position_index
+    if intervention_position == "token0":
+        return 0
+    raise ValueError(f"Unsupported intervention_position: {intervention_position}")
 
 
 class ReducedGPT2Tokenizer:
@@ -219,11 +227,13 @@ def _build_tokenizer(
 
 
 @contextlib.contextmanager
-def _contextual_steering_hook(
+def _steering_hook(
     model: SymbolicTransformer,
     layer_idx: int | None,
     position_idx: int | None,
     vector: torch.Tensor | None,
+    intervention_stream: str,
+    intervention_stage: str,
 ) -> Iterator[None]:
     if layer_idx is None or position_idx is None or vector is None:
         yield
@@ -232,16 +242,30 @@ def _contextual_steering_hook(
     block = model.blocks[layer_idx]
     vector = vector.detach()
 
-    def _hook(_module, _inputs, outputs):
-        x_t, x_e, interpretations, present = outputs
-        steered = x_e.clone()
-        steered[:, position_idx, :] = steered[:, position_idx, :] + vector.to(
-            device=steered.device,
-            dtype=steered.dtype,
-        )
-        return x_t, steered, interpretations, present
+    def _apply(target: torch.Tensor) -> torch.Tensor:
+        steered = target.clone()
+        steered[:, position_idx, :] = steered[:, position_idx, :] + vector.to(device=steered.device, dtype=steered.dtype)
+        return steered
 
-    handle = block.register_forward_hook(_hook)
+    if intervention_stage == "post_block":
+        def _hook(_module, _inputs, outputs):
+            x_t, x_e, interpretations, present = outputs
+            if intervention_stream == "x_e":
+                return x_t, _apply(x_e), interpretations, present
+            return _apply(x_t), x_e, interpretations, present
+
+        handle = block.register_forward_hook(_hook)
+    elif intervention_stage == "pre_block":
+        def _pre_hook(_module, inputs):
+            input_list = list(inputs)
+            stream_idx = 1 if intervention_stream == "x_e" else 0
+            input_list[stream_idx] = _apply(input_list[stream_idx])
+            return tuple(input_list)
+
+        handle = block.register_forward_pre_hook(_pre_hook)
+    else:
+        raise ValueError(f"Unsupported intervention_stage: {intervention_stage}")
+
     try:
         yield
     finally:
@@ -255,10 +279,60 @@ def _forward_logits(
     layer_idx: int | None = None,
     position_idx: int | None = None,
     vector: torch.Tensor | None = None,
+    intervention_stream: str = "x_e",
+    intervention_stage: str = "post_block",
+    readout_source: str = "combined",
 ) -> torch.Tensor:
     tokens = torch.tensor([input_ids], device=device, dtype=torch.long)
+
+    if intervention_stage == "embedding_init" or readout_source != "combined":
+        with torch.inference_mode():
+            x_t = model.embedding(tokens)
+            x_e = torch.zeros_like(x_t)
+
+            if model.config.stream_update_mode == StreamUpdateMode.CASCADE and model.config.cascade_cln_at_init:
+                x_t = model.ln_embed(x_t)
+
+            if position_idx is not None and vector is not None and intervention_stage == "embedding_init":
+                target = x_e if intervention_stream == "x_e" else x_t
+                target = target.clone()
+                target[:, position_idx, :] = target[:, position_idx, :] + vector.to(device=target.device, dtype=target.dtype)
+                if intervention_stream == "x_e":
+                    x_e = target
+                else:
+                    x_t = target
+
+            vocab_embeddings = model.embedding.get_vocab_embeddings()
+            output_vocab_embeddings = None
+            if model.config.experimental.vocab_projection.vocab_source.value == "output_embedding":
+                output_vocab_embeddings = model.get_output_vocab_embeddings()
+
+            for block in model.blocks:
+                x_t, x_e, _interp, _present = block(
+                    x_t,
+                    x_e,
+                    vocab_embeddings,
+                    output_vocab_embeddings,
+                    layer_past=None,
+                    use_cache=False,
+                    training_step=None,
+                    attention_mask=None,
+                )
+
+            if readout_source == "combined":
+                x = model.ln_f(x_t + x_e)
+            elif readout_source == "x_t":
+                x = model.ln_f(x_t)
+            elif readout_source == "x_e":
+                x = model.ln_f(x_e)
+            else:
+                raise ValueError(f"Unsupported readout_source: {readout_source}")
+
+            logits = model.lm_head(x)
+        return logits[0].detach().cpu().float()
+
     with torch.inference_mode():
-        with _contextual_steering_hook(model, layer_idx, position_idx, vector):
+        with _steering_hook(model, layer_idx, position_idx, vector, intervention_stream, intervention_stage):
             logits, _interpretations, _present = model(tokens)
     return logits[0].detach().cpu().float()
 
@@ -271,6 +345,9 @@ def _choice_score(
     layer_idx: int | None = None,
     position_idx: int | None = None,
     vector: torch.Tensor | None = None,
+    intervention_stream: str = "x_e",
+    intervention_stage: str = "post_block",
+    readout_source: str = "combined",
 ) -> float:
     logits = _forward_logits(
         model,
@@ -279,6 +356,9 @@ def _choice_score(
         layer_idx=layer_idx,
         position_idx=position_idx,
         vector=vector,
+        intervention_stream=intervention_stream,
+        intervention_stage=intervention_stage,
+        readout_source=readout_source,
     )
     log_probs = torch.log_softmax(logits, dim=-1)
     total = 0.0
@@ -293,6 +373,9 @@ def _local_metrics(
     device: torch.device,
     layer_idx: int | None = None,
     vector: torch.Tensor | None = None,
+    intervention_stream: str = "x_e",
+    intervention_stage: str = "post_block",
+    readout_source: str = "combined",
 ) -> dict[str, float]:
     logits = _forward_logits(
         model,
@@ -301,6 +384,9 @@ def _local_metrics(
         layer_idx=layer_idx,
         position_idx=prefix.decision_position_index,
         vector=vector,
+        intervention_stream=intervention_stream,
+        intervention_stage=intervention_stage,
+        readout_source=readout_source,
     )
     final_logits = logits[prefix.decision_position_index]
     final_log_probs = torch.log_softmax(final_logits, dim=-1)
@@ -318,19 +404,22 @@ def _baseline_case_summary(
     expected_label: str,
     tokenizer: ReducedGPT2Tokenizer,
     device: torch.device,
+    readout_source: str = "combined",
 ) -> dict[str, object]:
-    local = _local_metrics(model, prefix, device=device)
+    local = _local_metrics(model, prefix, device=device, readout_source=readout_source)
     choice_a_score = _choice_score(
         model,
         prefix.full_a,
         choice_start_idx=prefix.prompt_start_index,
         device=device,
+        readout_source=readout_source,
     )
     choice_b_score = _choice_score(
         model,
         prefix.full_b,
         choice_start_idx=prefix.prompt_start_index,
         device=device,
+        readout_source=readout_source,
     )
     predicted = "A" if choice_a_score >= choice_b_score else "B"
     return {
@@ -362,10 +451,15 @@ def _steering_rows_for_pair(
     layers: list[int],
     scales: list[float],
     device: torch.device,
+    intervention_stream: str = "x_e",
+    intervention_stage: str = "post_block",
+    readout_source: str = "combined",
+    intervention_position: str = "decision",
 ) -> list[dict[str, object]]:
     weight = model.lm_head.weight.detach().cpu().float()
     direction = weight[source_prefix.choice_a_token] - weight[source_prefix.choice_b_token]
     rows: list[dict[str, object]] = []
+    position_idx = _position_index(target_prefix, intervention_position)
     for layer_idx in layers:
         for scale in scales:
             vector = direction * scale
@@ -375,6 +469,9 @@ def _steering_rows_for_pair(
                 device=device,
                 layer_idx=layer_idx,
                 vector=vector,
+                intervention_stream=intervention_stream,
+                intervention_stage=intervention_stage,
+                readout_source=readout_source,
             )
             score_a = _choice_score(
                 model,
@@ -382,8 +479,11 @@ def _steering_rows_for_pair(
                 choice_start_idx=target_prefix.prompt_start_index,
                 device=device,
                 layer_idx=layer_idx,
-                position_idx=target_prefix.decision_position_index,
+                position_idx=position_idx,
                 vector=vector,
+                intervention_stream=intervention_stream,
+                intervention_stage=intervention_stage,
+                readout_source=readout_source,
             )
             score_b = _choice_score(
                 model,
@@ -391,8 +491,11 @@ def _steering_rows_for_pair(
                 choice_start_idx=target_prefix.prompt_start_index,
                 device=device,
                 layer_idx=layer_idx,
-                position_idx=target_prefix.decision_position_index,
+                position_idx=position_idx,
                 vector=vector,
+                intervention_stream=intervention_stream,
+                intervention_stage=intervention_stage,
+                readout_source=readout_source,
             )
             total_gap = score_a - score_b
             local_logit_shift = local["local_logit_gap"] - baseline_target["local"]["local_logit_gap"]
@@ -405,6 +508,10 @@ def _steering_rows_for_pair(
                     "source_case_id": source_prefix.case_id,
                     "target_case_id": target_prefix.case_id,
                     "on_target": int(source_prefix.case_id == target_prefix.case_id),
+                    "intervention_stream": intervention_stream,
+                    "intervention_stage": intervention_stage,
+                    "readout_source": readout_source,
+                    "intervention_position": intervention_position,
                     "layer": layer_idx,
                     "scale": scale,
                     "direction_norm": float(torch.norm(direction).item()),
@@ -550,6 +657,30 @@ def main() -> int:
         help="Choose GPT-2 tokenization directly or reduced-vocab mapping.",
     )
     parser.add_argument("--device", default="cpu")
+    parser.add_argument(
+        "--intervention-stream",
+        default="x_e",
+        choices=("x_e", "x_t"),
+        help="Which stream to perturb: contextual x_e or symbolic x_t.",
+    )
+    parser.add_argument(
+        "--intervention-stage",
+        default="post_block",
+        choices=("post_block", "pre_block", "embedding_init"),
+        help="Whether to perturb the stream before or after the selected block.",
+    )
+    parser.add_argument(
+        "--readout-source",
+        default="combined",
+        choices=("combined", "x_t", "x_e"),
+        help="Which stream to decode from at the output.",
+    )
+    parser.add_argument(
+        "--intervention-position",
+        default="decision",
+        choices=("decision", "token0"),
+        help="Where to inject the vector: at the answer decision token or token 0 as a wrong-position control.",
+    )
     parser.add_argument("--skip-off-target", action="store_true")
     parser.add_argument(
         "--output",
@@ -582,6 +713,10 @@ def main() -> int:
             "base_tokenizer": args.base_tokenizer,
             "tokenizer_mode": args.tokenizer_mode,
             "device": str(device),
+            "intervention_stream": args.intervention_stream,
+            "intervention_stage": args.intervention_stage,
+            "readout_source": args.readout_source,
+            "intervention_position": args.intervention_position,
             "skip_off_target": args.skip_off_target,
         },
         "cases": {},
@@ -636,6 +771,7 @@ def main() -> int:
                 expected_label=str(task_map[case_id]["expected_label"]),
                 tokenizer=tokenizer,
                 device=device,
+                readout_source=args.readout_source,
             )
             print(
                 f"[direct-vocab] baseline {model_label} {case_id}: "
@@ -661,6 +797,10 @@ def main() -> int:
                     layers=layers,
                     scales=scales,
                     device=device,
+                    intervention_stream=args.intervention_stream,
+                    intervention_stage=args.intervention_stage,
+                    readout_source=args.readout_source,
+                    intervention_position=args.intervention_position,
                 )
                 payload["rows"].extend(rows)
                 completed_runs += len(rows)
