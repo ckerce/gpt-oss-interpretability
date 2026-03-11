@@ -98,6 +98,9 @@ gpt_oss_interp/
 ├── capture/
 │   ├── activation_cache.py      # Hidden-state capture via forward hooks
 │   └── router_capture.py        # MoE routing decision capture
+├── features/
+│   ├── extractor.py             # Extended Tier-2 feature extraction for MoE
+│   └── geometry.py              # Metric-space analysis of feature point clouds
 ├── harmony/
 │   └── prompting.py             # Harmony chat-template formatting
 ├── readouts/
@@ -112,6 +115,7 @@ gpt_oss_interp/
 
 scripts/
 ├── run_benchmark.py             # CLI: run full intervention benchmark
+├── run_feature_extraction.py    # CLI: computational mode feature extraction
 ├── inspect_model.py             # CLI: dump model structure for hook planning
 ├── run_logit_lens.py            # CLI: per-layer prediction analysis
 └── capture_routing.py           # CLI: MoE expert selection analysis
@@ -139,6 +143,32 @@ configs/
 | induction | 4 | Pattern copying | Strong |
 | coreference | 4 | Pronoun resolution | Strong |
 | syntax_agreement | 4 | Subject-verb agreement across attractors | Partial |
+
+## Feature extraction and geometric analysis
+
+The `features/` module extends the 163-dimensional Tier-2 feature system from the NeurIPS 2026 activation clustering paper to MoE architectures. For gpt-oss-20b, the feature space expands to ~7,200 dimensions:
+
+| Component | Dims | What it captures |
+| --- | ---: | --- |
+| A. Trajectory | 71 | Per-layer probability, margin, confidence drops |
+| B. Stability | 2 | Convergence layer k*, max consecutive correct κ |
+| C. Head Activation | 3,072 | Peak attention at stability + final layers (64 heads × 24 layers × 2) |
+| D. Head Entropy | 3,072 | Attention sharpness at stability + final layers |
+| E. Expert Routing | 160 | Weighted routing vectors at stability + final layers, sorted top-4 weights |
+| F. Routing Entropy | 24 | Per-layer routing diversity |
+| G. Attention Scale | 24 | Sliding-window vs. full-attention local fraction |
+
+The feature map φ: Tokens-in-Context → ℝ^D simultaneously structures both the data (tokens processed similarly are "close") and the model (components that co-activate are "similar"). This dual metric enables architecture-agnostic comparison of computational modes across models of different scale and training objective.
+
+See `GEOMETRIC_FRAMEWORK.md` for the mathematical exposition and `RESEARCH_CONNECTIONS.md` for experimental plans.
+
+```bash
+# Extract features and run geometric analysis
+python scripts/run_feature_extraction.py \
+    --model openai/gpt-oss-20b \
+    --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
+    --output runs/features_demo/
+```
 
 ## Design principles
 
