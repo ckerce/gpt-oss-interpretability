@@ -1,4 +1,4 @@
-from gpt_oss_interp.benchmarks.tasks import all_tasks
+from gpt_oss_interp.benchmarks.pools import LEGACY_SOFT_MAIN_CASE_IDS, filter_tasks_by_case_ids
 from gpt_oss_interp.config import (
     BackendKind,
     BenchmarkConfig,
@@ -10,19 +10,6 @@ from gpt_oss_interp.config import (
 )
 
 
-SOFT_MAIN_CASE_IDS = {
-    "caps_002",
-    "caps_003",
-    "induction_001",
-    "induction_002",
-    "induction_003",
-    "induction_004",
-    "coref_002",
-    "coref_003",
-    "coref_004",
-}
-
-
 ###############################################################################
 #
 # Task filtering
@@ -30,13 +17,7 @@ SOFT_MAIN_CASE_IDS = {
 ###############################################################################
 
 def _filtered_tasks():
-    tasks = []
-    for task in all_tasks():
-        filtered_cases = [case for case in task.cases if case.case_id in SOFT_MAIN_CASE_IDS]
-        if filtered_cases:
-            task.cases = filtered_cases
-            tasks.append(task)
-    return tasks
+    return filter_tasks_by_case_ids(LEGACY_SOFT_MAIN_CASE_IDS)
 
 
 ###############################################################################

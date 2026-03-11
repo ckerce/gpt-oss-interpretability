@@ -1,0 +1,270 @@
+{
+  "model": "/home/ckerce/.cache/huggingface/hub/models--google--gemma-3-1b-it/snapshots/dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "set_name": "main_analysis_soft",
+  "layer": 23,
+  "summary": {
+    "local_support": 6,
+    "tail_rescued": 4
+  },
+  "rows": [
+    {
+      "case_id": "caps_005",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "expected_text_A": " Dakota",
+      "expected_text_B": " dakota",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Dak",
+      "local_token_B": "dak",
+      "tail_a_tokens": [
+        "ota",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "ota",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 3.980945587158203,
+      "total_diff_A_minus_B": 10.375349608802935,
+      "tail_contribution": 6.394404021644732,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "caps_006",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "expected_text_A": " Francisco",
+      "expected_text_B": " francisco",
+      "layer": 23,
+      "num_diff_positions": 3,
+      "same_len": false,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Francisco",
+      "local_token_B": "franc",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "isco",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 5.056495189666748,
+      "total_diff_A_minus_B": 8.941563128988491,
+      "tail_contribution": 3.8850679393217433,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "caps_007",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "expected_text_A": " Angeles",
+      "expected_text_B": " angeles",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Ang",
+      "local_token_B": "ang",
+      "tail_a_tokens": [
+        "eles",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "eles",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 1.5282764434814453,
+      "total_diff_A_minus_B": 1.8794543662224896,
+      "tail_contribution": 0.3511779227410443,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "coref_005",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " Sophia",
+      "expected_text_B": " Daniel",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Sophia",
+      "local_token_B": "Daniel",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": -1.1088147163391113,
+      "total_diff_A_minus_B": 10.125441193580627,
+      "tail_contribution": 11.234255909919739,
+      "classification": "tail_rescued"
+    },
+    {
+      "case_id": "coref_007",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " Marcus",
+      "expected_text_B": " Olivia",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Marcus",
+      "local_token_B": "Olivia",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": -2.8641343116760254,
+      "total_diff_A_minus_B": 3.306487560272217,
+      "tail_contribution": 6.170621871948242,
+      "classification": "tail_rescued"
+    },
+    {
+      "case_id": "coref_010",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "expected_text_A": " Emma",
+      "expected_text_B": " Lucas",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "Emma",
+      "local_token_B": "Lucas",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 1.7831592559814453,
+      "total_diff_A_minus_B": 14.54991626739502,
+      "tail_contribution": 12.766757011413574,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "induction_006",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " 8",
+      "expected_text_B": " 7",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "8",
+      "local_token_B": "7",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": -0.8240871429443359,
+      "total_diff_A_minus_B": 5.789938926696777,
+      "tail_contribution": 6.614026069641113,
+      "classification": "tail_rescued"
+    },
+    {
+      "case_id": "induction_007",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " cedar",
+      "expected_text_B": " maple",
+      "layer": 23,
+      "num_diff_positions": 2,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "ced",
+      "local_token_B": "map",
+      "tail_a_tokens": [
+        "ar",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "le",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": -0.18785595893859863,
+      "total_diff_A_minus_B": 21.293983399795934,
+      "tail_contribution": 21.481839358734533,
+      "classification": "tail_rescued"
+    },
+    {
+      "case_id": "induction_008",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " P8",
+      "expected_text_B": " Q9",
+      "layer": 23,
+      "num_diff_positions": 2,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "P",
+      "local_token_B": "Q",
+      "tail_a_tokens": [
+        "8",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "9",
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 5.602739334106445,
+      "total_diff_A_minus_B": 13.819890022277832,
+      "tail_contribution": 8.217150688171387,
+      "classification": "local_support"
+    },
+    {
+      "case_id": "induction_009",
+      "task_name": "induction",
+      "behavior": "induction",
+      "expected_text_A": " bird",
+      "expected_text_B": " fish",
+      "layer": 23,
+      "num_diff_positions": 1,
+      "same_len": true,
+      "shared_prefix_tokens": [],
+      "local_token_A": "bird",
+      "local_token_B": "fish",
+      "tail_a_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "tail_b_tokens": [
+        "<end_of_turn>",
+        "\n"
+      ],
+      "local_diff_A_minus_B": 1.0549519062042236,
+      "total_diff_A_minus_B": 1.3075990676879883,
+      "tail_contribution": 0.25264716148376465,
+      "classification": "local_support"
+    }
+  ]
+}
