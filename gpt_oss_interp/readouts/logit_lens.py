@@ -17,8 +17,10 @@ import torch.nn as nn
 class LayerPrediction:
     layer_idx: int
     position: int
+    top_token_ids: list[int]
     top_tokens: list[str]
     top_logprobs: list[float]
+    target_token_id: int | None = None
     target_token: str | None = None
     target_rank: int | None = None
     target_logprob: float | None = None
@@ -30,6 +32,7 @@ class LogitLensResult:
     predictions: list[LayerPrediction]
     num_layers: int
     num_positions: int
+    tracked_target_ids: dict[int, int] = field(default_factory=dict)
 
     def layer_slice(self, layer_idx: int) -> list[LayerPrediction]:
         return [p for p in self.predictions if p.layer_idx == layer_idx]
@@ -45,6 +48,19 @@ class LogitLensResult:
         final = preds[-1].top_tokens[0] if preds[-1].top_tokens else None
         for p in preds:
             if p.top_tokens and p.top_tokens[0] == final:
+                return p.layer_idx
+        return None
+
+    def tracked_target_id(self, position: int) -> int | None:
+        return self.tracked_target_ids.get(position)
+
+    def target_convergence_layer(self, position: int) -> int | None:
+        """Return the earliest layer where the tracked target reaches rank 0."""
+        preds = self.position_slice(position)
+        if not preds:
+            return None
+        for p in preds:
+            if p.target_rank == 0:
                 return p.layer_idx
         return None
 
@@ -113,7 +129,31 @@ def run_logit_lens(
         positions = list(range(seq_len))
     num_layers = len(block_modules)
 
-    # Move final_norm and lm_head weights to CPU for projection
+    # First pass: determine the fixed tracked token per position from the final layer.
+    final_layer_targets: dict[int, int] = {}
+    final_block_name = block_names[-1] if block_names else None
+    if final_block_name is not None:
+        record = cache.last(final_block_name)
+        if record is not None:
+            hidden = record.tensor
+            with torch.no_grad():
+                normed = final_norm(hidden.to(next(final_norm.parameters()).device))
+                logits = lm_head(normed).cpu().float()
+                final_log_probs = torch.log_softmax(logits[0], dim=-1)
+            for pos in positions:
+                if pos >= seq_len:
+                    continue
+                final_layer_targets[pos] = int(torch.argmax(final_log_probs[pos]).item())
+
+    tracked_target_ids: dict[int, int] = dict(final_layer_targets)
+    if target_ids is not None:
+        for pos in positions:
+            if pos >= seq_len:
+                continue
+            tracked_target_ids[pos] = int(
+                target_ids[0, pos].item() if target_ids.ndim > 1 else target_ids[pos].item()
+            )
+
     predictions: list[LayerPrediction] = []
     for layer_idx, block_name in enumerate(block_names):
         record = cache.last(block_name)
@@ -138,15 +178,18 @@ def run_logit_lens(
             pred = LayerPrediction(
                 layer_idx=layer_idx,
                 position=pos,
+                top_token_ids=topk_ids.tolist(),
                 top_tokens=top_tokens,
                 top_logprobs=top_logprobs,
             )
 
-            if target_ids is not None and pos < target_ids.shape[-1]:
-                target_id = target_ids[0, pos].item() if target_ids.ndim > 1 else target_ids[pos].item()
-                pred.target_token = tokenizer.decode([target_id])
-                pred.target_logprob = lp[target_id].item()
-                pred.target_rank = int((lp > lp[target_id]).sum().item())
+            tracked_target_id: int | None = tracked_target_ids.get(pos)
+
+            if tracked_target_id is not None:
+                pred.target_token_id = int(tracked_target_id)
+                pred.target_token = tokenizer.decode([tracked_target_id])
+                pred.target_logprob = lp[tracked_target_id].item()
+                pred.target_rank = int((lp > lp[tracked_target_id]).sum().item())
 
             predictions.append(pred)
 
@@ -154,6 +197,7 @@ def run_logit_lens(
         predictions=predictions,
         num_layers=num_layers,
         num_positions=len(positions),
+        tracked_target_ids=tracked_target_ids,
     )
 
 

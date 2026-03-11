@@ -218,12 +218,40 @@ def _expert_output_scale_hook(expert_indices: tuple[int, ...], scale: float, num
     return hook
 
 
-def _layer_scale_hook(scale: float):
-    """Return a hook that scales the entire layer output."""
+def _layer_scale_hook(scale: float, preserve_residual: bool = True):
+    """Return a hook that scales the decoder-layer delta.
+
+    For decoder blocks with residual connections, the semantically useful
+    intervention is usually:
+
+        output = input + scale * (output - input)
+
+    not
+
+        output = scale * output
+
+    because the latter also destroys the residual passthrough.  Setting
+    ``preserve_residual=True`` makes ``scale=0`` behave like an identity-skip
+    over the block rather than zeroing the entire residual stream.
+    """
     def hook(module: nn.Module, input: Any, output: Any) -> Any:
+        residual_in = input[0] if input else None
+
         if isinstance(output, tuple):
-            return (output[0] * scale,) + output[1:]
-        return output * scale
+            hidden = output[0]
+            rest = output[1:]
+        else:
+            hidden = output
+            rest = None
+
+        if preserve_residual and residual_in is not None and isinstance(hidden, torch.Tensor):
+            adjusted = residual_in + scale * (hidden - residual_in)
+        else:
+            adjusted = hidden * scale
+
+        if rest is not None:
+            return (adjusted,) + rest
+        return adjusted
     return hook
 
 
@@ -299,6 +327,44 @@ class GPTOSSTransformersBackend(BaseBackend):
     # Scoring
     ###########################################################################
 
+    def _choice_logprob_by_layer(self, prompt: str, choice_text: str) -> dict[int, float]:
+        """Compute per-layer log-probability of a choice completion."""
+        from gpt_oss_interp.capture.activation_cache import ActivationCache
+
+        full_ids, choice_start = encode_prompt_with_completion(
+            self.tokenizer, prompt, choice_text,
+        )
+        input_ids = torch.tensor([full_ids], device=self.device)
+
+        cache = ActivationCache(detach=True, to_cpu=True)
+        handles = cache.register(self.model, self.structure.block_names)
+        try:
+            with torch.no_grad():
+                self.model(input_ids)
+        finally:
+            for h in handles:
+                h.remove()
+
+        scores: dict[int, float] = {}
+        norm_device = next(self.structure.final_norm.parameters()).device
+        for layer_idx, block_name in enumerate(self.structure.block_names):
+            record = cache.last(block_name)
+            if record is None:
+                continue
+            hidden = record.tensor
+            with torch.no_grad():
+                normed = self.structure.final_norm(hidden.to(norm_device))
+                logits = self.structure.lm_head(normed).cpu().float()
+                log_probs = torch.log_softmax(logits[0], dim=-1)
+
+            total = 0.0
+            for i in range(choice_start, len(full_ids)):
+                token_id = full_ids[i]
+                total += log_probs[i - 1, token_id].item()
+            scores[layer_idx] = total
+
+        return scores
+
     def _choice_logprob(self, prompt: str, choice_text: str) -> float:
         """Compute log-probability of a choice completion given a prompt."""
         full_ids, choice_start = encode_prompt_with_completion(
@@ -326,6 +392,15 @@ class GPTOSSTransformersBackend(BaseBackend):
             choice_logprobs=choice_logprobs,
             metadata={"backend": "gpt_oss_transformers", "model": self.model_name},
         )
+
+    def score_case_by_layer(self, case: PromptCase) -> dict[int, dict[str, float]]:
+        """Compute per-layer choice logprobs for a benchmark case."""
+        layer_scores: dict[int, dict[str, float]] = {}
+        for label, text in case.choices.items():
+            choice_scores = self._choice_logprob_by_layer(case.prompt, text)
+            for layer_idx, score in choice_scores.items():
+                layer_scores.setdefault(layer_idx, {})[label] = score
+        return layer_scores
 
     ###########################################################################
     # Interventions
@@ -367,12 +442,13 @@ class GPTOSSTransformersBackend(BaseBackend):
 
         elif spec.kind == InterventionKind.LAYER_SCALE:
             layers = target.layer_indices if target.layer_indices else range(self.structure.num_layers)
+            preserve_residual = spec.params.get("preserve_residual", True)
             for li in layers:
                 block_name = self.structure.block_names[li]
                 module = dict(self.model.named_modules()).get(block_name)
                 if module is None:
                     continue
-                hook = module.register_forward_hook(_layer_scale_hook(scale))
+                hook = module.register_forward_hook(_layer_scale_hook(scale, preserve_residual=preserve_residual))
                 self._hooks.append(hook)
 
         elif spec.kind == InterventionKind.TEMPERATURE_SCALE:
@@ -411,6 +487,7 @@ class GPTOSSTransformersBackend(BaseBackend):
         self,
         prompt: str,
         top_k: int = 5,
+        target_ids: torch.Tensor | None = None,
         positions: list[int] | None = None,
     ):
         """Run a logit-lens pass on a prompt and return per-layer predictions."""
@@ -425,6 +502,7 @@ class GPTOSSTransformersBackend(BaseBackend):
             lm_head=self.structure.lm_head,
             block_modules=self.structure.blocks,
             top_k=top_k,
+            target_ids=target_ids,
             positions=positions,
         )
 
