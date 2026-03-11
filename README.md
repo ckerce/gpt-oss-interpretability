@@ -4,6 +4,18 @@ Mechanistic interpretability toolkit for OpenAI's gpt-oss-20b. Provides causal i
 
 Companion repository to `symbolic-transformer`. This repo demonstrates that inspection and intervention methods developed for interpretable-by-design architectures transfer to external production models.
 
+The repo is now in the middle of a light structural refactor:
+
+- `gpt_oss_interp/steering/` is the intended home for intervention, probing,
+  readout, and steering-control code
+- `gpt_oss_interp/distillation/` is the intended home for teacher-student and
+  CASCADE-target code
+- `gpt_oss_interp/common/` is the intended home for shared artifact schemas and
+  minimal shared infrastructure
+
+Legacy workflow code still exists in `scripts/` and older package locations.
+New code should prefer the new package split.
+
 ## Architecture target
 
 **gpt-oss-20b** (`GptOssForCausalLM`): 24-layer MoE transformer, 21B total / 3.6B active parameters per token.
@@ -94,6 +106,7 @@ python scripts/run_logit_lens.py \
 ```
 gpt_oss_interp/
 ├── config.py                    # Dataclasses: tasks, interventions, benchmarks
+├── common/                      # Shared artifact schemas and shared run types
 ├── backends/
 │   ├── base.py                  # Backend contract (score, intervene, clear)
 │   ├── dry_run.py               # Synthetic backend for smoke testing
@@ -113,6 +126,8 @@ gpt_oss_interp/
 │   └── runner.py                # Benchmark orchestration and scoring
 ├── interventions/
 │   └── specs.py                 # Intervention sweep expansion
+├── steering/                    # New home for steering / probing / readouts
+├── distillation/                # New home for teacher-student workflows
 └── reports/
     └── writers.py               # CSV, JSON, Markdown output
 
@@ -127,6 +142,22 @@ configs/
 ├── dry_run_recency.py           # Smoke-test config (no model needed)
 └── gpt_oss_20b_template.py      # Full sweep on real model
 ```
+
+## Refactor Note
+
+The `steering/`, `distillation/`, and `common/` packages are currently a
+scaffolded target structure.
+
+Short-term rules:
+
+- write new per-channel probing logic in `gpt_oss_interp/steering/probing.py`
+- write new steering readout/control logic in `gpt_oss_interp/steering/`
+- write new CASCADE distillation logic in `gpt_oss_interp/distillation/`
+- keep shared JSON artifact schemas in `gpt_oss_interp/common/artifacts.py`
+- avoid adding major new first-pass workflow logic directly to `scripts/`
+
+The old locations are still valid during migration, but they are no longer the
+intended place for new work.
 
 ## Intervention types
 

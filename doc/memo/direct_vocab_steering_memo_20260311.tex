@@ -47,6 +47,17 @@ is not intended as a full conference submission. The aim is to record the
 question, design, current evidence, and next experimental decisions in a form
 that is easy to cite internally and easy to extend into a later paper.
 
+\paragraph{Implementation status.}
+The repo now has a scaffolded package split between
+\texttt{gpt\_oss\_interp/steering/},
+\texttt{gpt\_oss\_interp/distillation/}, and
+\texttt{gpt\_oss\_interp/common/}. This matters for the next phase of work:
+per-channel probing, readout decomposition, and symbolic-slice interventions
+should now be implemented natively under \texttt{steering/}, while
+teacher-student and CASCADE-target code should live under
+\texttt{distillation/}. The split is still a scaffold, not a completed code
+migration, but it establishes the intended structure for future work.
+
 \paragraph{Model aliases.}
 To keep the tables compact, we use short aliases:
 \begin{itemize}[leftmargin=1.5em]
@@ -137,6 +148,27 @@ steering direction is
 For scale $\alpha$, we inject $\alpha \Delta v$ into the contextual stream
 $x_e$ after a selected transformer block. This is a direct vocabulary
 intervention rather than a learned steering vector.
+
+\paragraph{Scope note.}
+All experiments in this memo use $\Delta v$ as one whole $d_{\mathrm{model}}$
+vector. We do \emph{not} yet exploit a stronger dual-stream-specific
+intervention family in which the symbolic stream $x_t$ is channelized by head
+and token embeddings can be written per head or composed across heads. That
+intervention family is unavailable in a standard transformer and remains an
+important next step. The correct way to open that space is not by arbitrary
+head mixing. It requires ACL-style differential probing first: identify which
+channels behave like entity trackers, recency channels, answer selectors, or
+generic amplifiers, then intervene on one channel at a time before attempting
+mixed-token channel composites.
+
+\paragraph{Implementation note.}
+The intended home for that next-phase work is now
+\texttt{gpt\_oss\_interp/steering/}: probing in
+\texttt{steering/probing.py}, causal symbolic-slice interventions in
+\texttt{steering/interventions.py}, null baselines in
+\texttt{steering/controls.py}, and readout decomposition in
+\texttt{steering/readouts.py}. Shared artifact schemas should remain in
+\texttt{gpt\_oss\_interp/common/artifacts.py}.
 
 \subsection{Evaluation Panel}
 

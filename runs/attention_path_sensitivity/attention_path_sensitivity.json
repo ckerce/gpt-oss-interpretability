@@ -1,0 +1,131 @@
+{
+  "model": "C-71",
+  "checkpoint": "/mnt/d/mechanistic_interpretability/results/neurips-2026/training/gated_attention/dns-dns_S_G_cascade_gpt2/checkpoint_epoch_1.pt",
+  "intervention_stage": "embedding_init",
+  "scale": -8.0,
+  "cases": [
+    {
+      "case_id": "recency_001",
+      "task": "recency_bias",
+      "prompt": "The trophy would not fit in the suitcase because the suitcase was too small. The word 'small' refers to the",
+      "choice_a_token_text": " suitcase",
+      "choice_b_token_text": " trophy",
+      "layers": [
+        {
+          "layer": 0,
+          "x_t_delta": 0.002363524166867137,
+          "x_e_delta": 0.002363524166867137
+        },
+        {
+          "layer": 1,
+          "x_t_delta": 0.002455527428537607,
+          "x_e_delta": 0.00246535730548203
+        },
+        {
+          "layer": 2,
+          "x_t_delta": 0.002101662801578641,
+          "x_e_delta": 0.0019591236487030983
+        },
+        {
+          "layer": 3,
+          "x_t_delta": 0.0041715484112501144,
+          "x_e_delta": 0.0038703770842403173
+        },
+        {
+          "layer": 4,
+          "x_t_delta": 0.002482552779838443,
+          "x_e_delta": 0.002419695956632495
+        },
+        {
+          "layer": 5,
+          "x_t_delta": 0.0027376769576221704,
+          "x_e_delta": 0.0027627581730484962
+        }
+      ],
+      "mean_x_t_delta": 0.0027187487576156855,
+      "mean_x_e_delta": 0.0026401393891622624
+    },
+    {
+      "case_id": "induction_005",
+      "task": "induction",
+      "prompt": "sun moon star sun moon star sun moon",
+      "choice_a_token_text": " star",
+      "choice_b_token_text": " cloud",
+      "layers": [
+        {
+          "layer": 0,
+          "x_t_delta": 0.0033794392365962267,
+          "x_e_delta": 0.0033794392365962267
+        },
+        {
+          "layer": 1,
+          "x_t_delta": 0.004632888361811638,
+          "x_e_delta": 0.004732249770313501
+        },
+        {
+          "layer": 2,
+          "x_t_delta": 0.006242773029953241,
+          "x_e_delta": 0.0068159825168550014
+        },
+        {
+          "layer": 3,
+          "x_t_delta": 0.006458730902522802,
+          "x_e_delta": 0.006227526348084211
+        },
+        {
+          "layer": 4,
+          "x_t_delta": 0.007319167256355286,
+          "x_e_delta": 0.007392518222332001
+        },
+        {
+          "layer": 5,
+          "x_t_delta": 0.006263609975576401,
+          "x_e_delta": 0.006087029352784157
+        }
+      ],
+      "mean_x_t_delta": 0.0057161014604692655,
+      "mean_x_e_delta": 0.005772457574494183
+    },
+    {
+      "case_id": "coref_009",
+      "task": "coreference",
+      "prompt": "Natalie reminded Jacob that he needed to lock the door. The word 'he' refers to",
+      "choice_a_token_text": " Jacob",
+      "choice_b_token_text": " Natalie",
+      "layers": [
+        {
+          "layer": 0,
+          "x_t_delta": 0.005899473093450069,
+          "x_e_delta": 0.005899473093450069
+        },
+        {
+          "layer": 1,
+          "x_t_delta": 0.004174795467406511,
+          "x_e_delta": 0.004191174171864986
+        },
+        {
+          "layer": 2,
+          "x_t_delta": 0.005787788890302181,
+          "x_e_delta": 0.005895570851862431
+        },
+        {
+          "layer": 3,
+          "x_t_delta": 0.009301520884037018,
+          "x_e_delta": 0.009213803336024284
+        },
+        {
+          "layer": 4,
+          "x_t_delta": 0.006186328828334808,
+          "x_e_delta": 0.006068369839340448
+        },
+        {
+          "layer": 5,
+          "x_t_delta": 0.006936489138752222,
+          "x_e_delta": 0.006690475158393383
+        }
+      ],
+      "mean_x_t_delta": 0.006381066050380468,
+      "mean_x_e_delta": 0.0063264777418226
+    }
+  ]
+}
