@@ -1,0 +1,270 @@
+{
+  "source": "/mnt/c/Users/ckerc/Documents/job_applications/openai-interpretability/gpt-oss-interp/runs/filtered_benchmark_analysis/filtered_benchmark_analysis.json",
+  "set_name": "main_analysis_soft",
+  "baseline_run": "early_heads_L2@0",
+  "baseline_stats": {
+    "count": 9,
+    "accuracy": 1.0,
+    "mean_margin": 6.25960590816491
+  },
+  "ranking_by_margin_drop": [
+    {
+      "run_name": "layer_scale_L20@0",
+      "count": 9,
+      "accuracy": 0.4444444444444444,
+      "mean_margin": 0.9452672534518771,
+      "delta_accuracy": -0.5555555555555556,
+      "delta_margin": -5.314338654713033
+    },
+    {
+      "run_name": "layer_scale_L20@2",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 5.775967744618861,
+      "delta_accuracy": 0.0,
+      "delta_margin": -0.4836381635460487
+    },
+    {
+      "run_name": "early_heads_L2@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.25960590816491,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.0
+    },
+    {
+      "run_name": "early_heads_L2@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.587390340567152,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.3277844324022423
+    },
+    {
+      "run_name": "mid_heads_L12@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.75486410461599,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.49525819645108005
+    },
+    {
+      "run_name": "experts_L8@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.7917051196434635,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5320992114785534
+    },
+    {
+      "run_name": "early_heads_L2@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "experts_L8@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "layer_scale_L20@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "mid_heads_L12@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "experts_L8@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8458595814170415,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5862536732521315
+    },
+    {
+      "run_name": "experts_L8@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8770971666219545,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6174912584570444
+    },
+    {
+      "run_name": "early_heads_L2@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.896079872953123,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6364739647882134
+    },
+    {
+      "run_name": "mid_heads_L12@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.913846833320956,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6542409251560457
+    },
+    {
+      "run_name": "mid_heads_L12@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 7.03896188483082,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.7793559766659097
+    },
+    {
+      "run_name": "layer_scale_L20@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 7.988410205641736,
+      "delta_accuracy": 0.0,
+      "delta_margin": 1.7288042974768256
+    }
+  ],
+  "ranking_by_accuracy_drop": [
+    {
+      "run_name": "layer_scale_L20@0",
+      "count": 9,
+      "accuracy": 0.4444444444444444,
+      "mean_margin": 0.9452672534518771,
+      "delta_accuracy": -0.5555555555555556,
+      "delta_margin": -5.314338654713033
+    },
+    {
+      "run_name": "layer_scale_L20@2",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 5.775967744618861,
+      "delta_accuracy": 0.0,
+      "delta_margin": -0.4836381635460487
+    },
+    {
+      "run_name": "early_heads_L2@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.25960590816491,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.0
+    },
+    {
+      "run_name": "early_heads_L2@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.587390340567152,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.3277844324022423
+    },
+    {
+      "run_name": "mid_heads_L12@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.75486410461599,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.49525819645108005
+    },
+    {
+      "run_name": "experts_L8@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.7917051196434635,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5320992114785534
+    },
+    {
+      "run_name": "early_heads_L2@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "experts_L8@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "layer_scale_L20@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "mid_heads_L12@1",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8256716835829945,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5660657754180844
+    },
+    {
+      "run_name": "experts_L8@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8458595814170415,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.5862536732521315
+    },
+    {
+      "run_name": "experts_L8@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.8770971666219545,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6174912584570444
+    },
+    {
+      "run_name": "early_heads_L2@1.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.896079872953123,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6364739647882134
+    },
+    {
+      "run_name": "mid_heads_L12@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 6.913846833320956,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.6542409251560457
+    },
+    {
+      "run_name": "mid_heads_L12@0",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 7.03896188483082,
+      "delta_accuracy": 0.0,
+      "delta_margin": 0.7793559766659097
+    },
+    {
+      "run_name": "layer_scale_L20@0.5",
+      "count": 9,
+      "accuracy": 1.0,
+      "mean_margin": 7.988410205641736,
+      "delta_accuracy": 0.0,
+      "delta_margin": 1.7288042974768256
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "config": {
+    "backend_kind": "gpt_oss_transformers",
+    "backend_params": {
+      "model_name": "openai/gpt-oss-20b"
+    },
+    "tasks": [
+      {
+        "name": "capitalization",
+        "behavior": "capitalization",
+        "cases": [
+          {
+            "case_id": "caps_002",
+            "prompt": "Write the US state in normal headline style: north",
+            "choices": {
+              "A": " Carolina",
+              "B": " carolina"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          },
+          {
+            "case_id": "caps_003",
+            "prompt": "Complete the name of the city: new",
+            "choices": {
+              "A": " York",
+              "B": " york"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          }
+        ],
+        "description": "Formatting behavior: title case and proper noun capitalization."
+      },
+      {
+        "name": "induction",
+        "behavior": "induction",
+        "cases": [
+          {
+            "case_id": "induction_001",
+            "prompt": "A7 B2 C9 D4 A7 B2 C9",
+            "choices": {
+              "A": " D4",
+              "B": " E5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_002",
+            "prompt": "red blue green red blue green red blue",
+            "choices": {
+              "A": " green",
+              "B": " red"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_003",
+            "prompt": "1 2 3 4 1 2 3 4 1 2 3",
+            "choices": {
+              "A": " 4",
+              "B": " 5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_004",
+            "prompt": "alpha beta gamma alpha beta gamma alpha beta",
+            "choices": {
+              "A": " gamma",
+              "B": " delta"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          }
+        ],
+        "description": "Induction-style copying: repeat a previously observed pattern."
+      },
+      {
+        "name": "coreference",
+        "behavior": "coreference",
+        "cases": [
+          {
+            "case_id": "coref_002",
+            "prompt": "The teacher praised the student because the student got every answer right. Later, the teacher said he would recommend the student for the award. The word 'he' refers to the",
+            "choices": {
+              "A": " teacher",
+              "B": " student"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_003",
+            "prompt": "John called Mary and told her about the meeting. The word 'her' refers to",
+            "choices": {
+              "A": " Mary",
+              "B": " John"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_004",
+            "prompt": "The mother picked up the child because she was strong enough to carry him. The word 'she' refers to the",
+            "choices": {
+              "A": " mother",
+              "B": " child"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          }
+        ],
+        "description": "Simple pronoun coreference resolution."
+      }
+    ],
+    "interventions": [
+      {
+        "name": "late_delta_L20",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Residual-preserving full block-delta suppression at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Residual-delta block ablation at layer 20",
+        "params": {
+          "preserve_residual": true
+        }
+      },
+      {
+        "name": "all_heads_L20",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "expert_indices": [],
+          "note": "Zero all attention heads at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Attention-path ablation at layer 20",
+        "params": {}
+      },
+      {
+        "name": "all_experts_L20",
+        "kind": "expert_mask",
+        "target": {
+          "unit": "expert",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [],
+          "expert_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "note": "Zero all MoE experts at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "MoE-path ablation at layer 20",
+        "params": {}
+      },
+      {
+        "name": "late_delta_L21",
+        "kind": "layer_scale",
+        "target": {
+          "unit": "layer",
+          "layer_indices": [
+            21
+          ],
+          "head_indices": [],
+          "expert_indices": [],
+          "note": "Residual-preserving full block-delta suppression at layer 21"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Residual-delta block ablation at layer 21",
+        "params": {
+          "preserve_residual": true
+        }
+      },
+      {
+        "name": "all_heads_L21",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            21
+          ],
+          "head_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "expert_indices": [],
+          "note": "Zero all attention heads at layer 21"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Attention-path ablation at layer 21",
+        "params": {}
+      },
+      {
+        "name": "all_experts_L21",
+        "kind": "expert_mask",
+        "target": {
+          "unit": "expert",
+          "layer_indices": [
+            21
+          ],
+          "head_indices": [],
+          "expert_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "note": "Zero all MoE experts at layer 21"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "MoE-path ablation at layer 21",
+        "params": {}
+      }
+    ],
+    "sweep": {
+      "repeats": 1,
+      "max_examples": null,
+      "record_case_outputs": true
+    },
+    "seed": 7,
+    "experiment_name": "SoftMain_Component_Decomposition_Delta",
+    "output_dir": "./runs/soft_main_component_decomposition_delta",
+    "notes": "Residual-delta component decomposition on the soft main-analysis set, comparing full block-delta suppression against attention and MoE hooks at the corrected late layers 20 and 21."
+  },
+  "summary": {
+    "late_delta_L20@0": {
+      "accuracy": 0.8888888888888888,
+      "mean_margin": 6.017702480985059,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "all_heads_L20@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.787279589644943,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "all_experts_L20@0": {
+      "accuracy": 0.8888888888888888,
+      "mean_margin": 6.664813314874967,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "late_delta_L21@0": {
+      "accuracy": 0.8888888888888888,
+      "mean_margin": 4.726127661557661,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "all_heads_L21@0": {
+      "accuracy": 0.8888888888888888,
+      "mean_margin": 4.936461302891581,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "all_experts_L21@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.684450335464337,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    }
+  }
+}

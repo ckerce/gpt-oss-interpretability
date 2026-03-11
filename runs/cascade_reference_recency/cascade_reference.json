@@ -1,0 +1,14 @@
+{
+  "position": 12,
+  "prompt": "The trophy would not fit in the suitcase because the suitcase was too",
+  "model": "openai/gpt-oss-20b",
+  "target_token_id": 3291,
+  "target_token": " small",
+  "relative_residual": 0.0029417266204564644,
+  "teacher_top_logprob": -0.11350078135728836,
+  "reconstructed_top_logprob": -0.11342117935419083,
+  "kl_teacher_to_reconstructed": 1.1872602044604719e-05,
+  "solution_norm": 290.6067199707031,
+  "rhs_norm": 1214.3798828125,
+  "rank_upper_bound": 2880
+}

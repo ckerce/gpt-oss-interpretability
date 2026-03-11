@@ -1,0 +1,619 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "layer_start": 4,
+  "layer_end": 22,
+  "cases": [
+    {
+      "case_id": "induction_004",
+      "task_name": "induction",
+      "behavior": "induction",
+      "prompt": "alpha beta gamma alpha beta gamma alpha beta",
+      "expected_label": "A",
+      "choices": {
+        "A": " gamma",
+        "B": " delta"
+      },
+      "decision": {
+        "position_index": 77,
+        "shared_prefix_tokens": [
+          "<|channel|>",
+          "final",
+          "<|message|>"
+        ],
+        "token_a": " gamma",
+        "token_b": " delta"
+      },
+      "layers": [
+        {
+          "layer": 4,
+          "reconstruction_kl": 0.0005531180649995804,
+          "relative_residual": 0.0018271640159002178,
+          "delta_kl": null,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.3876667022705078
+        },
+        {
+          "layer": 5,
+          "reconstruction_kl": 0.0007757334969937801,
+          "relative_residual": 0.0018083664241893092,
+          "delta_kl": 0.00022261543199419975,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.6319112777709961
+        },
+        {
+          "layer": 6,
+          "reconstruction_kl": 9.688874706625938e-05,
+          "relative_residual": 0.0018278862474156207,
+          "delta_kl": -0.0006788447499275208,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.3448037803173065
+        },
+        {
+          "layer": 7,
+          "reconstruction_kl": 0.00015880848513916135,
+          "relative_residual": 0.0018641878284670393,
+          "delta_kl": 6.191973807290196e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.21141484379768372
+        },
+        {
+          "layer": 8,
+          "reconstruction_kl": 8.647714275866747e-05,
+          "relative_residual": 0.0018742278476473703,
+          "delta_kl": -7.233134238049388e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.21944715082645416
+        },
+        {
+          "layer": 9,
+          "reconstruction_kl": 0.00025196780916303396,
+          "relative_residual": 0.001881993115210416,
+          "delta_kl": 0.0001654906664043665,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.4249285459518433
+        },
+        {
+          "layer": 10,
+          "reconstruction_kl": 0.00011512961646076292,
+          "relative_residual": 0.0019988636718592375,
+          "delta_kl": -0.00013683819270227104,
+          "teacher_top_token_id": 17554,
+          "teacher_top_token": " Chat",
+          "teacher_top_logprob": -2.2566640377044678
+        },
+        {
+          "layer": 11,
+          "reconstruction_kl": 0.00010395782010164112,
+          "relative_residual": 0.0019363200948443857,
+          "delta_kl": -1.11717963591218e-05,
+          "teacher_top_token_id": 4066,
+          "teacher_top_token": "  \n",
+          "teacher_top_logprob": -2.8763158321380615
+        },
+        {
+          "layer": 12,
+          "reconstruction_kl": 9.204921661876142e-05,
+          "relative_residual": 0.0019831985587086534,
+          "delta_kl": -1.1908603482879698e-05,
+          "teacher_top_token_id": 4066,
+          "teacher_top_token": "  \n",
+          "teacher_top_logprob": -3.6737706661224365
+        },
+        {
+          "layer": 13,
+          "reconstruction_kl": 7.326818013098091e-05,
+          "relative_residual": 0.0018923081341256339,
+          "delta_kl": -1.878103648778051e-05,
+          "teacher_top_token_id": 156273,
+          "teacher_top_token": " \ud83d\ude0a",
+          "teacher_top_logprob": -2.4127557277679443
+        },
+        {
+          "layer": 14,
+          "reconstruction_kl": 7.799282320775092e-05,
+          "relative_residual": 0.0019721492658069635,
+          "delta_kl": 4.724643076770008e-06,
+          "teacher_top_token_id": 156273,
+          "teacher_top_token": " \ud83d\ude0a",
+          "teacher_top_logprob": -2.205899953842163
+        },
+        {
+          "layer": 15,
+          "reconstruction_kl": 6.898966967128217e-05,
+          "relative_residual": 0.001912221347528365,
+          "delta_kl": -9.003153536468744e-06,
+          "teacher_top_token_id": 35971,
+          "teacher_top_token": "\u202f",
+          "teacher_top_logprob": -0.5816777944564819
+        },
+        {
+          "layer": 16,
+          "reconstruction_kl": 0.00011651862587314099,
+          "relative_residual": 0.002080604746280415,
+          "delta_kl": 4.752895620185882e-05,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -1.2118839025497437
+        },
+        {
+          "layer": 17,
+          "reconstruction_kl": 0.0005732940044254065,
+          "relative_residual": 0.0023531222148709154,
+          "delta_kl": 0.00045677537855226547,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.7421101927757263
+        },
+        {
+          "layer": 18,
+          "reconstruction_kl": 0.0002145873149856925,
+          "relative_residual": 0.0030918276775982355,
+          "delta_kl": -0.00035870668943971395,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.2539989948272705
+        },
+        {
+          "layer": 19,
+          "reconstruction_kl": 5.3266805480234325e-05,
+          "relative_residual": 0.003263987598998707,
+          "delta_kl": -0.00016132050950545818,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.24426482617855072
+        },
+        {
+          "layer": 20,
+          "reconstruction_kl": 1.3323202438186854e-05,
+          "relative_residual": 0.003059478519009576,
+          "delta_kl": -3.994360304204747e-05,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.1588830053806305
+        },
+        {
+          "layer": 21,
+          "reconstruction_kl": 0.0002454558853060007,
+          "relative_residual": 0.002588293221020989,
+          "delta_kl": 0.00023213268286781386,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.3467749357223511
+        },
+        {
+          "layer": 22,
+          "reconstruction_kl": 5.670806785929017e-05,
+          "relative_residual": 0.001880271398640589,
+          "delta_kl": -0.00018874781744671054,
+          "teacher_top_token_id": 3206,
+          "teacher_top_token": "It",
+          "teacher_top_logprob": -0.11144255101680756
+        }
+      ],
+      "summary": {
+        "min_reconstruction_kl": 1.3323202438186854e-05,
+        "max_reconstruction_kl": 0.0007757334969937801,
+        "mean_reconstruction_kl": 0.00019618605150945338,
+        "reconstruction_kl_cv": 1.0364022801148014,
+        "delta_kl_mean": -2.7578333174460568e-05,
+        "delta_kl_abs_mean": 0.0001599324995267024,
+        "delta_kl_cv": 8.586306826108034,
+        "delta_kl_abs_cv": 1.1054005910496174
+      }
+    },
+    {
+      "case_id": "coref_003",
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "prompt": "John called Mary and told her about the meeting. The word 'her' refers to",
+      "expected_label": "A",
+      "choices": {
+        "A": " Mary",
+        "B": " John"
+      },
+      "decision": {
+        "position_index": 86,
+        "shared_prefix_tokens": [
+          "<|channel|>",
+          "final",
+          "<|message|>"
+        ],
+        "token_a": " Mary",
+        "token_b": " John"
+      },
+      "layers": [
+        {
+          "layer": 4,
+          "reconstruction_kl": 0.00041408673860132694,
+          "relative_residual": 0.001852426930760752,
+          "delta_kl": null,
+          "teacher_top_token_id": 33203,
+          "teacher_top_token": "\u2003",
+          "teacher_top_logprob": -1.8487685918807983
+        },
+        {
+          "layer": 5,
+          "reconstruction_kl": 0.0002655782736837864,
+          "relative_residual": 0.0018426091289678067,
+          "delta_kl": -0.00014850846491754055,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.1370874643325806
+        },
+        {
+          "layer": 6,
+          "reconstruction_kl": 0.0004438915057107806,
+          "relative_residual": 0.0018467839493598475,
+          "delta_kl": 0.00017831323202699423,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.6628313660621643
+        },
+        {
+          "layer": 7,
+          "reconstruction_kl": 0.0002016159996856004,
+          "relative_residual": 0.0019089951327452542,
+          "delta_kl": -0.00024227550602518022,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.6430065631866455
+        },
+        {
+          "layer": 8,
+          "reconstruction_kl": 0.00040578367770649493,
+          "relative_residual": 0.0019112593131660606,
+          "delta_kl": 0.00020416767802089453,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.49654269218444824
+        },
+        {
+          "layer": 9,
+          "reconstruction_kl": 0.0001253722293768078,
+          "relative_residual": 0.0019130592125569848,
+          "delta_kl": -0.0002804114483296871,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.3391618728637695
+        },
+        {
+          "layer": 10,
+          "reconstruction_kl": 8.943877764977515e-05,
+          "relative_residual": 0.0020334447957390837,
+          "delta_kl": -3.593345172703266e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.8616483211517334
+        },
+        {
+          "layer": 11,
+          "reconstruction_kl": 9.491691889706999e-05,
+          "relative_residual": 0.0020101490996834092,
+          "delta_kl": 5.478141247294843e-06,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -3.114088535308838
+        },
+        {
+          "layer": 12,
+          "reconstruction_kl": 8.875435014488176e-05,
+          "relative_residual": 0.0020519091087957027,
+          "delta_kl": -6.1625687521882355e-06,
+          "teacher_top_token_id": 34349,
+          "teacher_top_token": " computing",
+          "teacher_top_logprob": -3.0509543418884277
+        },
+        {
+          "layer": 13,
+          "reconstruction_kl": 7.98810797277838e-05,
+          "relative_residual": 0.002008845429726994,
+          "delta_kl": -8.873270417097956e-06,
+          "teacher_top_token_id": 974,
+          "teacher_top_token": " ro",
+          "teacher_top_logprob": -2.6687684059143066
+        },
+        {
+          "layer": 14,
+          "reconstruction_kl": 0.00011793420708272606,
+          "relative_residual": 0.002062375770633003,
+          "delta_kl": 3.805312735494226e-05,
+          "teacher_top_token_id": 7657,
+          "teacher_top_token": " \u2022",
+          "teacher_top_logprob": -3.287827968597412
+        },
+        {
+          "layer": 15,
+          "reconstruction_kl": 0.00014146699686534703,
+          "relative_residual": 0.002012519544237623,
+          "delta_kl": 2.3532789782620966e-05,
+          "teacher_top_token_id": 7657,
+          "teacher_top_token": " \u2022",
+          "teacher_top_logprob": -1.5629667043685913
+        },
+        {
+          "layer": 16,
+          "reconstruction_kl": 0.0001435742888133973,
+          "relative_residual": 0.0021970480156421356,
+          "delta_kl": 2.1072919480502605e-06,
+          "teacher_top_token_id": 6052,
+          "teacher_top_token": " answer",
+          "teacher_top_logprob": -1.3555341958999634
+        },
+        {
+          "layer": 17,
+          "reconstruction_kl": 0.0004874576989095658,
+          "relative_residual": 0.0022869077196746796,
+          "delta_kl": 0.0003438834100961685,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -1.073612093925476
+        },
+        {
+          "layer": 18,
+          "reconstruction_kl": 0.00025973853189498186,
+          "relative_residual": 0.0032565755074101697,
+          "delta_kl": -0.00022771916701458395,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -0.5712787508964539
+        },
+        {
+          "layer": 19,
+          "reconstruction_kl": 0.00029702074243687093,
+          "relative_residual": 0.003028734733347679,
+          "delta_kl": 3.728221054188907e-05,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -0.32024770975112915
+        },
+        {
+          "layer": 20,
+          "reconstruction_kl": 6.048198338248767e-05,
+          "relative_residual": 0.0028114074427097614,
+          "delta_kl": -0.00023653875905438326,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -0.2556764781475067
+        },
+        {
+          "layer": 21,
+          "reconstruction_kl": 7.070986612234265e-05,
+          "relative_residual": 0.0023795251793458554,
+          "delta_kl": 1.0227882739854977e-05,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -0.36149030923843384
+        },
+        {
+          "layer": 22,
+          "reconstruction_kl": 0.0003857736592181027,
+          "relative_residual": 0.0020385098620947927,
+          "delta_kl": 0.00031506379309576005,
+          "teacher_top_token_id": 976,
+          "teacher_top_token": "The",
+          "teacher_top_logprob": -0.8079656362533569
+        }
+      ],
+      "summary": {
+        "min_reconstruction_kl": 6.048198338248767e-05,
+        "max_reconstruction_kl": 0.0004874576989095658,
+        "mean_reconstruction_kl": 0.00021965671189000684,
+        "reconstruction_kl_cv": 0.6437578765423372,
+        "delta_kl_mean": -1.5729488546235693e-06,
+        "delta_kl_abs_mean": 0.0001302517885051202,
+        "delta_kl_cv": 112.44392408533257,
+        "delta_kl_abs_cv": 0.9187114328992502
+      }
+    },
+    {
+      "case_id": "caps_002",
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "prompt": "Write the US state in normal headline style: north",
+      "expected_label": "A",
+      "choices": {
+        "A": " Carolina",
+        "B": " carolina"
+      },
+      "decision": {
+        "position_index": 79,
+        "shared_prefix_tokens": [
+          "<|channel|>",
+          "final",
+          "<|message|>"
+        ],
+        "token_a": " Carolina",
+        "token_b": " car"
+      },
+      "layers": [
+        {
+          "layer": 4,
+          "reconstruction_kl": 0.0003092766273766756,
+          "relative_residual": 0.001848654587035182,
+          "delta_kl": null,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.2576533555984497
+        },
+        {
+          "layer": 5,
+          "reconstruction_kl": 0.0005182528402656317,
+          "relative_residual": 0.0018360453293195138,
+          "delta_kl": 0.00020897621288895607,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.3787614703178406
+        },
+        {
+          "layer": 6,
+          "reconstruction_kl": 2.0296196453273296e-05,
+          "relative_residual": 0.00184268799477895,
+          "delta_kl": -0.0004979566438123584,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.1555687040090561
+        },
+        {
+          "layer": 7,
+          "reconstruction_kl": 8.480370161123574e-05,
+          "relative_residual": 0.0019191668027820753,
+          "delta_kl": 6.450750515796244e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.09190140664577484
+        },
+        {
+          "layer": 8,
+          "reconstruction_kl": 8.573551895096898e-06,
+          "relative_residual": 0.0019172348076544738,
+          "delta_kl": -7.623014971613884e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.1103806272149086
+        },
+        {
+          "layer": 9,
+          "reconstruction_kl": 0.00010670713527360931,
+          "relative_residual": 0.0019269984651399004,
+          "delta_kl": 9.813358337851241e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -0.6413336992263794
+        },
+        {
+          "layer": 10,
+          "reconstruction_kl": 7.446226663887501e-05,
+          "relative_residual": 0.0020208770540179255,
+          "delta_kl": -3.22448686347343e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -1.2369412183761597
+        },
+        {
+          "layer": 11,
+          "reconstruction_kl": 9.225423127645627e-05,
+          "relative_residual": 0.002032309387002763,
+          "delta_kl": 1.779196463758126e-05,
+          "teacher_top_token_id": 5590,
+          "teacher_top_token": " ple",
+          "teacher_top_logprob": -2.6719770431518555
+        },
+        {
+          "layer": 12,
+          "reconstruction_kl": 9.201973443850875e-05,
+          "relative_residual": 0.002122775404827091,
+          "delta_kl": -2.3449683794751763e-07,
+          "teacher_top_token_id": 3454,
+          "teacher_top_token": "(e",
+          "teacher_top_logprob": -3.7521088123321533
+        },
+        {
+          "layer": 13,
+          "reconstruction_kl": 7.65824515838176e-05,
+          "relative_residual": 0.0020640690427163417,
+          "delta_kl": -1.5437282854691148e-05,
+          "teacher_top_token_id": 7657,
+          "teacher_top_token": " \u2022",
+          "teacher_top_logprob": -2.586857557296753
+        },
+        {
+          "layer": 14,
+          "reconstruction_kl": 0.00011598806304391474,
+          "relative_residual": 0.002223334117887983,
+          "delta_kl": 3.9405611460097134e-05,
+          "teacher_top_token_id": 7657,
+          "teacher_top_token": " \u2022",
+          "teacher_top_logprob": -2.1825883388519287
+        },
+        {
+          "layer": 15,
+          "reconstruction_kl": 0.00017999352712649852,
+          "relative_residual": 0.002118235249049581,
+          "delta_kl": 6.400546408258379e-05,
+          "teacher_top_token_id": 35971,
+          "teacher_top_token": "\u202f",
+          "teacher_top_logprob": -0.7784906625747681
+        },
+        {
+          "layer": 16,
+          "reconstruction_kl": 5.78193757974077e-05,
+          "relative_residual": 0.0023442485297111315,
+          "delta_kl": -0.00012217415132909082,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.5337260961532593
+        },
+        {
+          "layer": 17,
+          "reconstruction_kl": 2.720253905863501e-05,
+          "relative_residual": 0.0023592358592913272,
+          "delta_kl": -3.061683673877269e-05,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.03751211613416672
+        },
+        {
+          "layer": 18,
+          "reconstruction_kl": 2.8608987122424878e-05,
+          "relative_residual": 0.0028515639782789298,
+          "delta_kl": 1.4064480637898669e-06,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.02065739408135414
+        },
+        {
+          "layer": 19,
+          "reconstruction_kl": 4.812922634300776e-05,
+          "relative_residual": 0.0028812018946659398,
+          "delta_kl": 1.952023922058288e-05,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.0835040882229805
+        },
+        {
+          "layer": 20,
+          "reconstruction_kl": 0.0001217306635226123,
+          "relative_residual": 0.0029326201355876543,
+          "delta_kl": 7.360143717960455e-05,
+          "teacher_top_token_id": 410,
+          "teacher_top_token": "**",
+          "teacher_top_logprob": -0.050467293709516525
+        },
+        {
+          "layer": 21,
+          "reconstruction_kl": 7.306828774744645e-05,
+          "relative_residual": 0.002111708845395151,
+          "delta_kl": -4.8662375775165856e-05,
+          "teacher_top_token_id": 39499,
+          "teacher_top_token": "North",
+          "teacher_top_logprob": -0.09545280784368515
+        },
+        {
+          "layer": 22,
+          "reconstruction_kl": 0.00017141172429546714,
+          "relative_residual": 0.0018935122460473812,
+          "delta_kl": 9.834343654802069e-05,
+          "teacher_top_token_id": 39499,
+          "teacher_top_token": "North",
+          "teacher_top_logprob": -0.19655434787273407
+        }
+      ],
+      "summary": {
+        "min_reconstruction_kl": 8.573551895096898e-06,
+        "max_reconstruction_kl": 0.0005182528402656317,
+        "mean_reconstruction_kl": 0.00011616742794055761,
+        "reconstruction_kl_cv": 1.0029064147789872,
+        "delta_kl_mean": -7.659161282289359e-06,
+        "delta_kl_abs_mean": 8.384715046203282e-05,
+        "delta_kl_cv": 18.235349785827843,
+        "delta_kl_abs_cv": 1.3353019480358599
+      }
+    }
+  ]
+}

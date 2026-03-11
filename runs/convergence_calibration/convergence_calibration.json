@@ -1,0 +1,5127 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "family_summary": {
+    "capitalization": {
+      "num_cases": 4,
+      "final_correct_rate": 0.5,
+      "expected_choice_mean": 7.666666666666667,
+      "expected_choice_std": 8.178562764256865,
+      "expected_choice_min": 0,
+      "expected_choice_max": 19,
+      "final_choice_mean": 1.0,
+      "final_choice_std": 1.7320508075688772,
+      "final_choice_min": 0,
+      "final_choice_max": 4
+    },
+    "coreference": {
+      "num_cases": 4,
+      "final_correct_rate": 1.0,
+      "expected_choice_mean": 5.0,
+      "expected_choice_std": 7.516648189186454,
+      "expected_choice_min": 0,
+      "expected_choice_max": 18,
+      "final_choice_mean": 5.0,
+      "final_choice_std": 7.516648189186454,
+      "final_choice_min": 0,
+      "final_choice_max": 18
+    },
+    "induction": {
+      "num_cases": 4,
+      "final_correct_rate": 1.0,
+      "expected_choice_mean": 4.25,
+      "expected_choice_std": 7.361215932167728,
+      "expected_choice_min": 0,
+      "expected_choice_max": 17,
+      "final_choice_mean": 4.25,
+      "final_choice_std": 7.361215932167728,
+      "final_choice_min": 0,
+      "final_choice_max": 17
+    },
+    "recency_bias": {
+      "num_cases": 4,
+      "final_correct_rate": 0.25,
+      "expected_choice_mean": 0.0,
+      "expected_choice_std": 0.0,
+      "expected_choice_min": 0,
+      "expected_choice_max": 0,
+      "final_choice_mean": 7.0,
+      "final_choice_std": 6.123724356957945,
+      "final_choice_min": 0,
+      "final_choice_max": 16
+    },
+    "syntax_agreement": {
+      "num_cases": 4,
+      "final_correct_rate": 0.5,
+      "expected_choice_mean": 9.5,
+      "expected_choice_std": 7.762087348130012,
+      "expected_choice_min": 0,
+      "expected_choice_max": 19,
+      "final_choice_mean": 4.75,
+      "final_choice_std": 8.227241335952167,
+      "final_choice_min": 0,
+      "final_choice_max": 19
+    }
+  },
+  "cases": [
+    {
+      "task_name": "recency_bias",
+      "behavior": "recency_bias",
+      "case_id": "recency_001",
+      "expected_label": "A",
+      "expected_text": " suitcase",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 3,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -99.97622489929199,
+          "choice_logprobs": {
+            "A": -99.97622489929199,
+            "B": -105.0789852142334
+          },
+          "margin_vs_runner_up": 5.102760314941406
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -93.08208274841309,
+          "choice_logprobs": {
+            "A": -93.08208274841309,
+            "B": -99.46915817260742
+          },
+          "margin_vs_runner_up": 6.387075424194336
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -96.91013145446777,
+          "choice_logprobs": {
+            "A": -96.91013145446777,
+            "B": -97.96925926208496
+          },
+          "margin_vs_runner_up": 1.0591278076171875
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -99.25133514404297,
+          "choice_logprobs": {
+            "A": -99.25133514404297,
+            "B": -98.02645874023438
+          },
+          "margin_vs_runner_up": 1.2248764038085938
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -95.13635730743408,
+          "choice_logprobs": {
+            "A": -95.13635730743408,
+            "B": -91.34740352630615
+          },
+          "margin_vs_runner_up": 3.7889537811279297
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -88.27298736572266,
+          "choice_logprobs": {
+            "A": -88.27298736572266,
+            "B": -83.61440658569336
+          },
+          "margin_vs_runner_up": 4.658580780029297
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -82.38958644866943,
+          "choice_logprobs": {
+            "A": -82.38958644866943,
+            "B": -77.473219871521
+          },
+          "margin_vs_runner_up": 4.9163665771484375
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -77.9668779373169,
+          "choice_logprobs": {
+            "A": -77.9668779373169,
+            "B": -70.3164415359497
+          },
+          "margin_vs_runner_up": 7.6504364013671875
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -74.59220600128174,
+          "choice_logprobs": {
+            "A": -74.59220600128174,
+            "B": -69.02501106262207
+          },
+          "margin_vs_runner_up": 5.567194938659668
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -73.6417407989502,
+          "choice_logprobs": {
+            "A": -73.6417407989502,
+            "B": -68.93392658233643
+          },
+          "margin_vs_runner_up": 4.7078142166137695
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -67.54998970031738,
+          "choice_logprobs": {
+            "A": -67.54998970031738,
+            "B": -63.59127140045166
+          },
+          "margin_vs_runner_up": 3.9587182998657227
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -68.71757984161377,
+          "choice_logprobs": {
+            "A": -68.71757984161377,
+            "B": -64.54916381835938
+          },
+          "margin_vs_runner_up": 4.1684160232543945
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -67.82588863372803,
+          "choice_logprobs": {
+            "A": -67.82588863372803,
+            "B": -64.07253646850586
+          },
+          "margin_vs_runner_up": 3.753352165222168
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -65.25843143463135,
+          "choice_logprobs": {
+            "A": -65.25843143463135,
+            "B": -62.953789710998535
+          },
+          "margin_vs_runner_up": 2.3046417236328125
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -61.49440813064575,
+          "choice_logprobs": {
+            "A": -61.49440813064575,
+            "B": -57.461145877838135
+          },
+          "margin_vs_runner_up": 4.033262252807617
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -59.96129608154297,
+          "choice_logprobs": {
+            "A": -59.96129608154297,
+            "B": -57.89160442352295
+          },
+          "margin_vs_runner_up": 2.0696916580200195
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -68.55137920379639,
+          "choice_logprobs": {
+            "A": -68.55137920379639,
+            "B": -65.11278533935547
+          },
+          "margin_vs_runner_up": 3.438593864440918
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -73.35499000549316,
+          "choice_logprobs": {
+            "A": -73.35499000549316,
+            "B": -70.86383438110352
+          },
+          "margin_vs_runner_up": 2.4911556243896484
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -82.29132270812988,
+          "choice_logprobs": {
+            "A": -82.29132270812988,
+            "B": -81.2926139831543
+          },
+          "margin_vs_runner_up": 0.9987087249755859
+        },
+        {
+          "layer": 19,
+          "winner": "B",
+          "expected_logprob": -73.78850507736206,
+          "choice_logprobs": {
+            "A": -73.78850507736206,
+            "B": -72.02936506271362
+          },
+          "margin_vs_runner_up": 1.7591400146484375
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -66.59598398208618,
+          "choice_logprobs": {
+            "A": -66.59598398208618,
+            "B": -63.08710527420044
+          },
+          "margin_vs_runner_up": 3.508878707885742
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -56.14590625464916,
+          "choice_logprobs": {
+            "A": -56.14590625464916,
+            "B": -53.512281224131584
+          },
+          "margin_vs_runner_up": 2.633625030517578
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -46.660556150600314,
+          "choice_logprobs": {
+            "A": -46.660556150600314,
+            "B": -45.257357908412814
+          },
+          "margin_vs_runner_up": 1.4031982421875
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -65.4242999702692,
+          "choice_logprobs": {
+            "A": -65.4242999702692,
+            "B": -64.49429489672184
+          },
+          "margin_vs_runner_up": 0.9300050735473633
+        }
+      ]
+    },
+    {
+      "task_name": "recency_bias",
+      "behavior": "recency_bias",
+      "case_id": "recency_002",
+      "expected_label": "A",
+      "expected_text": " bag",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 16,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -93.35162925720215,
+          "choice_logprobs": {
+            "A": -93.35162925720215,
+            "B": -94.83005905151367
+          },
+          "margin_vs_runner_up": 1.4784297943115234
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -86.7010612487793,
+          "choice_logprobs": {
+            "A": -86.7010612487793,
+            "B": -92.10219192504883
+          },
+          "margin_vs_runner_up": 5.401130676269531
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -88.34894371032715,
+          "choice_logprobs": {
+            "A": -88.34894371032715,
+            "B": -94.94620895385742
+          },
+          "margin_vs_runner_up": 6.597265243530273
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -90.00268650054932,
+          "choice_logprobs": {
+            "A": -90.00268650054932,
+            "B": -94.57349872589111
+          },
+          "margin_vs_runner_up": 4.570812225341797
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -83.42286205291748,
+          "choice_logprobs": {
+            "A": -83.42286205291748,
+            "B": -88.1404447555542
+          },
+          "margin_vs_runner_up": 4.717582702636719
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -79.87367916107178,
+          "choice_logprobs": {
+            "A": -79.87367916107178,
+            "B": -83.00533866882324
+          },
+          "margin_vs_runner_up": 3.131659507751465
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -74.54919528961182,
+          "choice_logprobs": {
+            "A": -74.54919528961182,
+            "B": -76.15155124664307
+          },
+          "margin_vs_runner_up": 1.60235595703125
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -70.03840827941895,
+          "choice_logprobs": {
+            "A": -70.03840827941895,
+            "B": -70.5494966506958
+          },
+          "margin_vs_runner_up": 0.5110883712768555
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -69.01860046386719,
+          "choice_logprobs": {
+            "A": -69.01860046386719,
+            "B": -70.51026916503906
+          },
+          "margin_vs_runner_up": 1.491668701171875
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -69.1231050491333,
+          "choice_logprobs": {
+            "A": -69.1231050491333,
+            "B": -71.98328876495361
+          },
+          "margin_vs_runner_up": 2.8601837158203125
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -63.21898365020752,
+          "choice_logprobs": {
+            "A": -63.21898365020752,
+            "B": -63.97116184234619
+          },
+          "margin_vs_runner_up": 0.7521781921386719
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -64.15786838531494,
+          "choice_logprobs": {
+            "A": -64.15786838531494,
+            "B": -65.13766670227051
+          },
+          "margin_vs_runner_up": 0.9797983169555664
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -62.07256603240967,
+          "choice_logprobs": {
+            "A": -62.07256603240967,
+            "B": -64.44822025299072
+          },
+          "margin_vs_runner_up": 2.3756542205810547
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -59.592570304870605,
+          "choice_logprobs": {
+            "A": -59.592570304870605,
+            "B": -62.61612129211426
+          },
+          "margin_vs_runner_up": 3.0235509872436523
+        },
+        {
+          "layer": 14,
+          "winner": "A",
+          "expected_logprob": -55.93200731277466,
+          "choice_logprobs": {
+            "A": -55.93200731277466,
+            "B": -59.9908881187439
+          },
+          "margin_vs_runner_up": 4.058880805969238
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -57.874327182769775,
+          "choice_logprobs": {
+            "A": -57.874327182769775,
+            "B": -59.7848105430603
+          },
+          "margin_vs_runner_up": 1.9104833602905273
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -68.13727951049805,
+          "choice_logprobs": {
+            "A": -68.13727951049805,
+            "B": -64.13691806793213
+          },
+          "margin_vs_runner_up": 4.000361442565918
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -82.585768699646,
+          "choice_logprobs": {
+            "A": -82.585768699646,
+            "B": -74.57335948944092
+          },
+          "margin_vs_runner_up": 8.012409210205078
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -88.41279697418213,
+          "choice_logprobs": {
+            "A": -88.41279697418213,
+            "B": -86.05782413482666
+          },
+          "margin_vs_runner_up": 2.3549728393554688
+        },
+        {
+          "layer": 19,
+          "winner": "B",
+          "expected_logprob": -84.04903602600098,
+          "choice_logprobs": {
+            "A": -84.04903602600098,
+            "B": -81.37395477294922
+          },
+          "margin_vs_runner_up": 2.675081253051758
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -72.89351034164429,
+          "choice_logprobs": {
+            "A": -72.89351034164429,
+            "B": -70.00875806808472
+          },
+          "margin_vs_runner_up": 2.8847522735595703
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -62.08290096372366,
+          "choice_logprobs": {
+            "A": -62.08290096372366,
+            "B": -59.44268985837698
+          },
+          "margin_vs_runner_up": 2.6402111053466797
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -50.60114240832627,
+          "choice_logprobs": {
+            "A": -50.60114240832627,
+            "B": -47.800261022523046
+          },
+          "margin_vs_runner_up": 2.8008813858032227
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -68.91144638508558,
+          "choice_logprobs": {
+            "A": -68.91144638508558,
+            "B": -65.00912170857191
+          },
+          "margin_vs_runner_up": 3.902324676513672
+        }
+      ]
+    },
+    {
+      "task_name": "recency_bias",
+      "behavior": "recency_bias",
+      "case_id": "recency_003",
+      "expected_label": "A",
+      "expected_text": " mouse",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 9,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -95.42143821716309,
+          "choice_logprobs": {
+            "A": -95.42143821716309,
+            "B": -97.56503486633301
+          },
+          "margin_vs_runner_up": 2.143596649169922
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -90.24293422698975,
+          "choice_logprobs": {
+            "A": -90.24293422698975,
+            "B": -91.38094806671143
+          },
+          "margin_vs_runner_up": 1.1380138397216797
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -91.30219078063965,
+          "choice_logprobs": {
+            "A": -91.30219078063965,
+            "B": -92.8862419128418
+          },
+          "margin_vs_runner_up": 1.5840511322021484
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -90.84142112731934,
+          "choice_logprobs": {
+            "A": -90.84142112731934,
+            "B": -93.7646894454956
+          },
+          "margin_vs_runner_up": 2.9232683181762695
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -86.04313850402832,
+          "choice_logprobs": {
+            "A": -86.04313850402832,
+            "B": -89.81550407409668
+          },
+          "margin_vs_runner_up": 3.7723655700683594
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -81.57503318786621,
+          "choice_logprobs": {
+            "A": -81.57503318786621,
+            "B": -83.4886360168457
+          },
+          "margin_vs_runner_up": 1.9136028289794922
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -74.81936073303223,
+          "choice_logprobs": {
+            "A": -74.81936073303223,
+            "B": -76.52887725830078
+          },
+          "margin_vs_runner_up": 1.7095165252685547
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -70.55766296386719,
+          "choice_logprobs": {
+            "A": -70.55766296386719,
+            "B": -71.57761192321777
+          },
+          "margin_vs_runner_up": 1.019948959350586
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -68.27871799468994,
+          "choice_logprobs": {
+            "A": -68.27871799468994,
+            "B": -68.7982587814331
+          },
+          "margin_vs_runner_up": 0.5195407867431641
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -70.96082973480225,
+          "choice_logprobs": {
+            "A": -70.96082973480225,
+            "B": -70.24012184143066
+          },
+          "margin_vs_runner_up": 0.720707893371582
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -63.417479515075684,
+          "choice_logprobs": {
+            "A": -63.417479515075684,
+            "B": -64.01991367340088
+          },
+          "margin_vs_runner_up": 0.6024341583251953
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -64.5803050994873,
+          "choice_logprobs": {
+            "A": -64.5803050994873,
+            "B": -63.14339065551758
+          },
+          "margin_vs_runner_up": 1.4369144439697266
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -64.04736614227295,
+          "choice_logprobs": {
+            "A": -64.04736614227295,
+            "B": -61.729618072509766
+          },
+          "margin_vs_runner_up": 2.3177480697631836
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -61.7284574508667,
+          "choice_logprobs": {
+            "A": -61.7284574508667,
+            "B": -58.54305171966553
+          },
+          "margin_vs_runner_up": 3.185405731201172
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -57.62010860443115,
+          "choice_logprobs": {
+            "A": -57.62010860443115,
+            "B": -53.78400802612305
+          },
+          "margin_vs_runner_up": 3.8361005783081055
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -58.473140716552734,
+          "choice_logprobs": {
+            "A": -58.473140716552734,
+            "B": -53.78448295593262
+          },
+          "margin_vs_runner_up": 4.688657760620117
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -69.7649621963501,
+          "choice_logprobs": {
+            "A": -69.7649621963501,
+            "B": -60.105323791503906
+          },
+          "margin_vs_runner_up": 9.659638404846191
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -79.60757827758789,
+          "choice_logprobs": {
+            "A": -79.60757827758789,
+            "B": -70.8884162902832
+          },
+          "margin_vs_runner_up": 8.719161987304688
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -85.92041778564453,
+          "choice_logprobs": {
+            "A": -85.92041778564453,
+            "B": -81.95707893371582
+          },
+          "margin_vs_runner_up": 3.963338851928711
+        },
+        {
+          "layer": 19,
+          "winner": "B",
+          "expected_logprob": -77.1353235244751,
+          "choice_logprobs": {
+            "A": -77.1353235244751,
+            "B": -72.9948091506958
+          },
+          "margin_vs_runner_up": 4.140514373779297
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -66.10388088226318,
+          "choice_logprobs": {
+            "A": -66.10388088226318,
+            "B": -60.8488245010376
+          },
+          "margin_vs_runner_up": 5.255056381225586
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -55.22561685740948,
+          "choice_logprobs": {
+            "A": -55.22561685740948,
+            "B": -52.64955560863018
+          },
+          "margin_vs_runner_up": 2.576061248779297
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -46.41149611212313,
+          "choice_logprobs": {
+            "A": -46.41149611212313,
+            "B": -44.74645132757723
+          },
+          "margin_vs_runner_up": 1.6650447845458984
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -65.09555113874376,
+          "choice_logprobs": {
+            "A": -65.09555113874376,
+            "B": -62.01007140241563
+          },
+          "margin_vs_runner_up": 3.085479736328125
+        }
+      ]
+    },
+    {
+      "task_name": "recency_bias",
+      "behavior": "recency_bias",
+      "case_id": "recency_004",
+      "expected_label": "A",
+      "expected_text": " wall",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -94.34252166748047,
+          "choice_logprobs": {
+            "A": -94.34252166748047,
+            "B": -95.35861206054688
+          },
+          "margin_vs_runner_up": 1.0160903930664062
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -91.56208419799805,
+          "choice_logprobs": {
+            "A": -91.56208419799805,
+            "B": -88.3224925994873
+          },
+          "margin_vs_runner_up": 3.239591598510742
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -91.75790786743164,
+          "choice_logprobs": {
+            "A": -91.75790786743164,
+            "B": -88.640869140625
+          },
+          "margin_vs_runner_up": 3.1170387268066406
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -94.04950904846191,
+          "choice_logprobs": {
+            "A": -94.04950904846191,
+            "B": -89.70236587524414
+          },
+          "margin_vs_runner_up": 4.347143173217773
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -83.76332187652588,
+          "choice_logprobs": {
+            "A": -83.76332187652588,
+            "B": -82.17057800292969
+          },
+          "margin_vs_runner_up": 1.5927438735961914
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -79.96683692932129,
+          "choice_logprobs": {
+            "A": -79.96683692932129,
+            "B": -76.90666198730469
+          },
+          "margin_vs_runner_up": 3.0601749420166016
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -72.218186378479,
+          "choice_logprobs": {
+            "A": -72.218186378479,
+            "B": -71.02292537689209
+          },
+          "margin_vs_runner_up": 1.195261001586914
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -66.19714069366455,
+          "choice_logprobs": {
+            "A": -66.19714069366455,
+            "B": -65.63016128540039
+          },
+          "margin_vs_runner_up": 0.5669794082641602
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -64.22889137268066,
+          "choice_logprobs": {
+            "A": -64.22889137268066,
+            "B": -63.88321304321289
+          },
+          "margin_vs_runner_up": 0.34567832946777344
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -65.10598564147949,
+          "choice_logprobs": {
+            "A": -65.10598564147949,
+            "B": -65.33613300323486
+          },
+          "margin_vs_runner_up": 0.2301473617553711
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -58.88531494140625,
+          "choice_logprobs": {
+            "A": -58.88531494140625,
+            "B": -59.52043151855469
+          },
+          "margin_vs_runner_up": 0.6351165771484375
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -60.98528003692627,
+          "choice_logprobs": {
+            "A": -60.98528003692627,
+            "B": -60.3308048248291
+          },
+          "margin_vs_runner_up": 0.654475212097168
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -60.711748123168945,
+          "choice_logprobs": {
+            "A": -60.711748123168945,
+            "B": -57.11789417266846
+          },
+          "margin_vs_runner_up": 3.5938539505004883
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -58.404826164245605,
+          "choice_logprobs": {
+            "A": -58.404826164245605,
+            "B": -54.65475368499756
+          },
+          "margin_vs_runner_up": 3.750072479248047
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -55.626612186431885,
+          "choice_logprobs": {
+            "A": -55.626612186431885,
+            "B": -54.1523003578186
+          },
+          "margin_vs_runner_up": 1.4743118286132812
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -56.17865705490112,
+          "choice_logprobs": {
+            "A": -56.17865705490112,
+            "B": -57.51327657699585
+          },
+          "margin_vs_runner_up": 1.3346195220947266
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -65.4458532333374,
+          "choice_logprobs": {
+            "A": -65.4458532333374,
+            "B": -64.69163036346436
+          },
+          "margin_vs_runner_up": 0.7542228698730469
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -76.38127040863037,
+          "choice_logprobs": {
+            "A": -76.38127040863037,
+            "B": -73.76173496246338
+          },
+          "margin_vs_runner_up": 2.619535446166992
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -86.7852725982666,
+          "choice_logprobs": {
+            "A": -86.7852725982666,
+            "B": -85.53033638000488
+          },
+          "margin_vs_runner_up": 1.2549362182617188
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -78.4757432937622,
+          "choice_logprobs": {
+            "A": -78.4757432937622,
+            "B": -80.44471263885498
+          },
+          "margin_vs_runner_up": 1.9689693450927734
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -67.94184112548828,
+          "choice_logprobs": {
+            "A": -67.94184112548828,
+            "B": -68.29501533508301
+          },
+          "margin_vs_runner_up": 0.35317420959472656
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -56.987786278128624,
+          "choice_logprobs": {
+            "A": -56.987786278128624,
+            "B": -56.24752901494503
+          },
+          "margin_vs_runner_up": 0.7402572631835938
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -46.82022905908525,
+          "choice_logprobs": {
+            "A": -46.82022905908525,
+            "B": -45.9516434725374
+          },
+          "margin_vs_runner_up": 0.8685855865478516
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -63.499399587512016,
+          "choice_logprobs": {
+            "A": -63.499399587512016,
+            "B": -64.09309141337872
+          },
+          "margin_vs_runner_up": 0.5936918258666992
+        }
+      ]
+    },
+    {
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "case_id": "caps_001",
+      "expected_label": "A",
+      "expected_text": " Rings",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 19,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -98.91901397705078,
+          "choice_logprobs": {
+            "A": -98.91901397705078,
+            "B": -97.06596946716309
+          },
+          "margin_vs_runner_up": 1.8530445098876953
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -92.90599822998047,
+          "choice_logprobs": {
+            "A": -92.90599822998047,
+            "B": -90.46780967712402
+          },
+          "margin_vs_runner_up": 2.4381885528564453
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -97.94703102111816,
+          "choice_logprobs": {
+            "A": -97.94703102111816,
+            "B": -93.03489685058594
+          },
+          "margin_vs_runner_up": 4.912134170532227
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -94.52986240386963,
+          "choice_logprobs": {
+            "A": -94.52986240386963,
+            "B": -88.14632511138916
+          },
+          "margin_vs_runner_up": 6.383537292480469
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -90.00773620605469,
+          "choice_logprobs": {
+            "A": -90.00773620605469,
+            "B": -81.2113037109375
+          },
+          "margin_vs_runner_up": 8.796432495117188
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -87.35543918609619,
+          "choice_logprobs": {
+            "A": -87.35543918609619,
+            "B": -79.23641109466553
+          },
+          "margin_vs_runner_up": 8.119028091430664
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -80.42545318603516,
+          "choice_logprobs": {
+            "A": -80.42545318603516,
+            "B": -71.93342018127441
+          },
+          "margin_vs_runner_up": 8.492033004760742
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -78.30345916748047,
+          "choice_logprobs": {
+            "A": -78.30345916748047,
+            "B": -69.60082721710205
+          },
+          "margin_vs_runner_up": 8.702631950378418
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -74.4819221496582,
+          "choice_logprobs": {
+            "A": -74.4819221496582,
+            "B": -64.70543956756592
+          },
+          "margin_vs_runner_up": 9.776482582092285
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -70.27120780944824,
+          "choice_logprobs": {
+            "A": -70.27120780944824,
+            "B": -62.65851306915283
+          },
+          "margin_vs_runner_up": 7.61269474029541
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -64.7538890838623,
+          "choice_logprobs": {
+            "A": -64.7538890838623,
+            "B": -57.28079795837402
+          },
+          "margin_vs_runner_up": 7.473091125488281
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -65.62706565856934,
+          "choice_logprobs": {
+            "A": -65.62706565856934,
+            "B": -57.935519218444824
+          },
+          "margin_vs_runner_up": 7.691546440124512
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -64.34633159637451,
+          "choice_logprobs": {
+            "A": -64.34633159637451,
+            "B": -57.00986194610596
+          },
+          "margin_vs_runner_up": 7.336469650268555
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -63.53099822998047,
+          "choice_logprobs": {
+            "A": -63.53099822998047,
+            "B": -56.136223793029785
+          },
+          "margin_vs_runner_up": 7.394774436950684
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -59.45385217666626,
+          "choice_logprobs": {
+            "A": -59.45385217666626,
+            "B": -52.02355337142944
+          },
+          "margin_vs_runner_up": 7.430298805236816
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -59.71847629547119,
+          "choice_logprobs": {
+            "A": -59.71847629547119,
+            "B": -53.495970726013184
+          },
+          "margin_vs_runner_up": 6.222505569458008
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -65.77333736419678,
+          "choice_logprobs": {
+            "A": -65.77333736419678,
+            "B": -59.656283378601074
+          },
+          "margin_vs_runner_up": 6.117053985595703
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -65.42892742156982,
+          "choice_logprobs": {
+            "A": -65.42892742156982,
+            "B": -60.836082458496094
+          },
+          "margin_vs_runner_up": 4.5928449630737305
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -71.29138660430908,
+          "choice_logprobs": {
+            "A": -71.29138660430908,
+            "B": -70.15622043609619
+          },
+          "margin_vs_runner_up": 1.1351661682128906
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -58.260578632354736,
+          "choice_logprobs": {
+            "A": -58.260578632354736,
+            "B": -59.596519947052
+          },
+          "margin_vs_runner_up": 1.3359413146972656
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -56.30768918991089,
+          "choice_logprobs": {
+            "A": -56.30768918991089,
+            "B": -56.563623905181885
+          },
+          "margin_vs_runner_up": 0.2559347152709961
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -39.70605045277625,
+          "choice_logprobs": {
+            "A": -39.70605045277625,
+            "B": -41.09683280903846
+          },
+          "margin_vs_runner_up": 1.390782356262207
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -34.902589053846896,
+          "choice_logprobs": {
+            "A": -34.902589053846896,
+            "B": -35.20404836628586
+          },
+          "margin_vs_runner_up": 0.30145931243896484
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -49.429357551038265,
+          "choice_logprobs": {
+            "A": -49.429357551038265,
+            "B": -49.29400297254324
+          },
+          "margin_vs_runner_up": 0.13535457849502563
+        }
+      ]
+    },
+    {
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "case_id": "caps_002",
+      "expected_label": "A",
+      "expected_text": " Carolina",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -99.36650085449219,
+          "choice_logprobs": {
+            "A": -99.36650085449219,
+            "B": -105.98446750640869
+          },
+          "margin_vs_runner_up": 6.617966651916504
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -96.0217514038086,
+          "choice_logprobs": {
+            "A": -96.0217514038086,
+            "B": -104.73718738555908
+          },
+          "margin_vs_runner_up": 8.715435981750488
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -98.58057594299316,
+          "choice_logprobs": {
+            "A": -98.58057594299316,
+            "B": -109.67102527618408
+          },
+          "margin_vs_runner_up": 11.090449333190918
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -100.42801475524902,
+          "choice_logprobs": {
+            "A": -100.42801475524902,
+            "B": -112.0359878540039
+          },
+          "margin_vs_runner_up": 11.607973098754883
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -94.28692150115967,
+          "choice_logprobs": {
+            "A": -94.28692150115967,
+            "B": -103.72041988372803
+          },
+          "margin_vs_runner_up": 9.43349838256836
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -91.34940338134766,
+          "choice_logprobs": {
+            "A": -91.34940338134766,
+            "B": -99.38018131256104
+          },
+          "margin_vs_runner_up": 8.030777931213379
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -82.76264572143555,
+          "choice_logprobs": {
+            "A": -82.76264572143555,
+            "B": -92.0547924041748
+          },
+          "margin_vs_runner_up": 9.292146682739258
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -76.87395858764648,
+          "choice_logprobs": {
+            "A": -76.87395858764648,
+            "B": -90.2450532913208
+          },
+          "margin_vs_runner_up": 13.371094703674316
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -73.52325057983398,
+          "choice_logprobs": {
+            "A": -73.52325057983398,
+            "B": -85.03873348236084
+          },
+          "margin_vs_runner_up": 11.515482902526855
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -73.8851547241211,
+          "choice_logprobs": {
+            "A": -73.8851547241211,
+            "B": -86.90334892272949
+          },
+          "margin_vs_runner_up": 13.018194198608398
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -71.08736515045166,
+          "choice_logprobs": {
+            "A": -71.08736515045166,
+            "B": -80.53191089630127
+          },
+          "margin_vs_runner_up": 9.44454574584961
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -70.86557674407959,
+          "choice_logprobs": {
+            "A": -70.86557674407959,
+            "B": -79.39807510375977
+          },
+          "margin_vs_runner_up": 8.532498359680176
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -69.37840366363525,
+          "choice_logprobs": {
+            "A": -69.37840366363525,
+            "B": -75.95764923095703
+          },
+          "margin_vs_runner_up": 6.579245567321777
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -71.86294841766357,
+          "choice_logprobs": {
+            "A": -71.86294841766357,
+            "B": -78.05521202087402
+          },
+          "margin_vs_runner_up": 6.192263603210449
+        },
+        {
+          "layer": 14,
+          "winner": "A",
+          "expected_logprob": -64.52449417114258,
+          "choice_logprobs": {
+            "A": -64.52449417114258,
+            "B": -68.86921310424805
+          },
+          "margin_vs_runner_up": 4.344718933105469
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -69.37139225006104,
+          "choice_logprobs": {
+            "A": -69.37139225006104,
+            "B": -79.32996892929077
+          },
+          "margin_vs_runner_up": 9.958576679229736
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -76.55164623260498,
+          "choice_logprobs": {
+            "A": -76.55164623260498,
+            "B": -87.22266578674316
+          },
+          "margin_vs_runner_up": 10.671019554138184
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -78.92753505706787,
+          "choice_logprobs": {
+            "A": -78.92753505706787,
+            "B": -90.74854755401611
+          },
+          "margin_vs_runner_up": 11.821012496948242
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -82.4358024597168,
+          "choice_logprobs": {
+            "A": -82.4358024597168,
+            "B": -102.10520839691162
+          },
+          "margin_vs_runner_up": 19.669405937194824
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -62.92135190963745,
+          "choice_logprobs": {
+            "A": -62.92135190963745,
+            "B": -80.8170075416565
+          },
+          "margin_vs_runner_up": 17.895655632019043
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -57.821857213974,
+          "choice_logprobs": {
+            "A": -57.821857213974,
+            "B": -70.91822361946106
+          },
+          "margin_vs_runner_up": 13.09636640548706
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -45.29928445070982,
+          "choice_logprobs": {
+            "A": -45.29928445070982,
+            "B": -55.530227582901716
+          },
+          "margin_vs_runner_up": 10.230943132191896
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -36.475512102246284,
+          "choice_logprobs": {
+            "A": -36.475512102246284,
+            "B": -41.028064989019185
+          },
+          "margin_vs_runner_up": 4.552552886772901
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -53.663014325429685,
+          "choice_logprobs": {
+            "A": -53.663014325429685,
+            "B": -58.734612415661104
+          },
+          "margin_vs_runner_up": 5.071598090231419
+        }
+      ]
+    },
+    {
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "case_id": "caps_003",
+      "expected_label": "A",
+      "expected_text": " York",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 4,
+      "final_choice_convergence": 4,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -98.16889190673828,
+          "choice_logprobs": {
+            "A": -98.16889190673828,
+            "B": -97.32327842712402
+          },
+          "margin_vs_runner_up": 0.8456134796142578
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -89.55916023254395,
+          "choice_logprobs": {
+            "A": -89.55916023254395,
+            "B": -88.33980560302734
+          },
+          "margin_vs_runner_up": 1.2193546295166016
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -92.0804386138916,
+          "choice_logprobs": {
+            "A": -92.0804386138916,
+            "B": -90.13818740844727
+          },
+          "margin_vs_runner_up": 1.942251205444336
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -89.72456455230713,
+          "choice_logprobs": {
+            "A": -89.72456455230713,
+            "B": -89.18493175506592
+          },
+          "margin_vs_runner_up": 0.5396327972412109
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -86.19283866882324,
+          "choice_logprobs": {
+            "A": -86.19283866882324,
+            "B": -88.58913040161133
+          },
+          "margin_vs_runner_up": 2.396291732788086
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -81.68708610534668,
+          "choice_logprobs": {
+            "A": -81.68708610534668,
+            "B": -86.04707145690918
+          },
+          "margin_vs_runner_up": 4.3599853515625
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -77.03545188903809,
+          "choice_logprobs": {
+            "A": -77.03545188903809,
+            "B": -81.73936939239502
+          },
+          "margin_vs_runner_up": 4.703917503356934
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -75.42675399780273,
+          "choice_logprobs": {
+            "A": -75.42675399780273,
+            "B": -80.63881587982178
+          },
+          "margin_vs_runner_up": 5.212061882019043
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -72.41930389404297,
+          "choice_logprobs": {
+            "A": -72.41930389404297,
+            "B": -78.57215309143066
+          },
+          "margin_vs_runner_up": 6.152849197387695
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -68.99964046478271,
+          "choice_logprobs": {
+            "A": -68.99964046478271,
+            "B": -75.88576221466064
+          },
+          "margin_vs_runner_up": 6.88612174987793
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -67.37611103057861,
+          "choice_logprobs": {
+            "A": -67.37611103057861,
+            "B": -73.03892517089844
+          },
+          "margin_vs_runner_up": 5.662814140319824
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -67.21600151062012,
+          "choice_logprobs": {
+            "A": -67.21600151062012,
+            "B": -72.71891021728516
+          },
+          "margin_vs_runner_up": 5.502908706665039
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -67.0272798538208,
+          "choice_logprobs": {
+            "A": -67.0272798538208,
+            "B": -70.55742931365967
+          },
+          "margin_vs_runner_up": 3.530149459838867
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -67.64702033996582,
+          "choice_logprobs": {
+            "A": -67.64702033996582,
+            "B": -70.27309322357178
+          },
+          "margin_vs_runner_up": 2.626072883605957
+        },
+        {
+          "layer": 14,
+          "winner": "A",
+          "expected_logprob": -62.68867206573486,
+          "choice_logprobs": {
+            "A": -62.68867206573486,
+            "B": -65.62016582489014
+          },
+          "margin_vs_runner_up": 2.9314937591552734
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -63.366150856018066,
+          "choice_logprobs": {
+            "A": -63.366150856018066,
+            "B": -67.13214588165283
+          },
+          "margin_vs_runner_up": 3.7659950256347656
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -67.273118019104,
+          "choice_logprobs": {
+            "A": -67.273118019104,
+            "B": -70.45806121826172
+          },
+          "margin_vs_runner_up": 3.184943199157715
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -70.44629955291748,
+          "choice_logprobs": {
+            "A": -70.44629955291748,
+            "B": -74.24071025848389
+          },
+          "margin_vs_runner_up": 3.7944107055664062
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -74.1977071762085,
+          "choice_logprobs": {
+            "A": -74.1977071762085,
+            "B": -81.80634021759033
+          },
+          "margin_vs_runner_up": 7.608633041381836
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -60.38790702819824,
+          "choice_logprobs": {
+            "A": -60.38790702819824,
+            "B": -67.37541675567627
+          },
+          "margin_vs_runner_up": 6.987509727478027
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -54.575841188430786,
+          "choice_logprobs": {
+            "A": -54.575841188430786,
+            "B": -59.768616914749146
+          },
+          "margin_vs_runner_up": 5.192775726318359
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -43.42220736690797,
+          "choice_logprobs": {
+            "A": -43.42220736690797,
+            "B": -47.901785385096446
+          },
+          "margin_vs_runner_up": 4.479578018188477
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -38.80926053947769,
+          "choice_logprobs": {
+            "A": -38.80926053947769,
+            "B": -40.728382281726226
+          },
+          "margin_vs_runner_up": 1.9191217422485352
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -55.01752617562306,
+          "choice_logprobs": {
+            "A": -55.01752617562306,
+            "B": -56.01855542862904
+          },
+          "margin_vs_runner_up": 1.0010292530059814
+        }
+      ]
+    },
+    {
+      "task_name": "capitalization",
+      "behavior": "capitalization",
+      "case_id": "caps_004",
+      "expected_label": "A",
+      "expected_text": " States",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": null,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -93.38811111450195,
+          "choice_logprobs": {
+            "A": -93.38811111450195,
+            "B": -92.0803279876709
+          },
+          "margin_vs_runner_up": 1.3077831268310547
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -90.6113395690918,
+          "choice_logprobs": {
+            "A": -90.6113395690918,
+            "B": -86.08923149108887
+          },
+          "margin_vs_runner_up": 4.52210807800293
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -93.14477920532227,
+          "choice_logprobs": {
+            "A": -93.14477920532227,
+            "B": -88.43315410614014
+          },
+          "margin_vs_runner_up": 4.711625099182129
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -92.92813110351562,
+          "choice_logprobs": {
+            "A": -92.92813110351562,
+            "B": -85.35531234741211
+          },
+          "margin_vs_runner_up": 7.572818756103516
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -88.27706718444824,
+          "choice_logprobs": {
+            "A": -88.27706718444824,
+            "B": -78.35568714141846
+          },
+          "margin_vs_runner_up": 9.921380043029785
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -83.93614768981934,
+          "choice_logprobs": {
+            "A": -83.93614768981934,
+            "B": -74.04046154022217
+          },
+          "margin_vs_runner_up": 9.895686149597168
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -77.02920150756836,
+          "choice_logprobs": {
+            "A": -77.02920150756836,
+            "B": -68.00639533996582
+          },
+          "margin_vs_runner_up": 9.022806167602539
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -72.07480525970459,
+          "choice_logprobs": {
+            "A": -72.07480525970459,
+            "B": -64.85992622375488
+          },
+          "margin_vs_runner_up": 7.214879035949707
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -68.93229293823242,
+          "choice_logprobs": {
+            "A": -68.93229293823242,
+            "B": -61.292420387268066
+          },
+          "margin_vs_runner_up": 7.6398725509643555
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -67.1082181930542,
+          "choice_logprobs": {
+            "A": -67.1082181930542,
+            "B": -60.55301284790039
+          },
+          "margin_vs_runner_up": 6.555205345153809
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -62.70711421966553,
+          "choice_logprobs": {
+            "A": -62.70711421966553,
+            "B": -57.3116397857666
+          },
+          "margin_vs_runner_up": 5.395474433898926
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -63.11353778839111,
+          "choice_logprobs": {
+            "A": -63.11353778839111,
+            "B": -58.06925010681152
+          },
+          "margin_vs_runner_up": 5.04428768157959
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -62.48202705383301,
+          "choice_logprobs": {
+            "A": -62.48202705383301,
+            "B": -57.683058738708496
+          },
+          "margin_vs_runner_up": 4.798968315124512
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -64.19963550567627,
+          "choice_logprobs": {
+            "A": -64.19963550567627,
+            "B": -59.73259449005127
+          },
+          "margin_vs_runner_up": 4.467041015625
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -59.573519229888916,
+          "choice_logprobs": {
+            "A": -59.573519229888916,
+            "B": -54.61713933944702
+          },
+          "margin_vs_runner_up": 4.9563798904418945
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -61.03748369216919,
+          "choice_logprobs": {
+            "A": -61.03748369216919,
+            "B": -56.70866346359253
+          },
+          "margin_vs_runner_up": 4.32882022857666
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -66.8703784942627,
+          "choice_logprobs": {
+            "A": -66.8703784942627,
+            "B": -63.78805637359619
+          },
+          "margin_vs_runner_up": 3.082322120666504
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -70.94600200653076,
+          "choice_logprobs": {
+            "A": -70.94600200653076,
+            "B": -66.69967365264893
+          },
+          "margin_vs_runner_up": 4.246328353881836
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -78.8827314376831,
+          "choice_logprobs": {
+            "A": -78.8827314376831,
+            "B": -76.39443492889404
+          },
+          "margin_vs_runner_up": 2.4882965087890625
+        },
+        {
+          "layer": 19,
+          "winner": "B",
+          "expected_logprob": -65.37746047973633,
+          "choice_logprobs": {
+            "A": -65.37746047973633,
+            "B": -63.72923469543457
+          },
+          "margin_vs_runner_up": 1.6482257843017578
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -58.0273494720459,
+          "choice_logprobs": {
+            "A": -58.0273494720459,
+            "B": -56.1114559173584
+          },
+          "margin_vs_runner_up": 1.9158935546875
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -44.685616192407906,
+          "choice_logprobs": {
+            "A": -44.685616192407906,
+            "B": -43.217800793237984
+          },
+          "margin_vs_runner_up": 1.4678153991699219
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -38.08358803985175,
+          "choice_logprobs": {
+            "A": -38.08358803985175,
+            "B": -36.142758285976015
+          },
+          "margin_vs_runner_up": 1.9408297538757324
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -53.93221174682549,
+          "choice_logprobs": {
+            "A": -53.93221174682549,
+            "B": -51.41049252952507
+          },
+          "margin_vs_runner_up": 2.521719217300415
+        }
+      ]
+    },
+    {
+      "task_name": "induction",
+      "behavior": "induction",
+      "case_id": "induction_001",
+      "expected_label": "A",
+      "expected_text": " D4",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -101.93760871887207,
+          "choice_logprobs": {
+            "A": -101.93760871887207,
+            "B": -112.57589817047119
+          },
+          "margin_vs_runner_up": 10.638289451599121
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -96.79767608642578,
+          "choice_logprobs": {
+            "A": -96.79767608642578,
+            "B": -111.37824440002441
+          },
+          "margin_vs_runner_up": 14.580568313598633
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -98.59095096588135,
+          "choice_logprobs": {
+            "A": -98.59095096588135,
+            "B": -111.35728645324707
+          },
+          "margin_vs_runner_up": 12.766335487365723
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -103.48091125488281,
+          "choice_logprobs": {
+            "A": -103.48091125488281,
+            "B": -113.45199012756348
+          },
+          "margin_vs_runner_up": 9.971078872680664
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -96.26941776275635,
+          "choice_logprobs": {
+            "A": -96.26941776275635,
+            "B": -101.94481658935547
+          },
+          "margin_vs_runner_up": 5.675398826599121
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -88.81770324707031,
+          "choice_logprobs": {
+            "A": -88.81770324707031,
+            "B": -95.5708646774292
+          },
+          "margin_vs_runner_up": 6.753161430358887
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -78.97217464447021,
+          "choice_logprobs": {
+            "A": -78.97217464447021,
+            "B": -81.87573146820068
+          },
+          "margin_vs_runner_up": 2.9035568237304688
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -72.90026712417603,
+          "choice_logprobs": {
+            "A": -72.90026712417603,
+            "B": -79.0356035232544
+          },
+          "margin_vs_runner_up": 6.135336399078369
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -69.2090368270874,
+          "choice_logprobs": {
+            "A": -69.2090368270874,
+            "B": -76.4868335723877
+          },
+          "margin_vs_runner_up": 7.277796745300293
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -66.78488636016846,
+          "choice_logprobs": {
+            "A": -66.78488636016846,
+            "B": -73.73814582824707
+          },
+          "margin_vs_runner_up": 6.953259468078613
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -63.46095848083496,
+          "choice_logprobs": {
+            "A": -63.46095848083496,
+            "B": -68.43578338623047
+          },
+          "margin_vs_runner_up": 4.974824905395508
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -62.509602546691895,
+          "choice_logprobs": {
+            "A": -62.509602546691895,
+            "B": -65.71052885055542
+          },
+          "margin_vs_runner_up": 3.2009263038635254
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -62.22582006454468,
+          "choice_logprobs": {
+            "A": -62.22582006454468,
+            "B": -64.39574241638184
+          },
+          "margin_vs_runner_up": 2.169922351837158
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -64.32805156707764,
+          "choice_logprobs": {
+            "A": -64.32805156707764,
+            "B": -66.33648204803467
+          },
+          "margin_vs_runner_up": 2.0084304809570312
+        },
+        {
+          "layer": 14,
+          "winner": "A",
+          "expected_logprob": -59.28858995437622,
+          "choice_logprobs": {
+            "A": -59.28858995437622,
+            "B": -61.875361919403076
+          },
+          "margin_vs_runner_up": 2.5867719650268555
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -58.44412612915039,
+          "choice_logprobs": {
+            "A": -58.44412612915039,
+            "B": -59.251564502716064
+          },
+          "margin_vs_runner_up": 0.8074383735656738
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -65.03682279586792,
+          "choice_logprobs": {
+            "A": -65.03682279586792,
+            "B": -66.76942920684814
+          },
+          "margin_vs_runner_up": 1.7326064109802246
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -72.66455268859863,
+          "choice_logprobs": {
+            "A": -72.66455268859863,
+            "B": -74.47544145584106
+          },
+          "margin_vs_runner_up": 1.8108887672424316
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -82.72607707977295,
+          "choice_logprobs": {
+            "A": -82.72607707977295,
+            "B": -81.94886827468872
+          },
+          "margin_vs_runner_up": 0.7772088050842285
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -63.43130898475647,
+          "choice_logprobs": {
+            "A": -63.43130898475647,
+            "B": -65.81727910041809
+          },
+          "margin_vs_runner_up": 2.385970115661621
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -56.616933941841125,
+          "choice_logprobs": {
+            "A": -56.616933941841125,
+            "B": -57.35590720176697
+          },
+          "margin_vs_runner_up": 0.7389732599258423
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -41.199802595190704,
+          "choice_logprobs": {
+            "A": -41.199802595190704,
+            "B": -44.39858866017312
+          },
+          "margin_vs_runner_up": 3.1987860649824142
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -38.48762025614269,
+          "choice_logprobs": {
+            "A": -38.48762025614269,
+            "B": -44.858850202756
+          },
+          "margin_vs_runner_up": 6.371229946613312
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -59.6313175351097,
+          "choice_logprobs": {
+            "A": -59.6313175351097,
+            "B": -64.80575416392821
+          },
+          "margin_vs_runner_up": 5.174436628818512
+        }
+      ]
+    },
+    {
+      "task_name": "induction",
+      "behavior": "induction",
+      "case_id": "induction_002",
+      "expected_label": "A",
+      "expected_text": " green",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 17,
+      "final_choice_convergence": 17,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -99.09285736083984,
+          "choice_logprobs": {
+            "A": -99.09285736083984,
+            "B": -97.60626220703125
+          },
+          "margin_vs_runner_up": 1.4865951538085938
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -96.78965091705322,
+          "choice_logprobs": {
+            "A": -96.78965091705322,
+            "B": -92.34242534637451
+          },
+          "margin_vs_runner_up": 4.447225570678711
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -98.53547859191895,
+          "choice_logprobs": {
+            "A": -98.53547859191895,
+            "B": -93.38074493408203
+          },
+          "margin_vs_runner_up": 5.154733657836914
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -99.18276500701904,
+          "choice_logprobs": {
+            "A": -99.18276500701904,
+            "B": -94.39918994903564
+          },
+          "margin_vs_runner_up": 4.783575057983398
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -93.55824661254883,
+          "choice_logprobs": {
+            "A": -93.55824661254883,
+            "B": -84.94919204711914
+          },
+          "margin_vs_runner_up": 8.609054565429688
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -87.78659915924072,
+          "choice_logprobs": {
+            "A": -87.78659915924072,
+            "B": -78.82393455505371
+          },
+          "margin_vs_runner_up": 8.962664604187012
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -79.70169925689697,
+          "choice_logprobs": {
+            "A": -79.70169925689697,
+            "B": -71.14453029632568
+          },
+          "margin_vs_runner_up": 8.557168960571289
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -75.75141143798828,
+          "choice_logprobs": {
+            "A": -75.75141143798828,
+            "B": -67.97008419036865
+          },
+          "margin_vs_runner_up": 7.781327247619629
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -73.5720443725586,
+          "choice_logprobs": {
+            "A": -73.5720443725586,
+            "B": -66.5804967880249
+          },
+          "margin_vs_runner_up": 6.991547584533691
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -71.53738021850586,
+          "choice_logprobs": {
+            "A": -71.53738021850586,
+            "B": -66.23410415649414
+          },
+          "margin_vs_runner_up": 5.303276062011719
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -66.55087947845459,
+          "choice_logprobs": {
+            "A": -66.55087947845459,
+            "B": -61.22136974334717
+          },
+          "margin_vs_runner_up": 5.329509735107422
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -65.58928775787354,
+          "choice_logprobs": {
+            "A": -65.58928775787354,
+            "B": -58.97148132324219
+          },
+          "margin_vs_runner_up": 6.617806434631348
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -64.48994159698486,
+          "choice_logprobs": {
+            "A": -64.48994159698486,
+            "B": -57.79231548309326
+          },
+          "margin_vs_runner_up": 6.697626113891602
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -59.5007209777832,
+          "choice_logprobs": {
+            "A": -59.5007209777832,
+            "B": -55.409295082092285
+          },
+          "margin_vs_runner_up": 4.091425895690918
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -55.71967267990112,
+          "choice_logprobs": {
+            "A": -55.71967267990112,
+            "B": -51.14532518386841
+          },
+          "margin_vs_runner_up": 4.574347496032715
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -59.58126163482666,
+          "choice_logprobs": {
+            "A": -59.58126163482666,
+            "B": -53.65398025512695
+          },
+          "margin_vs_runner_up": 5.927281379699707
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -66.47699546813965,
+          "choice_logprobs": {
+            "A": -66.47699546813965,
+            "B": -63.935468673706055
+          },
+          "margin_vs_runner_up": 2.5415267944335938
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -69.82676887512207,
+          "choice_logprobs": {
+            "A": -69.82676887512207,
+            "B": -70.22124767303467
+          },
+          "margin_vs_runner_up": 0.39447879791259766
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -77.11555290222168,
+          "choice_logprobs": {
+            "A": -77.11555290222168,
+            "B": -79.09568214416504
+          },
+          "margin_vs_runner_up": 1.9801292419433594
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -65.29241991043091,
+          "choice_logprobs": {
+            "A": -65.29241991043091,
+            "B": -68.03225755691528
+          },
+          "margin_vs_runner_up": 2.739837646484375
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -54.98932123184204,
+          "choice_logprobs": {
+            "A": -54.98932123184204,
+            "B": -58.65703344345093
+          },
+          "margin_vs_runner_up": 3.6677122116088867
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -40.922023203223944,
+          "choice_logprobs": {
+            "A": -40.922023203223944,
+            "B": -43.50270023569465
+          },
+          "margin_vs_runner_up": 2.580677032470703
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -36.87158139038365,
+          "choice_logprobs": {
+            "A": -36.87158139038365,
+            "B": -41.71319325256627
+          },
+          "margin_vs_runner_up": 4.841611862182617
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -54.98775538348127,
+          "choice_logprobs": {
+            "A": -54.98775538348127,
+            "B": -57.31637677096296
+          },
+          "margin_vs_runner_up": 2.3286213874816895
+        }
+      ]
+    },
+    {
+      "task_name": "induction",
+      "behavior": "induction",
+      "case_id": "induction_003",
+      "expected_label": "A",
+      "expected_text": " 4",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -113.23248291015625,
+          "choice_logprobs": {
+            "A": -113.23248291015625,
+            "B": -114.01761817932129
+          },
+          "margin_vs_runner_up": 0.7851352691650391
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -103.44346332550049,
+          "choice_logprobs": {
+            "A": -103.44346332550049,
+            "B": -107.06458377838135
+          },
+          "margin_vs_runner_up": 3.6211204528808594
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -105.47616577148438,
+          "choice_logprobs": {
+            "A": -105.47616577148438,
+            "B": -109.26410293579102
+          },
+          "margin_vs_runner_up": 3.7879371643066406
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -105.13137817382812,
+          "choice_logprobs": {
+            "A": -105.13137817382812,
+            "B": -110.47994041442871
+          },
+          "margin_vs_runner_up": 5.348562240600586
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -99.07338428497314,
+          "choice_logprobs": {
+            "A": -99.07338428497314,
+            "B": -103.0379991531372
+          },
+          "margin_vs_runner_up": 3.9646148681640625
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -92.55943775177002,
+          "choice_logprobs": {
+            "A": -92.55943775177002,
+            "B": -95.5123701095581
+          },
+          "margin_vs_runner_up": 2.952932357788086
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -83.08316040039062,
+          "choice_logprobs": {
+            "A": -83.08316040039062,
+            "B": -83.91416549682617
+          },
+          "margin_vs_runner_up": 0.8310050964355469
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -76.13478183746338,
+          "choice_logprobs": {
+            "A": -76.13478183746338,
+            "B": -78.55874443054199
+          },
+          "margin_vs_runner_up": 2.4239625930786133
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -73.85287761688232,
+          "choice_logprobs": {
+            "A": -73.85287761688232,
+            "B": -75.12753200531006
+          },
+          "margin_vs_runner_up": 1.2746543884277344
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -69.94197845458984,
+          "choice_logprobs": {
+            "A": -69.94197845458984,
+            "B": -70.69265460968018
+          },
+          "margin_vs_runner_up": 0.750676155090332
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -63.240726470947266,
+          "choice_logprobs": {
+            "A": -63.240726470947266,
+            "B": -63.59041118621826
+          },
+          "margin_vs_runner_up": 0.3496847152709961
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -63.534278869628906,
+          "choice_logprobs": {
+            "A": -63.534278869628906,
+            "B": -63.49019908905029
+          },
+          "margin_vs_runner_up": 0.04407978057861328
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -64.04549217224121,
+          "choice_logprobs": {
+            "A": -64.04549217224121,
+            "B": -62.36064624786377
+          },
+          "margin_vs_runner_up": 1.6848459243774414
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -64.85950660705566,
+          "choice_logprobs": {
+            "A": -64.85950660705566,
+            "B": -63.56511116027832
+          },
+          "margin_vs_runner_up": 1.2943954467773438
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -58.92435884475708,
+          "choice_logprobs": {
+            "A": -58.92435884475708,
+            "B": -57.588841915130615
+          },
+          "margin_vs_runner_up": 1.3355169296264648
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -56.88093423843384,
+          "choice_logprobs": {
+            "A": -56.88093423843384,
+            "B": -55.19975519180298
+          },
+          "margin_vs_runner_up": 1.6811790466308594
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -61.70908546447754,
+          "choice_logprobs": {
+            "A": -61.70908546447754,
+            "B": -60.67791175842285
+          },
+          "margin_vs_runner_up": 1.0311737060546875
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -66.8421745300293,
+          "choice_logprobs": {
+            "A": -66.8421745300293,
+            "B": -69.12667274475098
+          },
+          "margin_vs_runner_up": 2.2844982147216797
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -73.93338918685913,
+          "choice_logprobs": {
+            "A": -73.93338918685913,
+            "B": -74.18233823776245
+          },
+          "margin_vs_runner_up": 0.2489490509033203
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -58.732158184051514,
+          "choice_logprobs": {
+            "A": -58.732158184051514,
+            "B": -62.96937704086304
+          },
+          "margin_vs_runner_up": 4.237218856811523
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -56.4688081741333,
+          "choice_logprobs": {
+            "A": -56.4688081741333,
+            "B": -62.065242290496826
+          },
+          "margin_vs_runner_up": 5.596434116363525
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -46.993756477255374,
+          "choice_logprobs": {
+            "A": -46.993756477255374,
+            "B": -53.43107527913526
+          },
+          "margin_vs_runner_up": 6.437318801879883
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -40.89989072558819,
+          "choice_logprobs": {
+            "A": -40.89989072558819,
+            "B": -45.12962610003888
+          },
+          "margin_vs_runner_up": 4.229735374450684
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -59.1481811992162,
+          "choice_logprobs": {
+            "A": -59.1481811992162,
+            "B": -63.149407624387095
+          },
+          "margin_vs_runner_up": 4.001226425170898
+        }
+      ]
+    },
+    {
+      "task_name": "induction",
+      "behavior": "induction",
+      "case_id": "induction_004",
+      "expected_label": "A",
+      "expected_text": " gamma",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -95.81832504272461,
+          "choice_logprobs": {
+            "A": -95.81832504272461,
+            "B": -95.82182121276855
+          },
+          "margin_vs_runner_up": 0.0034961700439453125
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -89.4876708984375,
+          "choice_logprobs": {
+            "A": -89.4876708984375,
+            "B": -87.91354751586914
+          },
+          "margin_vs_runner_up": 1.5741233825683594
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -90.9837589263916,
+          "choice_logprobs": {
+            "A": -90.9837589263916,
+            "B": -90.28270721435547
+          },
+          "margin_vs_runner_up": 0.7010517120361328
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -90.85668754577637,
+          "choice_logprobs": {
+            "A": -90.85668754577637,
+            "B": -92.23460388183594
+          },
+          "margin_vs_runner_up": 1.3779163360595703
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -83.91779136657715,
+          "choice_logprobs": {
+            "A": -83.91779136657715,
+            "B": -85.21886444091797
+          },
+          "margin_vs_runner_up": 1.3010730743408203
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -80.66125202178955,
+          "choice_logprobs": {
+            "A": -80.66125202178955,
+            "B": -80.92033195495605
+          },
+          "margin_vs_runner_up": 0.2590799331665039
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -72.90789318084717,
+          "choice_logprobs": {
+            "A": -72.90789318084717,
+            "B": -72.90498065948486
+          },
+          "margin_vs_runner_up": 0.0029125213623046875
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -68.99687099456787,
+          "choice_logprobs": {
+            "A": -68.99687099456787,
+            "B": -68.45557117462158
+          },
+          "margin_vs_runner_up": 0.5412998199462891
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -68.70165157318115,
+          "choice_logprobs": {
+            "A": -68.70165157318115,
+            "B": -66.69913959503174
+          },
+          "margin_vs_runner_up": 2.002511978149414
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -66.09161186218262,
+          "choice_logprobs": {
+            "A": -66.09161186218262,
+            "B": -64.98076343536377
+          },
+          "margin_vs_runner_up": 1.1108484268188477
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -63.54996967315674,
+          "choice_logprobs": {
+            "A": -63.54996967315674,
+            "B": -61.35090351104736
+          },
+          "margin_vs_runner_up": 2.199066162109375
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -63.20564270019531,
+          "choice_logprobs": {
+            "A": -63.20564270019531,
+            "B": -60.25862979888916
+          },
+          "margin_vs_runner_up": 2.9470129013061523
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -63.00779151916504,
+          "choice_logprobs": {
+            "A": -63.00779151916504,
+            "B": -60.20564651489258
+          },
+          "margin_vs_runner_up": 2.802145004272461
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -61.37374687194824,
+          "choice_logprobs": {
+            "A": -61.37374687194824,
+            "B": -58.292184829711914
+          },
+          "margin_vs_runner_up": 3.081562042236328
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -57.00067329406738,
+          "choice_logprobs": {
+            "A": -57.00067329406738,
+            "B": -55.03950881958008
+          },
+          "margin_vs_runner_up": 1.9611644744873047
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -59.35113573074341,
+          "choice_logprobs": {
+            "A": -59.35113573074341,
+            "B": -58.77495336532593
+          },
+          "margin_vs_runner_up": 0.5761823654174805
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -66.21912956237793,
+          "choice_logprobs": {
+            "A": -66.21912956237793,
+            "B": -65.69879531860352
+          },
+          "margin_vs_runner_up": 0.5203342437744141
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -70.50439453125,
+          "choice_logprobs": {
+            "A": -70.50439453125,
+            "B": -76.09254837036133
+          },
+          "margin_vs_runner_up": 5.588153839111328
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -74.9659423828125,
+          "choice_logprobs": {
+            "A": -74.9659423828125,
+            "B": -80.50517272949219
+          },
+          "margin_vs_runner_up": 5.5392303466796875
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -60.07044792175293,
+          "choice_logprobs": {
+            "A": -60.07044792175293,
+            "B": -68.34763145446777
+          },
+          "margin_vs_runner_up": 8.277183532714844
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -52.93047261238098,
+          "choice_logprobs": {
+            "A": -52.93047261238098,
+            "B": -59.586583375930786
+          },
+          "margin_vs_runner_up": 6.656110763549805
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -36.23544894065708,
+          "choice_logprobs": {
+            "A": -36.23544894065708,
+            "B": -47.82867155876011
+          },
+          "margin_vs_runner_up": 11.593222618103027
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -34.24193877493963,
+          "choice_logprobs": {
+            "A": -34.24193877493963,
+            "B": -47.15956134116277
+          },
+          "margin_vs_runner_up": 12.917622566223145
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -52.776198433944955,
+          "choice_logprobs": {
+            "A": -52.776198433944955,
+            "B": -67.4383917322848
+          },
+          "margin_vs_runner_up": 14.662193298339844
+        }
+      ]
+    },
+    {
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "case_id": "coref_001",
+      "expected_label": "A",
+      "expected_text": " Alice",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -92.14871406555176,
+          "choice_logprobs": {
+            "A": -92.14871406555176,
+            "B": -94.0093002319336
+          },
+          "margin_vs_runner_up": 1.860586166381836
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -84.5451431274414,
+          "choice_logprobs": {
+            "A": -84.5451431274414,
+            "B": -91.00795364379883
+          },
+          "margin_vs_runner_up": 6.462810516357422
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -85.07373905181885,
+          "choice_logprobs": {
+            "A": -85.07373905181885,
+            "B": -91.1104564666748
+          },
+          "margin_vs_runner_up": 6.036717414855957
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -86.92305278778076,
+          "choice_logprobs": {
+            "A": -86.92305278778076,
+            "B": -91.48855113983154
+          },
+          "margin_vs_runner_up": 4.565498352050781
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -79.48379325866699,
+          "choice_logprobs": {
+            "A": -79.48379325866699,
+            "B": -83.96998882293701
+          },
+          "margin_vs_runner_up": 4.4861955642700195
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -71.94541645050049,
+          "choice_logprobs": {
+            "A": -71.94541645050049,
+            "B": -76.82966804504395
+          },
+          "margin_vs_runner_up": 4.884251594543457
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -67.44647026062012,
+          "choice_logprobs": {
+            "A": -67.44647026062012,
+            "B": -70.85571384429932
+          },
+          "margin_vs_runner_up": 3.409243583679199
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -63.83057689666748,
+          "choice_logprobs": {
+            "A": -63.83057689666748,
+            "B": -67.41753482818604
+          },
+          "margin_vs_runner_up": 3.5869579315185547
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -63.18316841125488,
+          "choice_logprobs": {
+            "A": -63.18316841125488,
+            "B": -66.59562397003174
+          },
+          "margin_vs_runner_up": 3.4124555587768555
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -66.15411186218262,
+          "choice_logprobs": {
+            "A": -66.15411186218262,
+            "B": -67.82681655883789
+          },
+          "margin_vs_runner_up": 1.6727046966552734
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -59.137285232543945,
+          "choice_logprobs": {
+            "A": -59.137285232543945,
+            "B": -60.10135364532471
+          },
+          "margin_vs_runner_up": 0.9640684127807617
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -59.85134696960449,
+          "choice_logprobs": {
+            "A": -59.85134696960449,
+            "B": -61.80057144165039
+          },
+          "margin_vs_runner_up": 1.9492244720458984
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -58.6753044128418,
+          "choice_logprobs": {
+            "A": -58.6753044128418,
+            "B": -58.883806228637695
+          },
+          "margin_vs_runner_up": 0.20850181579589844
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -59.07544422149658,
+          "choice_logprobs": {
+            "A": -59.07544422149658,
+            "B": -61.486388206481934
+          },
+          "margin_vs_runner_up": 2.4109439849853516
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -56.65619897842407,
+          "choice_logprobs": {
+            "A": -56.65619897842407,
+            "B": -55.69283437728882
+          },
+          "margin_vs_runner_up": 0.9633646011352539
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -57.096893310546875,
+          "choice_logprobs": {
+            "A": -57.096893310546875,
+            "B": -54.64593029022217
+          },
+          "margin_vs_runner_up": 2.450963020324707
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -59.61262130737305,
+          "choice_logprobs": {
+            "A": -59.61262130737305,
+            "B": -59.35265254974365
+          },
+          "margin_vs_runner_up": 0.25996875762939453
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -65.31546878814697,
+          "choice_logprobs": {
+            "A": -65.31546878814697,
+            "B": -66.42198848724365
+          },
+          "margin_vs_runner_up": 1.1065196990966797
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -74.5975399017334,
+          "choice_logprobs": {
+            "A": -74.5975399017334,
+            "B": -74.77408218383789
+          },
+          "margin_vs_runner_up": 0.1765422821044922
+        },
+        {
+          "layer": 19,
+          "winner": "B",
+          "expected_logprob": -63.89500951766968,
+          "choice_logprobs": {
+            "A": -63.89500951766968,
+            "B": -62.6537299156189
+          },
+          "margin_vs_runner_up": 1.2412796020507812
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -56.469332218170166,
+          "choice_logprobs": {
+            "A": -56.469332218170166,
+            "B": -56.439587116241455
+          },
+          "margin_vs_runner_up": 0.029745101928710938
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -40.79916573688388,
+          "choice_logprobs": {
+            "A": -40.79916573688388,
+            "B": -40.661253940314054
+          },
+          "margin_vs_runner_up": 0.13791179656982422
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -38.381781321018934,
+          "choice_logprobs": {
+            "A": -38.381781321018934,
+            "B": -37.652548532933
+          },
+          "margin_vs_runner_up": 0.7292327880859375
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -53.72855990822427,
+          "choice_logprobs": {
+            "A": -53.72855990822427,
+            "B": -54.00462430412881
+          },
+          "margin_vs_runner_up": 0.276064395904541
+        }
+      ]
+    },
+    {
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "case_id": "coref_002",
+      "expected_label": "A",
+      "expected_text": " teacher",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 1,
+      "final_choice_convergence": 1,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -98.76498222351074,
+          "choice_logprobs": {
+            "A": -98.76498222351074,
+            "B": -97.64129829406738
+          },
+          "margin_vs_runner_up": 1.1236839294433594
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -89.27843475341797,
+          "choice_logprobs": {
+            "A": -89.27843475341797,
+            "B": -92.0836124420166
+          },
+          "margin_vs_runner_up": 2.805177688598633
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -90.30560493469238,
+          "choice_logprobs": {
+            "A": -90.30560493469238,
+            "B": -93.49361038208008
+          },
+          "margin_vs_runner_up": 3.1880054473876953
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -88.79000282287598,
+          "choice_logprobs": {
+            "A": -88.79000282287598,
+            "B": -93.42668533325195
+          },
+          "margin_vs_runner_up": 4.636682510375977
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -84.02168655395508,
+          "choice_logprobs": {
+            "A": -84.02168655395508,
+            "B": -86.7921314239502
+          },
+          "margin_vs_runner_up": 2.770444869995117
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -73.42789936065674,
+          "choice_logprobs": {
+            "A": -73.42789936065674,
+            "B": -79.63251304626465
+          },
+          "margin_vs_runner_up": 6.20461368560791
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -67.67221546173096,
+          "choice_logprobs": {
+            "A": -67.67221546173096,
+            "B": -73.55707454681396
+          },
+          "margin_vs_runner_up": 5.884859085083008
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -62.57082939147949,
+          "choice_logprobs": {
+            "A": -62.57082939147949,
+            "B": -65.78420352935791
+          },
+          "margin_vs_runner_up": 3.213374137878418
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -61.30960941314697,
+          "choice_logprobs": {
+            "A": -61.30960941314697,
+            "B": -64.17765522003174
+          },
+          "margin_vs_runner_up": 2.8680458068847656
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -60.34920406341553,
+          "choice_logprobs": {
+            "A": -60.34920406341553,
+            "B": -63.522972106933594
+          },
+          "margin_vs_runner_up": 3.1737680435180664
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -57.60216045379639,
+          "choice_logprobs": {
+            "A": -57.60216045379639,
+            "B": -58.53303146362305
+          },
+          "margin_vs_runner_up": 0.9308710098266602
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -59.50560760498047,
+          "choice_logprobs": {
+            "A": -59.50560760498047,
+            "B": -59.43352127075195
+          },
+          "margin_vs_runner_up": 0.07208633422851562
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -58.01088237762451,
+          "choice_logprobs": {
+            "A": -58.01088237762451,
+            "B": -58.085272789001465
+          },
+          "margin_vs_runner_up": 0.07439041137695312
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -57.268632888793945,
+          "choice_logprobs": {
+            "A": -57.268632888793945,
+            "B": -56.4246826171875
+          },
+          "margin_vs_runner_up": 0.8439502716064453
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -53.591530323028564,
+          "choice_logprobs": {
+            "A": -53.591530323028564,
+            "B": -53.370688915252686
+          },
+          "margin_vs_runner_up": 0.2208414077758789
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -55.13488483428955,
+          "choice_logprobs": {
+            "A": -55.13488483428955,
+            "B": -59.15841484069824
+          },
+          "margin_vs_runner_up": 4.023530006408691
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -60.20174789428711,
+          "choice_logprobs": {
+            "A": -60.20174789428711,
+            "B": -64.11708068847656
+          },
+          "margin_vs_runner_up": 3.915332794189453
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -68.84628295898438,
+          "choice_logprobs": {
+            "A": -68.84628295898438,
+            "B": -74.46773433685303
+          },
+          "margin_vs_runner_up": 5.621451377868652
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -80.98057270050049,
+          "choice_logprobs": {
+            "A": -80.98057270050049,
+            "B": -84.22922420501709
+          },
+          "margin_vs_runner_up": 3.2486515045166016
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -61.82256889343262,
+          "choice_logprobs": {
+            "A": -61.82256889343262,
+            "B": -68.91567897796631
+          },
+          "margin_vs_runner_up": 7.093110084533691
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -55.55435228347778,
+          "choice_logprobs": {
+            "A": -55.55435228347778,
+            "B": -60.8446307182312
+          },
+          "margin_vs_runner_up": 5.290278434753418
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -41.9390777759254,
+          "choice_logprobs": {
+            "A": -41.9390777759254,
+            "B": -48.69973508641124
+          },
+          "margin_vs_runner_up": 6.76065731048584
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -36.59887172002345,
+          "choice_logprobs": {
+            "A": -36.59887172002345,
+            "B": -43.95830870885402
+          },
+          "margin_vs_runner_up": 7.359436988830566
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -51.95540602877736,
+          "choice_logprobs": {
+            "A": -51.95540602877736,
+            "B": -61.86862285807729
+          },
+          "margin_vs_runner_up": 9.913216829299927
+        }
+      ]
+    },
+    {
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "case_id": "coref_003",
+      "expected_label": "A",
+      "expected_text": " Mary",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 18,
+      "final_choice_convergence": 18,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -98.04839515686035,
+          "choice_logprobs": {
+            "A": -98.04839515686035,
+            "B": -90.6611557006836
+          },
+          "margin_vs_runner_up": 7.387239456176758
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -94.03665733337402,
+          "choice_logprobs": {
+            "A": -94.03665733337402,
+            "B": -86.24687385559082
+          },
+          "margin_vs_runner_up": 7.789783477783203
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -96.69324398040771,
+          "choice_logprobs": {
+            "A": -96.69324398040771,
+            "B": -87.49197673797607
+          },
+          "margin_vs_runner_up": 9.20126724243164
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -97.98816680908203,
+          "choice_logprobs": {
+            "A": -97.98816680908203,
+            "B": -88.72215270996094
+          },
+          "margin_vs_runner_up": 9.266014099121094
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -94.00214576721191,
+          "choice_logprobs": {
+            "A": -94.00214576721191,
+            "B": -82.77692794799805
+          },
+          "margin_vs_runner_up": 11.225217819213867
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -85.24672603607178,
+          "choice_logprobs": {
+            "A": -85.24672603607178,
+            "B": -75.36773204803467
+          },
+          "margin_vs_runner_up": 9.87899398803711
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -80.46893310546875,
+          "choice_logprobs": {
+            "A": -80.46893310546875,
+            "B": -71.71989345550537
+          },
+          "margin_vs_runner_up": 8.749039649963379
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -74.664475440979,
+          "choice_logprobs": {
+            "A": -74.664475440979,
+            "B": -69.07440090179443
+          },
+          "margin_vs_runner_up": 5.59007453918457
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -73.76734352111816,
+          "choice_logprobs": {
+            "A": -73.76734352111816,
+            "B": -66.08297634124756
+          },
+          "margin_vs_runner_up": 7.6843671798706055
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -72.40474033355713,
+          "choice_logprobs": {
+            "A": -72.40474033355713,
+            "B": -67.45852565765381
+          },
+          "margin_vs_runner_up": 4.94621467590332
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -67.53632354736328,
+          "choice_logprobs": {
+            "A": -67.53632354736328,
+            "B": -62.45186424255371
+          },
+          "margin_vs_runner_up": 5.08445930480957
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -65.9231653213501,
+          "choice_logprobs": {
+            "A": -65.9231653213501,
+            "B": -62.44769287109375
+          },
+          "margin_vs_runner_up": 3.4754724502563477
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -63.69300651550293,
+          "choice_logprobs": {
+            "A": -63.69300651550293,
+            "B": -61.629608154296875
+          },
+          "margin_vs_runner_up": 2.0633983612060547
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -64.06908988952637,
+          "choice_logprobs": {
+            "A": -64.06908988952637,
+            "B": -62.21495342254639
+          },
+          "margin_vs_runner_up": 1.8541364669799805
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -59.90244817733765,
+          "choice_logprobs": {
+            "A": -59.90244817733765,
+            "B": -56.9671311378479
+          },
+          "margin_vs_runner_up": 2.935317039489746
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -56.8924994468689,
+          "choice_logprobs": {
+            "A": -56.8924994468689,
+            "B": -56.305543422698975
+          },
+          "margin_vs_runner_up": 0.5869560241699219
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -63.80492877960205,
+          "choice_logprobs": {
+            "A": -63.80492877960205,
+            "B": -60.57150650024414
+          },
+          "margin_vs_runner_up": 3.23342227935791
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -68.16921710968018,
+          "choice_logprobs": {
+            "A": -68.16921710968018,
+            "B": -66.36845397949219
+          },
+          "margin_vs_runner_up": 1.8007631301879883
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -74.54705238342285,
+          "choice_logprobs": {
+            "A": -74.54705238342285,
+            "B": -76.09196472167969
+          },
+          "margin_vs_runner_up": 1.544912338256836
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -61.28174543380737,
+          "choice_logprobs": {
+            "A": -61.28174543380737,
+            "B": -64.65725183486938
+          },
+          "margin_vs_runner_up": 3.3755064010620117
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -52.41692090034485,
+          "choice_logprobs": {
+            "A": -52.41692090034485,
+            "B": -55.79498028755188
+          },
+          "margin_vs_runner_up": 3.3780593872070312
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -38.3611161634326,
+          "choice_logprobs": {
+            "A": -38.3611161634326,
+            "B": -45.37558149546385
+          },
+          "margin_vs_runner_up": 7.01446533203125
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -34.02071232907474,
+          "choice_logprobs": {
+            "A": -34.02071232907474,
+            "B": -43.29526467435062
+          },
+          "margin_vs_runner_up": 9.274552345275879
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -47.53870099969208,
+          "choice_logprobs": {
+            "A": -47.53870099969208,
+            "B": -61.093316497281194
+          },
+          "margin_vs_runner_up": 13.554615497589111
+        }
+      ]
+    },
+    {
+      "task_name": "coreference",
+      "behavior": "coreference",
+      "case_id": "coref_004",
+      "expected_label": "A",
+      "expected_text": " mother",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 1,
+      "final_choice_convergence": 1,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -99.01192283630371,
+          "choice_logprobs": {
+            "A": -99.01192283630371,
+            "B": -97.47130012512207
+          },
+          "margin_vs_runner_up": 1.5406227111816406
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -91.53874111175537,
+          "choice_logprobs": {
+            "A": -91.53874111175537,
+            "B": -92.23179912567139
+          },
+          "margin_vs_runner_up": 0.6930580139160156
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -93.27714157104492,
+          "choice_logprobs": {
+            "A": -93.27714157104492,
+            "B": -93.54421615600586
+          },
+          "margin_vs_runner_up": 0.2670745849609375
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -93.95844554901123,
+          "choice_logprobs": {
+            "A": -93.95844554901123,
+            "B": -93.64922618865967
+          },
+          "margin_vs_runner_up": 0.3092193603515625
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -87.65797233581543,
+          "choice_logprobs": {
+            "A": -87.65797233581543,
+            "B": -87.22702312469482
+          },
+          "margin_vs_runner_up": 0.43094921112060547
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -81.6101942062378,
+          "choice_logprobs": {
+            "A": -81.6101942062378,
+            "B": -82.14710330963135
+          },
+          "margin_vs_runner_up": 0.5369091033935547
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -74.96358013153076,
+          "choice_logprobs": {
+            "A": -74.96358013153076,
+            "B": -76.02788925170898
+          },
+          "margin_vs_runner_up": 1.0643091201782227
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -72.33487033843994,
+          "choice_logprobs": {
+            "A": -72.33487033843994,
+            "B": -69.53880882263184
+          },
+          "margin_vs_runner_up": 2.7960615158081055
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -69.97433662414551,
+          "choice_logprobs": {
+            "A": -69.97433662414551,
+            "B": -68.42815113067627
+          },
+          "margin_vs_runner_up": 1.5461854934692383
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -71.42891025543213,
+          "choice_logprobs": {
+            "A": -71.42891025543213,
+            "B": -69.37028789520264
+          },
+          "margin_vs_runner_up": 2.058622360229492
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -66.51619815826416,
+          "choice_logprobs": {
+            "A": -66.51619815826416,
+            "B": -63.64149188995361
+          },
+          "margin_vs_runner_up": 2.874706268310547
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -66.5220308303833,
+          "choice_logprobs": {
+            "A": -66.5220308303833,
+            "B": -65.49061012268066
+          },
+          "margin_vs_runner_up": 1.0314207077026367
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -66.91596984863281,
+          "choice_logprobs": {
+            "A": -66.91596984863281,
+            "B": -65.02519226074219
+          },
+          "margin_vs_runner_up": 1.890777587890625
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -65.90263652801514,
+          "choice_logprobs": {
+            "A": -65.90263652801514,
+            "B": -64.45074939727783
+          },
+          "margin_vs_runner_up": 1.4518871307373047
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -61.54277849197388,
+          "choice_logprobs": {
+            "A": -61.54277849197388,
+            "B": -59.60901689529419
+          },
+          "margin_vs_runner_up": 1.9337615966796875
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -61.84845972061157,
+          "choice_logprobs": {
+            "A": -61.84845972061157,
+            "B": -59.13097143173218
+          },
+          "margin_vs_runner_up": 2.7174882888793945
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -69.42836856842041,
+          "choice_logprobs": {
+            "A": -69.42836856842041,
+            "B": -65.08913803100586
+          },
+          "margin_vs_runner_up": 4.339230537414551
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -75.83135032653809,
+          "choice_logprobs": {
+            "A": -75.83135032653809,
+            "B": -76.32216453552246
+          },
+          "margin_vs_runner_up": 0.490814208984375
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -84.51770782470703,
+          "choice_logprobs": {
+            "A": -84.51770782470703,
+            "B": -86.79951286315918
+          },
+          "margin_vs_runner_up": 2.2818050384521484
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -68.62072992324829,
+          "choice_logprobs": {
+            "A": -68.62072992324829,
+            "B": -76.14377069473267
+          },
+          "margin_vs_runner_up": 7.523040771484375
+        },
+        {
+          "layer": 20,
+          "winner": "A",
+          "expected_logprob": -60.20745515823364,
+          "choice_logprobs": {
+            "A": -60.20745515823364,
+            "B": -64.49191522598267
+          },
+          "margin_vs_runner_up": 4.284460067749023
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -47.49139277264476,
+          "choice_logprobs": {
+            "A": -47.49139277264476,
+            "B": -53.443385761231184
+          },
+          "margin_vs_runner_up": 5.951992988586426
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -42.37056572269648,
+          "choice_logprobs": {
+            "A": -42.37056572269648,
+            "B": -45.577885936014354
+          },
+          "margin_vs_runner_up": 3.207320213317871
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -56.73505776654929,
+          "choice_logprobs": {
+            "A": -56.73505776654929,
+            "B": -62.45929187070578
+          },
+          "margin_vs_runner_up": 5.724234104156494
+        }
+      ]
+    },
+    {
+      "task_name": "syntax_agreement",
+      "behavior": "syntax_agreement",
+      "case_id": "syntax_001",
+      "expected_label": "A",
+      "expected_text": " are",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 0,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "A",
+          "expected_logprob": -91.7065315246582,
+          "choice_logprobs": {
+            "A": -91.7065315246582,
+            "B": -97.57851600646973
+          },
+          "margin_vs_runner_up": 5.871984481811523
+        },
+        {
+          "layer": 1,
+          "winner": "A",
+          "expected_logprob": -87.0311508178711,
+          "choice_logprobs": {
+            "A": -87.0311508178711,
+            "B": -91.4749813079834
+          },
+          "margin_vs_runner_up": 4.443830490112305
+        },
+        {
+          "layer": 2,
+          "winner": "A",
+          "expected_logprob": -89.03395462036133,
+          "choice_logprobs": {
+            "A": -89.03395462036133,
+            "B": -91.2669906616211
+          },
+          "margin_vs_runner_up": 2.2330360412597656
+        },
+        {
+          "layer": 3,
+          "winner": "A",
+          "expected_logprob": -91.80471801757812,
+          "choice_logprobs": {
+            "A": -91.80471801757812,
+            "B": -93.58927726745605
+          },
+          "margin_vs_runner_up": 1.7845592498779297
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -83.34162044525146,
+          "choice_logprobs": {
+            "A": -83.34162044525146,
+            "B": -84.0033369064331
+          },
+          "margin_vs_runner_up": 0.6617164611816406
+        },
+        {
+          "layer": 5,
+          "winner": "A",
+          "expected_logprob": -79.15106296539307,
+          "choice_logprobs": {
+            "A": -79.15106296539307,
+            "B": -79.36838150024414
+          },
+          "margin_vs_runner_up": 0.21731853485107422
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -73.91580867767334,
+          "choice_logprobs": {
+            "A": -73.91580867767334,
+            "B": -73.79253959655762
+          },
+          "margin_vs_runner_up": 0.12326908111572266
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -68.82790184020996,
+          "choice_logprobs": {
+            "A": -68.82790184020996,
+            "B": -68.10213279724121
+          },
+          "margin_vs_runner_up": 0.72576904296875
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -66.44786643981934,
+          "choice_logprobs": {
+            "A": -66.44786643981934,
+            "B": -65.9750337600708
+          },
+          "margin_vs_runner_up": 0.47283267974853516
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -63.655816078186035,
+          "choice_logprobs": {
+            "A": -63.655816078186035,
+            "B": -63.18846321105957
+          },
+          "margin_vs_runner_up": 0.46735286712646484
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -60.30631637573242,
+          "choice_logprobs": {
+            "A": -60.30631637573242,
+            "B": -58.871493339538574
+          },
+          "margin_vs_runner_up": 1.4348230361938477
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -58.359015464782715,
+          "choice_logprobs": {
+            "A": -58.359015464782715,
+            "B": -55.3407506942749
+          },
+          "margin_vs_runner_up": 3.0182647705078125
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -57.644532203674316,
+          "choice_logprobs": {
+            "A": -57.644532203674316,
+            "B": -55.64418983459473
+          },
+          "margin_vs_runner_up": 2.00034236907959
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -56.54300403594971,
+          "choice_logprobs": {
+            "A": -56.54300403594971,
+            "B": -55.066237449645996
+          },
+          "margin_vs_runner_up": 1.476766586303711
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -52.95234775543213,
+          "choice_logprobs": {
+            "A": -52.95234775543213,
+            "B": -51.526493072509766
+          },
+          "margin_vs_runner_up": 1.4258546829223633
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -50.703665256500244,
+          "choice_logprobs": {
+            "A": -50.703665256500244,
+            "B": -53.395774364471436
+          },
+          "margin_vs_runner_up": 2.6921091079711914
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -57.40008354187012,
+          "choice_logprobs": {
+            "A": -57.40008354187012,
+            "B": -57.251033782958984
+          },
+          "margin_vs_runner_up": 0.1490497589111328
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -64.46564674377441,
+          "choice_logprobs": {
+            "A": -64.46564674377441,
+            "B": -64.6099967956543
+          },
+          "margin_vs_runner_up": 0.1443500518798828
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -67.7033863067627,
+          "choice_logprobs": {
+            "A": -67.7033863067627,
+            "B": -69.49737548828125
+          },
+          "margin_vs_runner_up": 1.7939891815185547
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -59.91803216934204,
+          "choice_logprobs": {
+            "A": -59.91803216934204,
+            "B": -61.93438196182251
+          },
+          "margin_vs_runner_up": 2.0163497924804688
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -50.907734632492065,
+          "choice_logprobs": {
+            "A": -50.907734632492065,
+            "B": -50.53541827201843
+          },
+          "margin_vs_runner_up": 0.3723163604736328
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -45.448585790582,
+          "choice_logprobs": {
+            "A": -45.448585790582,
+            "B": -46.234972280450165
+          },
+          "margin_vs_runner_up": 0.7863864898681641
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -42.85863442788832,
+          "choice_logprobs": {
+            "A": -42.85863442788832,
+            "B": -42.77293725381605
+          },
+          "margin_vs_runner_up": 0.08569717407226562
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -59.25820647156797,
+          "choice_logprobs": {
+            "A": -59.25820647156797,
+            "B": -59.72643290436827
+          },
+          "margin_vs_runner_up": 0.46822643280029297
+        }
+      ]
+    },
+    {
+      "task_name": "syntax_agreement",
+      "behavior": "syntax_agreement",
+      "case_id": "syntax_002",
+      "expected_label": "A",
+      "expected_text": " barks",
+      "final_winner": "A",
+      "final_correct": 1,
+      "expected_choice_convergence": 19,
+      "final_choice_convergence": 19,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -107.85374927520752,
+          "choice_logprobs": {
+            "A": -107.85374927520752,
+            "B": -95.0250301361084
+          },
+          "margin_vs_runner_up": 12.828719139099121
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -101.03827571868896,
+          "choice_logprobs": {
+            "A": -101.03827571868896,
+            "B": -88.53130722045898
+          },
+          "margin_vs_runner_up": 12.50696849822998
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -103.78197956085205,
+          "choice_logprobs": {
+            "A": -103.78197956085205,
+            "B": -88.33571529388428
+          },
+          "margin_vs_runner_up": 15.446264266967773
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -108.28730297088623,
+          "choice_logprobs": {
+            "A": -108.28730297088623,
+            "B": -87.48445320129395
+          },
+          "margin_vs_runner_up": 20.802849769592285
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -102.58413791656494,
+          "choice_logprobs": {
+            "A": -102.58413791656494,
+            "B": -79.17199611663818
+          },
+          "margin_vs_runner_up": 23.412141799926758
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -96.17684745788574,
+          "choice_logprobs": {
+            "A": -96.17684745788574,
+            "B": -74.57847023010254
+          },
+          "margin_vs_runner_up": 21.598377227783203
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -90.80387783050537,
+          "choice_logprobs": {
+            "A": -90.80387783050537,
+            "B": -71.93023681640625
+          },
+          "margin_vs_runner_up": 18.87364101409912
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -85.57358455657959,
+          "choice_logprobs": {
+            "A": -85.57358455657959,
+            "B": -68.61852550506592
+          },
+          "margin_vs_runner_up": 16.955059051513672
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -79.29347515106201,
+          "choice_logprobs": {
+            "A": -79.29347515106201,
+            "B": -66.32457733154297
+          },
+          "margin_vs_runner_up": 12.968897819519043
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -77.26646709442139,
+          "choice_logprobs": {
+            "A": -77.26646709442139,
+            "B": -63.461289405822754
+          },
+          "margin_vs_runner_up": 13.805177688598633
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -73.4325361251831,
+          "choice_logprobs": {
+            "A": -73.4325361251831,
+            "B": -62.31501483917236
+          },
+          "margin_vs_runner_up": 11.117521286010742
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -72.59095478057861,
+          "choice_logprobs": {
+            "A": -72.59095478057861,
+            "B": -61.2834997177124
+          },
+          "margin_vs_runner_up": 11.307455062866211
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -70.72350025177002,
+          "choice_logprobs": {
+            "A": -70.72350025177002,
+            "B": -61.89207458496094
+          },
+          "margin_vs_runner_up": 8.831425666809082
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -72.45079612731934,
+          "choice_logprobs": {
+            "A": -72.45079612731934,
+            "B": -59.01099681854248
+          },
+          "margin_vs_runner_up": 13.439799308776855
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -66.36173009872437,
+          "choice_logprobs": {
+            "A": -66.36173009872437,
+            "B": -57.8827486038208
+          },
+          "margin_vs_runner_up": 8.478981494903564
+        },
+        {
+          "layer": 15,
+          "winner": "B",
+          "expected_logprob": -66.934898853302,
+          "choice_logprobs": {
+            "A": -66.934898853302,
+            "B": -56.77935743331909
+          },
+          "margin_vs_runner_up": 10.15554141998291
+        },
+        {
+          "layer": 16,
+          "winner": "B",
+          "expected_logprob": -74.8070068359375,
+          "choice_logprobs": {
+            "A": -74.8070068359375,
+            "B": -65.1258316040039
+          },
+          "margin_vs_runner_up": 9.681175231933594
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -82.22747135162354,
+          "choice_logprobs": {
+            "A": -82.22747135162354,
+            "B": -73.59193706512451
+          },
+          "margin_vs_runner_up": 8.635534286499023
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -82.62803649902344,
+          "choice_logprobs": {
+            "A": -82.62803649902344,
+            "B": -77.41116619110107
+          },
+          "margin_vs_runner_up": 5.216870307922363
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -69.65287733078003,
+          "choice_logprobs": {
+            "A": -69.65287733078003,
+            "B": -71.92497396469116
+          },
+          "margin_vs_runner_up": 2.272096633911133
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -65.69508528709412,
+          "choice_logprobs": {
+            "A": -65.69508528709412,
+            "B": -64.09369897842407
+          },
+          "margin_vs_runner_up": 1.601386308670044
+        },
+        {
+          "layer": 21,
+          "winner": "A",
+          "expected_logprob": -48.702674966305494,
+          "choice_logprobs": {
+            "A": -48.702674966305494,
+            "B": -55.88991033658385
+          },
+          "margin_vs_runner_up": 7.1872353702783585
+        },
+        {
+          "layer": 22,
+          "winner": "A",
+          "expected_logprob": -39.39626400358975,
+          "choice_logprobs": {
+            "A": -39.39626400358975,
+            "B": -48.40239960094914
+          },
+          "margin_vs_runner_up": 9.006135597359389
+        },
+        {
+          "layer": 23,
+          "winner": "A",
+          "expected_logprob": -54.744918977841735,
+          "choice_logprobs": {
+            "A": -54.744918977841735,
+            "B": -67.47419785754755
+          },
+          "margin_vs_runner_up": 12.729278879705817
+        }
+      ]
+    },
+    {
+      "task_name": "syntax_agreement",
+      "behavior": "syntax_agreement",
+      "case_id": "syntax_003",
+      "expected_label": "A",
+      "expected_text": " were",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 15,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -95.72057723999023,
+          "choice_logprobs": {
+            "A": -95.72057723999023,
+            "B": -93.69068908691406
+          },
+          "margin_vs_runner_up": 2.029888153076172
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -91.76059341430664,
+          "choice_logprobs": {
+            "A": -91.76059341430664,
+            "B": -86.72351837158203
+          },
+          "margin_vs_runner_up": 5.037075042724609
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -94.20194721221924,
+          "choice_logprobs": {
+            "A": -94.20194721221924,
+            "B": -88.20379543304443
+          },
+          "margin_vs_runner_up": 5.998151779174805
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -96.64523506164551,
+          "choice_logprobs": {
+            "A": -96.64523506164551,
+            "B": -91.7595272064209
+          },
+          "margin_vs_runner_up": 4.885707855224609
+        },
+        {
+          "layer": 4,
+          "winner": "B",
+          "expected_logprob": -87.22539234161377,
+          "choice_logprobs": {
+            "A": -87.22539234161377,
+            "B": -83.87130832672119
+          },
+          "margin_vs_runner_up": 3.354084014892578
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -83.5934009552002,
+          "choice_logprobs": {
+            "A": -83.5934009552002,
+            "B": -79.69268417358398
+          },
+          "margin_vs_runner_up": 3.900716781616211
+        },
+        {
+          "layer": 6,
+          "winner": "B",
+          "expected_logprob": -79.57663154602051,
+          "choice_logprobs": {
+            "A": -79.57663154602051,
+            "B": -77.50635147094727
+          },
+          "margin_vs_runner_up": 2.070280075073242
+        },
+        {
+          "layer": 7,
+          "winner": "B",
+          "expected_logprob": -73.10179233551025,
+          "choice_logprobs": {
+            "A": -73.10179233551025,
+            "B": -72.62018203735352
+          },
+          "margin_vs_runner_up": 0.4816102981567383
+        },
+        {
+          "layer": 8,
+          "winner": "B",
+          "expected_logprob": -70.49111366271973,
+          "choice_logprobs": {
+            "A": -70.49111366271973,
+            "B": -70.32576274871826
+          },
+          "margin_vs_runner_up": 0.16535091400146484
+        },
+        {
+          "layer": 9,
+          "winner": "B",
+          "expected_logprob": -68.05531215667725,
+          "choice_logprobs": {
+            "A": -68.05531215667725,
+            "B": -67.5366268157959
+          },
+          "margin_vs_runner_up": 0.5186853408813477
+        },
+        {
+          "layer": 10,
+          "winner": "B",
+          "expected_logprob": -63.552635192871094,
+          "choice_logprobs": {
+            "A": -63.552635192871094,
+            "B": -62.20114707946777
+          },
+          "margin_vs_runner_up": 1.3514881134033203
+        },
+        {
+          "layer": 11,
+          "winner": "B",
+          "expected_logprob": -62.566040992736816,
+          "choice_logprobs": {
+            "A": -62.566040992736816,
+            "B": -60.529666900634766
+          },
+          "margin_vs_runner_up": 2.036374092102051
+        },
+        {
+          "layer": 12,
+          "winner": "B",
+          "expected_logprob": -62.20495319366455,
+          "choice_logprobs": {
+            "A": -62.20495319366455,
+            "B": -60.391085624694824
+          },
+          "margin_vs_runner_up": 1.8138675689697266
+        },
+        {
+          "layer": 13,
+          "winner": "B",
+          "expected_logprob": -61.293747901916504,
+          "choice_logprobs": {
+            "A": -61.293747901916504,
+            "B": -57.854990005493164
+          },
+          "margin_vs_runner_up": 3.43875789642334
+        },
+        {
+          "layer": 14,
+          "winner": "B",
+          "expected_logprob": -56.98081827163696,
+          "choice_logprobs": {
+            "A": -56.98081827163696,
+            "B": -55.37284994125366
+          },
+          "margin_vs_runner_up": 1.6079683303833008
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -54.319236755371094,
+          "choice_logprobs": {
+            "A": -54.319236755371094,
+            "B": -57.12788677215576
+          },
+          "margin_vs_runner_up": 2.808650016784668
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -62.55844020843506,
+          "choice_logprobs": {
+            "A": -62.55844020843506,
+            "B": -63.23995113372803
+          },
+          "margin_vs_runner_up": 0.6815109252929688
+        },
+        {
+          "layer": 17,
+          "winner": "A",
+          "expected_logprob": -68.23342037200928,
+          "choice_logprobs": {
+            "A": -68.23342037200928,
+            "B": -70.81888484954834
+          },
+          "margin_vs_runner_up": 2.5854644775390625
+        },
+        {
+          "layer": 18,
+          "winner": "A",
+          "expected_logprob": -70.89883518218994,
+          "choice_logprobs": {
+            "A": -70.89883518218994,
+            "B": -73.9574613571167
+          },
+          "margin_vs_runner_up": 3.058626174926758
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -61.43320608139038,
+          "choice_logprobs": {
+            "A": -61.43320608139038,
+            "B": -61.88386297225952
+          },
+          "margin_vs_runner_up": 0.4506568908691406
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -53.27991533279419,
+          "choice_logprobs": {
+            "A": -53.27991533279419,
+            "B": -51.59425210952759
+          },
+          "margin_vs_runner_up": 1.6856632232666016
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -46.01416996028274,
+          "choice_logprobs": {
+            "A": -46.01416996028274,
+            "B": -45.46778991725296
+          },
+          "margin_vs_runner_up": 0.5463800430297852
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -41.67788323760033,
+          "choice_logprobs": {
+            "A": -41.67788323760033,
+            "B": -41.28407582640648
+          },
+          "margin_vs_runner_up": 0.39380741119384766
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -59.8801889824681,
+          "choice_logprobs": {
+            "A": -59.8801889824681,
+            "B": -58.88052276847884
+          },
+          "margin_vs_runner_up": 0.9996662139892578
+        }
+      ]
+    },
+    {
+      "task_name": "syntax_agreement",
+      "behavior": "syntax_agreement",
+      "case_id": "syntax_004",
+      "expected_label": "A",
+      "expected_text": " runs",
+      "final_winner": "B",
+      "final_correct": 0,
+      "expected_choice_convergence": 4,
+      "final_choice_convergence": 0,
+      "layer_details": [
+        {
+          "layer": 0,
+          "winner": "B",
+          "expected_logprob": -96.26823043823242,
+          "choice_logprobs": {
+            "A": -96.26823043823242,
+            "B": -93.43524360656738
+          },
+          "margin_vs_runner_up": 2.832986831665039
+        },
+        {
+          "layer": 1,
+          "winner": "B",
+          "expected_logprob": -93.13715362548828,
+          "choice_logprobs": {
+            "A": -93.13715362548828,
+            "B": -86.01744842529297
+          },
+          "margin_vs_runner_up": 7.1197052001953125
+        },
+        {
+          "layer": 2,
+          "winner": "B",
+          "expected_logprob": -90.84503936767578,
+          "choice_logprobs": {
+            "A": -90.84503936767578,
+            "B": -86.85269927978516
+          },
+          "margin_vs_runner_up": 3.992340087890625
+        },
+        {
+          "layer": 3,
+          "winner": "B",
+          "expected_logprob": -89.80682945251465,
+          "choice_logprobs": {
+            "A": -89.80682945251465,
+            "B": -89.08746147155762
+          },
+          "margin_vs_runner_up": 0.7193679809570312
+        },
+        {
+          "layer": 4,
+          "winner": "A",
+          "expected_logprob": -82.77556705474854,
+          "choice_logprobs": {
+            "A": -82.77556705474854,
+            "B": -82.86881637573242
+          },
+          "margin_vs_runner_up": 0.09324932098388672
+        },
+        {
+          "layer": 5,
+          "winner": "B",
+          "expected_logprob": -77.86398315429688,
+          "choice_logprobs": {
+            "A": -77.86398315429688,
+            "B": -77.65071868896484
+          },
+          "margin_vs_runner_up": 0.21326446533203125
+        },
+        {
+          "layer": 6,
+          "winner": "A",
+          "expected_logprob": -73.0242919921875,
+          "choice_logprobs": {
+            "A": -73.0242919921875,
+            "B": -75.62000560760498
+          },
+          "margin_vs_runner_up": 2.5957136154174805
+        },
+        {
+          "layer": 7,
+          "winner": "A",
+          "expected_logprob": -67.54458045959473,
+          "choice_logprobs": {
+            "A": -67.54458045959473,
+            "B": -68.66829872131348
+          },
+          "margin_vs_runner_up": 1.12371826171875
+        },
+        {
+          "layer": 8,
+          "winner": "A",
+          "expected_logprob": -63.56039047241211,
+          "choice_logprobs": {
+            "A": -63.56039047241211,
+            "B": -68.04339694976807
+          },
+          "margin_vs_runner_up": 4.483006477355957
+        },
+        {
+          "layer": 9,
+          "winner": "A",
+          "expected_logprob": -60.691972732543945,
+          "choice_logprobs": {
+            "A": -60.691972732543945,
+            "B": -65.48302173614502
+          },
+          "margin_vs_runner_up": 4.791049003601074
+        },
+        {
+          "layer": 10,
+          "winner": "A",
+          "expected_logprob": -56.46200942993164,
+          "choice_logprobs": {
+            "A": -56.46200942993164,
+            "B": -60.5452938079834
+          },
+          "margin_vs_runner_up": 4.083284378051758
+        },
+        {
+          "layer": 11,
+          "winner": "A",
+          "expected_logprob": -53.7909779548645,
+          "choice_logprobs": {
+            "A": -53.7909779548645,
+            "B": -57.59415340423584
+          },
+          "margin_vs_runner_up": 3.803175449371338
+        },
+        {
+          "layer": 12,
+          "winner": "A",
+          "expected_logprob": -52.939170360565186,
+          "choice_logprobs": {
+            "A": -52.939170360565186,
+            "B": -56.14001750946045
+          },
+          "margin_vs_runner_up": 3.2008471488952637
+        },
+        {
+          "layer": 13,
+          "winner": "A",
+          "expected_logprob": -51.00650596618652,
+          "choice_logprobs": {
+            "A": -51.00650596618652,
+            "B": -53.48672389984131
+          },
+          "margin_vs_runner_up": 2.480217933654785
+        },
+        {
+          "layer": 14,
+          "winner": "A",
+          "expected_logprob": -48.68612813949585,
+          "choice_logprobs": {
+            "A": -48.68612813949585,
+            "B": -51.429114818573
+          },
+          "margin_vs_runner_up": 2.7429866790771484
+        },
+        {
+          "layer": 15,
+          "winner": "A",
+          "expected_logprob": -50.210503578186035,
+          "choice_logprobs": {
+            "A": -50.210503578186035,
+            "B": -52.359840393066406
+          },
+          "margin_vs_runner_up": 2.149336814880371
+        },
+        {
+          "layer": 16,
+          "winner": "A",
+          "expected_logprob": -59.27112293243408,
+          "choice_logprobs": {
+            "A": -59.27112293243408,
+            "B": -60.7831335067749
+          },
+          "margin_vs_runner_up": 1.5120105743408203
+        },
+        {
+          "layer": 17,
+          "winner": "B",
+          "expected_logprob": -67.55318355560303,
+          "choice_logprobs": {
+            "A": -67.55318355560303,
+            "B": -67.09984111785889
+          },
+          "margin_vs_runner_up": 0.4533424377441406
+        },
+        {
+          "layer": 18,
+          "winner": "B",
+          "expected_logprob": -73.8991060256958,
+          "choice_logprobs": {
+            "A": -73.8991060256958,
+            "B": -73.6619462966919
+          },
+          "margin_vs_runner_up": 0.23715972900390625
+        },
+        {
+          "layer": 19,
+          "winner": "A",
+          "expected_logprob": -64.22322940826416,
+          "choice_logprobs": {
+            "A": -64.22322940826416,
+            "B": -64.63756084442139
+          },
+          "margin_vs_runner_up": 0.41433143615722656
+        },
+        {
+          "layer": 20,
+          "winner": "B",
+          "expected_logprob": -57.35686779022217,
+          "choice_logprobs": {
+            "A": -57.35686779022217,
+            "B": -56.40610218048096
+          },
+          "margin_vs_runner_up": 0.9507656097412109
+        },
+        {
+          "layer": 21,
+          "winner": "B",
+          "expected_logprob": -49.00976989790797,
+          "choice_logprobs": {
+            "A": -49.00976989790797,
+            "B": -46.93811748549342
+          },
+          "margin_vs_runner_up": 2.071652412414551
+        },
+        {
+          "layer": 22,
+          "winner": "B",
+          "expected_logprob": -44.631125387735665,
+          "choice_logprobs": {
+            "A": -44.631125387735665,
+            "B": -43.3599395127967
+          },
+          "margin_vs_runner_up": 1.2711858749389648
+        },
+        {
+          "layer": 23,
+          "winner": "B",
+          "expected_logprob": -63.14323198609054,
+          "choice_logprobs": {
+            "A": -63.14323198609054,
+            "B": -61.507027266547084
+          },
+          "margin_vs_runner_up": 1.636204719543457
+        }
+      ]
+    }
+  ]
+}
