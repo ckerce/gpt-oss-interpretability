@@ -7,19 +7,19 @@ per-token feature vectors and geometric analysis.
 
 Usage:
     # Single prompt
-    python scripts/run_feature_extraction.py \
+    python threads/in-progress/9-feature-extraction/run_feature_extraction.py \
         --model openai/gpt-oss-20b \
         --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
         --output runs/features_demo/
 
     # Multiple prompts from file (one per line)
-    python scripts/run_feature_extraction.py \
+    python threads/in-progress/9-feature-extraction/run_feature_extraction.py \
         --model openai/gpt-oss-20b \
         --prompts-file prompts.txt \
         --output runs/features_corpus/
 
     # Logit-lens only (no attention capture — faster, smaller feature vector)
-    python scripts/run_feature_extraction.py \
+    python threads/in-progress/9-feature-extraction/run_feature_extraction.py \
         --model openai/gpt-oss-20b \
         --prompt "The keys to the cabinet" \
         --no-attention \

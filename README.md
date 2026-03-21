@@ -110,61 +110,62 @@ pytest tests/
 python scripts/run_benchmark.py --config configs/head_ablation_L20.py
 
 # Logit-lens analysis
-python scripts/run_logit_lens.py \
+python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
     --model openai/gpt-oss-20b \
     --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
     --output runs/logit_lens_demo/
 
 # Feature extraction
-python scripts/run_feature_extraction.py \
+python threads/in-progress/9-feature-extraction/run_feature_extraction.py \
     --model openai/gpt-oss-20b \
     --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
     --output runs/features_demo/
 
 # Generate figures from existing data (no GPU needed)
 python scripts/generate_phase1_figures.py
-python scripts/generate_decision_figure.py
+python threads/solid/4-decision-trajectories/generate_decision_figure.py
 ```
+
+## Research Threads
+
+This project is organized around a five-beat narrative arc. See **[THREAD_MAP.md](THREAD_MAP.md)** for the full index.
+
+| Beat | Threads | Status |
+|------|---------|--------|
+| **Measure** | Convergence, late-layer ablation, analysis-set filtering | Solid |
+| **Structure** | Decision trajectories, Hydra/head redundancy | Solid |
+| **Steer** | Direct vocab steering, channel probing, selectivity | Solid / In progress |
+| **Automate** | CASCADE distillation | Theoretical |
+| **Generalize** | Geometric framework, bridge/cross-model | Theoretical / In progress |
 
 ## Repository Structure
 
 ```
-figures/                         # Publication-quality visualizations (9 figures)
-tests/                           # pytest suite (52 tests)
-runs/                            # 49+ experiment directories with artifacts
+THREAD_MAP.md                    # Index of all 13 research threads
+threads/                         # Thread-specific scripts, docs, and READMEs
+  solid/                         # 6 publication-ready threads
+  in-progress/                   # 4 threads with code but thin experiments
+  theoretical/                   # 3 threads with frameworks but no implementation
 
-gpt_oss_interp/
+gpt_oss_interp/                  # Shared Python package (~40 modules)
 ├── config.py                    # Dataclasses: tasks, interventions, benchmarks
-├── backends/
-│   ├── base.py                  # Backend contract (score, intervene, clear)
-│   ├── dry_run.py               # Synthetic backend for smoke testing
-│   └── transformers_gpt_oss.py  # Real gpt-oss-20b backend with hooks
-├── capture/
-│   ├── activation_cache.py      # Hidden-state capture via forward hooks
-│   └── router_capture.py        # MoE routing decision capture
-├── features/
-│   ├── extractor.py             # Extended Tier-2 feature extraction (~7,200D for MoE)
-│   └── geometry.py              # Metric-space analysis of feature point clouds
-├── readouts/
-│   └── logit_lens.py            # Per-layer token prediction readouts
-├── benchmarks/
-│   ├── tasks.py                 # Task library (5 families, 36 cases)
-│   ├── pools.py                 # Case filtering and analysis-set definitions
-│   └── runner.py                # Benchmark orchestration and scoring
-├── interventions/
-│   └── specs.py                 # Intervention sweep expansion
-├── steering/                    # Probing, readouts, steering controls
-├── distillation/                # Teacher-student / CASCADE workflows
-└── reports/
-    └── writers.py               # CSV, JSON, Markdown output
+├── backends/                    # Model execution (dry_run + real gpt-oss-20b)
+├── benchmarks/                  # Task library (5 families, 36 cases), runner, pools
+├── capture/                     # Activation and routing capture via hooks
+├── features/                    # Feature extraction + geometry
+├── readouts/                    # Per-layer logit-lens readouts
+├── interventions/               # Intervention sweep expansion
+├── steering/                    # Probing, causal analysis, selectivity
+├── distillation/                # CASCADE workflows (stubs)
+├── common/                      # Shared utilities (artifacts, I/O)
+└── reports/                     # CSV, JSON, Markdown output
 
-scripts/                         # CLI tools (29 scripts)
-configs/                         # Benchmark configurations
-doc/                             # Theory, plans, and reports
-  ├── reference/                 # GEOMETRIC_FRAMEWORK, CASCADE_DISTILLATION, etc.
-  ├── reports/                   # 11 experiment reports
-  ├── plans/                     # Research plans and specs
-  └── memo/                      # Direct-vocab steering memo with figures
+scripts/                         # Shared CLI tools (4 cross-thread scripts + one_off/)
+configs/                         # 7 benchmark configurations
+runs/                            # 52 experiment output directories
+figures/                         # 16 publication-quality figures (PDF + PNG)
+tests/                           # pytest suite
+doc/references/                  # Literature reviews + academic papers
 ```
 
 ## Intervention Types

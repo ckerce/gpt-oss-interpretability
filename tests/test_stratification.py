@@ -7,7 +7,7 @@ from pathlib import Path
 # The stratification logic is in a script, not a package module.
 # Import the classify function by adding the scripts directory.
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+sys.path.insert(0, str(REPO / "threads" / "solid" / "3-analysis-set-filtering"))
 
 from stratify_analysis_set import classify_case
 

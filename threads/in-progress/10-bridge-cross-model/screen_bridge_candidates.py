@@ -151,7 +151,7 @@ def main() -> int:
     _run(
         [
             sys.executable,
-            "scripts/calibrate_convergence.py",
+            "threads/solid/1-convergence-logit-lens/calibrate_convergence.py",
             "--model",
             args.model,
             "--task-names",
@@ -165,7 +165,7 @@ def main() -> int:
     _run(
         [
             sys.executable,
-            "scripts/stratify_analysis_set.py",
+            "threads/solid/3-analysis-set-filtering/stratify_analysis_set.py",
             "--input",
             str(calibration_dir / "convergence_calibration.json"),
             "--output",

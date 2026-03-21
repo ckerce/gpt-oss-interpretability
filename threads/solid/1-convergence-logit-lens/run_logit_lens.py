@@ -5,12 +5,12 @@ Produces per-layer next-token predictions showing when the model
 "knows" the answer across layers.
 
 Usage:
-    python scripts/run_logit_lens.py \
+    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
         --model openai/gpt-oss-20b \
         --prompt "The capital of France is" \
         --output runs/logit_lens_demo/
 
-    python scripts/run_logit_lens.py \
+    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
         --model openai/gpt-oss-20b \
         --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
         --top_k 10 \
