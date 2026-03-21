@@ -1,5 +1,20 @@
 # Per-Channel `x_t` Intervention Plan
 
+## Status Note
+
+The first implementation wave has now tested the plan far enough to refine the
+near-term focus.
+
+Current practical interpretation:
+
+- the full design space in this document is still valid
+- but the immediate next path should follow
+  [PER_CHANNEL_ROADMAP.md](doc/plans/PER_CHANNEL_ROADMAP.md),
+  which narrows the work to the questions that matter most after the first
+  Phase 1 and Phase 2 runs
+- and the next decisive experiment within that narrowed path is specified in
+  [CHANNELIZED_VS_WHOLEVECTOR_SELECTIVITY_EXPERIMENT.md](doc/plans/CHANNELIZED_VS_WHOLEVECTOR_SELECTIVITY_EXPERIMENT.md)
+
 ## Central Falsifiable Hypothesis
 
 The central hypothesis of this plan is:
