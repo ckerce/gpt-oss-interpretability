@@ -130,7 +130,7 @@ python threads/solid/4-decision-trajectories/generate_decision_figure.py
 
 This project is organized as 13 research threads at three maturity levels. See **[THREAD_MAP.md](THREAD_MAP.md)** for the full index with links, run counts, and figures.
 
-### Solid — publication-ready results
+### Solid — completed results
 
 | # | Thread | Problem | Contribution | Impact |
 |---|--------|---------|--------------|--------|
