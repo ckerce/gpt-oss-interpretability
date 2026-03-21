@@ -1,7 +1,6 @@
 # Thread 7: Channel-Level Probing
 
-**Status**: In progress
-**Narrative beat**: Steer (fine-grained)
+**Status**: In progress — **Objective**: Resolve steering to channel level
 
 ## Problem
 Thread 6 shows that steering works at the whole-vector level: adding a vocabulary-space direction to the full hidden state at the right layer and position flips model answers. But which dimensions of that hidden state are actually carrying the signal? A 4096-dimensional steering vector might have its effect concentrated in a handful of channels, or it might be diffusely spread across all of them. Knowing this determines whether the model has *sparse, interpretable features* at the channel level or whether meaning is encoded in a distributed, superposition-like manner within layers.

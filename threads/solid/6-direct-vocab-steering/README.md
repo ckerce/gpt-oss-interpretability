@@ -1,7 +1,6 @@
 # Thread 6: Direct Vocabulary Steering
 
-**Status**: Solid (best-supported thread)
-**Narrative beat**: Steer
+**Status**: Solid (best-supported thread) — **Objective**: Validate steering precision
 
 ## Problem
 Activation steering methods (Turner et al. 2023; Rimsky et al. 2023) add learned directions to hidden states to shift model behavior. But a persistent criticism is that these methods might work by *disrupting* computation (a diffuse perturbation) rather than by *communicating* in the model's own representational language. If steering only works when applied everywhere, or works equally well at all positions, it's hard to distinguish from noise injection. The strongest possible evidence for genuine mechanistic steering would be: (a) using directions derived purely from the model's own vocabulary embeddings, with no learned component, and (b) showing that the effect is position-specific — steering at the decision-relevant position flips the answer while identical steering elsewhere has no effect.

@@ -1,7 +1,6 @@
 # Thread 12: Geometric Framework
 
-**Status**: Theoretical
-**Narrative beat**: Generalize
+**Status**: Theoretical — **Objective**: Enable principled cross-model comparison
 
 ## Question
 Can pullback metrics and dual metrics enable principled comparison of computational organization across models?

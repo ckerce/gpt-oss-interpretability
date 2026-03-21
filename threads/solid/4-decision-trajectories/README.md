@@ -1,7 +1,6 @@
 # Thread 4: Decision Trajectories
 
-**Status**: Solid
-**Narrative beat**: Structure
+**Status**: Solid — **Objective**: Characterize decision structure
 
 ## Problem
 Current steering methods like Contrastive Activation Addition (CAA; Rimsky et al. 2023) require curating 100+ positive/negative example pairs to extract a steering direction — a labor-intensive process that doesn't scale and may inject the researcher's assumptions about what contrast matters. An alternative would be to read steering directions directly from the model's own computation: if the model changes its prediction at layer L, the direction of that change in logit space *is* a steering direction, self-supervised by the model itself.

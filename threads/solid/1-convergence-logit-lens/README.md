@@ -1,7 +1,6 @@
 # Thread 1: Convergence / Logit Lens
 
-**Status**: Solid
-**Narrative beat**: Measure
+**Status**: Solid — **Objective**: Measure convergence depth
 
 ## Problem
 A fundamental question in mechanistic interpretability is *where* inside a transformer a given behavior gets resolved. Without knowing which layers are responsible for which computations, intervention-based interpretability is a needle-in-a-haystack search across thousands of components. For MoE models this is especially acute: the expert routing adds a second axis of variation (which experts, not just which layers), and production-scale MoE architectures like gpt-oss-20b have received far less interpretability attention than dense models.

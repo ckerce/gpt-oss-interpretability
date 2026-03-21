@@ -1,7 +1,6 @@
 # Thread 2: Late-Layer Ablation
 
-**Status**: Solid
-**Narrative beat**: Measure
+**Status**: Solid — **Objective**: Measure layer criticality
 
 ## Problem
 Logit-lens readouts (thread 1) show *when* convergence happens, but correlation is not causation. A layer might show convergence because it *computes* the answer, or because an earlier layer already did and the representation is merely preserved. Ablation — zeroing or scaling a layer's contribution — provides the causal test: if removing a layer destroys performance, that layer is doing essential work. For production MoE transformers, the interaction between attention paths and MoE paths within each layer adds complexity: is it the attention heads, the expert MLP, or their combination that matters?

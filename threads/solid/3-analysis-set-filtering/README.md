@@ -1,7 +1,6 @@
 # Thread 3: Analysis Set Filtering
 
-**Status**: Solid
-**Narrative beat**: Measure
+**Status**: Solid — **Objective**: Establish analysis methodology
 
 ## Problem
 Mechanistic interpretability papers routinely claim that a model "uses mechanism X" based on a handful of cherry-picked examples. But models are messy: some inputs trigger clean, interpretable circuits; others produce noisy, unstable behavior where no clean mechanistic story holds. If you don't separate these cases *before* running ablation or steering experiments, you contaminate your results with noise and risk overclaiming. The field largely lacks systematic methodology for deciding which test cases to include in a mechanistic analysis.

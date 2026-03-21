@@ -1,7 +1,6 @@
 # Thread 5: Hydra / Head Redundancy
 
-**Status**: Solid
-**Narrative beat**: Structure
+**Status**: Solid — **Objective**: Measure head redundancy
 
 ## Problem
 Thread 2 shows that layers 19–21 are critical — ablating them collapses performance. But *within* those layers, are all attention heads equally important, or are a few heads doing most of the work? The "Hydra effect" hypothesis (from the companion PLS preprint) predicts that standard training produces extreme distributed redundancy: all heads learn similar functions, so removing any one has negligible impact. If true, this has profound implications for interpretability: it means you cannot find "the coreference head" or "the induction head" in a standard model because no single head is specialized.

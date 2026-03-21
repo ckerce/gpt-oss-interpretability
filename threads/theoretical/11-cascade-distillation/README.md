@@ -1,7 +1,6 @@
 # Thread 11: CASCADE Distillation
 
-**Status**: Theoretical (major gap between framework and implementation)
-**Narrative beat**: Automate
+**Status**: Theoretical (major gap between framework and implementation) — **Objective**: Automate steering direction extraction
 
 ## Question
 Can we automatically extract steering directions from the model's decision trajectories via matrix factorization?

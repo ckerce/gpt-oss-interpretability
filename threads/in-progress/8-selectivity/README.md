@@ -1,7 +1,6 @@
 # Thread 8: Selectivity
 
-**Status**: In progress
-**Narrative beat**: Steer (evaluation)
+**Status**: In progress — **Objective**: Measure steering specificity
 
 ## Problem
 A steering intervention that flips the target answer (thread 6) is only useful if it doesn't simultaneously break everything else. If adding a `W["small"] - W["large"]` direction changes the answer from "large" to "small" but also degrades fluency, changes unrelated predictions, or shifts the model's confidence distribution on other tokens, the intervention isn't mechanistically clean — it's more like damage that happens to produce the desired side effect. Selectivity quantifies this: does the intervention affect *only* the intended behavior?

@@ -1,7 +1,6 @@
 # Thread 9: Feature Extraction
 
-**Status**: In progress
-**Narrative beat**: Measure (extended)
+**Status**: In progress — **Objective**: Measure computational modes
 
 ## Problem
 Individual interpretability readouts — logit lens, attention patterns, expert routing weights — each capture one slice of what a model is doing. But interpreting a model requires combining these signals: a token might have high expert-3 activation *and* late convergence *and* a specific attention pattern, and it's the combination that defines the computational mode. Constructing a unified feature vector that captures all of these signals simultaneously enables clustering, dimensionality reduction, and geometric analysis that would be impossible on any single readout.

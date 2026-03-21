@@ -1,7 +1,6 @@
 # Thread 13: Attention Path Sensitivity
 
-**Status**: Theoretical (proof-of-concept only)
-**Narrative beat**: Structure
+**Status**: Theoretical (proof-of-concept only) — **Objective**: Measure attention path sensitivity
 
 ## Question
 How sensitive are model outputs to specific attention paths through the network?

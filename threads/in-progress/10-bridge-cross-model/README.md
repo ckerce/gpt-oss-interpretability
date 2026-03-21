@@ -1,7 +1,6 @@
 # Thread 10: Bridge / Cross-Model
 
-**Status**: In progress (early)
-**Narrative beat**: Generalize
+**Status**: In progress (early) — **Objective**: Validate cross-model generalization
 
 ## Problem
 Every finding in this project is about a single model (gpt-oss-20b). The question of whether late-layer criticality, task-dependent convergence, vocabulary steering, or Hydra redundancy are properties of *this model* versus properties of *transformer MoE architectures in general* cannot be answered without testing on other models. A single-model study demonstrates methodology; a cross-model study reveals architecture-level principles.
