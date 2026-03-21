@@ -27,7 +27,7 @@ This thread **validates the Hydra hypothesis from the companion PLS preprint** (
 
 ## Results
 
-![Hydra variance](../../figures/fig5_hydra_variance.png)
+![Hydra variance](../../../figures/fig5_hydra_variance.png)
 
 ### Per-head ablation at L20 (64 heads, 9-case soft main-analysis set)
 

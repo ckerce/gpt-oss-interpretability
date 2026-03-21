@@ -30,7 +30,7 @@ This thread applies the **logit lens** technique (nostalgebraist 2020; formalize
 
 ## Results
 
-![Convergence trajectories](../../figures/fig1_convergence_trajectories.png)
+![Convergence trajectories](../../../figures/fig1_convergence_trajectories.png)
 
 ### Choice-relative convergence by task
 

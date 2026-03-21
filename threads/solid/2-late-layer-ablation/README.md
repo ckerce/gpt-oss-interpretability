@@ -35,7 +35,7 @@ Causal ablation studies are a standard methodology in mechanistic interpretabili
 
 ## Results
 
-![Late-layer ablation](../../figures/fig2_late_layer_ablation.png)
+![Late-layer ablation](../../../figures/fig2_late_layer_ablation.png)
 
 ### Layer ablation sweep (zeroing layer output, 9-case soft main-analysis set)
 

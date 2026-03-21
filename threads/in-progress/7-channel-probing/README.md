@@ -27,7 +27,7 @@ Per-channel causal intervention on steering directions is **original work** exte
 
 ## Preliminary results
 
-![Channel probe](../../figures/fig6_channel_probe.png)
+![Channel probe](../../../figures/fig6_channel_probe.png)
 
 ### Channel probe family summaries (C-71 model, phase 1)
 

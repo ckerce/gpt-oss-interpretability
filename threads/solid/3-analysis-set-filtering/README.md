@@ -30,7 +30,7 @@ Uses same configs as thread 2 (soft-main configs)
 
 ## Results
 
-![Analysis set stratification](../../figures/fig3_analysis_set_stratification.png)
+![Analysis set stratification](../../../figures/fig3_analysis_set_stratification.png)
 
 ### 4-way stratification by convergence stability (soft rule, final streak >= 4)
 

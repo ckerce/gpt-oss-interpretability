@@ -26,7 +26,7 @@ The selectivity comparison framework — measuring channelized vs whole-vector i
 
 ## Preliminary results (recency_bias, E2 model, full comparison)
 
-![Selectivity comparison](../../figures/fig7_selectivity_comparison.png)
+![Selectivity comparison](../../../figures/fig7_selectivity_comparison.png)
 
 | Case | Channelized selectivity | Whole-vector selectivity | Random-channel | Random-direction | Channelized wins? |
 |------|------------------------:|-------------------------:|---------------:|-----------------:|:-----------------:|

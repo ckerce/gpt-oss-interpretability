@@ -24,7 +24,7 @@ The decision trajectory extraction — identifying layers where the model's top-
 
 ## Results
 
-![Decision trajectories](../../figures/fig4_decision_trajectories.png)
+![Decision trajectories](../../../figures/fig4_decision_trajectories.png)
 
 ### Decision trajectory summary across 3 task families
 

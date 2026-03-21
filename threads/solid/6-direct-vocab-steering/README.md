@@ -38,11 +38,11 @@ The use of exact vocabulary-space directions (`W[token_A] - W[token_B]` from the
 
 ## Results
 
-![Steering heatmaps](../../figures/fig_matched_pair_heatmaps.png)
+![Steering heatmaps](../../../figures/fig_matched_pair_heatmaps.png)
 
 *Layer x position steering effect: steering at the decision position in late layers flips the answer; identical steering at token 0 has no effect.*
 
-![Layer profiles](../../figures/fig_matched_pair_layer_profiles.png)
+![Layer profiles](../../../figures/fig_matched_pair_layer_profiles.png)
 
 ### Experiment variant coverage
 

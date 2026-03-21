@@ -25,7 +25,7 @@ The extended Tier-2 feature system is **adapted from the companion PLS preprint'
 
 ## Preliminary results
 
-![Feature PCA](../../figures/fig8_feature_pca.png)
+![Feature PCA](../../../figures/fig8_feature_pca.png)
 
 PCA of 39 tokens across 3 task families in the 257D feature space shows partial task-family clustering along PC1 (74% variance). Induction tokens tend toward negative PC1; recency and syntax tokens toward positive PC1. The separation is suggestive but incomplete — consistent with the thread's early status and the small sample size (12–14 tokens per task).
 
