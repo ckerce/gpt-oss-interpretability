@@ -2,7 +2,7 @@
 
 ## 1. The Core Mathematical Object
 
-The NeurIPS paper's Tier-2 feature extraction defines a map:
+The PLS paper's Tier-2 feature extraction defines a map:
 
 ```
 φ_M : Tokens-in-Context → ℝ^D

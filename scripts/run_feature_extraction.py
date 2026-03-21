@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Extract computational-mode feature vectors from gpt-oss-20b.
 
-Implements the extended Tier-2 feature system from the NeurIPS 2026
+Implements the extended Tier-2 feature system from the PLS
 activation clustering paper, adapted for MoE architectures. Produces
 per-token feature vectors and geometric analysis.
 

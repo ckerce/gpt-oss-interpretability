@@ -7,7 +7,7 @@ the model has distributed redundancy (Hydra active).
 Expected result: tight variance (Hydra active), since gpt-oss-20b
 is standard-trained without per-layer supervision.
 
-Reference: NeurIPS 2026 paper Table 2 — PLS σ=0.47 vs control σ=0.08
+Reference: PLS paper Table 2 — PLS σ=0.47 vs control σ=0.08
 """
 
 from gpt_oss_interp.benchmarks.pools import LEGACY_SOFT_MAIN_CASE_IDS, filter_tasks_by_case_ids

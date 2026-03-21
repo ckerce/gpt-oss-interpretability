@@ -143,7 +143,7 @@ This is a 2:1 layer compression (24 → 12) and ~5:1 head compression per layer 
 **Option B: 6-layer, 6-head (targeting ~3-29M params)**
 - More extreme compression (4:1 layers, ~10:1 heads)
 - Useful as a second stage: first distill 24→12, then distill 12→6
-- The NeurIPS paper's existing models are this size — direct comparison possible
+- The PLS paper's existing models are this size — direct comparison possible
 
 **Recommendation**: Start with Option A (12/12). Once that works, try progressive distillation to Option B (6/6).
 
@@ -231,7 +231,7 @@ The teacher uses top-4-of-32 MoE routing. The student is dense. The literature s
 Drawing on MOHAWK's result that 3B tokens (~0.1% of pre-training data) suffices:
 
 **Distillation corpus**:
-- 1-3B tokens of diverse text (the grade-school corpus from the NeurIPS paper, augmented with broader text)
+- 1-3B tokens of diverse text (the grade-school corpus from the PLS paper, augmented with broader text)
 - Teacher forward passes generate logit-lens targets, attention patterns, and routing decisions
 - These are cached once and reused across student training runs
 

@@ -2,7 +2,7 @@
 #
 # Extended feature extraction for gpt-oss-20b
 #
-# Adapts the NeurIPS 2026 Tier-2 feature system to MoE architectures.
+# Adapts the PLS Tier-2 feature system to MoE architectures.
 # Computes per-token feature vectors from forward-pass data, enabling
 # computational mode discovery via clustering.
 #
@@ -91,7 +91,7 @@ class FeatureResult:
 class MoEFeatureExtractor:
     """Extended feature extractor for MoE transformer models.
 
-    Computes the Tier-2 feature system from the NeurIPS 2026 paper, extended
+    Computes the Tier-2 feature system from the PLS paper, extended
     with MoE routing features (Components E, F, G). The resulting feature
     vectors define a metric on the input that captures computational structure
     orthogonal to vocabulary/semantics.

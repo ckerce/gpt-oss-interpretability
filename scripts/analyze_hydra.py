@@ -4,7 +4,7 @@
 Reads head_ablation_L20 results and computes:
 1. Ablation-effect variance across 64 heads (the Hydra metric)
 2. Per-task ablation profiles
-3. Comparison to NeurIPS paper's PLS vs control values
+3. Comparison to PLS paper's PLS vs control values
 
 Output: figures/fig5_hydra_variance.{pdf,png} and runs/head_ablation_L20/hydra_analysis.json
 """
@@ -144,7 +144,7 @@ def plot_hydra(metrics):
 
     # --- Panel B: Variance comparison ---
     ax2 = axes[1]
-    labels = ["gpt-oss-20b\n(standard)", "NeurIPS\ncontrol", "NeurIPS\nPLS"]
+    labels = ["gpt-oss-20b\n(standard)", "PLS paper\ncontrol", "PLS paper\nPLS"]
     values = [
         metrics["neurips_comparison"]["gpt_oss_20b_std"],
         metrics["neurips_comparison"]["neurips_control_std"],
@@ -181,8 +181,8 @@ def main():
     print(f"  Analysis saved to {out_path}")
     print(f"  Heads: {metrics['num_heads']}")
     print(f"  Overall σ: {metrics['overall_std']:.4f}")
-    print(f"  NeurIPS control σ: {metrics['neurips_comparison']['neurips_control_std']}")
-    print(f"  NeurIPS PLS σ: {metrics['neurips_comparison']['neurips_pls_std']}")
+    print(f"  PLS-paper control σ: {metrics['neurips_comparison']['neurips_control_std']}")
+    print(f"  PLS-paper PLS σ: {metrics['neurips_comparison']['neurips_pls_std']}")
 
     # Generate figure
     plot_hydra(metrics)

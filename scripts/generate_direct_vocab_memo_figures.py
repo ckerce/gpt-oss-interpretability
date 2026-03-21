@@ -189,10 +189,11 @@ def plot_matched_pair_heatmaps(payload: dict, output_dir: Path) -> None:
                 ax.set_xlabel("Scale α")
             if col_idx == 0:
                 ax.set_ylabel("Layer")
-    cbar = fig.colorbar(im, ax=axes.ravel().tolist(), shrink=0.9)
+    fig.tight_layout(rect=[0, 0, 0.88, 0.95])
+    cbar_ax = fig.add_axes([0.90, 0.08, 0.02, 0.84])
+    cbar = fig.colorbar(im, cax=cbar_ax)
     cbar.set_label("Local logit-gap shift")
     fig.suptitle("Layer × Scale Heatmaps for the Matched 71M Pair", y=0.98)
-    fig.tight_layout()
     _save_figure(fig, output_dir, "fig_matched_pair_heatmaps")
 
 

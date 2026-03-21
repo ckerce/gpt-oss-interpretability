@@ -2,7 +2,7 @@
 
 Mechanistic interpretability toolkit for OpenAI's **gpt-oss-20b** (21B params, 3.6B active). Combines causal intervention benchmarks, per-layer logit-lens readouts, direct-vocabulary steering, and computational-mode feature extraction to study internal representations of a production-scale MoE transformer.
 
-Companion to three March 2026 preprints on interpretable transformer architectures ([dual-stream](https://arxiv.org/), [per-layer supervision / Hydra effect](https://arxiv.org/), [late fusion](https://arxiv.org/)).
+Companion to three March 2026 preprints on interpretable transformer architectures ([dual-stream](https://arxiv.org/abs/2603.07461), [per-layer supervision / Hydra effect](https://arxiv.org/abs/2603.18029), [late fusion](https://arxiv.org/abs/2603.07482)).
 
 ## Key Findings
 
@@ -52,7 +52,7 @@ Ablating each of 64 heads individually at L20 produces near-identical margins (�
 
 ![Hydra variance](figures/fig5_hydra_variance.png)
 
-gpt-oss-20b's σ = 0.042 is **half** the NeurIPS control (σ = 0.08) and **11× smaller** than PLS-trained models (σ = 0.47). This directly validates the Hydra hypothesis at production scale: standard training produces extreme distributed redundancy, which per-layer supervision breaks.
+gpt-oss-20b's σ = 0.042 is **half** the PLS-paper control (σ = 0.08) and **11× smaller** than PLS-trained models (σ = 0.47). This directly validates the Hydra hypothesis at production scale: standard training produces extreme distributed redundancy, which per-layer supervision breaks.
 
 ### 6. Honest analysis-set stratification
 
@@ -181,9 +181,9 @@ doc/                             # Theory, plans, and reports
 
 This toolkit validates at production scale the same ideas demonstrated at controlled scale in three preprints:
 
-- **Dual-Stream Transformer Architecture** — interpretability through stream separation (2.5% loss cost for full decomposition)
-- **Breaking the Hydra** (NeurIPS 2026) — per-layer supervision + gated attention yields 5-23x larger ablation effects, exposing hidden modularity
-- **Late Fusion by Architectural Constraint** (ACL 2026) — delayed position/semantic integration enables surgical intervention with 7x coreference advantage
+- [**The Dual-Stream Transformer**](https://arxiv.org/abs/2603.07461) — interpretability through stream separation (2.5% loss cost for full decomposition)
+- [**Engineering Verifiable Modularity via Per-Layer Supervision**](https://arxiv.org/abs/2603.18029) — PLS + gated attention yields 5-23x larger ablation effects, exposing hidden modularity
+- [**Interpretable-by-Design Transformers via Architectural Stream Independence**](https://arxiv.org/abs/2603.07482) — delayed position/semantic integration enables surgical intervention with 7x coreference advantage
 
 ## Design Principles
 

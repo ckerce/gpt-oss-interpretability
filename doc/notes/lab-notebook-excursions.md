@@ -10,10 +10,10 @@ This file captures side investigations and reboot-recovery notes that are releva
 - Recovered from `/tmp/tmp.tmp` after the reboot interruption.
 
 `Context`
-- The interrupted thread suggested looking at `~/code/mechanistic_interpretability/` and the NeurIPS project directory to see what PLS and Bregman distance might contribute to the current line of work.
+- The interrupted thread suggested looking at `~/code/mechanistic_interpretability/` and the PLS project directory to see what PLS and Bregman distance might contribute to the current line of work.
 - The main concrete references mentioned were:
   - `downloads/2602.15293v1.pdf`
-  - `downloads/NeurIPS_Hydra_Paper (2).pdf`
+  - `downloads/PLS_Hydra_Paper (2).pdf`
   - `companion-repo/neurips-2026-activation-clustering/analysis/bregman_geometry/`
 
 `Recovered thesis`
@@ -53,7 +53,7 @@ This file captures side investigations and reboot-recovery notes that are releva
 
 `Caveats captured in the scratch note`
 - Do not overstate the Park et al. result as if it proved the geometry of all intermediate layers.
-- Do not make this the main NeurIPS arc yet.
+- Do not make this the main PLS arc yet.
 - Treat the geometry story as:
   - a side note
   - an appendix candidate

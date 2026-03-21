@@ -2,7 +2,7 @@
 
 ## Overview
 
-The NeurIPS 2026 paper ("Engineering Verifiable Modularity in Transformers via Per-Layer Supervision") demonstrates that per-layer supervision (PLS) breaks the Hydra effect and enables mechanistic interpretability on custom architectures at 29-126M scale. The gpt-oss-interp toolkit provides forward-pass instrumentation on a production 21B MoE model.
+The PLS paper ("Engineering Verifiable Modularity in Transformers via Per-Layer Supervision") demonstrates that per-layer supervision (PLS) breaks the Hydra effect and enables mechanistic interpretability on custom architectures at 29-126M scale. The gpt-oss-interp toolkit provides forward-pass instrumentation on a production 21B MoE model.
 
 The connection between these is not superficial. The same conceptual apparatus — layer-wise readouts, ablation-effect variance, feature-based computational mode discovery — can be applied to gpt-oss-20b to answer questions the paper currently cannot.
 
@@ -172,7 +172,7 @@ gpt-oss uses o200k_harmony (201K vocab), the symbolic transformer uses GPT-2 BPE
 
 ## 7. New paper possibilities
 
-### Option A: Extend the existing NeurIPS paper
+### Option A: Extend the existing PLS paper
 
 Add a section: "Feature extraction at scale: gpt-oss-20b"
 - Apply Tier-2 features to gpt-oss-20b

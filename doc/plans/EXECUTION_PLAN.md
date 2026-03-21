@@ -120,14 +120,14 @@ Required output:
 
 #### Step 1: Head Ablation Sweep → Hydra Measurement
 **What**: Ablate each of the 64 heads at layer 20 individually. Compute the variance of ablation effects across heads.
-**Why**: This is a single number that tests the Hydra hypothesis (distributed redundancy) at production scale. The NeurIPS paper's core claim is that PLS breaks the Hydra effect (measured by ablation-effect variance). Measuring this on gpt-oss-20b provides a negative control at scale.
+**Why**: This is a single number that tests the Hydra hypothesis (distributed redundancy) at production scale. The PLS paper's core claim is that PLS breaks the Hydra effect (measured by ablation-effect variance). Measuring this on gpt-oss-20b provides a negative control at scale.
 **How**:
 1. Create config `configs/head_ablation_L20.py`:
    - 64 interventions: `HEAD_MASK` at layer 20, one head at a time (heads 0-63), scale=0.0
    - Run all 5 task families
 2. Run: `python scripts/run_benchmark.py --config configs/head_ablation_L20.py`
 3. Analyze: compute σ² of margin-change across the 64 heads
-4. Compare to NeurIPS paper Table 2 (PLS σ=0.47 vs control σ=0.08)
+4. Compare to PLS paper Table 2 (PLS σ=0.47 vs control σ=0.08)
 **Output**: `runs/head_ablation_L20/` with case_results.csv, summary.json, report.md
 **Expected result**: Tight variance (Hydra active) — gpt-oss-20b is standard-trained, so it should match the paper's control condition.
 **Time**: ~2 hours (64 forward passes × 20 cases = 1,280 forward passes)
@@ -267,7 +267,7 @@ Each transition is a candidate steering direction. In CASCADE mode, the quantita
 **What**: If Step 6 shows well-conditioned solutions, train a tiny CASCADE student on x_e* regression targets.
 **Why**: Demonstrates the CASCADE distillation concept end-to-end.
 **How**:
-1. Use the symbolic transformer codebase (NeurIPS paper) for the student architecture
+1. Use the symbolic transformer codebase (PLS paper) for the student architecture
 2. Configure a 2-layer, 4-head CASCADE model (tiny — for proof of concept)
 3. Compute x_e* targets from teacher logit-lens data (using the approach from Step 6, projected to GPT-2 50K vocab)
 4. Train the student FFN to predict x_e* (regression warmup)
@@ -370,7 +370,7 @@ Steps 8, 9, 10 have explicit dependencies.
 
 ---
 
-## NeurIPS Paper Code Available for Reference
+## PLS Paper Code Available for Reference
 
 Located at: `companion-repo/neurips-2026-activation-clustering/`
 
