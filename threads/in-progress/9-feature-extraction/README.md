@@ -20,13 +20,28 @@ The extended Tier-2 feature system is **adapted from the companion PLS preprint'
 - `features_recency/`
 - `features_syntax/`
 
-## Figures
-None.
+## Figures (in `figures/`)
+- `fig8_feature_pca.{pdf,png}`
+
+## Preliminary results
+
+![Feature PCA](../../figures/fig8_feature_pca.png)
+
+PCA of 39 tokens across 3 task families in the 257D feature space shows partial task-family clustering along PC1 (74% variance). Induction tokens tend toward negative PC1; recency and syntax tokens toward positive PC1. The separation is suggestive but incomplete — consistent with the thread's early status and the small sample size (12–14 tokens per task).
+
+### Per-task geometric analysis
+
+| Task | Tokens | Feature dims | Intrinsic dim (90% var) | Mean pairwise dist |
+|------|-------:|-------------:|------------------------:|-------------------:|
+| Induction | 14 | 257 | 9 | 11.50 |
+| Recency | 13 | 257 | 9 | 10.83 |
+| Syntax | 12 | 257 | 8 | 10.21 |
 
 ## Current state
 - Code is implemented (`features/extractor.py`: 477 lines, `features/geometry.py`: 239 lines)
-- 3 runs completed but thin — only 12 tokens analyzed, ~20 KB each
-- Geometric framework document exists but empirical validation is token-level PCA on tiny samples
+- 3 runs completed but thin — 39 total tokens analyzed
+- Feature space is 257D (subset of the full ~7,200D Tier-2 system)
+- PCA shows partial task clustering but sample is too small for confident conclusions
 
 ## Gaps
 - Needs larger-scale extraction to validate the 7,200D feature space

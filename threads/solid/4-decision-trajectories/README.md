@@ -22,10 +22,30 @@ The decision trajectory extraction — identifying layers where the model's top-
 ## Figures (in `figures/`)
 - `fig4_decision_trajectories.{pdf,png}`
 
-## Key findings
+## Results
+
+![Decision trajectories](../../figures/fig4_decision_trajectories.png)
+
+### Decision trajectory summary across 3 task families
+
+| Task | Prompt (truncated) | Key positions | Convergence layers | Transitions per position |
+|------|-------------------|:-------------:|:------------------:|:------------------------:|
+| Recency | "...suitcase was too" | 5 | L17–L18 | 6–12 |
+| Induction | "A B C D A B C" | 5 | L13–L21 | 5–10 |
+| Syntax | "The keys to the cabinet" | 5 | L16–L19 | 5–16 |
+
+### Example decision arc — recency, position 12 ("suitcase was too ___")
+
+```
+L0: noise → L8: '‑' → L13: 'pack' → L14: <eos> → L16: '(' → L17: 'too' → L18: 'small'
+```
+
+Each transition (`→`) is a decision point where the model's top-1 prediction changes. The logit-space difference at each transition is a self-supervised steering direction — no curated contrastive examples needed.
+
+### Key findings
 - Each layer where the model's top-1 prediction changes is a "decision point"
 - The logit-space difference at decision layers is a self-supervised steering direction
-- Example arc for recency-bias ("suitcase was too ___"): L0:noise → L8:'‑' → L13:'pack' → L14:eos → L16:'(' → L17:'too' → L18:'small'
+- Late transitions (L16–L18) are where semantically meaningful decisions happen; early transitions are noise
 - Fundamentally different from CAA (which requires 100+ curated example pairs) — CASCADE reads directions from the model's own computation
 
 ## Package dependencies

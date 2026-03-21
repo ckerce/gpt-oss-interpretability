@@ -22,12 +22,28 @@ Per-channel causal intervention on steering directions is **original work** exte
 - `channel_probe_ss71_phase1/`
 - `per_channel_causal_e2_recency/`, `per_channel_causal_e2_recency_smoke/`
 
-## Figures
-None yet — needs figure generation.
+## Figures (in `figures/`)
+- `fig6_channel_probe.{pdf,png}`
+
+## Preliminary results
+
+![Channel probe](../../figures/fig6_channel_probe.png)
+
+### Channel probe family summaries (C-71 model, phase 1)
+
+| Task family | Cases | Promoted channels | Top channel | Top held-out accuracy | Null ceiling |
+|-------------|------:|------------------:|:-----------:|----------------------:|-------------:|
+| recency_bias | 4 | 6 | L0 H4 | 1.000 | 0.492 |
+| induction | 10 | 6 | L5 H4 | 0.900 | 0.538 |
+| coreference | 10 | 0 | L0 H4 | 0.700 | 0.527 |
+
+All 12 promoted channels are head H4 across layers L0–L5, with identical accuracy within each task family. This consistency across layers is notable — it suggests H4 carries a task-relevant signal that is present from early layers, not computed in the critical late layers.
+
+Coreference produces zero promoted channels (top accuracy 0.700 barely exceeds the null ceiling of 0.527), suggesting coreference information is more distributed across channels than recency or induction.
 
 ## Current state
 - Code is solid (`steering.probing`, `steering.causal`)
-- 5 probe runs completed with causal experiments
+- 7 probe runs completed across 2 models with causal experiments
 - No publication figures yet
 
 ## Gaps

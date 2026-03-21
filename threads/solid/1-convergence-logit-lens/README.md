@@ -28,10 +28,25 @@ This thread applies the **logit lens** technique (nostalgebraist 2020; formalize
 ## Figures (in `figures/`)
 - `fig1_convergence_trajectories.{pdf,png}`
 
-## Key findings
+## Results
+
+![Convergence trajectories](../../figures/fig1_convergence_trajectories.png)
+
+### Choice-relative convergence by task
+
+| Task | Cases | Final correct rate | Final convergence (mean) | Final convergence (std) | Range |
+|------|------:|-------------------:|-------------------------:|------------------------:|-------|
+| capitalization | 4 | 0.50 | 1.0 | 1.7 | 0–4 |
+| coreference | 4 | 1.00 | 5.0 | 7.5 | 0–18 |
+| induction | 4 | 1.00 | 4.3 | 7.4 | 0–17 |
+| recency_bias | 4 | 0.25 | 7.0 | 6.1 | 0–16 |
+| syntax_agreement | 4 | 0.50 | 4.8 | 8.2 | 0–19 |
+
+### Key findings
 - **Capitalization** converges early (L1–2) — minimal depth processing
 - **Coreference** converges mid-depth (L5) — requires semantic resolution
 - **Induction** converges late (L17+) — consistent with induction heads as a late-layer phenomenon
+- **Recency bias** and **syntax agreement** largely fail to converge to the correct answer — only 25% and 50% final correct rates, respectively
 - Task-dependent convergence depth is a fundamental organizing principle of gpt-oss-20b's computation
 
 ## Package dependencies

@@ -36,12 +36,32 @@ The use of exact vocabulary-space directions (`W[token_A] - W[token_B]` from the
 - `fig_matched_pair_strength_scans.{pdf,png}`
 - `fig_baseline_local_gaps.{pdf,png}`
 
-## Key findings
+## Results
+
+![Steering heatmaps](../../figures/fig_matched_pair_heatmaps.png)
+
+*Layer x position steering effect: steering at the decision position in late layers flips the answer; identical steering at token 0 has no effect.*
+
+![Layer profiles](../../figures/fig_matched_pair_layer_profiles.png)
+
+### Experiment variant coverage
+
+| Variant | What it tests | Runs |
+|---------|---------------|:----:|
+| Matched-pair demo | Basic steering on model pairs | 1 |
+| Position control (decision vs token-0) | Position specificity | 2 |
+| Stream ablation (x_e vs x_t) | Which stream carries the signal | 2 |
+| Embed-init ablation (x_e vs x_t) | Role of initial embeddings | 2 |
+| Preblock ablation (x_e vs x_t) | Pre-block vs post-block effects | 2 |
+| Readout decomposition (3 variants) | How steering reads out through layers | 3 |
+| Large models CPU | Scaling behavior | 1 |
+
+### Key findings
 - Exact `W[token_A] - W[token_B]` directions in late layers cleanly flip model answers
 - Effect is **position-specific**: steering at the decision-token position flips answers; identical steering at token 0 produces zero effect
 - Position specificity rules out diffuse perturbation artifacts — this is real circuit-level control
-- 10+ experiment variants covering stream ablation, embed-init ablation, readout decomposition
-- 4.8 GB of experiment data — the most thoroughly exercised thread
+- 13 experiment runs covering stream ablation, embed-init ablation, readout decomposition, position controls
+- 4.8 GB of experiment data — the most thoroughly exercised thread in the project
 
 ## Package dependencies
 `benchmarks.tasks`, `steering.*`, `backends.transformers_gpt_oss`

@@ -33,10 +33,27 @@ Causal ablation studies are a standard methodology in mechanistic interpretabili
 ## Figures (in `figures/`)
 - `fig2_late_layer_ablation.{pdf,png}`
 
-## Key findings
+## Results
+
+![Late-layer ablation](../../figures/fig2_late_layer_ablation.png)
+
+### Layer ablation sweep (zeroing layer output, 9-case soft main-analysis set)
+
+| Layer ablated | Accuracy | Mean margin | Margin vs baseline |
+|:-------------:|---------:|------------:|-------------------:|
+| L18 | 66.7% | 2.126 | -68% |
+| L19 | 44.4% | 0.726 | -89% |
+| L20 | 44.4% | 0.945 | -86% |
+| L21 | 44.4% | 0.607 | -91% |
+| L22 | 33.3% | 1.258 | -81% |
+| L23 | 100% | 1.357 | -80% |
+| Baseline (no ablation) | 100% | 6.692 | — |
+
+### Key findings
 - Layers 19–21 are where gpt-oss-20b resolves task-relevant behavior
 - Ablating L19–21 drops accuracy from 100% to 44% and collapses margin by 85–90%
 - Layer 23 preserves accuracy (100%) despite margin loss — it refines, not decides
+- L22 ablation produces the worst accuracy (33%) but higher margin than L19–21, suggesting it handles different cases
 - Computation is concentrated across layers but distributed within layers (see thread 5)
 
 ## Package dependencies

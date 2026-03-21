@@ -28,11 +28,30 @@ Uses same configs as thread 2 (soft-main configs)
 ## Figures (in `figures/`)
 - `fig3_analysis_set_stratification.{pdf,png}`
 
-## Key findings
+## Results
+
+![Analysis set stratification](../../figures/fig3_analysis_set_stratification.png)
+
+### 4-way stratification by convergence stability (soft rule, final streak >= 4)
+
+| Task | Correct + late-stable | Correct + unstable | Incorrect (early expected) | Incorrect (never expected) |
+|------|----------------------:|-------------------:|---------------------------:|---------------------------:|
+| capitalization | 2 | 0 | 1 | 1 |
+| coreference | 3 | 1 | 0 | 0 |
+| induction | 4 | 0 | 0 | 0 |
+| recency_bias | 0 | 1 | 3 | 0 |
+| syntax_agreement | 0 | 2 | 2 | 0 |
+| **Total** | **9** | **4** | **6** | **1** |
+
+The 9 "correct, late-stable" cases form the **soft main-analysis set** used by all downstream threads.
+
+### Key findings
 - Only 9/20 cases (45%) are "correct, late-stable" — the soft main-analysis set
-- Recency bias and syntax agreement cases largely fail convergence criteria
+- **Induction** is the cleanest task: all 4 cases pass (100%)
+- **Coreference** is strong: 3/4 pass (75%)
+- **Recency bias** almost entirely fails: 0/4 pass (0%) — the model doesn't reliably exhibit the expected bias
+- **Syntax agreement** entirely fails: 0/4 pass (0%)
 - This is a feature: it tells you where the model's behavior is robust enough for causal claims
-- All other threads (ablation, steering, Hydra) use this filtered set
 
 ## Package dependencies
 `benchmarks.tasks`, `benchmarks.pools`
