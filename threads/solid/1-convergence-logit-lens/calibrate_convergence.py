@@ -7,12 +7,8 @@ import argparse
 import json
 import math
 import statistics
-import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
 
 
 ###############################################################################
@@ -183,7 +179,7 @@ def main() -> int:
 
     output_dir = Path(args.output)
     if not output_dir.is_absolute():
-        output_dir = REPO_ROOT / output_dir
+        output_dir = Path.cwd() / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     payload = {

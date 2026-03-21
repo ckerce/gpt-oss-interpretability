@@ -11,8 +11,7 @@ from pathlib import Path
 import torch
 
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-RUNNER_PATH = REPO_ROOT / "scripts" / "run_direct_vocab_steering.py"
+RUNNER_PATH = Path(__file__).resolve().parent.parent.parent / "threads" / "solid" / "6-direct-vocab-steering" / "run_direct_vocab_steering.py"
 BASE_TOKENIZER = (
     "hf-cache/models--gpt2/snapshots/"
     "607a30d783dfa663caf39e06633721c8d4cfcd7e"

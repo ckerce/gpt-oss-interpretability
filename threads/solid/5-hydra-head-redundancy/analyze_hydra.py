@@ -21,9 +21,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
 
-REPO = Path(__file__).resolve().parent.parent
-RUNS = REPO / "runs" / "head_ablation_L20"
-FIGS = REPO / "figures"
+RUNS = Path("runs") / "head_ablation_L20"
+FIGS = Path("figures")
 FIGS.mkdir(exist_ok=True)
 
 plt.rcParams.update({

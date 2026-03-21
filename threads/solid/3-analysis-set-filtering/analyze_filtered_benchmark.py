@@ -53,19 +53,17 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    repo_root = Path(__file__).resolve().parent.parent
-
     case_results_path = Path(args.case_results)
     if not case_results_path.is_absolute():
-        case_results_path = repo_root / case_results_path
+        case_results_path = Path.cwd() / case_results_path
 
     strat_path = Path(args.stratification)
     if not strat_path.is_absolute():
-        strat_path = repo_root / strat_path
+        strat_path = Path.cwd() / strat_path
 
     output_dir = Path(args.output)
     if not output_dir.is_absolute():
-        output_dir = repo_root / output_dir
+        output_dir = Path.cwd() / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     with case_results_path.open() as f:

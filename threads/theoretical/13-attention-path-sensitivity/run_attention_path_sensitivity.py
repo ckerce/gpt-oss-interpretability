@@ -11,8 +11,7 @@ from pathlib import Path
 import torch
 
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-RUNNER_PATH = REPO_ROOT / "scripts" / "run_direct_vocab_steering.py"
+RUNNER_PATH = Path(__file__).resolve().parent.parent.parent / "solid" / "6-direct-vocab-steering" / "run_direct_vocab_steering.py"
 MODEL_PATH = (
     "/mnt/d/mechanistic_interpretability/results/neurips-2026/training/"
     "gated_attention/dns-dns_S_G_cascade_gpt2/checkpoint_epoch_1.pt"

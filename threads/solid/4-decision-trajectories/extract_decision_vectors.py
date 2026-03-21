@@ -15,8 +15,7 @@ import math
 from pathlib import Path
 
 
-REPO = Path(__file__).resolve().parent.parent
-RUNS = REPO / "runs"
+RUNS = Path("runs")
 OUTPUT = RUNS / "decision_vectors"
 
 

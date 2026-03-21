@@ -120,7 +120,7 @@ def main() -> int:
 
     input_path = Path(args.input)
     if not input_path.is_absolute():
-        input_path = Path(__file__).resolve().parent.parent / input_path
+        input_path = Path.cwd() / input_path
     data = json.loads(input_path.read_text())
 
     classified = [classify_case(case, tail_length=args.tail_length) for case in data["cases"]]
@@ -167,7 +167,7 @@ def main() -> int:
 
     output_dir = Path(args.output)
     if not output_dir.is_absolute():
-        output_dir = Path(__file__).resolve().parent.parent / output_dir
+        output_dir = Path.cwd() / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     (output_dir / "analysis_set_stratification.json").write_text(json.dumps(payload, indent=2) + "\n")

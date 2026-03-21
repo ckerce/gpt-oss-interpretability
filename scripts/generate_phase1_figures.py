@@ -16,9 +16,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
 
-REPO = Path(__file__).resolve().parent.parent
-RUNS = REPO / "runs"
-FIGS = REPO / "figures"
+RUNS = Path("runs")
+FIGS = Path("figures")
 FIGS.mkdir(exist_ok=True)
 
 # ---------- shared style ----------

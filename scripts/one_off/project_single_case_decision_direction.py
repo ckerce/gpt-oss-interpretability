@@ -12,14 +12,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
 import torch
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
 
 from gpt_oss_interp.capture.activation_cache import ActivationCache
 from gpt_oss_interp.benchmarks.tasks import all_tasks

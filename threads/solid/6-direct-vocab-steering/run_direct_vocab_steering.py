@@ -22,10 +22,6 @@ from typing import Iterator
 import torch
 from transformers import GPT2TokenizerFast
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
 SYMBOLIC_SRC = Path("companion-repo/neuro-symb-v2/src")
 if str(SYMBOLIC_SRC) not in sys.path:
     sys.path.insert(0, str(SYMBOLIC_SRC))

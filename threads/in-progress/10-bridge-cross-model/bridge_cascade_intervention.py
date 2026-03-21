@@ -18,14 +18,9 @@ import json
 import math
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import torch
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
 
 from gpt_oss_interp.benchmarks.tasks import all_tasks
 from gpt_oss_interp.benchmarks.pools import PROVISIONAL_BRIDGE_POOL_CASE_IDS
@@ -571,10 +566,10 @@ def main() -> int:
 
     stratification_json = Path(args.stratification_json)
     if not stratification_json.is_absolute():
-        stratification_json = REPO_ROOT / stratification_json
+        stratification_json = Path.cwd() / stratification_json
     audit_json = Path(args.audit_json)
     if not audit_json.is_absolute():
-        audit_json = REPO_ROOT / audit_json
+        audit_json = Path.cwd() / audit_json
 
     excluded_case_ids = {
         case_id.strip() for case_id in args.exclude_case_ids.split(",") if case_id.strip()
@@ -596,7 +591,7 @@ def main() -> int:
 
     output_dir = Path(args.output)
     if not output_dir.is_absolute():
-        output_dir = REPO_ROOT / output_dir
+        output_dir = Path.cwd() / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     backend = GPTOSSTransformersBackend(model_name=args.model)

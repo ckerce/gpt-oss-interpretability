@@ -20,10 +20,6 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
 from gpt_oss_interp.benchmarks.tasks import all_tasks
 
 
@@ -64,7 +60,7 @@ def _slugify_model_path(model: str) -> str:
 
 def _run(cmd: list[str]) -> None:
     print("+", " ".join(cmd), flush=True)
-    subprocess.run(cmd, check=True, cwd=REPO_ROOT)
+    subprocess.run(cmd, check=True)
 
 
 def _write_report(path: Path, payload: dict[str, object]) -> None:
@@ -135,7 +131,7 @@ def main() -> int:
     model_slug = _slugify_model_path(args.model)
     output_root = Path(args.output_root)
     if not output_root.is_absolute():
-        output_root = REPO_ROOT / output_root
+        output_root = Path.cwd() / output_root
     out_dir = output_root / model_slug
     out_dir.mkdir(parents=True, exist_ok=True)
 

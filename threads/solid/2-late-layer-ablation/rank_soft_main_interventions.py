@@ -32,10 +32,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    repo_root = Path(__file__).resolve().parent.parent
     input_path = Path(args.input)
     if not input_path.is_absolute():
-        input_path = repo_root / input_path
+        input_path = Path.cwd() / input_path
 
     data = json.loads(input_path.read_text())
     run_map = data["summary_by_set"][args.set_name]
@@ -68,7 +67,7 @@ def main() -> int:
 
     output_dir = Path(args.output)
     if not output_dir.is_absolute():
-        output_dir = repo_root / output_dir
+        output_dir = Path.cwd() / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     (output_dir / "soft_main_intervention_ranking.json").write_text(json.dumps(payload, indent=2) + "\n")

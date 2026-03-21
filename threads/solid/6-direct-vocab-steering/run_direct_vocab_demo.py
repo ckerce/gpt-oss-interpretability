@@ -12,8 +12,7 @@ from pathlib import Path
 import torch
 
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-RUNNER_PATH = REPO_ROOT / "scripts" / "run_direct_vocab_steering.py"
+RUNNER_PATH = Path(__file__).resolve().parent / "run_direct_vocab_steering.py"
 
 DEFAULT_MODELS = (
     "SS-71=/mnt/d/mechanistic_interpretability/results/neurips-2026/training/"

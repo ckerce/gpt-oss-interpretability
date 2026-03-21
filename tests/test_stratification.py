@@ -4,8 +4,8 @@ import pytest
 import sys
 from pathlib import Path
 
-# The stratification logic is in a script, not a package module.
-# Import the classify function by adding the scripts directory.
+# The stratification logic lives in a thread script, not a package module.
+# Add its directory to sys.path so we can import the classify function.
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "threads" / "solid" / "3-analysis-set-filtering"))
 
