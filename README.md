@@ -132,23 +132,23 @@ This project is organized as 13 research threads at three maturity levels. See *
 
 ### Solid — completed results
 
-| # | Thread | Problem | Contribution | Impact |
-|---|--------|---------|--------------|--------|
-| 1 | [Convergence](threads/solid/1-convergence-logit-lens/) | Where in the network does each task get resolved? | Applies logit lens (prior work) to a production MoE; measures task-dependent convergence depth | Locates computation by task type — prerequisite for targeted intervention |
-| 2 | [Late-layer ablation](threads/solid/2-late-layer-ablation/) | Which layers are causally critical, not just correlated? | Standard ablation methodology applied at production MoE scale with attention-vs-MoE decomposition | Narrows the interpretability target from 24 layers to 3 (L19–21) |
-| 3 | [Analysis set filtering](threads/solid/3-analysis-set-filtering/) | Which test cases support honest mechanistic claims? | Systematic 4-way stratification by convergence stability; not aware of prior systematic methodology for this in interpretability | Only 45% of cases pass — sets defensible scope for all downstream threads |
-| 4 | [Decision trajectories](threads/solid/4-decision-trajectories/) | Can the model's own prediction changes serve as steering directions? | Extracts logit-space directions from prediction-transition layers; not aware of prior work using these as self-supervised steering signals | Provides steering directions without curated contrastive pairs; empirical basis for CASCADE |
-| 5 | [Hydra / head redundancy](threads/solid/5-hydra-head-redundancy/) | Are individual attention heads specialized or redundant? | Measures the Hydra effect (from companion PLS preprint) at 21B-param production scale | σ=0.042 confirms extreme redundancy — explains why circuit-level interpretation is hard in standard models |
-| 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
+| # | Thread | Model | Problem | Contribution | Impact |
+|---|--------|-------|---------|--------------|--------|
+| 1 | [Convergence](threads/solid/1-convergence-logit-lens/) | gpt-oss-20b | Where in the network does each task get resolved? | Applies logit lens (prior work) to a production MoE; measures task-dependent convergence depth | Locates computation by task type — prerequisite for targeted intervention |
+| 2 | [Late-layer ablation](threads/solid/2-late-layer-ablation/) | gpt-oss-20b | Which layers are causally critical, not just correlated? | Standard ablation methodology applied at production MoE scale with attention-vs-MoE decomposition | Narrows the interpretability target from 24 layers to 3 (L19–21) |
+| 3 | [Analysis set filtering](threads/solid/3-analysis-set-filtering/) | gpt-oss-20b | Which test cases support honest mechanistic claims? | Systematic 4-way stratification by convergence stability; not aware of prior systematic methodology for this in interpretability | Only 45% of cases pass — sets defensible scope for all downstream threads |
+| 4 | [Decision trajectories](threads/solid/4-decision-trajectories/) | gpt-oss-20b | Can the model's own prediction changes serve as steering directions? | Extracts logit-space directions from prediction-transition layers; not aware of prior work using these as self-supervised steering signals | Provides steering directions without curated contrastive pairs; empirical basis for CASCADE |
+| 5 | [Hydra / head redundancy](threads/solid/5-hydra-head-redundancy/) | gpt-oss-20b | Are individual attention heads specialized or redundant? | Measures the Hydra effect (from companion PLS preprint) at 21B-param production scale | σ=0.042 confirms extreme redundancy — explains why circuit-level interpretation is hard in standard models |
+| 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | CASCADE (SS-71, C-71) | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
 
 ### In progress — code and initial experiments exist
 
-| # | Thread | Problem | Contribution | Impact |
-|---|--------|---------|--------------|--------|
-| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis applied to vocabulary steering directions | Tests whether steering signal is sparse or distributed within layers |
-| 8 | [Selectivity](threads/in-progress/8-selectivity/) | Does steering affect only the target behavior? | Compares channelized vs whole-vector selectivity with random baselines | Evaluation metric for whether interventions are mechanistically clean |
-| 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | Can computational modes be captured as unified feature vectors? | Adapts PLS Tier-2 features for MoE (adds expert routing to ~257D vectors) | Enables clustering and geometric analysis across tasks |
-| 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | Do these findings generalize beyond gpt-oss-20b? | Screening pipeline to evaluate new models for interpretability compatibility | Early infrastructure — one model (Gemma-3-1B) screened so far |
+| # | Thread | Model | Problem | Contribution | Impact |
+|---|--------|-------|---------|--------------|--------|
+| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | CASCADE (C-71) | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis applied to vocabulary steering directions | Tests whether steering signal is sparse or distributed within layers |
+| 8 | [Selectivity](threads/in-progress/8-selectivity/) | CASCADE (E2) | Does steering affect only the target behavior? | Compares channelized vs whole-vector selectivity with random baselines | Evaluation metric for whether interventions are mechanistically clean |
+| 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | gpt-oss-20b | Can computational modes be captured as unified feature vectors? | Adapts PLS Tier-2 features for MoE (adds expert routing to ~257D vectors) | Enables clustering and geometric analysis across tasks |
+| 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | gpt-oss-20b, Gemma-3-1B | Do these findings generalize beyond gpt-oss-20b? | Screening pipeline to evaluate new models for interpretability compatibility | Early infrastructure — one model (Gemma-3-1B) screened so far |
 
 ### Theoretical — framework documented, not yet implemented
 

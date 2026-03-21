@@ -1,6 +1,6 @@
 # Thread 11: CASCADE Distillation
 
-**Status**: Theoretical (major gap between framework and implementation) — **Objective**: Automate steering direction extraction
+**Status**: Theoretical — **Objective**: Automate steering direction extraction
 
 ## Question
 Can we automatically extract steering directions from the model's decision trajectories via matrix factorization?
@@ -20,9 +20,8 @@ The `gpt_oss_interp/distillation/` package exists but is **stubs only**:
 - 3 reference runs exist in `runs/cascade_reference_*/` but these are target computation, not student training
 
 ## Gaps
-- **No working implementation** — this is the biggest disconnect between ambition and delivery
-- The theoretical framework is well-specified but there's zero training code
-- Student distillation pipeline needs to be built from scratch
+- No working implementation
+- Student distillation pipeline needs to be built
 
 ## Package dependencies (planned)
 `distillation.*`, `capture.activation_cache`, `backends.transformers_gpt_oss`

@@ -18,7 +18,7 @@ Can pullback metrics and dual metrics enable principled comparison of computatio
 - No cross-model comparison experiments
 
 ## Gaps
-- Rich theory with zero empirical backing
+- No empirical validation
 - Pullback metric / dual metric concepts need demonstration on at least 2 models
 - Depends on bridge/cross-model thread (10) for multi-model data
 
