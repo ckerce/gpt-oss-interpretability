@@ -97,3 +97,4 @@ doc/reports/WRONG_POSITION_CONTROL_REPORT.md
 doc/reports/XT_XE_INTERVENTION_REPORT.md
 
 # Keep analysis outputs under runs/ tracked by default.
+scaffold_refactor.py
