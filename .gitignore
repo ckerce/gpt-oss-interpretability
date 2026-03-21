@@ -78,4 +78,20 @@ Thumbs.db
 *.xz
 *.zip
 
+# Internal process docs (kept on disk, not in repo)
+DOC_INDEX.md
+doc/plans/
+doc/notes/
+doc/reference/RESEARCH_CONNECTIONS.md
+doc/reports/ATTENTION_PATH_SENSITIVITY_REPORT.md
+doc/reports/BRANCH_MILESTONE_REPORT.md
+doc/reports/CHANNELIZED_VS_WHOLEVECTOR_SELECTIVITY_INITIAL_REPORT.md
+doc/reports/EMBEDINIT_XT_XE_INTERVENTION_REPORT.md
+doc/reports/PHASE1_CHANNEL_PROBE_INITIAL_REPORT.md
+doc/reports/PHASE2_E2_RECENCY_CAUSAL_REPORT.md
+doc/reports/PREBLOCK_XT_XE_INTERVENTION_REPORT.md
+doc/reports/READOUT_DECOMPOSITION_REPORT.md
+doc/reports/WRONG_POSITION_CONTROL_REPORT.md
+doc/reports/XT_XE_INTERVENTION_REPORT.md
+
 # Keep analysis outputs under runs/ tracked by default.
