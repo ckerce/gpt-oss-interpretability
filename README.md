@@ -1,8 +1,14 @@
 # gpt-oss-interp
 
-Mechanistic interpretability toolkit for OpenAI's **gpt-oss-20b** (21B params, 3.6B active). Combines causal intervention benchmarks, per-layer logit-lens readouts, direct-vocabulary steering, and computational-mode feature extraction to study internal representations of a production-scale MoE transformer.
+## Context
 
-Companion to three March 2026 preprints on interpretable transformer architectures ([dual-stream](https://arxiv.org/abs/2603.07461), [per-layer supervision / Hydra effect](https://arxiv.org/abs/2603.18029), [late fusion](https://arxiv.org/abs/2603.07482)).
+This repository is the **production-scale validation** half of a two-part research program on mechanistic interpretability.
+
+The first part, developed across three March 2026 preprints ([dual-stream](https://arxiv.org/abs/2603.07461), [per-layer supervision / Hydra effect](https://arxiv.org/abs/2603.18029), [late fusion](https://arxiv.org/abs/2603.07482)), demonstrates at controlled scale (22M–53M parameters) that architectural constraints — dual-stream decomposition, per-layer supervision, gated attention — make transformer internals causally inspectable. The core finding is that per-layer supervision breaks the Hydra effect, exposing 5–23x larger ablation effects and enabling 4x greater steering control than standard-trained models.
+
+This repository takes the **same inspection toolkit** — causal intervention benchmarks, per-layer logit-lens readouts, direct-vocabulary steering, activation capture — and applies it to OpenAI's **gpt-oss-20b** (21B params, 3.6B active), a production MoE transformer trained without any interpretability constraints. The goal is to answer: do the measurement methods transfer, and what do they reveal about a standard model at scale?
+
+The steering experiments (threads 6–8) additionally use the companion CASCADE architecture models (SS-71, C-71, E2) from the preprint work, where architectural structure enables cleaner steering demonstration.
 
 ## Key Findings
 
