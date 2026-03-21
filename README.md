@@ -29,7 +29,6 @@ Per-layer logit-lens readouts with choice-relative convergence show task-specifi
 Exact vocabulary-space directions (`W[token_A] - W[token_B]`) applied in the contextual stream at late layers cleanly flip model answers:
 
 ![Steering heatmaps](figures/fig_matched_pair_heatmaps.png)
-![Selectivity](figures/fig_selectivity_scatter.png)
 
 Crucially, the effect is **position-specific**: steering at the decision-token position flips answers; identical steering at token 0 produces zero effect. This rules out diffuse perturbation artifacts.
 
