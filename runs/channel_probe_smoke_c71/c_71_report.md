@@ -1,0 +1,54 @@
+# Channel Probe Report
+
+Run id: `channel_probe_smoke_c71`
+Model: `C-71`
+
+## Promotion Gate
+
+- held-out sign accuracy threshold: `0.70`
+- null margin: `0.10`
+- null samples: `4`
+
+## Family Summaries
+
+### recency_bias
+
+- cases: recency_001, recency_002, recency_003, recency_004
+- median x_t layer delta: 0.000000
+- promoted channels: 6
+- top channel: L0 H4
+- top held-out sign accuracy: 1.000
+- top null ceiling: 0.625
+
+### induction
+
+- cases: induction_001, induction_002, induction_003, induction_004, induction_005, induction_006, induction_007, induction_008, induction_009, induction_010
+- median x_t layer delta: 0.000000
+- promoted channels: 6
+- top channel: L5 H4
+- top held-out sign accuracy: 0.900
+- top null ceiling: 0.600
+
+### coreference
+
+- cases: coref_001, coref_002, coref_003, coref_004, coref_005, coref_006, coref_007, coref_008, coref_009, coref_010
+- median x_t layer delta: 0.000000
+- promoted channels: 0
+- top channel: L0 H4
+- top held-out sign accuracy: 0.700
+- top null ceiling: 0.500
+
+## Promoted Channels
+
+- `recency_bias` L0 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `recency_bias` L1 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `recency_bias` L2 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `recency_bias` L3 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `recency_bias` L4 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `recency_bias` L5 H4: held-out acc=1.000, mean_score=+0.177, position_sensitivity=-0.035
+- `induction` L5 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127
+- `induction` L0 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127
+- `induction` L1 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127
+- `induction` L2 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127
+- `induction` L3 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127
+- `induction` L4 H4: held-out acc=0.900, mean_score=+0.037, position_sensitivity=-0.127

@@ -1,0 +1,3842 @@
+{
+  "artifact": {
+    "run_id": "per_channel_causal_e2_recency",
+    "model_id": "E2",
+    "phase": "steering",
+    "schema_version": "1.0.0",
+    "results": [
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.5145586729049683,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.660207182168961,
+        "best_mean_directed_total_effect": 6.660206317901611,
+        "best_mean_tail_fraction": 1.0839163355987862e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.660207182168961,
+            "mean_directed_total_effect": 6.660206317901611,
+            "mean_tail_fraction": 1.0839163355987862e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.743916988372803,
+            "mean_directed_total_effect": 4.743917226791382,
+            "mean_tail_fraction": 4.85497458210397e-07
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.767648607492447,
+            "mean_directed_total_effect": 2.7676477432250977,
+            "mean_tail_fraction": 6.011730089557915e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.4358420968055725,
+            "mean_directed_total_effect": 1.4358413219451904,
+            "mean_tail_fraction": 8.654754685979868e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.3513255715370178,
+            "mean_directed_total_effect": 1.3513259887695312,
+            "mean_tail_fraction": 1.3967703867301729e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 2.4839543998241425,
+            "mean_directed_total_effect": 2.483954071998596,
+            "mean_tail_fraction": 7.085634806505552e-07
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 4.048577010631561,
+            "mean_directed_total_effect": 4.048577785491943,
+            "mean_tail_fraction": 2.0269874441103663e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.524216264486313,
+            "mean_directed_total_effect": 5.52421760559082,
+            "mean_tail_fraction": 1.8294022655842559e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.28605854511260986,
+            "total_shift": -0.2860574722290039,
+            "tail_fraction": 3.750587592056089e-06,
+            "whole_vector_total_gap": -1.6884765625
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -14.71033525466919,
+            "total_shift": -14.710334777832031,
+            "tail_fraction": 3.2415112599728336e-08,
+            "whole_vector_total_gap": -63.59440517425537
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.773732662200928,
+            "total_shift": -8.77373218536377,
+            "tail_fraction": 5.434826914349845e-08,
+            "whole_vector_total_gap": -41.64744186401367
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.8707022666931152,
+            "total_shift": -2.8707008361816406,
+            "tail_fraction": 4.983143685958299e-07,
+            "whole_vector_total_gap": -9.874016761779785
+          }
+        ],
+        "causal_rank": 1
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.25502145290374756,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.4624804854393005,
+        "best_mean_directed_total_effect": 6.462480545043945,
+        "best_mean_tail_fraction": 1.7599006363511609e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.4624804854393005,
+            "mean_directed_total_effect": 6.462480545043945,
+            "mean_tail_fraction": 1.7599006363511609e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.00204798579216,
+            "mean_directed_total_effect": 4.0020482540130615,
+            "mean_tail_fraction": 1.3423528067856186e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.0272104889154434,
+            "mean_directed_total_effect": 2.0272092819213867,
+            "mean_tail_fraction": 8.449318928079052e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.0024972707033157,
+            "mean_directed_total_effect": 1.0024964809417725,
+            "mean_tail_fraction": 4.77365327455382e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.9354296922683716,
+            "mean_directed_total_effect": 0.935430645942688,
+            "mean_tail_fraction": 7.159904542939195e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.9107113182544708,
+            "mean_directed_total_effect": 1.9107112884521484,
+            "mean_tail_fraction": 2.1069383558679123e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.6049076914787292,
+            "mean_directed_total_effect": 3.604907751083374,
+            "mean_tail_fraction": 2.040996672214533e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.36078542470932,
+            "mean_directed_total_effect": 5.360785484313965,
+            "mean_tail_fraction": 5.781407908727967e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.2607381343841553,
+            "total_shift": -0.26073646545410156,
+            "tail_fraction": 6.400831010746081e-06,
+            "whole_vector_total_gap": -1.6444978713989258
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -15.021592617034912,
+            "total_shift": -15.021595001220703,
+            "tail_fraction": 1.5871721949778824e-07,
+            "whole_vector_total_gap": -59.06591606140137
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.311347484588623,
+            "total_shift": -8.311347961425781,
+            "tail_fraction": 5.737181988002405e-08,
+            "whole_vector_total_gap": -38.604265213012695
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.2562437057495117,
+            "total_shift": -2.2562427520751953,
+            "tail_fraction": 4.2268249528074994e-07,
+            "whole_vector_total_gap": -8.017048835754395
+          }
+        ],
+        "causal_rank": 2
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.45534271001815796,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.329276025295258,
+        "best_mean_directed_total_effect": 6.329275131225586,
+        "best_mean_tail_fraction": 1.1732803195134668e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.329276025295258,
+            "mean_directed_total_effect": 6.329275131225586,
+            "mean_tail_fraction": 1.1732803195134668e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.215439110994339,
+            "mean_directed_total_effect": 4.215440034866333,
+            "mean_tail_fraction": 1.2490961591973711e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.3285087049007416,
+            "mean_directed_total_effect": 2.328507423400879,
+            "mean_tail_fraction": 6.8328047246394385e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.1976656466722488,
+            "mean_directed_total_effect": 1.1976649761199951,
+            "mean_tail_fraction": 1.7146496490497893e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.1885155737400055,
+            "mean_directed_total_effect": 1.1885157823562622,
+            "mean_tail_fraction": 5.319798301772586e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 2.2653788626194,
+            "mean_directed_total_effect": 2.2653790712356567,
+            "mean_tail_fraction": 4.204843401003238e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.8733844459056854,
+            "mean_directed_total_effect": 3.8733856678009033,
+            "mean_tail_fraction": 2.7216619081104637e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.453869938850403,
+            "mean_directed_total_effect": 5.453870892524719,
+            "mean_tail_fraction": 8.564081489329461e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.2791404724121094,
+            "total_shift": -0.27913951873779297,
+            "tail_fraction": 3.4164790450257773e-06,
+            "whole_vector_total_gap": -1.6660003662109375
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -14.39372968673706,
+            "total_shift": -14.393730163574219,
+            "tail_fraction": 3.312811569928152e-08,
+            "whole_vector_total_gap": -57.54322624206543
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.151744842529297,
+            "total_shift": -8.151744842529297,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.790215492248535
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.4924890995025635,
+            "total_shift": -2.492486000061035,
+            "tail_fraction": 1.2435141173288092e-06,
+            "whole_vector_total_gap": -8.722081184387207
+          }
+        ],
+        "causal_rank": 3
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.3255574405193329,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.312130153179169,
+        "best_mean_directed_total_effect": 6.312129735946655,
+        "best_mean_tail_fraction": 1.6726477428714985e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.312130153179169,
+            "mean_directed_total_effect": 6.312129735946655,
+            "mean_tail_fraction": 1.6726477428714985e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.020454406738281,
+            "mean_directed_total_effect": 4.020453691482544,
+            "mean_tail_fraction": 2.2197915986853336e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.123862460255623,
+            "mean_directed_total_effect": 2.123861789703369,
+            "mean_tail_fraction": 3.939395117077195e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.077315166592598,
+            "mean_directed_total_effect": 1.077314853668213,
+            "mean_tail_fraction": 1.1918092901022716e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.0835776329040527,
+            "mean_directed_total_effect": 1.0835771560668945,
+            "mean_tail_fraction": 3.4517353486831162e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 2.1228873133659363,
+            "mean_directed_total_effect": 2.122886896133423,
+            "mean_tail_fraction": 6.87947648092284e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.7820909321308136,
+            "mean_directed_total_effect": 3.7820911407470703,
+            "mean_tail_fraction": 3.229269416745539e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.44330906867981,
+            "mean_directed_total_effect": 5.443310022354126,
+            "mean_tail_fraction": 2.1961009851486463e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.2652010917663574,
+            "total_shift": -0.2651996612548828,
+            "tail_fraction": 5.394092390014456e-06,
+            "whole_vector_total_gap": -1.650120735168457
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -14.628742694854736,
+            "total_shift": -14.628745079040527,
+            "tail_fraction": 1.6297951588694983e-07,
+            "whole_vector_total_gap": -55.530385971069336
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.04089069366455,
+            "total_shift": -8.04089069366455,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.173044204711914
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.3136861324310303,
+            "total_shift": -2.31368350982666,
+            "tail_fraction": 1.1335190655845887e-06,
+            "whole_vector_total_gap": -7.854487419128418
+          }
+        ],
+        "causal_rank": 4
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.3480709195137024,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.282765686511993,
+        "best_mean_directed_total_effect": 6.282764911651611,
+        "best_mean_tail_fraction": 1.728442074896986e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.282765686511993,
+            "mean_directed_total_effect": 6.282764911651611,
+            "mean_tail_fraction": 1.728442074896986e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.1321388483047485,
+            "mean_directed_total_effect": 4.132138013839722,
+            "mean_tail_fraction": 3.159110346771048e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.2495304346084595,
+            "mean_directed_total_effect": 2.2495293617248535,
+            "mean_tail_fraction": 6.714895832649834e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.1520391404628754,
+            "mean_directed_total_effect": 1.1520380973815918,
+            "mean_tail_fraction": 1.0469325084152322e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.1637426912784576,
+            "mean_directed_total_effect": 1.1637423038482666,
+            "mean_tail_fraction": 4.892498817145866e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 2.246619164943695,
+            "mean_directed_total_effect": 2.2466187477111816,
+            "mean_tail_fraction": 5.787897940198557e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.890642464160919,
+            "mean_directed_total_effect": 3.8906428813934326,
+            "mean_tail_fraction": 9.7655921730863e-07
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.4934079349040985,
+            "mean_directed_total_effect": 5.493408441543579,
+            "mean_tail_fraction": 1.3979892113789313e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.2739436626434326,
+            "total_shift": -0.2739419937133789,
+            "tail_fraction": 6.092275342995102e-06,
+            "whole_vector_total_gap": -1.6486644744873047
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -14.367516994476318,
+            "total_shift": -14.367517471313477,
+            "tail_fraction": 3.3188556001772004e-08,
+            "whole_vector_total_gap": -57.73788833618164
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.07004165649414,
+            "total_shift": -8.07004165649414,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.91374206542969
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.419560432434082,
+            "total_shift": -2.419558525085449,
+            "tail_fraction": 7.883044005910706e-07,
+            "whole_vector_total_gap": -8.5707426071167
+          }
+        ],
+        "causal_rank": 5
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 5,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.4201279878616333,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 6.247105300426483,
+        "best_mean_directed_total_effect": 6.24710488319397,
+        "best_mean_tail_fraction": 1.221144759657721e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 6.247105300426483,
+            "mean_directed_total_effect": 6.24710488319397,
+            "mean_tail_fraction": 1.221144759657721e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 4.066985160112381,
+            "mean_directed_total_effect": 4.0669846534729,
+            "mean_tail_fraction": 2.711266108378135e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 2.2019250690937042,
+            "mean_directed_total_effect": 2.201925277709961,
+            "mean_tail_fraction": 2.665823791198689e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.1295855343341827,
+            "mean_directed_total_effect": 1.1295852661132812,
+            "mean_tail_fraction": 1.0620101436543376e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.158455729484558,
+            "mean_directed_total_effect": 1.1584563255310059,
+            "mean_tail_fraction": 9.643223230495131e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 2.253724902868271,
+            "mean_directed_total_effect": 2.253725528717041,
+            "mean_tail_fraction": 5.289194910460333e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.933750808238983,
+            "mean_directed_total_effect": 3.933750867843628,
+            "mean_tail_fraction": 2.388821013779868e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.56352624297142,
+            "mean_directed_total_effect": 5.563526272773743,
+            "mean_tail_fraction": 1.174910869650385e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -0.26798176765441895,
+            "total_shift": -0.26798057556152344,
+            "tail_fraction": 4.448430237937637e-06,
+            "whole_vector_total_gap": -1.637131690979004
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -14.329623699188232,
+            "total_shift": -14.32962417602539,
+            "tail_fraction": 3.327631990522904e-08,
+            "whole_vector_total_gap": -57.533074378967285
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -8.023628234863281,
+            "total_shift": -8.023628234863281,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -37.24104022979736
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 5,
+            "scale": -8.0,
+            "local_shift": -2.3671875,
+            "total_shift": -2.3671865463256836,
+            "tail_fraction": 4.028724807880186e-07,
+            "whole_vector_total_gap": -8.506327629089355
+          }
+        ],
+        "causal_rank": 6
+      },
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 0.5,
+        "probe_mean_score": 0.15526458621025085,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.809421598911285,
+        "best_mean_directed_total_effect": 5.809422016143799,
+        "best_mean_tail_fraction": 1.8754690937828957e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.809421598911285,
+            "mean_directed_total_effect": 5.809422016143799,
+            "mean_tail_fraction": 1.8754690937828957e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.660538077354431,
+            "mean_directed_total_effect": 3.6605384349823,
+            "mean_tail_fraction": 1.886596185213101e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.9821558892726898,
+            "mean_directed_total_effect": 1.9821553230285645,
+            "mean_tail_fraction": 5.10835796162694e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.010509192943573,
+            "mean_directed_total_effect": 1.0105092525482178,
+            "mean_tail_fraction": 3.6137553639093394e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.9961879849433899,
+            "mean_directed_total_effect": 0.9961888790130615,
+            "mean_tail_fraction": 1.265268748709289e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.9279673099517822,
+            "mean_directed_total_effect": 1.9279680252075195,
+            "mean_tail_fraction": 4.006263135385924e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.481938064098358,
+            "mean_directed_total_effect": 3.4819393157958984,
+            "mean_tail_fraction": 3.2576350625052046e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.385533720254898,
+            "mean_directed_total_effect": 5.385532855987549,
+            "mean_tail_fraction": 9.824377816806118e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.20564794540405273,
+            "total_shift": -0.20564651489257812,
+            "tail_fraction": 6.956166873805858e-06,
+            "whole_vector_total_gap": -1.6884765625
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.948620319366455,
+            "total_shift": -11.94862174987793,
+            "tail_fraction": 1.197218812809092e-07,
+            "whole_vector_total_gap": -63.59440517425537
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.834457397460938,
+            "total_shift": -8.834458351135254,
+            "tail_fraction": 1.0794938167133926e-07,
+            "whole_vector_total_gap": -41.64744186401367
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -2.2489607334136963,
+            "total_shift": -2.2489614486694336,
+            "tail_fraction": 3.180382383734761e-07,
+            "whole_vector_total_gap": -9.874016761779785
+          }
+        ],
+        "causal_rank": 7
+      },
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -1.5111680030822754,
+        "probe_passes_gate": false,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.727798163890839,
+        "best_mean_directed_total_effect": 5.727798342704773,
+        "best_mean_tail_fraction": 1.4901226979731583e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.3970783948898315,
+            "mean_directed_total_effect": 4.397078275680542,
+            "mean_tail_fraction": 1.0847318320543662e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.833563208580017,
+            "mean_directed_total_effect": 2.8335628509521484,
+            "mean_tail_fraction": 3.1542806127251483e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.5856589376926422,
+            "mean_directed_total_effect": 1.5856585502624512,
+            "mean_tail_fraction": 1.6008735569911037e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8290935754776001,
+            "mean_directed_total_effect": 0.8290927410125732,
+            "mean_tail_fraction": 1.1931599061349814e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.8737216293811798,
+            "mean_directed_total_effect": 0.8737221956253052,
+            "mean_tail_fraction": 1.2366554268510598e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.754965364933014,
+            "mean_directed_total_effect": 1.7549662590026855,
+            "mean_tail_fraction": 6.8221158555860374e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.3946874737739563,
+            "mean_directed_total_effect": 3.394688844680786,
+            "mean_tail_fraction": 4.11287963004538e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.727798163890839,
+            "mean_directed_total_effect": 5.727798342704773,
+            "mean_tail_fraction": 1.4901226979731583e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.26284074783325195,
+            "total_shift": 0.26284217834472656,
+            "tail_fraction": 5.442473059758354e-06,
+            "whole_vector_total_gap": 0.9915294647216797
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 12.309600353240967,
+            "total_shift": 12.309601306915283,
+            "tail_fraction": 7.747402150795048e-08,
+            "whole_vector_total_gap": 65.56444549560547
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 8.125544548034668,
+            "total_shift": 8.125543594360352,
+            "tail_fraction": 1.1736744813825885e-07,
+            "whole_vector_total_gap": 43.06593132019043
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 2.2132070064544678,
+            "total_shift": 2.2132062911987305,
+            "tail_fraction": 3.231762624880694e-07,
+            "whole_vector_total_gap": 10.837211608886719
+          }
+        ],
+        "causal_rank": 8
+      },
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.28099629282951355,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.634591579437256,
+        "best_mean_directed_total_effect": 5.6345908641815186,
+        "best_mean_tail_fraction": 2.546298817612554e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.634591579437256,
+            "mean_directed_total_effect": 5.6345908641815186,
+            "mean_tail_fraction": 2.546298817612554e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.625997357070446,
+            "mean_directed_total_effect": 3.6259970664978027,
+            "mean_tail_fraction": 3.934934095199605e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.9641502052545547,
+            "mean_directed_total_effect": 1.964148998260498,
+            "mean_tail_fraction": 9.427320782310914e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.9945534393191338,
+            "mean_directed_total_effect": 0.9945533275604248,
+            "mean_tail_fraction": 4.411773457148195e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.954465389251709,
+            "mean_directed_total_effect": 0.9544657468795776,
+            "mean_tail_fraction": 9.134585290622206e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.81757652759552,
+            "mean_directed_total_effect": 1.8175772428512573,
+            "mean_tail_fraction": 6.1415338520171405e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.190722107887268,
+            "mean_directed_total_effect": 3.190722942352295,
+            "mean_tail_fraction": 3.0317641309285324e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.78059846162796,
+            "mean_directed_total_effect": 4.7805986404418945,
+            "mean_tail_fraction": 2.370465718472634e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.2210237979888916,
+            "total_shift": -0.2210216522216797,
+            "tail_fraction": 9.708402730434333e-06,
+            "whole_vector_total_gap": -1.6884765625
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.769050121307373,
+            "total_shift": -12.769049644470215,
+            "tail_fraction": 3.7343198709359305e-08,
+            "whole_vector_total_gap": -63.59440517425537
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.651724338531494,
+            "total_shift": -7.651724815368652,
+            "tail_fraction": 6.231760416231742e-08,
+            "whole_vector_total_gap": -41.64744186401367
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.8965680599212646,
+            "total_shift": -1.8965673446655273,
+            "tail_fraction": 3.771317371442076e-07,
+            "whole_vector_total_gap": -9.874016761779785
+          }
+        ],
+        "causal_rank": 9
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.351584255695343,
+        "probe_passes_gate": false,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.623463213443756,
+        "best_mean_directed_total_effect": 5.623464107513428,
+        "best_mean_tail_fraction": 1.943483231138185e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.241572290658951,
+            "mean_directed_total_effect": 4.241572856903076,
+            "mean_tail_fraction": 1.6458006418409528e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.6044854521751404,
+            "mean_directed_total_effect": 2.604485273361206,
+            "mean_tail_fraction": 3.7859852732913045e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.417278304696083,
+            "mean_directed_total_effect": 1.4172775745391846,
+            "mean_tail_fraction": 6.904067665563629e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.7355208098888397,
+            "mean_directed_total_effect": 0.735520601272583,
+            "mean_tail_fraction": 1.661024521433742e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7739126682281494,
+            "mean_directed_total_effect": 0.7739124298095703,
+            "mean_tail_fraction": 1.1702849560631497e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.5667943358421326,
+            "mean_directed_total_effect": 1.5667943954467773,
+            "mean_tail_fraction": 6.904747204687923e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.14642933011055,
+            "mean_directed_total_effect": 3.1464295387268066,
+            "mean_tail_fraction": 9.680837091130736e-07
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.623463213443756,
+            "mean_directed_total_effect": 5.623464107513428,
+            "mean_tail_fraction": 1.943483231138185e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.2543907165527344,
+            "total_shift": 0.2543926239013672,
+            "tail_fraction": 7.4976569821930645e-06,
+            "whole_vector_total_gap": 0.9329748153686523
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 12.077867031097412,
+            "total_shift": 12.07786750793457,
+            "tail_fraction": 3.948024416478043e-08,
+            "whole_vector_total_gap": 66.28233242034912
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 8.177696228027344,
+            "total_shift": 8.17769718170166,
+            "tail_fraction": 1.166189325939071e-07,
+            "whole_vector_total_gap": 45.07892417907715
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 1.9838988780975342,
+            "total_shift": 1.9838991165161133,
+            "tail_fraction": 1.2017676560098719e-07,
+            "whole_vector_total_gap": 11.71225357055664
+          }
+        ],
+        "causal_rank": 10
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.28328147530555725,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.592520356178284,
+        "best_mean_directed_total_effect": 5.592520475387573,
+        "best_mean_tail_fraction": 2.0069544744759133e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.592520356178284,
+            "mean_directed_total_effect": 5.592520475387573,
+            "mean_tail_fraction": 2.0069544744759133e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.3875856399536133,
+            "mean_directed_total_effect": 3.387585401535034,
+            "mean_tail_fraction": 4.2990083771570865e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.7957701981067657,
+            "mean_directed_total_effect": 1.7957704067230225,
+            "mean_tail_fraction": 4.829052701390622e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.910391315817833,
+            "mean_directed_total_effect": 0.9103906154632568,
+            "mean_tail_fraction": 1.0462492666106581e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.9026689529418945,
+            "mean_directed_total_effect": 0.9026696681976318,
+            "mean_tail_fraction": 1.0540599059083874e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.7643564641475677,
+            "mean_directed_total_effect": 1.7643567323684692,
+            "mean_tail_fraction": 5.6601949777446075e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.2625131011009216,
+            "mean_directed_total_effect": 3.2625131607055664,
+            "mean_tail_fraction": 3.3346073262198617e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.211336672306061,
+            "mean_directed_total_effect": 5.211336016654968,
+            "mean_tail_fraction": 1.2820240006227164e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.20280122756958008,
+            "total_shift": -0.20279979705810547,
+            "tail_fraction": 7.053811174177408e-06,
+            "whole_vector_total_gap": -1.6660003662109375
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.58626127243042,
+            "total_shift": -11.586264610290527,
+            "tail_fraction": 2.880876813789753e-07,
+            "whole_vector_total_gap": -57.54322624206543
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.495477676391602,
+            "total_shift": -8.495477676391602,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.790215492248535
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -2.085541248321533,
+            "total_shift": -2.0855398178100586,
+            "tail_fraction": 6.859190423472699e-07,
+            "whole_vector_total_gap": -8.722081184387207
+          }
+        ],
+        "causal_rank": 11
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.4505343437194824,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.5473931431770325,
+        "best_mean_directed_total_effect": 5.547392845153809,
+        "best_mean_tail_fraction": 1.698772428092668e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.5473931431770325,
+            "mean_directed_total_effect": 5.547392845153809,
+            "mean_tail_fraction": 1.698772428092668e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.3368913531303406,
+            "mean_directed_total_effect": 3.3368916511535645,
+            "mean_tail_fraction": 4.696493283306208e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.7652427852153778,
+            "mean_directed_total_effect": 1.7652428150177002,
+            "mean_tail_fraction": 8.758895522722981e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8951884508132935,
+            "mean_directed_total_effect": 0.8951888084411621,
+            "mean_tail_fraction": 6.864842050668879e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.8907799124717712,
+            "mean_directed_total_effect": 0.8907805681228638,
+            "mean_tail_fraction": 2.012396134833555e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.7453909814357758,
+            "mean_directed_total_effect": 1.7453906536102295,
+            "mean_tail_fraction": 8.139725695321296e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.2400928735733032,
+            "mean_directed_total_effect": 3.2400927543640137,
+            "mean_tail_fraction": 4.165722759909881e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.188552707433701,
+            "mean_directed_total_effect": 5.1885528564453125,
+            "mean_tail_fraction": 1.8109016489892764e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.1998894214630127,
+            "total_shift": -0.1998882293701172,
+            "tail_fraction": 5.963797364478669e-06,
+            "whole_vector_total_gap": -1.6486644744873047
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.506585597991943,
+            "total_shift": -11.506587028503418,
+            "tail_fraction": 1.2432109287191754e-07,
+            "whole_vector_total_gap": -57.73788833618164
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.459659576416016,
+            "total_shift": -8.459659576416016,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.91374206542969
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -2.023437976837158,
+            "total_shift": -2.0234365463256836,
+            "tail_fraction": 7.06971255020085e-07,
+            "whole_vector_total_gap": -8.5707426071167
+          }
+        ],
+        "causal_rank": 12
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.35495221614837646,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.534690320491791,
+        "best_mean_directed_total_effect": 5.534690618515015,
+        "best_mean_tail_fraction": 3.345240887569107e-07,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.534690320491791,
+            "mean_directed_total_effect": 5.534690618515015,
+            "mean_tail_fraction": 3.345240887569107e-07
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.2758691906929016,
+            "mean_directed_total_effect": 3.275869369506836,
+            "mean_tail_fraction": 2.624964119636259e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.7052230685949326,
+            "mean_directed_total_effect": 1.7052233219146729,
+            "mean_tail_fraction": 6.2512625680615415e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8585163801908493,
+            "mean_directed_total_effect": 0.8585159778594971,
+            "mean_tail_fraction": 1.5442602404503005e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.85747230052948,
+            "mean_directed_total_effect": 0.8574726581573486,
+            "mean_tail_fraction": 1.7378294896289935e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.7006257474422455,
+            "mean_directed_total_effect": 1.7006251811981201,
+            "mean_tail_fraction": 4.551102458240524e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.2365544140338898,
+            "mean_directed_total_effect": 3.236555337905884,
+            "mean_tail_fraction": 4.6737948310528265e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.277459889650345,
+            "mean_directed_total_effect": 5.277461409568787,
+            "mean_tail_fraction": 9.790581632161925e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.19637513160705566,
+            "total_shift": -0.19637489318847656,
+            "tail_fraction": 1.2140990899113222e-06,
+            "whole_vector_total_gap": -1.637131690979004
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.536635875701904,
+            "total_shift": -11.536637306213379,
+            "tail_fraction": 1.239972651163206e-07,
+            "whole_vector_total_gap": -57.533074378967285
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.429906845092773,
+            "total_shift": -8.429906845092773,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -37.24104022979736
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -1.9758434295654297,
+            "total_shift": -1.9758434295654297,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -8.506327629089355
+          }
+        ],
+        "causal_rank": 13
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.5186837911605835,
+        "probe_passes_gate": true,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.529477059841156,
+        "best_mean_directed_total_effect": 5.529477000236511,
+        "best_mean_tail_fraction": 1.6157094073537241e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.371480047702789,
+            "mean_directed_total_effect": 4.371479034423828,
+            "mean_tail_fraction": 1.183129375197352e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.645526498556137,
+            "mean_directed_total_effect": 2.6455249786376953,
+            "mean_tail_fraction": 4.9292791429035685e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.4097922295331955,
+            "mean_directed_total_effect": 1.4097919464111328,
+            "mean_tail_fraction": 1.1033931068849477e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.7192929834127426,
+            "mean_directed_total_effect": 0.7192926406860352,
+            "mean_tail_fraction": 1.478643620886958e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7334132492542267,
+            "mean_directed_total_effect": 0.7334136962890625,
+            "mean_tail_fraction": 1.3681413010712791e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.484509915113449,
+            "mean_directed_total_effect": 1.4845110177993774,
+            "mean_tail_fraction": 8.607557117934689e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.018460124731064,
+            "mean_directed_total_effect": 3.018460512161255,
+            "mean_tail_fraction": 3.2750597342808592e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.529477059841156,
+            "mean_directed_total_effect": 5.529477000236511,
+            "mean_tail_fraction": 1.6157094073537241e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.256345272064209,
+            "total_shift": 0.2563467025756836,
+            "tail_fraction": 5.580377903191604e-06,
+            "whole_vector_total_gap": 0.9283466339111328
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 12.020473003387451,
+            "total_shift": 12.020470142364502,
+            "tail_fraction": 2.3801256650814898e-07,
+            "whole_vector_total_gap": 63.81159591674805
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 7.991299629211426,
+            "total_shift": 7.991299629211426,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": 42.41632843017578
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 1.849790334701538,
+            "total_shift": 1.8497915267944336,
+            "tail_fraction": 6.444471597151441e-07,
+            "whole_vector_total_gap": 9.373397827148438
+          }
+        ],
+        "causal_rank": 14
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -0.06010715663433075,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.519383460283279,
+        "best_mean_directed_total_effect": 5.519383668899536,
+        "best_mean_tail_fraction": 1.9052166506107718e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.519383460283279,
+            "mean_directed_total_effect": 5.519383668899536,
+            "mean_tail_fraction": 1.9052166506107718e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.3685987815260887,
+            "mean_directed_total_effect": 3.368598222732544,
+            "mean_tail_fraction": 3.889943317017283e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.8162808567285538,
+            "mean_directed_total_effect": 1.8162798881530762,
+            "mean_tail_fraction": 1.1841179570762784e-05
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.9611096233129501,
+            "mean_directed_total_effect": 0.9611098766326904,
+            "mean_tail_fraction": 7.282538966185134e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.0542446374893188,
+            "mean_directed_total_effect": 1.0542443990707397,
+            "mean_tail_fraction": 1.2074835120538224e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.9677384793758392,
+            "mean_directed_total_effect": 1.9677387475967407,
+            "mean_tail_fraction": 3.705272859406902e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.3210557103157043,
+            "mean_directed_total_effect": 3.3210561275482178,
+            "mean_tail_fraction": 4.558143850135908e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.840541303157806,
+            "mean_directed_total_effect": 4.840541839599609,
+            "mean_tail_fraction": 1.2038861372839172e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.22753870487213135,
+            "total_shift": -0.2275371551513672,
+            "tail_fraction": 6.810847059809715e-06,
+            "whole_vector_total_gap": -1.6444978713989258
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.636348247528076,
+            "total_shift": -12.636351585388184,
+            "tail_fraction": 2.6414745465625923e-07,
+            "whole_vector_total_gap": -59.06591606140137
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.466580390930176,
+            "total_shift": -7.466580390930176,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -38.604265213012695
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.7470664978027344,
+            "total_shift": -1.747065544128418,
+            "tail_fraction": 5.458720879771126e-07,
+            "whole_vector_total_gap": -8.017048835754395
+          }
+        ],
+        "causal_rank": 15
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.2910339832305908,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.517138302326202,
+        "best_mean_directed_total_effect": 5.517137765884399,
+        "best_mean_tail_fraction": 2.2989801096406636e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.517138302326202,
+            "mean_directed_total_effect": 5.517137765884399,
+            "mean_tail_fraction": 2.2989801096406636e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.115969657897949,
+            "mean_directed_total_effect": 3.1159698963165283,
+            "mean_tail_fraction": 3.816336112959662e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.558834657073021,
+            "mean_directed_total_effect": 1.5588343143463135,
+            "mean_tail_fraction": 6.8484415414416415e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.766861081123352,
+            "mean_directed_total_effect": 0.7668607234954834,
+            "mean_tail_fraction": 1.5400550073965857e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7217546999454498,
+            "mean_directed_total_effect": 0.7217552661895752,
+            "mean_tail_fraction": 1.0675165091932843e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.4778381288051605,
+            "mean_directed_total_effect": 1.4778387546539307,
+            "mean_tail_fraction": 6.9236902304707985e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.987908899784088,
+            "mean_directed_total_effect": 2.987910270690918,
+            "mean_tail_fraction": 6.520824894477408e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.146745383739471,
+            "mean_directed_total_effect": 5.146746635437012,
+            "mean_tail_fraction": 3.3450220548195416e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.19301486015319824,
+            "total_shift": -0.19301319122314453,
+            "tail_fraction": 8.646714989451008e-06,
+            "whole_vector_total_gap": -1.6444978713989258
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.687708377838135,
+            "total_shift": -11.687708854675293,
+            "tail_fraction": 4.0798172176609415e-08,
+            "whole_vector_total_gap": -59.06591606140137
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.312021255493164,
+            "total_shift": -8.312021255493164,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -38.604265213012695
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -1.8758087158203125,
+            "total_shift": -1.875807762145996,
+            "tail_fraction": 5.084072769350362e-07,
+            "whole_vector_total_gap": -8.017048835754395
+          }
+        ],
+        "causal_rank": 16
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 3,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.26407885551452637,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.498196721076965,
+        "best_mean_directed_total_effect": 5.498196601867676,
+        "best_mean_tail_fraction": 1.6385790550100806e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.498196721076965,
+            "mean_directed_total_effect": 5.498196601867676,
+            "mean_tail_fraction": 1.6385790550100806e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.182530164718628,
+            "mean_directed_total_effect": 3.1825311183929443,
+            "mean_tail_fraction": 1.9857273967516936e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.6297931224107742,
+            "mean_directed_total_effect": 1.6297929286956787,
+            "mean_tail_fraction": 3.470695110986652e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8156115114688873,
+            "mean_directed_total_effect": 0.8156113624572754,
+            "mean_tail_fraction": 1.7692714526053467e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.8147298991680145,
+            "mean_directed_total_effect": 0.8147306442260742,
+            "mean_tail_fraction": 1.9211647875078885e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.6264602839946747,
+            "mean_directed_total_effect": 1.6264610290527344,
+            "mean_tail_fraction": 7.910163009770316e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.146894156932831,
+            "mean_directed_total_effect": 3.1468933820724487,
+            "mean_tail_fraction": 8.868236457620984e-07
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.226180404424667,
+            "mean_directed_total_effect": 5.226181507110596,
+            "mean_tail_fraction": 2.4732410025855485e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -0.19608426094055176,
+            "total_shift": -0.19608306884765625,
+            "tail_fraction": 6.0795299793782345e-06,
+            "whole_vector_total_gap": -1.650120735168457
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -11.53983736038208,
+            "total_shift": -11.539837837219238,
+            "tail_fraction": 4.13209583123595e-08,
+            "whole_vector_total_gap": -55.530385971069336
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -8.35663366317749,
+            "total_shift": -8.356633186340332,
+            "tail_fraction": 5.706091766509007e-08,
+            "whole_vector_total_gap": -36.173044204711914
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 3,
+            "scale": -8.0,
+            "local_shift": -1.9002315998077393,
+            "total_shift": -1.9002323150634766,
+            "tail_fraction": 3.7640436468463837e-07,
+            "whole_vector_total_gap": -7.854487419128418
+          }
+        ],
+        "causal_rank": 17
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -0.9754613637924194,
+        "probe_passes_gate": false,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.4909752905368805,
+        "best_mean_directed_total_effect": 5.4909751415252686,
+        "best_mean_tail_fraction": 1.099020009226394e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.212731212377548,
+            "mean_directed_total_effect": 4.212730169296265,
+            "mean_tail_fraction": 1.2463399394165543e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.6135648488998413,
+            "mean_directed_total_effect": 2.6135640144348145,
+            "mean_tail_fraction": 3.079698956941375e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.426436647772789,
+            "mean_directed_total_effect": 1.426436185836792,
+            "mean_tail_fraction": 4.695488908030445e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.7382157891988754,
+            "mean_directed_total_effect": 0.7382156848907471,
+            "mean_tail_fraction": 6.861165008146262e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7735168039798737,
+            "mean_directed_total_effect": 0.7735170125961304,
+            "mean_tail_fraction": 1.235834929937013e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.5645214021205902,
+            "mean_directed_total_effect": 1.5645219087600708,
+            "mean_tail_fraction": 4.441264056736106e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.1103034019470215,
+            "mean_directed_total_effect": 3.1103034019470215,
+            "mean_tail_fraction": 1.716605644274547e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.4909752905368805,
+            "mean_directed_total_effect": 5.4909751415252686,
+            "mean_tail_fraction": 1.099020009226394e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.2581700086593628,
+            "total_shift": 0.25817108154296875,
+            "tail_fraction": 4.155707910990277e-06,
+            "whole_vector_total_gap": 0.9708576202392578
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 11.84746789932251,
+            "total_shift": 11.847466468811035,
+            "tail_fraction": 1.2074408299658479e-07,
+            "whole_vector_total_gap": 62.379727363586426
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 7.865263938903809,
+            "total_shift": 7.865263938903809,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": 40.77678298950195
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 1.9929993152618408,
+            "total_shift": 1.9929990768432617,
+            "tail_fraction": 1.196280429187137e-07,
+            "whole_vector_total_gap": 9.669486999511719
+          }
+        ],
+        "causal_rank": 18
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -0.274730384349823,
+        "probe_passes_gate": false,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.479929745197296,
+        "best_mean_directed_total_effect": 5.479931592941284,
+        "best_mean_tail_fraction": 2.2181369629566242e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.219955772161484,
+            "mean_directed_total_effect": 4.219955205917358,
+            "mean_tail_fraction": 1.6724797811315435e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.5831974148750305,
+            "mean_directed_total_effect": 2.583197832107544,
+            "mean_tail_fraction": 2.41108457811247e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.3940860629081726,
+            "mean_directed_total_effect": 1.3940856456756592,
+            "mean_tail_fraction": 5.672647974088872e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.7170131504535675,
+            "mean_directed_total_effect": 0.717012882232666,
+            "mean_tail_fraction": 1.6131315312020212e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7450465261936188,
+            "mean_directed_total_effect": 0.7450472116470337,
+            "mean_tail_fraction": 9.631823414838988e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.5085743069648743,
+            "mean_directed_total_effect": 1.5085747241973877,
+            "mean_tail_fraction": 5.040550910446449e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.036865711212158,
+            "mean_directed_total_effect": 3.0368669033050537,
+            "mean_tail_fraction": 3.078120422908047e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.479929745197296,
+            "mean_directed_total_effect": 5.479931592941284,
+            "mean_tail_fraction": 2.2181369629566242e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.2563323974609375,
+            "total_shift": 0.2563343048095703,
+            "tail_fraction": 7.440863735462413e-06,
+            "whole_vector_total_gap": 0.9498462677001953
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 11.783138751983643,
+            "total_shift": 11.783141136169434,
+            "tail_fraction": 2.0233872814246005e-07,
+            "whole_vector_total_gap": 62.607789039611816
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 7.945950508117676,
+            "total_shift": 7.945951461791992,
+            "tail_fraction": 1.2002015378422345e-07,
+            "whole_vector_total_gap": 41.41369438171387
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 1.9342973232269287,
+            "total_shift": 1.9342994689941406,
+            "tail_fraction": 1.1093252344373995e-06,
+            "whole_vector_total_gap": 9.773632049560547
+          }
+        ],
+        "causal_rank": 19
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -0.1368904858827591,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.473518818616867,
+        "best_mean_directed_total_effect": 5.47351861000061,
+        "best_mean_tail_fraction": 2.0428775490425204e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.473518818616867,
+            "mean_directed_total_effect": 5.47351861000061,
+            "mean_tail_fraction": 2.0428775490425204e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.395201377570629,
+            "mean_directed_total_effect": 3.3952012062072754,
+            "mean_tail_fraction": 2.6117343418040734e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.8733753561973572,
+            "mean_directed_total_effect": 1.8733749389648438,
+            "mean_tail_fraction": 7.0679070887845e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 1.008442871272564,
+            "mean_directed_total_effect": 1.0084424018859863,
+            "mean_tail_fraction": 1.6434803547213183e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 1.069189965724945,
+            "mean_directed_total_effect": 1.0691906213760376,
+            "mean_tail_fraction": 1.7135088828222045e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.9483281970024109,
+            "mean_directed_total_effect": 1.9483284950256348,
+            "mean_tail_fraction": 8.888703176952e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 3.2475913166999817,
+            "mean_directed_total_effect": 3.247591257095337,
+            "mean_tail_fraction": 1.83514771164124e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.739372551441193,
+            "mean_directed_total_effect": 4.739373683929443,
+            "mean_tail_fraction": 2.7722748378693583e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.22963130474090576,
+            "total_shift": -0.2296295166015625,
+            "tail_fraction": 7.787062263273307e-06,
+            "whole_vector_total_gap": -1.650120735168457
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.475568294525146,
+            "total_shift": -12.475569725036621,
+            "tail_fraction": 1.1466502180966937e-07,
+            "whole_vector_total_gap": -55.530385971069336
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.421390533447266,
+            "total_shift": -7.421390533447266,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.173044204711914
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.7674851417541504,
+            "total_shift": -1.7674846649169922,
+            "tail_fraction": 2.6978291108710643e-07,
+            "whole_vector_total_gap": -7.854487419128418
+          }
+        ],
+        "causal_rank": 20
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 4,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.26752448081970215,
+        "probe_passes_gate": true,
+        "best_scale": 8.0,
+        "best_mean_directed_local_effect": 5.40022885799408,
+        "best_mean_directed_total_effect": 5.400229215621948,
+        "best_mean_tail_fraction": 1.8811538930214376e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.363320887088776,
+            "mean_directed_total_effect": 4.363320827484131,
+            "mean_tail_fraction": 1.7648398011805322e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.61816343665123,
+            "mean_directed_total_effect": 2.6181628704071045,
+            "mean_tail_fraction": 8.482906077520584e-07
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.3789958655834198,
+            "mean_directed_total_effect": 1.3789961338043213,
+            "mean_tail_fraction": 5.40532136475589e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.6975657790899277,
+            "mean_directed_total_effect": 0.6975655555725098,
+            "mean_tail_fraction": 1.0426052913727292e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.6699692606925964,
+            "mean_directed_total_effect": 0.6699705123901367,
+            "mean_tail_fraction": 1.2317646258466234e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.3793908655643463,
+            "mean_directed_total_effect": 1.3793914318084717,
+            "mean_tail_fraction": 3.938206746354278e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.8815869092941284,
+            "mean_directed_total_effect": 2.8815873861312866,
+            "mean_tail_fraction": 2.97367661427596e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 5.40022885799408,
+            "mean_directed_total_effect": 5.400229215621948,
+            "mean_tail_fraction": 1.8811538930214376e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 0.2553141117095947,
+            "total_shift": 0.25531578063964844,
+            "tail_fraction": 6.5367289461298825e-06,
+            "whole_vector_total_gap": 0.9343357086181641
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 11.7839674949646,
+            "total_shift": 11.783965110778809,
+            "tail_fraction": 2.023245799357304e-07,
+            "whole_vector_total_gap": 63.73563480377197
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 7.762821197509766,
+            "total_shift": 7.762822151184082,
+            "tail_fraction": 1.2285149625137086e-07,
+            "whole_vector_total_gap": 42.362314224243164
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 4,
+            "scale": 8.0,
+            "local_shift": 1.7988126277923584,
+            "total_shift": 1.798813819885254,
+            "tail_fraction": 6.627105497687671e-07,
+            "whole_vector_total_gap": 9.422405242919922
+          }
+        ],
+        "causal_rank": 21
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": -0.09208933264017105,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.372316956520081,
+        "best_mean_directed_total_effect": 5.372316360473633,
+        "best_mean_tail_fraction": 1.3891592364038443e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.372316956520081,
+            "mean_directed_total_effect": 5.372316360473633,
+            "mean_tail_fraction": 1.3891592364038443e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.2758598923683167,
+            "mean_directed_total_effect": 3.275859832763672,
+            "mean_tail_fraction": 1.5724665636668942e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.7167465388774872,
+            "mean_directed_total_effect": 1.7167460918426514,
+            "mean_tail_fraction": 6.9401293750932695e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.861931711435318,
+            "mean_directed_total_effect": 0.861931324005127,
+            "mean_tail_fraction": 1.9421195796575448e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.8348749876022339,
+            "mean_directed_total_effect": 0.8348746299743652,
+            "mean_tail_fraction": 2.8851476854442254e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.6118996143341064,
+            "mean_directed_total_effect": 1.6119000911712646,
+            "mean_tail_fraction": 9.145522099833876e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.914649248123169,
+            "mean_directed_total_effect": 2.914649486541748,
+            "mean_tail_fraction": 4.632717851012907e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.5263659954071045,
+            "mean_directed_total_effect": 4.5263671875,
+            "mean_tail_fraction": 2.38542824707122e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.2171487808227539,
+            "total_shift": -0.2171478271484375,
+            "tail_fraction": 4.3918206731782724e-06,
+            "whole_vector_total_gap": -1.6660003662109375
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.32572317123413,
+            "total_shift": -12.325723648071289,
+            "tail_fraction": 3.868634181797024e-08,
+            "whole_vector_total_gap": -57.54322624206543
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.252674102783203,
+            "total_shift": -7.252674102783203,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.790215492248535
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.6937217712402344,
+            "total_shift": -1.6937198638916016,
+            "tail_fraction": 1.126129930619135e-06,
+            "whole_vector_total_gap": -8.722081184387207
+          }
+        ],
+        "causal_rank": 22
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.5,
+        "probe_mean_score": -0.022482333704829216,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.359975874423981,
+        "best_mean_directed_total_effect": 5.359975576400757,
+        "best_mean_tail_fraction": 1.3289282110489092e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.359975874423981,
+            "mean_directed_total_effect": 5.359975576400757,
+            "mean_tail_fraction": 1.3289282110489092e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.1708663031458855,
+            "mean_directed_total_effect": 3.170866012573242,
+            "mean_tail_fraction": 3.362982193926266e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.6173085719347,
+            "mean_directed_total_effect": 1.6173079013824463,
+            "mean_tail_fraction": 1.0150210735286207e-05
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8021101206541061,
+            "mean_directed_total_effect": 0.8021097183227539,
+            "mean_tail_fraction": 1.170551389617112e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7713418304920197,
+            "mean_directed_total_effect": 0.7713412046432495,
+            "mean_tail_fraction": 7.811537600444105e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.5010304749011993,
+            "mean_directed_total_effect": 1.5010311603546143,
+            "mean_tail_fraction": 1.0203281726841068e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.786347061395645,
+            "mean_directed_total_effect": 2.7863471508026123,
+            "mean_tail_fraction": 3.191363804722291e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.46573132276535,
+            "mean_directed_total_effect": 4.465731382369995,
+            "mean_tail_fraction": 1.9735272384214905e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.21317195892333984,
+            "total_shift": -0.21317100524902344,
+            "tail_fraction": 4.473752494117015e-06,
+            "whole_vector_total_gap": -1.637131690979004
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.379919528961182,
+            "total_shift": -12.37992000579834,
+            "tail_fraction": 3.8516982175958364e-08,
+            "whole_vector_total_gap": -57.533074378967285
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.230401515960693,
+            "total_shift": -7.230401992797852,
+            "tail_fraction": 6.594891386095806e-08,
+            "whole_vector_total_gap": -37.24104022979736
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.616410493850708,
+            "total_shift": -1.6164093017578125,
+            "tail_fraction": 7.374944540417056e-07,
+            "whole_vector_total_gap": -8.506327629089355
+          }
+        ],
+        "causal_rank": 23
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 2,
+        "probe_heldout_sign_accuracy": 0.0,
+        "probe_mean_score": -0.35204848647117615,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 5.339595168828964,
+        "best_mean_directed_total_effect": 5.339595317840576,
+        "best_mean_tail_fraction": 1.983627642765655e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 5.339595168828964,
+            "mean_directed_total_effect": 5.339595317840576,
+            "mean_tail_fraction": 1.983627642765655e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.1828294955193996,
+            "mean_directed_total_effect": 3.1828291416168213,
+            "mean_tail_fraction": 5.683957078723811e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.632572814822197,
+            "mean_directed_total_effect": 1.6325726509094238,
+            "mean_tail_fraction": 7.088201212314207e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8106266334652901,
+            "mean_directed_total_effect": 0.8106260299682617,
+            "mean_tail_fraction": 2.059327752650479e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7753045856952667,
+            "mean_directed_total_effect": 0.7753045558929443,
+            "mean_tail_fraction": 1.6615317248972696e-06
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.5001203417778015,
+            "mean_directed_total_effect": 1.5001208782196045,
+            "mean_tail_fraction": 3.027583282519376e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.7550302147865295,
+            "mean_directed_total_effect": 2.755030632019043,
+            "mean_tail_fraction": 5.420176164345512e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.388702929019928,
+            "mean_directed_total_effect": 4.3887035846710205,
+            "mean_tail_fraction": 2.4403572142765084e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -0.21424543857574463,
+            "total_shift": -0.21424388885498047,
+            "tail_fraction": 7.233442094626777e-06,
+            "whole_vector_total_gap": -1.6486644744873047
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -12.312963962554932,
+            "total_shift": -12.312966346740723,
+            "tail_fraction": 1.9363212112138402e-07,
+            "whole_vector_total_gap": -57.73788833618164
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -7.210394382476807,
+            "total_shift": -7.210394859313965,
+            "tail_fraction": 6.613190643604972e-08,
+            "whole_vector_total_gap": -36.91374206542969
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 2,
+            "scale": -8.0,
+            "local_shift": -1.620776891708374,
+            "total_shift": -1.6207761764526367,
+            "tail_fraction": 4.4130444887841e-07,
+            "whole_vector_total_gap": -8.5707426071167
+          }
+        ],
+        "causal_rank": 24
+      },
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.10969497263431549,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.782383471727371,
+        "best_mean_directed_total_effect": 4.78238320350647,
+        "best_mean_tail_fraction": 1.0729990309010106e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.782383471727371,
+            "mean_directed_total_effect": 4.78238320350647,
+            "mean_tail_fraction": 1.0729990309010106e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 3.0035482943058014,
+            "mean_directed_total_effect": 3.0035479068756104,
+            "mean_tail_fraction": 4.968773671039551e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.6291694790124893,
+            "mean_directed_total_effect": 1.6291694641113281,
+            "mean_tail_fraction": 1.6924838930465167e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.8330034911632538,
+            "mean_directed_total_effect": 0.8330025672912598,
+            "mean_tail_fraction": 2.5061891910091887e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.8300794959068298,
+            "mean_directed_total_effect": 0.8300800323486328,
+            "mean_tail_fraction": 1.6399969376360917e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.6178645491600037,
+            "mean_directed_total_effect": 1.6178653240203857,
+            "mean_tail_fraction": 1.2524939514010981e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.9638739824295044,
+            "mean_directed_total_effect": 2.963874578475952,
+            "mean_tail_fraction": 3.3967515448917764e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.678781986236572,
+            "mean_directed_total_effect": 4.67878270149231,
+            "mean_tail_fraction": 3.2015165246357223e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.19800639152526855,
+            "total_shift": -0.19800567626953125,
+            "tail_fraction": 3.612299156166917e-06,
+            "whole_vector_total_gap": -1.6884765625
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -10.343753337860107,
+            "total_shift": -10.343753814697266,
+            "tail_fraction": 4.609904361080163e-08,
+            "whole_vector_total_gap": -63.59440517425537
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -7.270747184753418,
+            "total_shift": -7.270747184753418,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -41.64744186401367
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.317026972770691,
+            "total_shift": -1.317026138305664,
+            "tail_fraction": 6.335979238263232e-07,
+            "whole_vector_total_gap": -9.874016761779785
+          }
+        ],
+        "causal_rank": 25
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.23418939113616943,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.5504676923155785,
+        "best_mean_directed_total_effect": 4.5504677295684814,
+        "best_mean_tail_fraction": 2.2531316341358317e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.5504676923155785,
+            "mean_directed_total_effect": 4.5504677295684814,
+            "mean_tail_fraction": 2.2531316341358317e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.4820396900177,
+            "mean_directed_total_effect": 2.4820396900177,
+            "mean_tail_fraction": 2.8564413917306174e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.172070249915123,
+            "mean_directed_total_effect": 1.172069787979126,
+            "mean_tail_fraction": 3.938929416164998e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.5414599478244781,
+            "mean_directed_total_effect": 0.5414597988128662,
+            "mean_tail_fraction": 7.17471666124597e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.5100454688072205,
+            "mean_directed_total_effect": 0.5100460052490234,
+            "mean_tail_fraction": 1.280926903550725e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.1102086305618286,
+            "mean_directed_total_effect": 1.1102101802825928,
+            "mean_tail_fraction": 1.2525469791445169e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.3739681243896484,
+            "mean_directed_total_effect": 2.3739686012268066,
+            "mean_tail_fraction": 3.359886610320287e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.2535693645477295,
+            "mean_directed_total_effect": 4.253569841384888,
+            "mean_tail_fraction": 2.140023964625337e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.19165921211242676,
+            "total_shift": -0.19165802001953125,
+            "tail_fraction": 6.219895704788822e-06,
+            "whole_vector_total_gap": -1.6444978713989258
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -10.121224880218506,
+            "total_shift": -10.12122917175293,
+            "tail_fraction": 4.240131658914764e-07,
+            "whole_vector_total_gap": -59.06591606140137
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -6.812866687774658,
+            "total_shift": -6.8128662109375,
+            "tail_fraction": 6.99906828403003e-08,
+            "whole_vector_total_gap": -38.604265213012695
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.076119989156723,
+            "total_shift": -1.0761175155639648,
+            "tail_fraction": 2.298626983022729e-06,
+            "whole_vector_total_gap": -8.017048835754395
+          }
+        ],
+        "causal_rank": 26
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.2664737403392792,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.5282019302248955,
+        "best_mean_directed_total_effect": 4.528201103210449,
+        "best_mean_tail_fraction": 2.350271963843686e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.5282019302248955,
+            "mean_directed_total_effect": 4.528201103210449,
+            "mean_tail_fraction": 2.350271963843686e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.5566141605377197,
+            "mean_directed_total_effect": 2.5566141605377197,
+            "mean_tail_fraction": 7.715677617492625e-07
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.2789613753557205,
+            "mean_directed_total_effect": 1.2789607048034668,
+            "mean_tail_fraction": 6.877417735409299e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.6265515387058258,
+            "mean_directed_total_effect": 0.6265513896942139,
+            "mean_tail_fraction": 9.879937091498665e-06
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.6066102981567383,
+            "mean_directed_total_effect": 0.6066107749938965,
+            "mean_tail_fraction": 2.072754402595917e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.2403381764888763,
+            "mean_directed_total_effect": 1.2403382062911987,
+            "mean_tail_fraction": 3.57367306943776e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.501376122236252,
+            "mean_directed_total_effect": 2.5013760328292847,
+            "mean_tail_fraction": 1.6612926668086384e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.340155988931656,
+            "mean_directed_total_effect": 4.340155363082886,
+            "mean_tail_fraction": 2.813473628544895e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.18639898300170898,
+            "total_shift": -0.18639755249023438,
+            "tail_fraction": 7.674518551869512e-06,
+            "whole_vector_total_gap": -1.650120735168457
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -10.085409164428711,
+            "total_shift": -10.085409164428711,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -55.530385971069336
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -6.753554344177246,
+            "total_shift": -6.753554344177246,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.173044204711914
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.087445229291916,
+            "total_shift": -1.0874433517456055,
+            "tail_fraction": 1.7265693035052317e-06,
+            "whole_vector_total_gap": -7.854487419128418
+          }
+        ],
+        "causal_rank": 27
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.3053728938102722,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.5226951241493225,
+        "best_mean_directed_total_effect": 4.522695541381836,
+        "best_mean_tail_fraction": 1.9136057165461285e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.5226951241493225,
+            "mean_directed_total_effect": 4.522695541381836,
+            "mean_tail_fraction": 1.9136057165461285e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.6080177277326584,
+            "mean_directed_total_effect": 2.608017683029175,
+            "mean_tail_fraction": 2.4840122807576823e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.3403955399990082,
+            "mean_directed_total_effect": 1.3403956890106201,
+            "mean_tail_fraction": 6.368946733953666e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.672437459230423,
+            "mean_directed_total_effect": 0.6724369525909424,
+            "mean_tail_fraction": 2.36398504031518e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.6716362237930298,
+            "mean_directed_total_effect": 0.6716365814208984,
+            "mean_tail_fraction": 1.282623622205212e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.3405134677886963,
+            "mean_directed_total_effect": 1.3405139446258545,
+            "mean_tail_fraction": 6.468756116389784e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.604968339204788,
+            "mean_directed_total_effect": 2.6049680709838867,
+            "mean_tail_fraction": 3.278656810607014e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.4098038375377655,
+            "mean_directed_total_effect": 4.409804940223694,
+            "mean_tail_fraction": 2.806621736471054e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.18673336505889893,
+            "total_shift": -0.18673229217529297,
+            "tail_fraction": 5.745570803307406e-06,
+            "whole_vector_total_gap": -1.637131690979004
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -9.97026252746582,
+            "total_shift": -9.970267295837402,
+            "tail_fraction": 4.782591519910455e-07,
+            "whole_vector_total_gap": -57.533074378967285
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -6.7946295738220215,
+            "total_shift": -6.794629096984863,
+            "tail_fraction": 7.017854122673494e-08,
+            "whole_vector_total_gap": -37.24104022979736
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.1391550302505493,
+            "total_shift": -1.1391534805297852,
+            "tail_fraction": 1.3604143696593271e-06,
+            "whole_vector_total_gap": -8.506327629089355
+          }
+        ],
+        "causal_rank": 28
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.3968732953071594,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.5027739107608795,
+        "best_mean_directed_total_effect": 4.50277304649353,
+        "best_mean_tail_fraction": 3.6661106677602533e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.5027739107608795,
+            "mean_directed_total_effect": 4.50277304649353,
+            "mean_tail_fraction": 3.6661106677602533e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.6826169788837433,
+            "mean_directed_total_effect": 2.6826164722442627,
+            "mean_tail_fraction": 4.402367158739237e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.4143681973218918,
+            "mean_directed_total_effect": 1.414367914199829,
+            "mean_tail_fraction": 7.974017411478753e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.7172140181064606,
+            "mean_directed_total_effect": 0.7172133922576904,
+            "mean_tail_fraction": 1.963792345689968e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.7177573442459106,
+            "mean_directed_total_effect": 0.717758059501648,
+            "mean_tail_fraction": 1.517690776469703e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.4152197241783142,
+            "mean_directed_total_effect": 1.4152202606201172,
+            "mean_tail_fraction": 4.357508111851126e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.672264963388443,
+            "mean_directed_total_effect": 2.6722657680511475,
+            "mean_tail_fraction": 5.125682028447996e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.410256177186966,
+            "mean_directed_total_effect": 4.4102559089660645,
+            "mean_tail_fraction": 9.800696802433886e-07
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.19437265396118164,
+            "total_shift": -0.19437026977539062,
+            "tail_fraction": 1.2266206111514533e-05,
+            "whole_vector_total_gap": -1.6660003662109375
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -9.83688735961914,
+            "total_shift": -9.836889266967773,
+            "tail_fraction": 1.9389754027397334e-07,
+            "whole_vector_total_gap": -57.54322624206543
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -6.806890964508057,
+            "total_shift": -6.806890487670898,
+            "tail_fraction": 7.005212718888379e-08,
+            "whole_vector_total_gap": -36.790215492248535
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.1729446649551392,
+            "total_shift": -1.1729421615600586,
+            "tail_fraction": 2.1342868920636235e-06,
+            "whole_vector_total_gap": -8.722081184387207
+          }
+        ],
+        "causal_rank": 29
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 0,
+        "probe_heldout_sign_accuracy": 1.0,
+        "probe_mean_score": 0.3747938275337219,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 4.479397386312485,
+        "best_mean_directed_total_effect": 4.4793970584869385,
+        "best_mean_tail_fraction": 9.129606777015888e-07,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 4.479397386312485,
+            "mean_directed_total_effect": 4.4793970584869385,
+            "mean_tail_fraction": 9.129606777015888e-07
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 2.6244711577892303,
+            "mean_directed_total_effect": 2.6244709491729736,
+            "mean_tail_fraction": 3.7267319862391344e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 1.3667193800210953,
+            "mean_directed_total_effect": 1.3667192459106445,
+            "mean_tail_fraction": 2.8372871480486933e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.6895540803670883,
+            "mean_directed_total_effect": 0.6895542144775391,
+            "mean_tail_fraction": 1.252269899037174e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.6886378526687622,
+            "mean_directed_total_effect": 0.6886386871337891,
+            "mean_tail_fraction": 1.6399496708134506e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 1.3632829785346985,
+            "mean_directed_total_effect": 1.363283395767212,
+            "mean_tail_fraction": 9.343772321802857e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 2.6067947149276733,
+            "mean_directed_total_effect": 2.6067956686019897,
+            "mean_tail_fraction": 3.006158669833353e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 4.369989395141602,
+            "mean_directed_total_effect": 4.369989395141602,
+            "mean_tail_fraction": 1.3730021308111735e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -0.18989884853363037,
+            "total_shift": -0.18989849090576172,
+            "tail_fraction": 1.8832580867102242e-06,
+            "whole_vector_total_gap": -1.6486644744873047
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -9.850918769836426,
+            "total_shift": -9.850919723510742,
+            "tail_fraction": 9.681068805485835e-08,
+            "whole_vector_total_gap": -57.73788833618164
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -6.735857009887695,
+            "total_shift": -6.735857009887695,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -36.91374206542969
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 0,
+            "scale": -8.0,
+            "local_shift": -1.1409149169921875,
+            "total_shift": -1.1409130096435547,
+            "tail_fraction": 1.6717739360412727e-06,
+            "whole_vector_total_gap": -8.5707426071167
+          }
+        ],
+        "causal_rank": 30
+      },
+      {
+        "family": "recency_bias",
+        "layer": 5,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.8420945405960083,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 3.200123354792595,
+        "best_mean_directed_total_effect": 3.2001233100891113,
+        "best_mean_tail_fraction": 1.929084232461983e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 3.200123354792595,
+            "mean_directed_total_effect": 3.2001233100891113,
+            "mean_tail_fraction": 1.929084232461983e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.7120640128850937,
+            "mean_directed_total_effect": 1.7120637893676758,
+            "mean_tail_fraction": 2.4756232037546937e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.8614410161972046,
+            "mean_directed_total_effect": 0.8614406585693359,
+            "mean_tail_fraction": 3.954277919771967e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.42864494025707245,
+            "mean_directed_total_effect": 0.42864441871643066,
+            "mean_tail_fraction": 2.3891054987065017e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.4179821014404297,
+            "mean_directed_total_effect": 0.4179821014404297,
+            "mean_tail_fraction": 1.5033522015900327e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.8196960091590881,
+            "mean_directed_total_effect": 0.8196965456008911,
+            "mean_tail_fraction": 9.450067716890939e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.558290421962738,
+            "mean_directed_total_effect": 1.558290958404541,
+            "mean_tail_fraction": 5.741688923464648e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.7351233959198,
+            "mean_directed_total_effect": 2.7351237535476685,
+            "mean_tail_fraction": 1.9282783302652282e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 5,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.17584919929504395,
+            "total_shift": -0.17584800720214844,
+            "tail_fraction": 6.779109496176582e-06,
+            "whole_vector_total_gap": -1.6884765625
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 5,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.622104167938232,
+            "total_shift": -7.622105598449707,
+            "tail_fraction": 1.8767930411516902e-07,
+            "whole_vector_total_gap": -63.59440517425537
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 5,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.445894241333008,
+            "total_shift": -4.445894241333008,
+            "tail_fraction": 0.0,
+            "whole_vector_total_gap": -41.64744186401367
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 5,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5566458106040955,
+            "total_shift": -0.556645393371582,
+            "tail_fraction": 7.495481295561818e-07,
+            "whole_vector_total_gap": -9.874016761779785
+          }
+        ],
+        "causal_rank": 31
+      },
+      {
+        "family": "recency_bias",
+        "layer": 4,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.8348217606544495,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 3.0586086958646774,
+        "best_mean_directed_total_effect": 3.0586085319519043,
+        "best_mean_tail_fraction": 1.9964433649455533e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 3.0586086958646774,
+            "mean_directed_total_effect": 3.0586085319519043,
+            "mean_tail_fraction": 1.9964433649455533e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.6155419200658798,
+            "mean_directed_total_effect": 1.615541696548462,
+            "mean_tail_fraction": 4.258848088789392e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.8102864697575569,
+            "mean_directed_total_effect": 0.8102865219116211,
+            "mean_tail_fraction": 6.7764264141656495e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.40306568145751953,
+            "mean_directed_total_effect": 0.40306520462036133,
+            "mean_tail_fraction": 1.3843229700964e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.3937819004058838,
+            "mean_directed_total_effect": 0.3937828540802002,
+            "mean_tail_fraction": 2.3155796803992308e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.7737492322921753,
+            "mean_directed_total_effect": 0.773749828338623,
+            "mean_tail_fraction": 1.2228796570642928e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.4784590601921082,
+            "mean_directed_total_effect": 1.478459119796753,
+            "mean_tail_fraction": 5.4290320084599746e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.6235406398773193,
+            "mean_directed_total_effect": 2.6235406398773193,
+            "mean_tail_fraction": 1.7899606724573358e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 4,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.17540621757507324,
+            "total_shift": -0.17540550231933594,
+            "tail_fraction": 4.077726911910225e-06,
+            "whole_vector_total_gap": -1.6660003662109375
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 4,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.286229610443115,
+            "total_shift": -7.286231994628906,
+            "tail_fraction": 3.272179355218367e-07,
+            "whole_vector_total_gap": -57.54322624206543
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 4,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.240055561065674,
+            "total_shift": -4.240055084228516,
+            "tail_fraction": 1.1246013288289302e-07,
+            "whole_vector_total_gap": -36.790215492248535
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 4,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5327433943748474,
+            "total_shift": -0.5327415466308594,
+            "tail_fraction": 3.4683684794672588e-06,
+            "whole_vector_total_gap": -8.722081184387207
+          }
+        ],
+        "causal_rank": 32
+      },
+      {
+        "family": "recency_bias",
+        "layer": 0,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.5695579051971436,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 3.0519191324710846,
+        "best_mean_directed_total_effect": 3.0519192218780518,
+        "best_mean_tail_fraction": 2.093966817597524e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 3.0519191324710846,
+            "mean_directed_total_effect": 3.0519192218780518,
+            "mean_tail_fraction": 2.093966817597524e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.5631352216005325,
+            "mean_directed_total_effect": 1.5631349086761475,
+            "mean_tail_fraction": 4.643838614110283e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.7731227055191994,
+            "mean_directed_total_effect": 0.7731215953826904,
+            "mean_tail_fraction": 1.746535011713284e-05
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.38089698553085327,
+            "mean_directed_total_effect": 0.38089680671691895,
+            "mean_tail_fraction": 1.0971911078720778e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.36233648657798767,
+            "mean_directed_total_effect": 0.3623368740081787,
+            "mean_tail_fraction": 1.3021586082080336e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.7133156061172485,
+            "mean_directed_total_effect": 0.7133157253265381,
+            "mean_tail_fraction": 7.277425065118498e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.3798066079616547,
+            "mean_directed_total_effect": 1.3798073530197144,
+            "mean_tail_fraction": 5.961202840987895e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.515998810529709,
+            "mean_directed_total_effect": 2.5159995555877686,
+            "mean_tail_fraction": 2.614313753377475e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 0,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.17252826690673828,
+            "total_shift": -0.17252731323242188,
+            "tail_fraction": 5.5276715236473786e-06,
+            "whole_vector_total_gap": -1.6444978713989258
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 0,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.268228054046631,
+            "total_shift": -7.268230438232422,
+            "tail_fraction": 3.280283710426001e-07,
+            "whole_vector_total_gap": -59.06591606140137
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 0,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.234705686569214,
+            "total_shift": -4.234705924987793,
+            "tail_fraction": 5.630109465092308e-08,
+            "whole_vector_total_gap": -38.604265213012695
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 0,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5322145223617554,
+            "total_shift": -0.5322132110595703,
+            "tail_fraction": 2.463866281049195e-06,
+            "whole_vector_total_gap": -8.017048835754395
+          }
+        ],
+        "causal_rank": 33
+      },
+      {
+        "family": "recency_bias",
+        "layer": 3,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.5485538244247437,
+        "probe_passes_gate": true,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 2.957887142896652,
+        "best_mean_directed_total_effect": 2.9578871726989746,
+        "best_mean_tail_fraction": 1.2499388901145414e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 2.957887142896652,
+            "mean_directed_total_effect": 2.9578871726989746,
+            "mean_tail_fraction": 1.2499388901145414e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.5491812974214554,
+            "mean_directed_total_effect": 1.549180507659912,
+            "mean_tail_fraction": 5.960184152306365e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.7748843878507614,
+            "mean_directed_total_effect": 0.7748847007751465,
+            "mean_tail_fraction": 1.0061006397753598e-05
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.38525694608688354,
+            "mean_directed_total_effect": 0.385256290435791,
+            "mean_tail_fraction": 1.3474429895551557e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.3767840266227722,
+            "mean_directed_total_effect": 0.3767836093902588,
+            "mean_tail_fraction": 2.0131987726432112e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.7414748072624207,
+            "mean_directed_total_effect": 0.7414751052856445,
+            "mean_tail_fraction": 1.085529922163729e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.422972410917282,
+            "mean_directed_total_effect": 1.4229724407196045,
+            "mean_tail_fraction": 4.0227610565465286e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.549125224351883,
+            "mean_directed_total_effect": 2.5491247177124023,
+            "mean_tail_fraction": 1.94113426483621e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 3,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.17397475242614746,
+            "total_shift": -0.17397403717041016,
+            "tail_fraction": 4.111278607646978e-06,
+            "whole_vector_total_gap": -1.6486644744873047
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 3,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.047863006591797,
+            "total_shift": -7.047863960266113,
+            "tail_fraction": 1.3531395069240824e-07,
+            "whole_vector_total_gap": -57.73788833618164
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 3,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.09509539604187,
+            "total_shift": -4.095095634460449,
+            "tail_fraction": 5.822051555896702e-08,
+            "whole_vector_total_gap": -36.91374206542969
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 3,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5146154165267944,
+            "total_shift": -0.5146150588989258,
+            "tail_fraction": 6.949424865598123e-07,
+            "whole_vector_total_gap": -8.5707426071167
+          }
+        ],
+        "causal_rank": 34
+      },
+      {
+        "family": "recency_bias",
+        "layer": 1,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.3115173876285553,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 2.9546622186899185,
+        "best_mean_directed_total_effect": 2.9546618461608887,
+        "best_mean_tail_fraction": 3.433055511491792e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 2.9546622186899185,
+            "mean_directed_total_effect": 2.9546618461608887,
+            "mean_tail_fraction": 3.433055511491792e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.528465285897255,
+            "mean_directed_total_effect": 1.5284652709960938,
+            "mean_tail_fraction": 3.43832847630234e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.7592953592538834,
+            "mean_directed_total_effect": 0.7592952251434326,
+            "mean_tail_fraction": 6.232746495938184e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.3764279782772064,
+            "mean_directed_total_effect": 0.37642765045166016,
+            "mean_tail_fraction": 1.6217264948532136e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.3670192360877991,
+            "mean_directed_total_effect": 0.3670198917388916,
+            "mean_tail_fraction": 2.2196234435660035e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.7223056554794312,
+            "mean_directed_total_effect": 0.7223055362701416,
+            "mean_tail_fraction": 4.680588295247192e-06
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.3898239731788635,
+            "mean_directed_total_effect": 1.3898248672485352,
+            "mean_tail_fraction": 4.6167709046254355e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.510765701532364,
+            "mean_directed_total_effect": 2.510765790939331,
+            "mean_tail_fraction": 2.1286450274217193e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 1,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.1739482879638672,
+            "total_shift": -0.17394638061523438,
+            "tail_fraction": 1.0965152744577733e-05,
+            "whole_vector_total_gap": -1.650120735168457
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 1,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.076884031295776,
+            "total_shift": -7.076885223388672,
+            "tail_fraction": 1.6844881015846046e-07,
+            "whole_vector_total_gap": -55.530385971069336
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 1,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.063356876373291,
+            "total_shift": -4.063357353210449,
+            "tail_fraction": 1.1735053473118161e-07,
+            "whole_vector_total_gap": -36.173044204711914
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 1,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5044596791267395,
+            "total_shift": -0.5044584274291992,
+            "tail_fraction": 2.481269956499793e-06,
+            "whole_vector_total_gap": -7.854487419128418
+          }
+        ],
+        "causal_rank": 35
+      },
+      {
+        "family": "recency_bias",
+        "layer": 2,
+        "head": 1,
+        "probe_heldout_sign_accuracy": 0.75,
+        "probe_mean_score": 0.6275805830955505,
+        "probe_passes_gate": false,
+        "best_scale": -8.0,
+        "best_mean_directed_local_effect": 2.9534833431243896,
+        "best_mean_directed_total_effect": 2.9534828662872314,
+        "best_mean_tail_fraction": 2.0375652488444625e-06,
+        "scale_summaries": [
+          {
+            "scale": -8.0,
+            "mean_directed_local_effect": 2.9534833431243896,
+            "mean_directed_total_effect": 2.9534828662872314,
+            "mean_tail_fraction": 2.0375652488444625e-06
+          },
+          {
+            "scale": -4.0,
+            "mean_directed_local_effect": 1.5434901416301727,
+            "mean_directed_total_effect": 1.5434887409210205,
+            "mean_tail_fraction": 6.643186353983857e-06
+          },
+          {
+            "scale": -2.0,
+            "mean_directed_local_effect": 0.7719056233763695,
+            "mean_directed_total_effect": 0.7719056606292725,
+            "mean_tail_fraction": 9.446415295401791e-06
+          },
+          {
+            "scale": -1.0,
+            "mean_directed_local_effect": 0.3838941156864166,
+            "mean_directed_total_effect": 0.3838934898376465,
+            "mean_tail_fraction": 2.578114667296236e-05
+          },
+          {
+            "scale": 1.0,
+            "mean_directed_local_effect": 0.3759250342845917,
+            "mean_directed_total_effect": 0.37592554092407227,
+            "mean_tail_fraction": 2.3547720370384743e-05
+          },
+          {
+            "scale": 2.0,
+            "mean_directed_local_effect": 0.7403948307037354,
+            "mean_directed_total_effect": 0.7403950691223145,
+            "mean_tail_fraction": 1.215425850664397e-05
+          },
+          {
+            "scale": 4.0,
+            "mean_directed_local_effect": 1.4232820272445679,
+            "mean_directed_total_effect": 1.4232821464538574,
+            "mean_tail_fraction": 3.6887877291122048e-06
+          },
+          {
+            "scale": 8.0,
+            "mean_directed_local_effect": 2.5558246672153473,
+            "mean_directed_total_effect": 2.5558254718780518,
+            "mean_tail_fraction": 2.694409646593326e-06
+          }
+        ],
+        "case_rows": [
+          {
+            "case_id": "recency_001",
+            "layer": 2,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.17360734939575195,
+            "total_shift": -0.17360687255859375,
+            "tail_fraction": 2.7466490881125028e-06,
+            "whole_vector_total_gap": -1.637131690979004
+          },
+          {
+            "case_id": "recency_002",
+            "layer": 2,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -7.038885593414307,
+            "total_shift": -7.038887023925781,
+            "tail_fraction": 2.032297818883786e-07,
+            "whole_vector_total_gap": -57.533074378967285
+          },
+          {
+            "case_id": "recency_003",
+            "layer": 2,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -4.091412782669067,
+            "total_shift": -4.091412544250488,
+            "tail_fraction": 5.8272925676146586e-08,
+            "whole_vector_total_gap": -37.24104022979736
+          },
+          {
+            "case_id": "recency_004",
+            "layer": 2,
+            "head": 1,
+            "scale": -8.0,
+            "local_shift": -0.5100276470184326,
+            "total_shift": -0.5100250244140625,
+            "tail_fraction": 5.142109199700823e-06,
+            "whole_vector_total_gap": -8.506327629089355
+          }
+        ],
+        "causal_rank": 36
+      }
+    ],
+    "metadata": {
+      "phase_name": "per_channel_causal_phase2",
+      "family": "recency_bias",
+      "probe_artifact": "runs/channel_probe_e2_phase1/e2_channel_probe.json",
+      "stream": "x_t",
+      "stage": "post_block",
+      "scales": [
+        -8.0,
+        -4.0,
+        -2.0,
+        -1.0,
+        1.0,
+        2.0,
+        4.0,
+        8.0
+      ],
+      "rank_correlation_probe_vs_causal": 0.22110682110682112,
+      "heldout_accuracy_vs_effect_correlation": 0.16216855140438455,
+      "n_promoted": 18,
+      "promoted_mean_effect": 5.373428464349773,
+      "low_rank_mean_effect": 4.331564934717284,
+      "random_control_mean_effect": 4.941713292565611,
+      "top_readout_decompositions": [
+        {
+          "layer": 5,
+          "head": 5,
+          "case_id": "recency_002",
+          "combined_effect": -14.71033525466919,
+          "xt_effect": -16.110337734222412,
+          "xe_effect": 0.0,
+          "transfer_ratio": 0.0
+        },
+        {
+          "layer": 0,
+          "head": 5,
+          "case_id": "recency_002",
+          "combined_effect": -15.021592617034912,
+          "xt_effect": -16.75824213027954,
+          "xe_effect": 9.172917366027832,
+          "transfer_ratio": 0.5473675159194529
+        },
+        {
+          "layer": 4,
+          "head": 5,
+          "case_id": "recency_002",
+          "combined_effect": -14.39372968673706,
+          "xt_effect": -16.073343753814697,
+          "xe_effect": 5.856075286865234,
+          "transfer_ratio": 0.3643346012229352
+        }
+      ]
+    }
+  }
+}
