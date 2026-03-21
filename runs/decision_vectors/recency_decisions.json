@@ -1,0 +1,7925 @@
+{
+  "prompt": "The trophy would not fit in the suitcase because the suitcase was too",
+  "model": "openai/gpt-oss-20b",
+  "num_layers": 24,
+  "positions": [
+    {
+      "position": 0,
+      "target_token": " code",
+      "convergence_layer": 21,
+      "num_decisions": 9,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": "ira",
+          "to_token": " entr",
+          "semantic_label": "content\u2192'entr'",
+          "gainers": [
+            [
+              "utum",
+              16.2
+            ],
+            [
+              "spe",
+              15.83
+            ],
+            [
+              " epit",
+              15.08
+            ],
+            [
+              " schematic",
+              14.95
+            ],
+            [
+              " Circ",
+              14.83
+            ]
+          ],
+          "losers": [
+            [
+              " doma",
+              -15.09
+            ],
+            [
+              " bride",
+              -15.09
+            ],
+            [
+              " cre",
+              -15.71
+            ],
+            [
+              " dent",
+              -16.09
+            ],
+            [
+              "ekl",
+              -16.71
+            ]
+          ]
+        },
+        {
+          "from_layer": 2,
+          "to_layer": 3,
+          "from_token": " entr",
+          "to_token": "orem",
+          "semantic_label": "content\u2192'orem'",
+          "gainers": [
+            [
+              "321",
+              16.27
+            ],
+            [
+              "Emb",
+              16.02
+            ],
+            [
+              "orem",
+              3.52
+            ],
+            [
+              "besch",
+              1.9
+            ],
+            [
+              "utum",
+              0.52
+            ]
+          ],
+          "losers": [
+            [
+              " epit",
+              -0.23
+            ],
+            [
+              "spe",
+              -1.35
+            ],
+            [
+              " entr",
+              -2.73
+            ],
+            [
+              " Spe",
+              -15.62
+            ],
+            [
+              " Circ",
+              -16.12
+            ]
+          ]
+        },
+        {
+          "from_layer": 3,
+          "to_layer": 4,
+          "from_token": "orem",
+          "to_token": " epit",
+          "semantic_label": "content\u2192'epit'",
+          "gainers": [
+            [
+              " gro",
+              16.84
+            ],
+            [
+              "DE",
+              16.84
+            ],
+            [
+              " pit",
+              16.59
+            ],
+            [
+              "leg",
+              16.34
+            ],
+            [
+              "Emb",
+              1.63
+            ]
+          ],
+          "losers": [
+            [
+              "orem",
+              -1.37
+            ],
+            [
+              "spe",
+              -16.27
+            ],
+            [
+              "oretical",
+              -16.4
+            ],
+            [
+              " entr",
+              -16.65
+            ],
+            [
+              "EMS",
+              -16.65
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": " epit",
+          "to_token": "DE",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              "assist",
+              16.04
+            ],
+            [
+              " developed",
+              15.73
+            ],
+            [
+              "DD",
+              15.73
+            ],
+            [
+              "LL",
+              15.54
+            ],
+            [
+              "DE",
+              1.82
+            ]
+          ],
+          "losers": [
+            [
+              " pit",
+              -0.8
+            ],
+            [
+              "leg",
+              -16.34
+            ],
+            [
+              " gro",
+              -16.84
+            ],
+            [
+              "utum",
+              -17.15
+            ],
+            [
+              "besch",
+              -17.22
+            ]
+          ]
+        },
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": "DE",
+          "to_token": " BOTH",
+          "semantic_label": "letter/short\u2192'BOTH'",
+          "gainers": [
+            [
+              " BOTH",
+              18.75
+            ],
+            [
+              " b\u00e5de",
+              18.63
+            ],
+            [
+              "both",
+              17.63
+            ],
+            [
+              " ]\r\n",
+              16.75
+            ],
+            [
+              "\tthen",
+              16.5
+            ]
+          ],
+          "losers": [
+            [
+              "orem",
+              -16.91
+            ],
+            [
+              "321",
+              -17.16
+            ],
+            [
+              " epit",
+              -17.91
+            ],
+            [
+              "Emb",
+              -18.54
+            ],
+            [
+              "DE",
+              -18.66
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " BOTH",
+          "to_token": "By",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              "By",
+              17.1
+            ],
+            [
+              "();\n",
+              16.73
+            ],
+            [
+              " and",
+              16.54
+            ],
+            [
+              "Field",
+              16.54
+            ],
+            [
+              "_",
+              16.54
+            ]
+          ],
+          "losers": [
+            [
+              " ]\r\n",
+              -16.07
+            ],
+            [
+              " Both",
+              -16.94
+            ],
+            [
+              "both",
+              -17.82
+            ],
+            [
+              " b\u00e5de",
+              -18.57
+            ],
+            [
+              " BOTH",
+              -18.82
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": "By",
+          "to_token": " ",
+          "semantic_label": "letter/short\u2192padding",
+          "gainers": [
+            [
+              " ",
+              17.96
+            ],
+            [
+              " main",
+              17.09
+            ],
+            [
+              " `",
+              16.77
+            ],
+            [
+              " code",
+              16.65
+            ],
+            [
+              ",",
+              16.52
+            ]
+          ],
+          "losers": [
+            [
+              ");\n",
+              -16.48
+            ],
+            [
+              "Field",
+              -16.54
+            ],
+            [
+              "_",
+              -16.54
+            ],
+            [
+              "();\n",
+              -16.73
+            ],
+            [
+              "By",
+              -17.1
+            ]
+          ]
+        },
+        {
+          "from_layer": 18,
+          "to_layer": 19,
+          "from_token": " ",
+          "to_token": " main",
+          "semantic_label": "padding\u2192'main'",
+          "gainers": [
+            [
+              " next",
+              16.8
+            ],
+            [
+              " \"",
+              16.05
+            ],
+            [
+              " overall",
+              15.73
+            ],
+            [
+              " **",
+              15.67
+            ],
+            [
+              " first",
+              1.33
+            ]
+          ],
+          "losers": [
+            [
+              " `",
+              -0.54
+            ],
+            [
+              "`",
+              -15.96
+            ],
+            [
+              " =",
+              -16.02
+            ],
+            [
+              ",",
+              -16.52
+            ],
+            [
+              " and",
+              -16.71
+            ]
+          ]
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 21,
+          "from_token": " main",
+          "to_token": " code",
+          "semantic_label": "content\u2192'code'",
+          "gainers": [
+            [
+              " function",
+              16.04
+            ],
+            [
+              " following",
+              15.79
+            ],
+            [
+              " user",
+              15.73
+            ],
+            [
+              " `",
+              1.0
+            ],
+            [
+              " code",
+              1.0
+            ]
+          ],
+          "losers": [
+            [
+              " first",
+              -0.56
+            ],
+            [
+              " main",
+              -1.25
+            ],
+            [
+              " overall",
+              -15.67
+            ],
+            [
+              " goal",
+              -15.73
+            ],
+            [
+              " current",
+              -15.79
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -23.329,
+          "target_prob": 0.0,
+          "target_rank": 61898
+        },
+        {
+          "layer": 1,
+          "target_logprob": -21.897,
+          "target_prob": 0.0,
+          "target_rank": 48453
+        },
+        {
+          "layer": 2,
+          "target_logprob": -20.891,
+          "target_prob": 0.0,
+          "target_rank": 34953
+        },
+        {
+          "layer": 3,
+          "target_logprob": -18.259,
+          "target_prob": 0.0,
+          "target_rank": 23664
+        },
+        {
+          "layer": 4,
+          "target_logprob": -14.972,
+          "target_prob": 0.0,
+          "target_rank": 11705
+        },
+        {
+          "layer": 5,
+          "target_logprob": -16.366,
+          "target_prob": 0.0,
+          "target_rank": 17623
+        },
+        {
+          "layer": 6,
+          "target_logprob": -24.808,
+          "target_prob": 0.0,
+          "target_rank": 133719
+        },
+        {
+          "layer": 7,
+          "target_logprob": -24.792,
+          "target_prob": 0.0,
+          "target_rank": 133311
+        },
+        {
+          "layer": 8,
+          "target_logprob": -24.783,
+          "target_prob": 0.0,
+          "target_rank": 133022
+        },
+        {
+          "layer": 9,
+          "target_logprob": -24.938,
+          "target_prob": 0.0,
+          "target_rank": 134878
+        },
+        {
+          "layer": 10,
+          "target_logprob": -24.945,
+          "target_prob": 0.0,
+          "target_rank": 134902
+        },
+        {
+          "layer": 11,
+          "target_logprob": -24.851,
+          "target_prob": 0.0,
+          "target_rank": 133877
+        },
+        {
+          "layer": 12,
+          "target_logprob": -24.832,
+          "target_prob": 0.0,
+          "target_rank": 133297
+        },
+        {
+          "layer": 13,
+          "target_logprob": -24.719,
+          "target_prob": 0.0,
+          "target_rank": 131297
+        },
+        {
+          "layer": 14,
+          "target_logprob": -24.629,
+          "target_prob": 0.0,
+          "target_rank": 129010
+        },
+        {
+          "layer": 15,
+          "target_logprob": -24.367,
+          "target_prob": 0.0,
+          "target_rank": 123843
+        },
+        {
+          "layer": 16,
+          "target_logprob": -23.927,
+          "target_prob": 0.0,
+          "target_rank": 116221
+        },
+        {
+          "layer": 17,
+          "target_logprob": -7.208,
+          "target_prob": 0.000741,
+          "target_rank": 178
+        },
+        {
+          "layer": 18,
+          "target_logprob": -3.35,
+          "target_prob": 0.035073,
+          "target_rank": 4
+        },
+        {
+          "layer": 19,
+          "target_logprob": -2.705,
+          "target_prob": 0.066896,
+          "target_rank": 3
+        },
+        {
+          "layer": 20,
+          "target_logprob": -2.457,
+          "target_prob": 0.08569,
+          "target_rank": 1
+        },
+        {
+          "layer": 21,
+          "target_logprob": -1.456,
+          "target_prob": 0.233074,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -2.529,
+          "target_prob": 0.079734,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -3.202,
+          "target_prob": 0.040681,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 1,
+      "target_token": " was",
+      "convergence_layer": 21,
+      "num_decisions": 7,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " Dum",
+          "to_token": " Sav",
+          "semantic_label": "content\u2192'Sav'",
+          "gainers": [
+            [
+              " sle",
+              17.31
+            ],
+            [
+              " Nus",
+              17.19
+            ],
+            [
+              "odor",
+              16.69
+            ],
+            [
+              " dum",
+              16.31
+            ],
+            [
+              " scre",
+              16.31
+            ]
+          ],
+          "losers": [
+            [
+              " reco",
+              -16.31
+            ],
+            [
+              "&p",
+              -16.43
+            ],
+            [
+              " cho",
+              -16.43
+            ],
+            [
+              "gio",
+              -16.81
+            ],
+            [
+              "dos",
+              -16.93
+            ]
+          ]
+        },
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " Sav",
+          "to_token": "odor",
+          "semantic_label": "content\u2192'odor'",
+          "gainers": [
+            [
+              " graz",
+              15.2
+            ],
+            [
+              " sur",
+              15.08
+            ],
+            [
+              " Dra",
+              14.95
+            ],
+            [
+              "odor",
+              2.32
+            ],
+            [
+              " sle",
+              1.07
+            ]
+          ],
+          "losers": [
+            [
+              " dum",
+              -1.05
+            ],
+            [
+              " Sav",
+              -1.93
+            ],
+            [
+              " incom",
+              -16.19
+            ],
+            [
+              " Ashton",
+              -16.81
+            ],
+            [
+              " Nus",
+              -17.19
+            ]
+          ]
+        },
+        {
+          "from_layer": 3,
+          "to_layer": 4,
+          "from_token": "odor",
+          "to_token": "manship",
+          "semantic_label": "content\u2192'manship'",
+          "gainers": [
+            [
+              " tipped",
+              15.46
+            ],
+            [
+              " surf",
+              15.03
+            ],
+            [
+              "\u00a0",
+              14.71
+            ],
+            [
+              "manship",
+              2.21
+            ],
+            [
+              " sur",
+              0.4
+            ]
+          ],
+          "losers": [
+            [
+              "odor",
+              -0.54
+            ],
+            [
+              " Sta",
+              -1.1
+            ],
+            [
+              "olem",
+              -14.88
+            ],
+            [
+              " Dra",
+              -15.69
+            ],
+            [
+              " Cheer",
+              -16.19
+            ]
+          ]
+        },
+        {
+          "from_layer": 10,
+          "to_layer": 11,
+          "from_token": "manship",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " sports",
+              15.25
+            ],
+            [
+              "BC",
+              15.06
+            ],
+            [
+              "\u2011",
+              1.37
+            ],
+            [
+              "<|endoftext|>",
+              1.3
+            ],
+            [
+              "33",
+              0.68
+            ]
+          ],
+          "losers": [
+            [
+              " sur",
+              0.12
+            ],
+            [
+              "man",
+              -0.26
+            ],
+            [
+              "manship",
+              -1.2
+            ],
+            [
+              " rewards",
+              -15.45
+            ],
+            [
+              "odor",
+              -15.7
+            ]
+          ]
+        },
+        {
+          "from_layer": 14,
+          "to_layer": 15,
+          "from_token": "<|endoftext|>",
+          "to_token": ",",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              " for",
+              16.79
+            ],
+            [
+              " (",
+              16.41
+            ],
+            [
+              " in",
+              16.35
+            ],
+            [
+              ",",
+              1.28
+            ],
+            [
+              " ",
+              0.15
+            ]
+          ],
+          "losers": [
+            [
+              "_",
+              -0.97
+            ],
+            [
+              "<|endoftext|>",
+              -1.29
+            ],
+            [
+              " or",
+              -15.64
+            ],
+            [
+              "\u2011",
+              -16.07
+            ],
+            [
+              "\n",
+              -16.45
+            ]
+          ]
+        },
+        {
+          "from_layer": 18,
+          "to_layer": 19,
+          "from_token": ",",
+          "to_token": " is",
+          "semantic_label": "punctuation\u2192letter/short",
+          "gainers": [
+            [
+              "'s",
+              16.15
+            ],
+            [
+              " has",
+              15.9
+            ],
+            [
+              " that",
+              2.19
+            ],
+            [
+              " is",
+              1.62
+            ],
+            [
+              " was",
+              1.5
+            ]
+          ],
+          "losers": [
+            [
+              " for",
+              0.87
+            ],
+            [
+              " and",
+              -0.88
+            ],
+            [
+              ",",
+              -1.38
+            ],
+            [
+              " or",
+              -14.9
+            ],
+            [
+              ":",
+              -15.15
+            ]
+          ]
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 21,
+          "from_token": " is",
+          "to_token": " was",
+          "semantic_label": "letter/short\u2192'was'",
+          "gainers": [
+            [
+              " will",
+              16.45
+            ],
+            [
+              " of",
+              0.42
+            ],
+            [
+              " was",
+              0.36
+            ],
+            [
+              " that",
+              0.3
+            ],
+            [
+              " in",
+              0.11
+            ]
+          ],
+          "losers": [
+            [
+              "'s",
+              -0.14
+            ],
+            [
+              ",",
+              -0.27
+            ],
+            [
+              " has",
+              -0.58
+            ],
+            [
+              " is",
+              -0.77
+            ],
+            [
+              " and",
+              -16.09
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -20.132,
+          "target_prob": 0.0,
+          "target_rank": 80715
+        },
+        {
+          "layer": 1,
+          "target_logprob": -19.752,
+          "target_prob": 0.0,
+          "target_rank": 76084
+        },
+        {
+          "layer": 2,
+          "target_logprob": -18.877,
+          "target_prob": 0.0,
+          "target_rank": 61985
+        },
+        {
+          "layer": 3,
+          "target_logprob": -18.219,
+          "target_prob": 0.0,
+          "target_rank": 46809
+        },
+        {
+          "layer": 4,
+          "target_logprob": -16.864,
+          "target_prob": 0.0,
+          "target_rank": 28587
+        },
+        {
+          "layer": 5,
+          "target_logprob": -17.783,
+          "target_prob": 0.0,
+          "target_rank": 26000
+        },
+        {
+          "layer": 6,
+          "target_logprob": -14.916,
+          "target_prob": 0.0,
+          "target_rank": 15099
+        },
+        {
+          "layer": 7,
+          "target_logprob": -15.659,
+          "target_prob": 0.0,
+          "target_rank": 12612
+        },
+        {
+          "layer": 8,
+          "target_logprob": -13.974,
+          "target_prob": 1e-06,
+          "target_rank": 5129
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.4,
+          "target_prob": 4e-06,
+          "target_rank": 2280
+        },
+        {
+          "layer": 10,
+          "target_logprob": -10.365,
+          "target_prob": 3.2e-05,
+          "target_rank": 1356
+        },
+        {
+          "layer": 11,
+          "target_logprob": -10.781,
+          "target_prob": 2.1e-05,
+          "target_rank": 1030
+        },
+        {
+          "layer": 12,
+          "target_logprob": -8.876,
+          "target_prob": 0.00014,
+          "target_rank": 444
+        },
+        {
+          "layer": 13,
+          "target_logprob": -9.644,
+          "target_prob": 6.5e-05,
+          "target_rank": 178
+        },
+        {
+          "layer": 14,
+          "target_logprob": -8.926,
+          "target_prob": 0.000133,
+          "target_rank": 171
+        },
+        {
+          "layer": 15,
+          "target_logprob": -8.526,
+          "target_prob": 0.000198,
+          "target_rank": 91
+        },
+        {
+          "layer": 16,
+          "target_logprob": -7.758,
+          "target_prob": 0.000427,
+          "target_rank": 24
+        },
+        {
+          "layer": 17,
+          "target_logprob": -8.409,
+          "target_prob": 0.000223,
+          "target_rank": 14
+        },
+        {
+          "layer": 18,
+          "target_logprob": -4.223,
+          "target_prob": 0.014661,
+          "target_rank": 4
+        },
+        {
+          "layer": 19,
+          "target_logprob": -2.724,
+          "target_prob": 0.065583,
+          "target_rank": 3
+        },
+        {
+          "layer": 20,
+          "target_logprob": -1.905,
+          "target_prob": 0.148815,
+          "target_rank": 1
+        },
+        {
+          "layer": 21,
+          "target_logprob": -1.546,
+          "target_prob": 0.213138,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -2.236,
+          "target_prob": 0.106833,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.902,
+          "target_prob": 0.149239,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "target_token": " be",
+      "convergence_layer": 18,
+      "num_decisions": 6,
+      "decisions": [
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " dep",
+          "to_token": " alle",
+          "semantic_label": "content\u2192'alle'",
+          "gainers": [
+            [
+              " plaus",
+              14.89
+            ],
+            [
+              " Fact",
+              14.52
+            ],
+            [
+              "ng",
+              14.39
+            ],
+            [
+              " alle",
+              3.35
+            ],
+            [
+              " mus",
+              2.73
+            ]
+          ],
+          "losers": [
+            [
+              "Alle",
+              0.48
+            ],
+            [
+              " dep",
+              -1.27
+            ],
+            [
+              "ROB",
+              -12.67
+            ],
+            [
+              " glimps",
+              -13.67
+            ],
+            [
+              "ICE",
+              -14.54
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " alle",
+          "to_token": " ex",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " rough",
+              16.26
+            ],
+            [
+              " NP",
+              16.26
+            ],
+            [
+              "\ufffd",
+              16.19
+            ],
+            [
+              " intangible",
+              16.01
+            ],
+            [
+              " hypot",
+              0.47
+            ]
+          ],
+          "losers": [
+            [
+              " alle",
+              -0.97
+            ],
+            [
+              " plaus",
+              -15.47
+            ],
+            [
+              " Alle",
+              -15.6
+            ],
+            [
+              "Trans",
+              -15.66
+            ],
+            [
+              " mus",
+              -16.6
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " ex",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "letter/short\u2192padding",
+          "gainers": [
+            [
+              " item",
+              16.39
+            ],
+            [
+              " rational",
+              15.64
+            ],
+            [
+              " intangible",
+              0.64
+            ],
+            [
+              "<|endoftext|>",
+              0.57
+            ],
+            [
+              " hypot",
+              0.14
+            ]
+          ],
+          "losers": [
+            [
+              "\ufffd",
+              -0.43
+            ],
+            [
+              " verst",
+              -0.86
+            ],
+            [
+              " ex",
+              -0.99
+            ],
+            [
+              " hazard",
+              -15.94
+            ],
+            [
+              " rough",
+              -16.26
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": " (",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              " ",
+              17.81
+            ],
+            [
+              "'",
+              17.25
+            ],
+            [
+              "\"",
+              16.75
+            ],
+            [
+              " also",
+              16.69
+            ],
+            [
+              " a",
+              16.19
+            ]
+          ],
+          "losers": [
+            [
+              "_",
+              -15.84
+            ],
+            [
+              "A",
+              -16.09
+            ],
+            [
+              " item",
+              -16.09
+            ],
+            [
+              " with",
+              -16.78
+            ],
+            [
+              "<|endoftext|>",
+              -18.53
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " (",
+          "to_token": " not",
+          "semantic_label": "punctuation\u2192'not'",
+          "gainers": [
+            [
+              " be",
+              16.5
+            ],
+            [
+              " only",
+              16.32
+            ],
+            [
+              ":",
+              16.32
+            ],
+            [
+              " at",
+              15.88
+            ],
+            [
+              " not",
+              1.38
+            ]
+          ],
+          "losers": [
+            [
+              " (",
+              -1.12
+            ],
+            [
+              ",",
+              -16.06
+            ],
+            [
+              " and",
+              -16.31
+            ],
+            [
+              "\"",
+              -16.75
+            ],
+            [
+              "'",
+              -17.25
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " not",
+          "to_token": " be",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " have",
+              16.42
+            ],
+            [
+              " become",
+              16.3
+            ],
+            [
+              " probably",
+              15.61
+            ],
+            [
+              " then",
+              15.42
+            ],
+            [
+              " never",
+              14.86
+            ]
+          ],
+          "losers": [
+            [
+              " only",
+              -16.32
+            ],
+            [
+              ":",
+              -16.32
+            ],
+            [
+              " for",
+              -16.94
+            ],
+            [
+              " (",
+              -16.94
+            ],
+            [
+              " ",
+              -18.19
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -24.774,
+          "target_prob": 0.0,
+          "target_rank": 50948
+        },
+        {
+          "layer": 1,
+          "target_logprob": -22.381,
+          "target_prob": 0.0,
+          "target_rank": 36709
+        },
+        {
+          "layer": 2,
+          "target_logprob": -19.482,
+          "target_prob": 0.0,
+          "target_rank": 29374
+        },
+        {
+          "layer": 3,
+          "target_logprob": -17.694,
+          "target_prob": 0.0,
+          "target_rank": 15493
+        },
+        {
+          "layer": 4,
+          "target_logprob": -15.425,
+          "target_prob": 0.0,
+          "target_rank": 7332
+        },
+        {
+          "layer": 5,
+          "target_logprob": -12.884,
+          "target_prob": 3e-06,
+          "target_rank": 4139
+        },
+        {
+          "layer": 6,
+          "target_logprob": -11.588,
+          "target_prob": 9e-06,
+          "target_rank": 3252
+        },
+        {
+          "layer": 7,
+          "target_logprob": -11.463,
+          "target_prob": 1.1e-05,
+          "target_rank": 3368
+        },
+        {
+          "layer": 8,
+          "target_logprob": -10.889,
+          "target_prob": 1.9e-05,
+          "target_rank": 2957
+        },
+        {
+          "layer": 9,
+          "target_logprob": -11.374,
+          "target_prob": 1.1e-05,
+          "target_rank": 1986
+        },
+        {
+          "layer": 10,
+          "target_logprob": -10.416,
+          "target_prob": 3e-05,
+          "target_rank": 2138
+        },
+        {
+          "layer": 11,
+          "target_logprob": -13.142,
+          "target_prob": 2e-06,
+          "target_rank": 1930
+        },
+        {
+          "layer": 12,
+          "target_logprob": -10.232,
+          "target_prob": 3.6e-05,
+          "target_rank": 2086
+        },
+        {
+          "layer": 13,
+          "target_logprob": -12.41,
+          "target_prob": 4e-06,
+          "target_rank": 2918
+        },
+        {
+          "layer": 14,
+          "target_logprob": -9.406,
+          "target_prob": 8.2e-05,
+          "target_rank": 704
+        },
+        {
+          "layer": 15,
+          "target_logprob": -7.126,
+          "target_prob": 0.000804,
+          "target_rank": 101
+        },
+        {
+          "layer": 16,
+          "target_logprob": -5.936,
+          "target_prob": 0.002641,
+          "target_rank": 34
+        },
+        {
+          "layer": 17,
+          "target_logprob": -3.497,
+          "target_prob": 0.030301,
+          "target_rank": 5
+        },
+        {
+          "layer": 18,
+          "target_logprob": -0.701,
+          "target_prob": 0.496148,
+          "target_rank": 0
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.471,
+          "target_prob": 0.624513,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.19,
+          "target_prob": 0.826939,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.658,
+          "target_prob": 0.517834,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -0.636,
+          "target_prob": 0.529271,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -0.93,
+          "target_prob": 0.394512,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "target_token": " be",
+      "convergence_layer": 18,
+      "num_decisions": 9,
+      "decisions": [
+        {
+          "from_layer": 3,
+          "to_layer": 4,
+          "from_token": " succ",
+          "to_token": "\ufffd",
+          "semantic_label": "content\u2192'\ufffd'",
+          "gainers": [
+            [
+              " apparent",
+              16.87
+            ],
+            [
+              " yet",
+              16.62
+            ],
+            [
+              " verst",
+              16.62
+            ],
+            [
+              " fin",
+              16.5
+            ],
+            [
+              " ex",
+              16.12
+            ]
+          ],
+          "losers": [
+            [
+              " Ct",
+              -15.54
+            ],
+            [
+              " h\u00e1",
+              -15.66
+            ],
+            [
+              " Nations",
+              -15.91
+            ],
+            [
+              " hypo",
+              -16.29
+            ],
+            [
+              " \ufffd",
+              -16.29
+            ]
+          ]
+        },
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": "\ufffd",
+          "to_token": " ex",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " MC",
+              15.71
+            ],
+            [
+              " quite",
+              15.59
+            ],
+            [
+              " h\u00e1",
+              15.46
+            ],
+            [
+              " hazard",
+              2.24
+            ],
+            [
+              " division",
+              1.74
+            ]
+          ],
+          "losers": [
+            [
+              " rec",
+              -0.07
+            ],
+            [
+              "\ufffd",
+              -1.38
+            ],
+            [
+              " succ",
+              -15.22
+            ],
+            [
+              " verst",
+              -16.03
+            ],
+            [
+              " fin",
+              -16.09
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " ex",
+          "to_token": "\ufffd",
+          "semantic_label": "letter/short\u2192'\ufffd'",
+          "gainers": [
+            [
+              "<|reserved_200016|>",
+              15.28
+            ],
+            [
+              " synt",
+              14.97
+            ],
+            [
+              " fin",
+              14.91
+            ],
+            [
+              " harm",
+              14.91
+            ],
+            [
+              "<|endoftext|>",
+              1.07
+            ]
+          ],
+          "losers": [
+            [
+              " rec",
+              -1.31
+            ],
+            [
+              " ordinary",
+              -15.4
+            ],
+            [
+              " h\u00e1",
+              -15.46
+            ],
+            [
+              " quite",
+              -15.59
+            ],
+            [
+              " MC",
+              -15.71
+            ]
+          ]
+        },
+        {
+          "from_layer": 8,
+          "to_layer": 9,
+          "from_token": "\ufffd",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " synergy",
+              15.19
+            ],
+            [
+              " fin",
+              15.0
+            ],
+            [
+              " verst",
+              14.88
+            ],
+            [
+              "<|reserved_200016|>",
+              0.98
+            ],
+            [
+              " rec",
+              0.79
+            ]
+          ],
+          "losers": [
+            [
+              " division",
+              -0.59
+            ],
+            [
+              "\ufffd",
+              -1.09
+            ],
+            [
+              " word",
+              -14.71
+            ],
+            [
+              " MC",
+              -14.78
+            ],
+            [
+              " hazard",
+              -15.78
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": " without",
+          "semantic_label": "padding\u2192'without'",
+          "gainers": [
+            [
+              " unless",
+              16.5
+            ],
+            [
+              " necessarily",
+              16.13
+            ],
+            [
+              " greatly",
+              16.0
+            ],
+            [
+              " really",
+              15.69
+            ],
+            [
+              " be",
+              15.63
+            ]
+          ],
+          "losers": [
+            [
+              "-st",
+              -15.68
+            ],
+            [
+              "\u2011",
+              -16.12
+            ],
+            [
+              "<|reserved_200016|>",
+              -16.18
+            ],
+            [
+              "\"",
+              -16.43
+            ],
+            [
+              "<|endoftext|>",
+              -18.99
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " without",
+          "to_token": " be",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " exist",
+              17.17
+            ],
+            [
+              " become",
+              16.04
+            ],
+            [
+              " get",
+              15.79
+            ],
+            [
+              " reward",
+              15.67
+            ],
+            [
+              " being",
+              15.54
+            ]
+          ],
+          "losers": [
+            [
+              " (",
+              -15.38
+            ],
+            [
+              " regret",
+              -15.5
+            ],
+            [
+              " greatly",
+              -16.0
+            ],
+            [
+              " unless",
+              -16.5
+            ],
+            [
+              " without",
+              -16.82
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " be",
+          "to_token": " have",
+          "semantic_label": "letter/short\u2192'have'",
+          "gainers": [
+            [
+              " have",
+              19.51
+            ],
+            [
+              " appear",
+              14.07
+            ],
+            [
+              " change",
+              13.7
+            ],
+            [
+              " result",
+              13.45
+            ],
+            [
+              " be",
+              0.59
+            ]
+          ],
+          "losers": [
+            [
+              " necessarily",
+              -3.66
+            ],
+            [
+              " being",
+              -15.54
+            ],
+            [
+              " even",
+              -15.54
+            ],
+            [
+              " reward",
+              -15.67
+            ],
+            [
+              " really",
+              -16.92
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": " have",
+          "to_token": " be",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " show",
+              14.65
+            ],
+            [
+              " give",
+              13.9
+            ],
+            [
+              " hold",
+              13.77
+            ],
+            [
+              " be",
+              0.35
+            ],
+            [
+              " become",
+              0.29
+            ]
+          ],
+          "losers": [
+            [
+              " have",
+              -0.21
+            ],
+            [
+              " exist",
+              -1.33
+            ],
+            [
+              " change",
+              -13.79
+            ],
+            [
+              " yet",
+              -14.04
+            ],
+            [
+              " get",
+              -14.67
+            ]
+          ]
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 21,
+          "from_token": " be",
+          "to_token": " have",
+          "semantic_label": "letter/short\u2192'have'",
+          "gainers": [
+            [
+              " win",
+              14.48
+            ],
+            [
+              " fit",
+              13.67
+            ],
+            [
+              " give",
+              0.15
+            ],
+            [
+              " have",
+              0.15
+            ],
+            [
+              " appear",
+              -0.04
+            ]
+          ],
+          "losers": [
+            [
+              " help",
+              -0.22
+            ],
+            [
+              " exist",
+              -0.47
+            ],
+            [
+              " become",
+              -0.79
+            ],
+            [
+              " hold",
+              -13.77
+            ],
+            [
+              " necessarily",
+              -14.08
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -23.862,
+          "target_prob": 0.0,
+          "target_rank": 64954
+        },
+        {
+          "layer": 1,
+          "target_logprob": -20.657,
+          "target_prob": 0.0,
+          "target_rank": 27993
+        },
+        {
+          "layer": 2,
+          "target_logprob": -20.159,
+          "target_prob": 0.0,
+          "target_rank": 20491
+        },
+        {
+          "layer": 3,
+          "target_logprob": -16.555,
+          "target_prob": 0.0,
+          "target_rank": 11805
+        },
+        {
+          "layer": 4,
+          "target_logprob": -13.813,
+          "target_prob": 1e-06,
+          "target_rank": 4654
+        },
+        {
+          "layer": 5,
+          "target_logprob": -12.905,
+          "target_prob": 2e-06,
+          "target_rank": 3137
+        },
+        {
+          "layer": 6,
+          "target_logprob": -11.473,
+          "target_prob": 1e-05,
+          "target_rank": 2110
+        },
+        {
+          "layer": 7,
+          "target_logprob": -11.907,
+          "target_prob": 7e-06,
+          "target_rank": 1825
+        },
+        {
+          "layer": 8,
+          "target_logprob": -11.88,
+          "target_prob": 7e-06,
+          "target_rank": 2322
+        },
+        {
+          "layer": 9,
+          "target_logprob": -10.53,
+          "target_prob": 2.7e-05,
+          "target_rank": 1122
+        },
+        {
+          "layer": 10,
+          "target_logprob": -10.506,
+          "target_prob": 2.7e-05,
+          "target_rank": 2030
+        },
+        {
+          "layer": 11,
+          "target_logprob": -11.246,
+          "target_prob": 1.3e-05,
+          "target_rank": 2389
+        },
+        {
+          "layer": 12,
+          "target_logprob": -10.748,
+          "target_prob": 2.1e-05,
+          "target_rank": 4015
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.764,
+          "target_prob": 2.1e-05,
+          "target_rank": 2221
+        },
+        {
+          "layer": 14,
+          "target_logprob": -9.936,
+          "target_prob": 4.8e-05,
+          "target_rank": 829
+        },
+        {
+          "layer": 15,
+          "target_logprob": -7.354,
+          "target_prob": 0.00064,
+          "target_rank": 114
+        },
+        {
+          "layer": 16,
+          "target_logprob": -4.371,
+          "target_prob": 0.012635,
+          "target_rank": 6
+        },
+        {
+          "layer": 17,
+          "target_logprob": -1.708,
+          "target_prob": 0.181295,
+          "target_rank": 0
+        },
+        {
+          "layer": 18,
+          "target_logprob": -1.113,
+          "target_prob": 0.328442,
+          "target_rank": 1
+        },
+        {
+          "layer": 19,
+          "target_logprob": -1.082,
+          "target_prob": 0.339041,
+          "target_rank": 1
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.729,
+          "target_prob": 0.482512,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.828,
+          "target_prob": 0.437088,
+          "target_rank": 1
+        },
+        {
+          "layer": 22,
+          "target_logprob": -1.212,
+          "target_prob": 0.297744,
+          "target_rank": 1
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.076,
+          "target_prob": 0.340847,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "target_token": " in",
+      "convergence_layer": 19,
+      "num_decisions": 9,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " gird",
+          "to_token": " don",
+          "semantic_label": "content\u2192'don'",
+          "gainers": [
+            [
+              " tightly",
+              16.63
+            ],
+            [
+              " unre",
+              15.51
+            ],
+            [
+              " performing",
+              15.51
+            ],
+            [
+              " RE",
+              15.26
+            ],
+            [
+              " conven",
+              15.01
+            ]
+          ],
+          "losers": [
+            [
+              "Anything",
+              -15.28
+            ],
+            [
+              " alleg",
+              -15.28
+            ],
+            [
+              "tes",
+              -15.65
+            ],
+            [
+              "worthy",
+              -17.03
+            ],
+            [
+              "waters",
+              -17.03
+            ]
+          ]
+        },
+        {
+          "from_layer": 2,
+          "to_layer": 3,
+          "from_token": " don",
+          "to_token": "extr",
+          "semantic_label": "content\u2192'extr'",
+          "gainers": [
+            [
+              " firm",
+              15.97
+            ],
+            [
+              " breath",
+              15.6
+            ],
+            [
+              "extr",
+              1.73
+            ],
+            [
+              " metaphor",
+              1.1
+            ],
+            [
+              " cr",
+              0.85
+            ]
+          ],
+          "losers": [
+            [
+              " don",
+              -0.77
+            ],
+            [
+              " RE",
+              -1.02
+            ],
+            [
+              " tightly",
+              -1.52
+            ],
+            [
+              "orni",
+              -15.56
+            ],
+            [
+              "pci",
+              -15.62
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": "extr",
+          "to_token": " pack",
+          "semantic_label": "content\u2192'pack'",
+          "gainers": [
+            [
+              " breath",
+              16.05
+            ],
+            [
+              " perfectly",
+              15.87
+            ],
+            [
+              " placement",
+              15.55
+            ],
+            [
+              " pocket",
+              15.55
+            ],
+            [
+              "acha",
+              15.55
+            ]
+          ],
+          "losers": [
+            [
+              " cr",
+              -16.25
+            ],
+            [
+              " performing",
+              -16.38
+            ],
+            [
+              " firm",
+              -16.38
+            ],
+            [
+              "ment",
+              -16.44
+            ],
+            [
+              " denomin",
+              -16.75
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " pack",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              "<|endoftext|>",
+              17.88
+            ],
+            [
+              "<|reserved_200016|>",
+              16.07
+            ],
+            [
+              "LL",
+              15.88
+            ],
+            [
+              " crown",
+              15.69
+            ],
+            [
+              " leg",
+              -0.17
+            ]
+          ],
+          "losers": [
+            [
+              " cond",
+              -2.23
+            ],
+            [
+              " placement",
+              -15.55
+            ],
+            [
+              " pocket",
+              -15.55
+            ],
+            [
+              "acha",
+              -15.55
+            ],
+            [
+              " perfectly",
+              -15.87
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": " (",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              " (",
+              17.65
+            ],
+            [
+              " with",
+              16.77
+            ],
+            [
+              "**",
+              16.33
+            ],
+            [
+              ".\n\n",
+              16.21
+            ],
+            [
+              " unless",
+              16.08
+            ]
+          ],
+          "losers": [
+            [
+              ",",
+              -15.39
+            ],
+            [
+              " cannot",
+              -15.58
+            ],
+            [
+              " and",
+              -15.89
+            ],
+            [
+              "ier",
+              -16.51
+            ],
+            [
+              "<|endoftext|>",
+              -18.08
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " (",
+          "to_token": ";",
+          "semantic_label": "punctuation\u2192punctuation",
+          "gainers": [
+            [
+              " in",
+              17.37
+            ],
+            [
+              " if",
+              16.37
+            ],
+            [
+              " into",
+              16.37
+            ],
+            [
+              " inside",
+              1.49
+            ],
+            [
+              ";",
+              1.37
+            ]
+          ],
+          "losers": [
+            [
+              " on",
+              -0.38
+            ],
+            [
+              ":",
+              -0.51
+            ],
+            [
+              " ",
+              -16.01
+            ],
+            [
+              " above",
+              -16.26
+            ],
+            [
+              " (",
+              -18.38
+            ]
+          ]
+        },
+        {
+          "from_layer": 18,
+          "to_layer": 19,
+          "from_token": ";",
+          "to_token": " in",
+          "semantic_label": "punctuation\u2192letter/short",
+          "gainers": [
+            [
+              " the",
+              16.97
+            ],
+            [
+              " in",
+              1.66
+            ],
+            [
+              " on",
+              0.22
+            ],
+            [
+              ",",
+              0.1
+            ],
+            [
+              " inside",
+              0.1
+            ]
+          ],
+          "losers": [
+            [
+              " into",
+              -0.15
+            ],
+            [
+              ";",
+              -0.34
+            ],
+            [
+              ".",
+              -0.9
+            ],
+            [
+              " with",
+              -1.47
+            ],
+            [
+              ":",
+              -16.56
+            ]
+          ]
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 21,
+          "from_token": " in",
+          "to_token": " into",
+          "semantic_label": "letter/short\u2192'into'",
+          "gainers": [
+            [
+              " into",
+              0.41
+            ],
+            [
+              " if",
+              0.22
+            ],
+            [
+              " inside",
+              0.16
+            ],
+            [
+              " within",
+              0.16
+            ],
+            [
+              " on",
+              0.09
+            ]
+          ],
+          "losers": [
+            [
+              " because",
+              0.09
+            ],
+            [
+              " the",
+              -0.22
+            ],
+            [
+              " any",
+              -0.22
+            ],
+            [
+              " in",
+              -0.34
+            ],
+            [
+              ".",
+              -0.34
+            ]
+          ]
+        },
+        {
+          "from_layer": 21,
+          "to_layer": 22,
+          "from_token": " into",
+          "to_token": " in",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              ";",
+              16.14
+            ],
+            [
+              ".",
+              1.03
+            ],
+            [
+              " if",
+              0.97
+            ],
+            [
+              " because",
+              0.78
+            ],
+            [
+              " on",
+              0.72
+            ]
+          ],
+          "losers": [
+            [
+              " the",
+              0.09
+            ],
+            [
+              " in",
+              -0.28
+            ],
+            [
+              " inside",
+              -0.91
+            ],
+            [
+              " into",
+              -1.28
+            ],
+            [
+              " any",
+              -15.35
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -22.362,
+          "target_prob": 0.0,
+          "target_rank": 101251
+        },
+        {
+          "layer": 1,
+          "target_logprob": -19.97,
+          "target_prob": 0.0,
+          "target_rank": 57296
+        },
+        {
+          "layer": 2,
+          "target_logprob": -17.815,
+          "target_prob": 0.0,
+          "target_rank": 30741
+        },
+        {
+          "layer": 3,
+          "target_logprob": -17.339,
+          "target_prob": 0.0,
+          "target_rank": 23791
+        },
+        {
+          "layer": 4,
+          "target_logprob": -14.219,
+          "target_prob": 1e-06,
+          "target_rank": 7810
+        },
+        {
+          "layer": 5,
+          "target_logprob": -13.447,
+          "target_prob": 1e-06,
+          "target_rank": 7047
+        },
+        {
+          "layer": 6,
+          "target_logprob": -12.187,
+          "target_prob": 5e-06,
+          "target_rank": 5639
+        },
+        {
+          "layer": 7,
+          "target_logprob": -12.791,
+          "target_prob": 3e-06,
+          "target_rank": 7395
+        },
+        {
+          "layer": 8,
+          "target_logprob": -11.464,
+          "target_prob": 1.1e-05,
+          "target_rank": 4934
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.781,
+          "target_prob": 3e-06,
+          "target_rank": 11039
+        },
+        {
+          "layer": 10,
+          "target_logprob": -12.517,
+          "target_prob": 4e-06,
+          "target_rank": 9507
+        },
+        {
+          "layer": 11,
+          "target_logprob": -12.809,
+          "target_prob": 3e-06,
+          "target_rank": 8820
+        },
+        {
+          "layer": 12,
+          "target_logprob": -10.706,
+          "target_prob": 2.2e-05,
+          "target_rank": 2985
+        },
+        {
+          "layer": 13,
+          "target_logprob": -9.974,
+          "target_prob": 4.7e-05,
+          "target_rank": 1400
+        },
+        {
+          "layer": 14,
+          "target_logprob": -7.851,
+          "target_prob": 0.000389,
+          "target_rank": 206
+        },
+        {
+          "layer": 15,
+          "target_logprob": -5.236,
+          "target_prob": 0.005321,
+          "target_rank": 17
+        },
+        {
+          "layer": 16,
+          "target_logprob": -5.166,
+          "target_prob": 0.005706,
+          "target_rank": 18
+        },
+        {
+          "layer": 17,
+          "target_logprob": -4.18,
+          "target_prob": 0.015302,
+          "target_rank": 10
+        },
+        {
+          "layer": 18,
+          "target_logprob": -2.626,
+          "target_prob": 0.072379,
+          "target_rank": 4
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.967,
+          "target_prob": 0.380039,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.865,
+          "target_prob": 0.420881,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -1.208,
+          "target_prob": 0.298664,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -1.489,
+          "target_prob": 0.225596,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.614,
+          "target_prob": 0.199129,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "target_token": " the",
+      "convergence_layer": 18,
+      "num_decisions": 9,
+      "decisions": [
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " Vegas",
+          "to_token": " unre",
+          "semantic_label": "content\u2192'unre'",
+          "gainers": [
+            [
+              " overhe",
+              15.26
+            ],
+            [
+              " unre",
+              2.77
+            ],
+            [
+              "Verd",
+              1.46
+            ],
+            [
+              ".at",
+              0.71
+            ],
+            [
+              " eng",
+              0.65
+            ]
+          ],
+          "losers": [
+            [
+              " sp",
+              -0.1
+            ],
+            [
+              " Hadd",
+              -0.42
+            ],
+            [
+              "ues",
+              -0.67
+            ],
+            [
+              " Vegas",
+              -1.73
+            ],
+            [
+              " sext",
+              -14.36
+            ]
+          ]
+        },
+        {
+          "from_layer": 3,
+          "to_layer": 4,
+          "from_token": " unre",
+          "to_token": " sp",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " sext",
+              16.87
+            ],
+            [
+              " denomin",
+              16.06
+            ],
+            [
+              " breath",
+              15.93
+            ],
+            [
+              " performing",
+              15.81
+            ],
+            [
+              " herm",
+              2.63
+            ]
+          ],
+          "losers": [
+            [
+              " unre",
+              -1.62
+            ],
+            [
+              " Bott",
+              -14.36
+            ],
+            [
+              "Verd",
+              -15.92
+            ],
+            [
+              " pl",
+              -16.55
+            ],
+            [
+              " Vegas",
+              -17.3
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": " sp",
+          "to_token": " eng",
+          "semantic_label": "letter/short\u2192'eng'",
+          "gainers": [
+            [
+              "BBB",
+              16.79
+            ],
+            [
+              " pack",
+              16.73
+            ],
+            [
+              " bott",
+              1.42
+            ],
+            [
+              " denomin",
+              0.86
+            ],
+            [
+              "extr",
+              0.61
+            ]
+          ],
+          "losers": [
+            [
+              " sp",
+              -0.64
+            ],
+            [
+              " unre",
+              -1.33
+            ],
+            [
+              " herm",
+              -1.7
+            ],
+            [
+              " breath",
+              -15.93
+            ],
+            [
+              " sext",
+              -16.87
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " eng",
+          "to_token": " bott",
+          "semantic_label": "content\u2192'bott'",
+          "gainers": [
+            [
+              " breath",
+              16.43
+            ],
+            [
+              " ex",
+              16.18
+            ],
+            [
+              " herm",
+              15.93
+            ],
+            [
+              " pack",
+              1.8
+            ],
+            [
+              " Bott",
+              0.99
+            ]
+          ],
+          "losers": [
+            [
+              " eng",
+              -1.2
+            ],
+            [
+              " leg",
+              -1.45
+            ],
+            [
+              " windows",
+              -16.2
+            ],
+            [
+              " denomin",
+              -16.63
+            ],
+            [
+              " sp",
+              -17.76
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " bott",
+          "to_token": " pack",
+          "semantic_label": "content\u2192'pack'",
+          "gainers": [
+            [
+              "BBB",
+              16.56
+            ],
+            [
+              "<|reserved_200016|>",
+              15.75
+            ],
+            [
+              " windows",
+              15.63
+            ],
+            [
+              " ex",
+              0.88
+            ],
+            [
+              " breath",
+              0.13
+            ]
+          ],
+          "losers": [
+            [
+              " eng",
+              -0.93
+            ],
+            [
+              " bott",
+              -2.37
+            ],
+            [
+              " herm",
+              -15.93
+            ],
+            [
+              " sext",
+              -16.43
+            ],
+            [
+              " Bott",
+              -16.81
+            ]
+          ]
+        },
+        {
+          "from_layer": 9,
+          "to_layer": 10,
+          "from_token": " pack",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " drop",
+              15.68
+            ],
+            [
+              " exp",
+              15.55
+            ],
+            [
+              "(run",
+              0.45
+            ],
+            [
+              " principle",
+              0.26
+            ],
+            [
+              " windows",
+              0.26
+            ]
+          ],
+          "losers": [
+            [
+              " ex",
+              -0.3
+            ],
+            [
+              " breath",
+              -0.68
+            ],
+            [
+              " pack",
+              -0.99
+            ],
+            [
+              " hollow",
+              -15.36
+            ],
+            [
+              " breathe",
+              -15.42
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": ".",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              ".",
+              16.33
+            ],
+            [
+              " this",
+              16.33
+            ],
+            [
+              " windows",
+              15.14
+            ],
+            [
+              ".\"",
+              15.08
+            ],
+            [
+              " feas",
+              15.02
+            ]
+          ],
+          "losers": [
+            [
+              "\u2026",
+              -14.97
+            ],
+            [
+              " box",
+              -15.16
+            ],
+            [
+              " shipping",
+              -15.53
+            ],
+            [
+              " constraints",
+              -16.16
+            ],
+            [
+              "<|endoftext|>",
+              -17.91
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": ".",
+          "to_token": " this",
+          "semantic_label": "punctuation\u2192'this'",
+          "gainers": [
+            [
+              " the",
+              18.02
+            ],
+            [
+              " that",
+              17.58
+            ],
+            [
+              " above",
+              15.15
+            ],
+            [
+              " exactly",
+              15.08
+            ],
+            [
+              " with",
+              15.02
+            ]
+          ],
+          "losers": [
+            [
+              " cannot",
+              -14.95
+            ],
+            [
+              " feas",
+              -15.02
+            ],
+            [
+              " windows",
+              -15.14
+            ],
+            [
+              "\u2011",
+              -15.27
+            ],
+            [
+              "i",
+              -15.7
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " this",
+          "to_token": " the",
+          "semantic_label": "content\u2192'the'",
+          "gainers": [
+            [
+              " ",
+              14.23
+            ],
+            [
+              " any",
+              13.8
+            ],
+            [
+              " a",
+              12.61
+            ],
+            [
+              " it",
+              12.55
+            ],
+            [
+              " anything",
+              12.36
+            ]
+          ],
+          "losers": [
+            [
+              ".\"",
+              -14.96
+            ],
+            [
+              " with",
+              -15.02
+            ],
+            [
+              " exactly",
+              -15.08
+            ],
+            [
+              " above",
+              -15.15
+            ],
+            [
+              ";",
+              -15.33
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -22.904,
+          "target_prob": 0.0,
+          "target_rank": 54112
+        },
+        {
+          "layer": 1,
+          "target_logprob": -17.934,
+          "target_prob": 0.0,
+          "target_rank": 19615
+        },
+        {
+          "layer": 2,
+          "target_logprob": -18.662,
+          "target_prob": 0.0,
+          "target_rank": 17679
+        },
+        {
+          "layer": 3,
+          "target_logprob": -16.859,
+          "target_prob": 0.0,
+          "target_rank": 10627
+        },
+        {
+          "layer": 4,
+          "target_logprob": -14.849,
+          "target_prob": 0.0,
+          "target_rank": 9918
+        },
+        {
+          "layer": 5,
+          "target_logprob": -14.113,
+          "target_prob": 1e-06,
+          "target_rank": 7680
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.148,
+          "target_prob": 2e-06,
+          "target_rank": 6545
+        },
+        {
+          "layer": 7,
+          "target_logprob": -13.394,
+          "target_prob": 2e-06,
+          "target_rank": 9586
+        },
+        {
+          "layer": 8,
+          "target_logprob": -12.139,
+          "target_prob": 5e-06,
+          "target_rank": 7673
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.906,
+          "target_prob": 2e-06,
+          "target_rank": 16266
+        },
+        {
+          "layer": 10,
+          "target_logprob": -12.883,
+          "target_prob": 3e-06,
+          "target_rank": 19756
+        },
+        {
+          "layer": 11,
+          "target_logprob": -13.131,
+          "target_prob": 2e-06,
+          "target_rank": 19143
+        },
+        {
+          "layer": 12,
+          "target_logprob": -11.54,
+          "target_prob": 1e-05,
+          "target_rank": 6926
+        },
+        {
+          "layer": 13,
+          "target_logprob": -12.332,
+          "target_prob": 4e-06,
+          "target_rank": 8462
+        },
+        {
+          "layer": 14,
+          "target_logprob": -10.456,
+          "target_prob": 2.9e-05,
+          "target_rank": 3410
+        },
+        {
+          "layer": 15,
+          "target_logprob": -9.47,
+          "target_prob": 7.7e-05,
+          "target_rank": 1153
+        },
+        {
+          "layer": 16,
+          "target_logprob": -5.952,
+          "target_prob": 0.0026,
+          "target_rank": 29
+        },
+        {
+          "layer": 17,
+          "target_logprob": -1.979,
+          "target_prob": 0.138232,
+          "target_rank": 1
+        },
+        {
+          "layer": 18,
+          "target_logprob": -0.017,
+          "target_prob": 0.982752,
+          "target_rank": 0
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.003,
+          "target_prob": 0.997421,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.004,
+          "target_prob": 0.995976,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.061,
+          "target_prob": 0.940789,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -0.373,
+          "target_prob": 0.68852,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -0.466,
+          "target_prob": 0.627594,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "target_token": " box",
+      "convergence_layer": 20,
+      "num_decisions": 7,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " beh",
+          "to_token": " eng",
+          "semantic_label": "content\u2192'eng'",
+          "gainers": [
+            [
+              " eng",
+              19.24
+            ],
+            [
+              " circ",
+              16.74
+            ],
+            [
+              " rhetorical",
+              16.62
+            ],
+            [
+              " Ba",
+              16.49
+            ],
+            [
+              " dist",
+              16.49
+            ]
+          ],
+          "losers": [
+            [
+              " Griffith",
+              -16.07
+            ],
+            [
+              " NC",
+              -16.19
+            ],
+            [
+              " Tens",
+              -16.32
+            ],
+            [
+              " Kit",
+              -16.57
+            ],
+            [
+              " cant",
+              -17.57
+            ]
+          ]
+        },
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " eng",
+          "to_token": " dist",
+          "semantic_label": "content\u2192'dist'",
+          "gainers": [
+            [
+              "Verd",
+              16.73
+            ],
+            [
+              " fin",
+              16.6
+            ],
+            [
+              " nou",
+              16.48
+            ],
+            [
+              " Easter",
+              15.98
+            ],
+            [
+              " dist",
+              1.86
+            ]
+          ],
+          "losers": [
+            [
+              " eng",
+              -1.14
+            ],
+            [
+              " fort",
+              -16.37
+            ],
+            [
+              " Ba",
+              -16.49
+            ],
+            [
+              "\ufffd",
+              -16.49
+            ],
+            [
+              " Cur",
+              -16.49
+            ]
+          ]
+        },
+        {
+          "from_layer": 2,
+          "to_layer": 3,
+          "from_token": " dist",
+          "to_token": "Verd",
+          "semantic_label": "content\u2192'Verd'",
+          "gainers": [
+            [
+              " Verd",
+              16.66
+            ],
+            [
+              " Ul",
+              15.6
+            ],
+            [
+              "uci",
+              15.35
+            ],
+            [
+              "Verd",
+              2.0
+            ],
+            [
+              " circ",
+              0.5
+            ]
+          ],
+          "losers": [
+            [
+              " beh",
+              -1.31
+            ],
+            [
+              " dist",
+              -2.75
+            ],
+            [
+              " Easter",
+              -15.98
+            ],
+            [
+              " nou",
+              -16.48
+            ],
+            [
+              " rhetorical",
+              -17.48
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": "Verd",
+          "to_token": "manship",
+          "semantic_label": "content\u2192'manship'",
+          "gainers": [
+            [
+              "utum",
+              16.25
+            ],
+            [
+              " firm",
+              15.69
+            ],
+            [
+              " Balk",
+              15.57
+            ],
+            [
+              " Lauf",
+              15.44
+            ],
+            [
+              "manship",
+              1.56
+            ]
+          ],
+          "losers": [
+            [
+              "Verd",
+              -1.06
+            ],
+            [
+              " con",
+              -15.69
+            ],
+            [
+              " barr",
+              -15.75
+            ],
+            [
+              " Easter",
+              -15.75
+            ],
+            [
+              " circ",
+              -16.75
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": "manship",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " water",
+              15.98
+            ],
+            [
+              "123",
+              15.41
+            ],
+            [
+              "\u00e2",
+              15.35
+            ],
+            [
+              " leg",
+              15.29
+            ],
+            [
+              "bet",
+              15.23
+            ]
+          ],
+          "losers": [
+            [
+              " Hil",
+              -15.45
+            ],
+            [
+              " mai",
+              -15.45
+            ],
+            [
+              " Lauf",
+              -16.01
+            ],
+            [
+              " tim",
+              -16.88
+            ],
+            [
+              " Clap",
+              -16.95
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": " ",
+          "semantic_label": "padding\u2192padding",
+          "gainers": [
+            [
+              " first",
+              16.36
+            ],
+            [
+              " while",
+              15.68
+            ],
+            [
+              " in",
+              15.55
+            ],
+            [
+              " (",
+              15.43
+            ],
+            [
+              "\n",
+              15.24
+            ]
+          ],
+          "losers": [
+            [
+              "\u202f",
+              -16.03
+            ],
+            [
+              "_",
+              -16.35
+            ],
+            [
+              "\u00a0",
+              -17.22
+            ],
+            [
+              "\u2011",
+              -17.41
+            ],
+            [
+              "<|endoftext|>",
+              -18.72
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": " ",
+          "to_token": " box",
+          "semantic_label": "padding\u2192'box'",
+          "gainers": [
+            [
+              " room",
+              15.45
+            ],
+            [
+              " storage",
+              15.32
+            ],
+            [
+              " container",
+              2.61
+            ],
+            [
+              " box",
+              1.98
+            ],
+            [
+              " space",
+              0.86
+            ]
+          ],
+          "losers": [
+            [
+              " empty",
+              -0.46
+            ],
+            [
+              " ",
+              -0.83
+            ],
+            [
+              " first",
+              -1.39
+            ],
+            [
+              " second",
+              -14.71
+            ],
+            [
+              " new",
+              -14.9
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -19.622,
+          "target_prob": 0.0,
+          "target_rank": 24493
+        },
+        {
+          "layer": 1,
+          "target_logprob": -15.194,
+          "target_prob": 0.0,
+          "target_rank": 4120
+        },
+        {
+          "layer": 2,
+          "target_logprob": -12.461,
+          "target_prob": 4e-06,
+          "target_rank": 1764
+        },
+        {
+          "layer": 3,
+          "target_logprob": -11.273,
+          "target_prob": 1.3e-05,
+          "target_rank": 1399
+        },
+        {
+          "layer": 4,
+          "target_logprob": -7.433,
+          "target_prob": 0.000591,
+          "target_rank": 175
+        },
+        {
+          "layer": 5,
+          "target_logprob": -7.058,
+          "target_prob": 0.00086,
+          "target_rank": 99
+        },
+        {
+          "layer": 6,
+          "target_logprob": -6.712,
+          "target_prob": 0.001216,
+          "target_rank": 67
+        },
+        {
+          "layer": 7,
+          "target_logprob": -6.617,
+          "target_prob": 0.001338,
+          "target_rank": 71
+        },
+        {
+          "layer": 8,
+          "target_logprob": -6.336,
+          "target_prob": 0.001772,
+          "target_rank": 41
+        },
+        {
+          "layer": 9,
+          "target_logprob": -5.6,
+          "target_prob": 0.003699,
+          "target_rank": 26
+        },
+        {
+          "layer": 10,
+          "target_logprob": -5.856,
+          "target_prob": 0.002864,
+          "target_rank": 32
+        },
+        {
+          "layer": 11,
+          "target_logprob": -4.811,
+          "target_prob": 0.008141,
+          "target_rank": 14
+        },
+        {
+          "layer": 12,
+          "target_logprob": -5.433,
+          "target_prob": 0.004369,
+          "target_rank": 20
+        },
+        {
+          "layer": 13,
+          "target_logprob": -7.677,
+          "target_prob": 0.000463,
+          "target_rank": 174
+        },
+        {
+          "layer": 14,
+          "target_logprob": -7.121,
+          "target_prob": 0.000808,
+          "target_rank": 101
+        },
+        {
+          "layer": 15,
+          "target_logprob": -7.341,
+          "target_prob": 0.000648,
+          "target_rank": 70
+        },
+        {
+          "layer": 16,
+          "target_logprob": -5.698,
+          "target_prob": 0.003351,
+          "target_rank": 26
+        },
+        {
+          "layer": 17,
+          "target_logprob": -4.538,
+          "target_prob": 0.010692,
+          "target_rank": 3
+        },
+        {
+          "layer": 18,
+          "target_logprob": -4.761,
+          "target_prob": 0.008559,
+          "target_rank": 8
+        },
+        {
+          "layer": 19,
+          "target_logprob": -3.161,
+          "target_prob": 0.04239,
+          "target_rank": 2
+        },
+        {
+          "layer": 20,
+          "target_logprob": -1.18,
+          "target_prob": 0.307307,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.516,
+          "target_prob": 0.59714,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -1.297,
+          "target_prob": 0.273472,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.856,
+          "target_prob": 0.15623,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "target_token": ",",
+      "convergence_layer": 23,
+      "num_decisions": 6,
+      "decisions": [
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": " Sid",
+          "to_token": "bay",
+          "semantic_label": "content\u2192'bay'",
+          "gainers": [
+            [
+              " coff",
+              15.28
+            ],
+            [
+              " viv",
+              15.03
+            ],
+            [
+              "rein",
+              14.91
+            ],
+            [
+              "holder",
+              14.85
+            ],
+            [
+              " commod",
+              14.78
+            ]
+          ],
+          "losers": [
+            [
+              " vert",
+              -14.18
+            ],
+            [
+              " heav",
+              -14.49
+            ],
+            [
+              " hil",
+              -14.56
+            ],
+            [
+              "\ufffd",
+              -14.62
+            ],
+            [
+              " Tanya",
+              -15.43
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": "bay",
+          "to_token": " Sid",
+          "semantic_label": "content\u2192'Sid'",
+          "gainers": [
+            [
+              "<|endoftext|>",
+              15.22
+            ],
+            [
+              "\u2011",
+              15.03
+            ],
+            [
+              " phot",
+              15.03
+            ],
+            [
+              "_tem",
+              14.84
+            ],
+            [
+              " pocket",
+              14.72
+            ]
+          ],
+          "losers": [
+            [
+              " commod",
+              -14.78
+            ],
+            [
+              "holder",
+              -14.85
+            ],
+            [
+              "rein",
+              -14.91
+            ],
+            [
+              "Cust",
+              -15.03
+            ],
+            [
+              " coff",
+              -15.28
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " Sid",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " contents",
+              15.53
+            ],
+            [
+              " coff",
+              15.41
+            ],
+            [
+              "re",
+              15.34
+            ],
+            [
+              "<|endoftext|>",
+              2.88
+            ],
+            [
+              "\u2011",
+              1.19
+            ]
+          ],
+          "losers": [
+            [
+              "bay",
+              -1.12
+            ],
+            [
+              " Sid",
+              -2.06
+            ],
+            [
+              " viv",
+              -14.72
+            ],
+            [
+              " pocket",
+              -14.72
+            ],
+            [
+              "\u7528\u54c1",
+              -14.9
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": ",",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              ".",
+              16.12
+            ],
+            [
+              ";",
+              15.74
+            ],
+            [
+              "?",
+              15.49
+            ],
+            [
+              ",\n",
+              15.37
+            ],
+            [
+              ",",
+              3.89
+            ]
+          ],
+          "losers": [
+            [
+              "\u2011",
+              -1.18
+            ],
+            [
+              "i",
+              -14.48
+            ],
+            [
+              "\n\n",
+              -15.04
+            ],
+            [
+              "\u2014",
+              -15.54
+            ],
+            [
+              "<|endoftext|>",
+              -19.67
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": ",",
+          "to_token": " because",
+          "semantic_label": "punctuation\u2192'because'",
+          "gainers": [
+            [
+              " if",
+              15.49
+            ],
+            [
+              " due",
+              14.99
+            ],
+            [
+              ".\"",
+              14.93
+            ],
+            [
+              " or",
+              14.93
+            ],
+            [
+              " unless",
+              14.8
+            ]
+          ],
+          "losers": [
+            [
+              "?",
+              -14.72
+            ],
+            [
+              " (",
+              -14.78
+            ],
+            [
+              " that",
+              -14.91
+            ],
+            [
+              " with",
+              -15.03
+            ],
+            [
+              " and",
+              -17.22
+            ]
+          ]
+        },
+        {
+          "from_layer": 22,
+          "to_layer": 23,
+          "from_token": " because",
+          "to_token": ".\"",
+          "semantic_label": "content\u2192'.\"'",
+          "gainers": [
+            [
+              ".\"\n\n",
+              16.12
+            ],
+            [
+              "?",
+              0.72
+            ],
+            [
+              ".\n\n",
+              0.59
+            ],
+            [
+              "\"",
+              0.34
+            ],
+            [
+              ".",
+              0.34
+            ]
+          ],
+          "losers": [
+            [
+              ";",
+              -0.1
+            ],
+            [
+              ",",
+              -0.22
+            ],
+            [
+              " if",
+              -0.35
+            ],
+            [
+              " because",
+              -0.78
+            ],
+            [
+              " or",
+              -15.78
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -19.452,
+          "target_prob": 0.0,
+          "target_rank": 49021
+        },
+        {
+          "layer": 1,
+          "target_logprob": -20.346,
+          "target_prob": 0.0,
+          "target_rank": 42348
+        },
+        {
+          "layer": 2,
+          "target_logprob": -16.498,
+          "target_prob": 0.0,
+          "target_rank": 20161
+        },
+        {
+          "layer": 3,
+          "target_logprob": -15.591,
+          "target_prob": 0.0,
+          "target_rank": 17681
+        },
+        {
+          "layer": 4,
+          "target_logprob": -14.756,
+          "target_prob": 0.0,
+          "target_rank": 12960
+        },
+        {
+          "layer": 5,
+          "target_logprob": -14.976,
+          "target_prob": 0.0,
+          "target_rank": 13609
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.185,
+          "target_prob": 2e-06,
+          "target_rank": 9175
+        },
+        {
+          "layer": 7,
+          "target_logprob": -12.378,
+          "target_prob": 4e-06,
+          "target_rank": 5775
+        },
+        {
+          "layer": 8,
+          "target_logprob": -11.188,
+          "target_prob": 1.4e-05,
+          "target_rank": 4738
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.424,
+          "target_prob": 4e-06,
+          "target_rank": 4726
+        },
+        {
+          "layer": 10,
+          "target_logprob": -11.453,
+          "target_prob": 1.1e-05,
+          "target_rank": 3911
+        },
+        {
+          "layer": 11,
+          "target_logprob": -12.625,
+          "target_prob": 3e-06,
+          "target_rank": 1878
+        },
+        {
+          "layer": 12,
+          "target_logprob": -11.924,
+          "target_prob": 7e-06,
+          "target_rank": 4660
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.693,
+          "target_prob": 2.3e-05,
+          "target_rank": 1016
+        },
+        {
+          "layer": 14,
+          "target_logprob": -7.645,
+          "target_prob": 0.000479,
+          "target_rank": 55
+        },
+        {
+          "layer": 15,
+          "target_logprob": -4.331,
+          "target_prob": 0.013154,
+          "target_rank": 3
+        },
+        {
+          "layer": 16,
+          "target_logprob": -0.444,
+          "target_prob": 0.641253,
+          "target_rank": 0
+        },
+        {
+          "layer": 17,
+          "target_logprob": -0.505,
+          "target_prob": 0.603648,
+          "target_rank": 0
+        },
+        {
+          "layer": 18,
+          "target_logprob": -1.135,
+          "target_prob": 0.32148,
+          "target_rank": 0
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.406,
+          "target_prob": 0.666393,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -2.136,
+          "target_prob": 0.118161,
+          "target_rank": 1
+        },
+        {
+          "layer": 21,
+          "target_logprob": -2.651,
+          "target_prob": 0.070614,
+          "target_rank": 2
+        },
+        {
+          "layer": 22,
+          "target_logprob": -1.845,
+          "target_prob": 0.157955,
+          "target_rank": 1
+        },
+        {
+          "layer": 23,
+          "target_logprob": -2.066,
+          "target_prob": 0.126656,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "target_token": " the",
+      "convergence_layer": 17,
+      "num_decisions": 12,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " inh",
+          "to_token": "\ufffd",
+          "semantic_label": "content\u2192'\ufffd'",
+          "gainers": [
+            [
+              "Sab",
+              15.77
+            ],
+            [
+              " generous",
+              15.27
+            ],
+            [
+              " sober",
+              15.02
+            ],
+            [
+              " sab",
+              2.85
+            ],
+            [
+              "\ufffd",
+              1.72
+            ]
+          ],
+          "losers": [
+            [
+              " Sm",
+              0.1
+            ],
+            [
+              " inh",
+              -1.9
+            ],
+            [
+              " Ton",
+              -13.54
+            ],
+            [
+              " dispers",
+              -13.79
+            ],
+            [
+              " Bola",
+              -14.04
+            ]
+          ]
+        },
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": "\ufffd",
+          "to_token": " ce",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              "esc",
+              16.35
+            ],
+            [
+              " Sab",
+              15.35
+            ],
+            [
+              " esc",
+              14.35
+            ],
+            [
+              " sab",
+              2.21
+            ],
+            [
+              " ce",
+              1.08
+            ]
+          ],
+          "losers": [
+            [
+              " eff",
+              -1.54
+            ],
+            [
+              ".sm",
+              -2.92
+            ],
+            [
+              " Sm",
+              -14.52
+            ],
+            [
+              " sober",
+              -15.02
+            ],
+            [
+              " inh",
+              -17.89
+            ]
+          ]
+        },
+        {
+          "from_layer": 2,
+          "to_layer": 3,
+          "from_token": " ce",
+          "to_token": " sab",
+          "semantic_label": "letter/short\u2192'sab'",
+          "gainers": [
+            [
+              " allow",
+              15.59
+            ],
+            [
+              " rational",
+              15.4
+            ],
+            [
+              "CI",
+              15.09
+            ],
+            [
+              " crude",
+              14.9
+            ],
+            [
+              " eff",
+              0.8
+            ]
+          ],
+          "losers": [
+            [
+              "\ufffd",
+              -3.33
+            ],
+            [
+              " esc",
+              -14.35
+            ],
+            [
+              " generous",
+              -14.35
+            ],
+            [
+              ".sm",
+              -14.35
+            ],
+            [
+              " Sab",
+              -15.35
+            ]
+          ]
+        },
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": " sab",
+          "to_token": " rational",
+          "semantic_label": "content\u2192'rational'",
+          "gainers": [
+            [
+              " bin",
+              16.61
+            ],
+            [
+              " exp",
+              16.43
+            ],
+            [
+              " evaluate",
+              16.3
+            ],
+            [
+              "hand",
+              15.99
+            ],
+            [
+              " abstract",
+              1.67
+            ]
+          ],
+          "losers": [
+            [
+              " sab",
+              -2.08
+            ],
+            [
+              "ace",
+              -15.75
+            ],
+            [
+              " predetermined",
+              -15.94
+            ],
+            [
+              " ce",
+              -16.44
+            ],
+            [
+              " l",
+              -17.07
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " rational",
+          "to_token": " abstract",
+          "semantic_label": "content\u2192'abstract'",
+          "gainers": [
+            [
+              "ace",
+              17.17
+            ],
+            [
+              " dec",
+              16.86
+            ],
+            [
+              " cannot",
+              16.11
+            ],
+            [
+              " bin",
+              0.75
+            ],
+            [
+              " exp",
+              0.62
+            ]
+          ],
+          "losers": [
+            [
+              " ex",
+              -1.19
+            ],
+            [
+              " rational",
+              -2.13
+            ],
+            [
+              "hand",
+              -15.99
+            ],
+            [
+              " evaluate",
+              -16.3
+            ],
+            [
+              " sab",
+              -16.43
+            ]
+          ]
+        },
+        {
+          "from_layer": 8,
+          "to_layer": 9,
+          "from_token": " abstract",
+          "to_token": " dec",
+          "semantic_label": "content\u2192'dec'",
+          "gainers": [
+            [
+              "<|endoftext|>",
+              16.87
+            ],
+            [
+              " cannot",
+              16.68
+            ],
+            [
+              " dec",
+              0.78
+            ],
+            [
+              " evaluate",
+              0.59
+            ],
+            [
+              " answer",
+              0.47
+            ]
+          ],
+          "losers": [
+            [
+              " exp",
+              -0.03
+            ],
+            [
+              " abstract",
+              -0.59
+            ],
+            [
+              " bin",
+              -0.91
+            ],
+            [
+              "f",
+              -16.02
+            ],
+            [
+              "ace",
+              -16.52
+            ]
+          ]
+        },
+        {
+          "from_layer": 9,
+          "to_layer": 10,
+          "from_token": " dec",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " mar",
+              15.8
+            ],
+            [
+              " allow",
+              15.49
+            ],
+            [
+              "f",
+              15.42
+            ],
+            [
+              "<|endoftext|>",
+              1.93
+            ],
+            [
+              " exp",
+              0.18
+            ]
+          ],
+          "losers": [
+            [
+              " evaluate",
+              -1.19
+            ],
+            [
+              " abstract",
+              -1.69
+            ],
+            [
+              " rational",
+              -16.18
+            ],
+            [
+              " bin",
+              -16.37
+            ],
+            [
+              " cannot",
+              -16.68
+            ]
+          ]
+        },
+        {
+          "from_layer": 14,
+          "to_layer": 15,
+          "from_token": "<|endoftext|>",
+          "to_token": " ",
+          "semantic_label": "padding\u2192padding",
+          "gainers": [
+            [
+              " ",
+              17.63
+            ],
+            [
+              " and",
+              16.82
+            ],
+            [
+              " the",
+              16.25
+            ],
+            [
+              " with",
+              15.75
+            ],
+            [
+              " dec",
+              15.57
+            ]
+          ],
+          "losers": [
+            [
+              "_",
+              -14.67
+            ],
+            [
+              " not",
+              -14.86
+            ],
+            [
+              " ex",
+              -15.11
+            ],
+            [
+              " solution",
+              -15.23
+            ],
+            [
+              " due",
+              -15.42
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": " ",
+          "to_token": " (",
+          "semantic_label": "padding\u2192punctuation",
+          "gainers": [
+            [
+              " \"",
+              16.44
+            ],
+            [
+              ":",
+              16.32
+            ],
+            [
+              " that",
+              16.19
+            ],
+            [
+              "\"",
+              16.07
+            ],
+            [
+              "**",
+              15.88
+            ]
+          ],
+          "losers": [
+            [
+              " with",
+              -15.75
+            ],
+            [
+              "\u2014",
+              -16.63
+            ],
+            [
+              " and",
+              -16.82
+            ],
+            [
+              " in",
+              -16.88
+            ],
+            [
+              "<|endoftext|>",
+              -17.57
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " (",
+          "to_token": " the",
+          "semantic_label": "punctuation\u2192'the'",
+          "gainers": [
+            [
+              " it",
+              14.81
+            ],
+            [
+              " '",
+              13.74
+            ],
+            [
+              " there",
+              13.18
+            ],
+            [
+              " in",
+              12.49
+            ],
+            [
+              " the",
+              1.74
+            ]
+          ],
+          "losers": [
+            [
+              " (",
+              -4.57
+            ],
+            [
+              "`",
+              -15.26
+            ],
+            [
+              ",",
+              -15.69
+            ],
+            [
+              "**",
+              -15.88
+            ],
+            [
+              "\"",
+              -16.07
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": " the",
+          "to_token": " it",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " there's",
+              10.9
+            ],
+            [
+              " its",
+              4.13
+            ],
+            [
+              " it's",
+              3.01
+            ],
+            [
+              " it",
+              2.51
+            ],
+            [
+              " we",
+              1.13
+            ]
+          ],
+          "losers": [
+            [
+              " ",
+              0.82
+            ],
+            [
+              " they",
+              0.76
+            ],
+            [
+              " of",
+              0.13
+            ],
+            [
+              " the",
+              -1.49
+            ],
+            [
+              " that",
+              -9.89
+            ]
+          ]
+        },
+        {
+          "from_layer": 22,
+          "to_layer": 23,
+          "from_token": " it",
+          "to_token": " the",
+          "semantic_label": "letter/short\u2192'the'",
+          "gainers": [
+            [
+              " a",
+              15.27
+            ],
+            [
+              " its",
+              0.69
+            ],
+            [
+              " you",
+              0.69
+            ],
+            [
+              " they",
+              0.69
+            ],
+            [
+              " we",
+              0.63
+            ]
+          ],
+          "losers": [
+            [
+              " of",
+              -0.12
+            ],
+            [
+              " there",
+              -0.12
+            ],
+            [
+              " it's",
+              -0.31
+            ],
+            [
+              " it",
+              -0.37
+            ],
+            [
+              " there's",
+              -14.39
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -26.43,
+          "target_prob": 0.0,
+          "target_rank": 103273
+        },
+        {
+          "layer": 1,
+          "target_logprob": -21.945,
+          "target_prob": 0.0,
+          "target_rank": 61423
+        },
+        {
+          "layer": 2,
+          "target_logprob": -18.682,
+          "target_prob": 0.0,
+          "target_rank": 25287
+        },
+        {
+          "layer": 3,
+          "target_logprob": -16.399,
+          "target_prob": 0.0,
+          "target_rank": 13015
+        },
+        {
+          "layer": 4,
+          "target_logprob": -16.333,
+          "target_prob": 0.0,
+          "target_rank": 10418
+        },
+        {
+          "layer": 5,
+          "target_logprob": -13.809,
+          "target_prob": 1e-06,
+          "target_rank": 6633
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.918,
+          "target_prob": 1e-06,
+          "target_rank": 9065
+        },
+        {
+          "layer": 7,
+          "target_logprob": -13.282,
+          "target_prob": 2e-06,
+          "target_rank": 9974
+        },
+        {
+          "layer": 8,
+          "target_logprob": -12.616,
+          "target_prob": 3e-06,
+          "target_rank": 8274
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.601,
+          "target_prob": 3e-06,
+          "target_rank": 6813
+        },
+        {
+          "layer": 10,
+          "target_logprob": -12.404,
+          "target_prob": 4e-06,
+          "target_rank": 7340
+        },
+        {
+          "layer": 11,
+          "target_logprob": -13.799,
+          "target_prob": 1e-06,
+          "target_rank": 6937
+        },
+        {
+          "layer": 12,
+          "target_logprob": -11.604,
+          "target_prob": 9e-06,
+          "target_rank": 4227
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.633,
+          "target_prob": 2.4e-05,
+          "target_rank": 1589
+        },
+        {
+          "layer": 14,
+          "target_logprob": -8.769,
+          "target_prob": 0.000155,
+          "target_rank": 394
+        },
+        {
+          "layer": 15,
+          "target_logprob": -3.747,
+          "target_prob": 0.023585,
+          "target_rank": 7
+        },
+        {
+          "layer": 16,
+          "target_logprob": -1.807,
+          "target_prob": 0.164197,
+          "target_rank": 1
+        },
+        {
+          "layer": 17,
+          "target_logprob": -0.069,
+          "target_prob": 0.933649,
+          "target_rank": 0
+        },
+        {
+          "layer": 18,
+          "target_logprob": -0.253,
+          "target_prob": 0.776804,
+          "target_rank": 0
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.106,
+          "target_prob": 0.899542,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -1.601,
+          "target_prob": 0.20173,
+          "target_rank": 1
+        },
+        {
+          "layer": 21,
+          "target_logprob": -1.006,
+          "target_prob": 0.365714,
+          "target_rank": 1
+        },
+        {
+          "layer": 22,
+          "target_logprob": -1.17,
+          "target_prob": 0.310391,
+          "target_rank": 1
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.102,
+          "target_prob": 0.332312,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "target_token": " suitcase",
+      "convergence_layer": 23,
+      "num_decisions": 12,
+      "decisions": [
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " cant",
+          "to_token": " eng",
+          "semantic_label": "content\u2192'eng'",
+          "gainers": [
+            [
+              " entries",
+              17.43
+            ],
+            [
+              " ex",
+              17.3
+            ],
+            [
+              " Patrick",
+              16.3
+            ],
+            [
+              " \u0441\u0442\u0438",
+              15.8
+            ],
+            [
+              " eng",
+              1.75
+            ]
+          ],
+          "losers": [
+            [
+              " cant",
+              -1.88
+            ],
+            [
+              " entr",
+              -15.68
+            ],
+            [
+              " plat",
+              -16.18
+            ],
+            [
+              " contin",
+              -17.06
+            ],
+            [
+              " dent",
+              -17.06
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": " eng",
+          "to_token": " Dra",
+          "semantic_label": "content\u2192'Dra'",
+          "gainers": [
+            [
+              " ci",
+              17.53
+            ],
+            [
+              " fin",
+              17.03
+            ],
+            [
+              " firm",
+              16.78
+            ],
+            [
+              " magn",
+              16.59
+            ],
+            [
+              " alt",
+              16.28
+            ]
+          ],
+          "losers": [
+            [
+              " circ",
+              -16.2
+            ],
+            [
+              " epit",
+              -16.26
+            ],
+            [
+              " verd",
+              -16.32
+            ],
+            [
+              " cant",
+              -16.45
+            ],
+            [
+              " eng",
+              -17.57
+            ]
+          ]
+        },
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": " Dra",
+          "to_token": " ex",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " con",
+              16.75
+            ],
+            [
+              " pal",
+              16.25
+            ],
+            [
+              " glimps",
+              15.56
+            ],
+            [
+              " ex",
+              1.97
+            ],
+            [
+              " firm",
+              0.72
+            ]
+          ],
+          "losers": [
+            [
+              " alt",
+              -0.72
+            ],
+            [
+              " magn",
+              -0.97
+            ],
+            [
+              " Easter",
+              -16.28
+            ],
+            [
+              "Verd",
+              -17.22
+            ],
+            [
+              " Dra",
+              -17.53
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " ex",
+          "to_token": " firm",
+          "semantic_label": "letter/short\u2192'firm'",
+          "gainers": [
+            [
+              "123",
+              16.48
+            ],
+            [
+              "<|endoftext|>",
+              16.29
+            ],
+            [
+              " paradox",
+              15.91
+            ],
+            [
+              " firm",
+              0.41
+            ],
+            [
+              " glimps",
+              0.29
+            ]
+          ],
+          "losers": [
+            [
+              " ci",
+              -0.65
+            ],
+            [
+              " entries",
+              -0.84
+            ],
+            [
+              " alt",
+              -15.56
+            ],
+            [
+              " magn",
+              -15.63
+            ],
+            [
+              " fin",
+              -17.5
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " firm",
+          "to_token": "123",
+          "semantic_label": "content\u2192number",
+          "gainers": [
+            [
+              " compound",
+              15.8
+            ],
+            [
+              " rational",
+              15.74
+            ],
+            [
+              " presumably",
+              15.49
+            ],
+            [
+              "-f",
+              15.43
+            ],
+            [
+              "108",
+              15.37
+            ]
+          ],
+          "losers": [
+            [
+              " glimps",
+              -15.85
+            ],
+            [
+              " paradox",
+              -15.91
+            ],
+            [
+              " pal",
+              -16.16
+            ],
+            [
+              " con",
+              -16.23
+            ],
+            [
+              " ci",
+              -16.35
+            ]
+          ]
+        },
+        {
+          "from_layer": 8,
+          "to_layer": 9,
+          "from_token": "123",
+          "to_token": " metaphor",
+          "semantic_label": "number\u2192'metaphor'",
+          "gainers": [
+            [
+              " metaphor",
+              17.56
+            ],
+            [
+              " paradox",
+              16.25
+            ],
+            [
+              " intangible",
+              16.06
+            ],
+            [
+              " harmon",
+              16.0
+            ],
+            [
+              "\u2011",
+              15.93
+            ]
+          ],
+          "losers": [
+            [
+              "108",
+              -15.37
+            ],
+            [
+              "-f",
+              -15.43
+            ],
+            [
+              " presumably",
+              -15.49
+            ],
+            [
+              " entries",
+              -16.05
+            ],
+            [
+              " ex",
+              -16.37
+            ]
+          ]
+        },
+        {
+          "from_layer": 9,
+          "to_layer": 10,
+          "from_token": " metaphor",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " intended",
+              15.65
+            ],
+            [
+              " ex",
+              15.59
+            ],
+            [
+              " pack",
+              15.59
+            ],
+            [
+              " constraints",
+              15.21
+            ],
+            [
+              "<|endoftext|>",
+              0.65
+            ]
+          ],
+          "losers": [
+            [
+              " rational",
+              -0.91
+            ],
+            [
+              " harmon",
+              -16.0
+            ],
+            [
+              " paradox",
+              -16.25
+            ],
+            [
+              " compound",
+              -16.81
+            ],
+            [
+              "123",
+              -16.87
+            ]
+          ]
+        },
+        {
+          "from_layer": 13,
+          "to_layer": 14,
+          "from_token": "<|endoftext|>",
+          "to_token": "\u2011",
+          "semantic_label": "padding\u2192'\u2011'",
+          "gainers": [
+            [
+              "D",
+              16.31
+            ],
+            [
+              "-",
+              15.63
+            ],
+            [
+              " volume",
+              15.13
+            ],
+            [
+              " in",
+              15.13
+            ],
+            [
+              "-d",
+              15.06
+            ]
+          ],
+          "losers": [
+            [
+              " constraints",
+              -15.01
+            ],
+            [
+              "Hal",
+              -15.07
+            ],
+            [
+              " abstract",
+              -15.14
+            ],
+            [
+              "-f",
+              -15.39
+            ],
+            [
+              " hal",
+              -15.64
+            ]
+          ]
+        },
+        {
+          "from_layer": 14,
+          "to_layer": 15,
+          "from_token": "\u2011",
+          "to_token": " size",
+          "semantic_label": "content\u2192'size'",
+          "gainers": [
+            [
+              " (",
+              16.49
+            ],
+            [
+              " \"",
+              16.18
+            ],
+            [
+              " shape",
+              16.18
+            ],
+            [
+              " volume",
+              1.18
+            ],
+            [
+              " size",
+              1.12
+            ]
+          ],
+          "losers": [
+            [
+              "<|endoftext|>",
+              -0.32
+            ],
+            [
+              "\u2011",
+              -1.44
+            ],
+            [
+              "-d",
+              -15.06
+            ],
+            [
+              " contents",
+              -15.19
+            ],
+            [
+              "D",
+              -16.31
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " size",
+          "to_token": " \"",
+          "semantic_label": "content\u2192punctuation",
+          "gainers": [
+            [
+              " first",
+              15.11
+            ],
+            [
+              " **",
+              14.86
+            ],
+            [
+              " entire",
+              14.11
+            ],
+            [
+              " \"",
+              1.44
+            ],
+            [
+              " length",
+              0.69
+            ]
+          ],
+          "losers": [
+            [
+              " dimensions",
+              -0.94
+            ],
+            [
+              " size",
+              -1.31
+            ],
+            [
+              " larger",
+              -14.61
+            ],
+            [
+              " (",
+              -14.92
+            ],
+            [
+              " large",
+              -15.54
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": " \"",
+          "to_token": " size",
+          "semantic_label": "punctuation\u2192'size'",
+          "gainers": [
+            [
+              " latter",
+              16.52
+            ],
+            [
+              " last",
+              15.77
+            ],
+            [
+              " height",
+              1.58
+            ],
+            [
+              " first",
+              0.83
+            ],
+            [
+              " shape",
+              0.77
+            ]
+          ],
+          "losers": [
+            [
+              " '",
+              -0.35
+            ],
+            [
+              " ",
+              -0.67
+            ],
+            [
+              " \"",
+              -1.42
+            ],
+            [
+              " largest",
+              -14.44
+            ],
+            [
+              " **",
+              -14.75
+            ]
+          ]
+        },
+        {
+          "from_layer": 22,
+          "to_layer": 23,
+          "from_token": " size",
+          "to_token": " suitcase",
+          "semantic_label": "content\u2192'suitcase'",
+          "gainers": [
+            [
+              " space",
+              15.14
+            ],
+            [
+              " trophy",
+              1.6
+            ],
+            [
+              " suitcase",
+              1.6
+            ],
+            [
+              " ",
+              -0.15
+            ],
+            [
+              " \"",
+              -0.28
+            ]
+          ],
+          "losers": [
+            [
+              " box",
+              -0.78
+            ],
+            [
+              " dimensions",
+              -1.22
+            ],
+            [
+              " shape",
+              -1.28
+            ],
+            [
+              " size",
+              -1.53
+            ],
+            [
+              " height",
+              -15.92
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -17.955,
+          "target_prob": 0.0,
+          "target_rank": 13828
+        },
+        {
+          "layer": 1,
+          "target_logprob": -16.695,
+          "target_prob": 0.0,
+          "target_rank": 15886
+        },
+        {
+          "layer": 2,
+          "target_logprob": -16.414,
+          "target_prob": 0.0,
+          "target_rank": 13701
+        },
+        {
+          "layer": 3,
+          "target_logprob": -13.602,
+          "target_prob": 1e-06,
+          "target_rank": 5140
+        },
+        {
+          "layer": 4,
+          "target_logprob": -14.256,
+          "target_prob": 1e-06,
+          "target_rank": 15037
+        },
+        {
+          "layer": 5,
+          "target_logprob": -12.845,
+          "target_prob": 3e-06,
+          "target_rank": 7232
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.279,
+          "target_prob": 2e-06,
+          "target_rank": 9204
+        },
+        {
+          "layer": 7,
+          "target_logprob": -13.085,
+          "target_prob": 2e-06,
+          "target_rank": 7759
+        },
+        {
+          "layer": 8,
+          "target_logprob": -12.837,
+          "target_prob": 3e-06,
+          "target_rank": 12151
+        },
+        {
+          "layer": 9,
+          "target_logprob": -11.253,
+          "target_prob": 1.3e-05,
+          "target_rank": 3508
+        },
+        {
+          "layer": 10,
+          "target_logprob": -9.57,
+          "target_prob": 7e-05,
+          "target_rank": 1442
+        },
+        {
+          "layer": 11,
+          "target_logprob": -8.212,
+          "target_prob": 0.000271,
+          "target_rank": 238
+        },
+        {
+          "layer": 12,
+          "target_logprob": -9.656,
+          "target_prob": 6.4e-05,
+          "target_rank": 1429
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.206,
+          "target_prob": 3.7e-05,
+          "target_rank": 1385
+        },
+        {
+          "layer": 14,
+          "target_logprob": -10.25,
+          "target_prob": 3.5e-05,
+          "target_rank": 2239
+        },
+        {
+          "layer": 15,
+          "target_logprob": -10.974,
+          "target_prob": 1.7e-05,
+          "target_rank": 2405
+        },
+        {
+          "layer": 16,
+          "target_logprob": -12.626,
+          "target_prob": 3e-06,
+          "target_rank": 4652
+        },
+        {
+          "layer": 17,
+          "target_logprob": -14.269,
+          "target_prob": 1e-06,
+          "target_rank": 2383
+        },
+        {
+          "layer": 18,
+          "target_logprob": -14.142,
+          "target_prob": 1e-06,
+          "target_rank": 2290
+        },
+        {
+          "layer": 19,
+          "target_logprob": -11.655,
+          "target_prob": 9e-06,
+          "target_rank": 522
+        },
+        {
+          "layer": 20,
+          "target_logprob": -8.353,
+          "target_prob": 0.000236,
+          "target_rank": 190
+        },
+        {
+          "layer": 21,
+          "target_logprob": -2.951,
+          "target_prob": 0.052284,
+          "target_rank": 1
+        },
+        {
+          "layer": 22,
+          "target_logprob": -3.263,
+          "target_prob": 0.038255,
+          "target_rank": 1
+        },
+        {
+          "layer": 23,
+          "target_logprob": -1.668,
+          "target_prob": 0.188541,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "target_token": " is",
+      "convergence_layer": 20,
+      "num_decisions": 10,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " Pon",
+          "to_token": "intel",
+          "semantic_label": "content\u2192'intel'",
+          "gainers": [
+            [
+              " Pines",
+              16.96
+            ],
+            [
+              " Polaris",
+              16.34
+            ],
+            [
+              " primit",
+              16.21
+            ],
+            [
+              " Vand",
+              16.21
+            ],
+            [
+              "master",
+              16.21
+            ]
+          ],
+          "losers": [
+            [
+              " accomod",
+              -16.33
+            ],
+            [
+              " Ache",
+              -16.58
+            ],
+            [
+              "_tem",
+              -16.7
+            ],
+            [
+              " Harden",
+              -16.95
+            ],
+            [
+              "inc",
+              -17.2
+            ]
+          ]
+        },
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": "intel",
+          "to_token": " Sid",
+          "semantic_label": "content\u2192'Sid'",
+          "gainers": [
+            [
+              " Sid",
+              17.99
+            ],
+            [
+              "-mus",
+              16.74
+            ],
+            [
+              " Joy",
+              16.74
+            ],
+            [
+              "izen",
+              16.61
+            ],
+            [
+              " clen",
+              16.11
+            ]
+          ],
+          "losers": [
+            [
+              "master",
+              -16.21
+            ],
+            [
+              " ec",
+              -16.46
+            ],
+            [
+              " Pines",
+              -16.96
+            ],
+            [
+              " Pon",
+              -17.09
+            ],
+            [
+              "intel",
+              -18.34
+            ]
+          ]
+        },
+        {
+          "from_layer": 2,
+          "to_layer": 3,
+          "from_token": " Sid",
+          "to_token": "\u7528\u54c1",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              "\u7528\u54c1",
+              17.58
+            ],
+            [
+              "izz",
+              16.89
+            ],
+            [
+              " Heck",
+              16.46
+            ],
+            [
+              " mens",
+              16.46
+            ],
+            [
+              "\ufffd",
+              16.33
+            ]
+          ],
+          "losers": [
+            [
+              " clen",
+              -16.11
+            ],
+            [
+              "&p",
+              -16.11
+            ],
+            [
+              " vibr",
+              -16.24
+            ],
+            [
+              " Hom",
+              -16.74
+            ],
+            [
+              " Polaris",
+              -17.49
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": "\u7528\u54c1",
+          "to_token": " commod",
+          "semantic_label": "letter/short\u2192'commod'",
+          "gainers": [
+            [
+              " mens",
+              15.88
+            ],
+            [
+              "_tem",
+              15.57
+            ],
+            [
+              " Joy",
+              15.51
+            ],
+            [
+              " commod",
+              1.8
+            ],
+            [
+              " Attr",
+              0.05
+            ]
+          ],
+          "losers": [
+            [
+              " heav",
+              -0.39
+            ],
+            [
+              "\u7528\u54c1",
+              -0.45
+            ],
+            [
+              "izz",
+              -16.14
+            ],
+            [
+              "\ufffd",
+              -16.2
+            ],
+            [
+              "master",
+              -17.08
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " commod",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              "<|endoftext|>",
+              17.55
+            ],
+            [
+              " coff",
+              16.37
+            ],
+            [
+              " compartments",
+              15.99
+            ],
+            [
+              " contents",
+              15.93
+            ],
+            [
+              " tem",
+              15.87
+            ]
+          ],
+          "losers": [
+            [
+              "itia",
+              -16.0
+            ],
+            [
+              " cond",
+              -16.0
+            ],
+            [
+              " Sid",
+              -16.06
+            ],
+            [
+              "meg",
+              -16.12
+            ],
+            [
+              "holder",
+              -16.25
+            ]
+          ]
+        },
+        {
+          "from_layer": 12,
+          "to_layer": 13,
+          "from_token": "<|endoftext|>",
+          "to_token": " contents",
+          "semantic_label": "padding\u2192'contents'",
+          "gainers": [
+            [
+              "ier",
+              16.8
+            ],
+            [
+              "\u5bb9\u91cf",
+              15.8
+            ],
+            [
+              " capacity",
+              15.8
+            ],
+            [
+              " constraints",
+              1.35
+            ],
+            [
+              "\u88c5",
+              0.85
+            ]
+          ],
+          "losers": [
+            [
+              " contents",
+              0.1
+            ],
+            [
+              "<|endoftext|>",
+              -1.4
+            ],
+            [
+              " pack",
+              -15.2
+            ],
+            [
+              "_contents",
+              -15.51
+            ],
+            [
+              " compartments",
+              -15.51
+            ]
+          ]
+        },
+        {
+          "from_layer": 13,
+          "to_layer": 14,
+          "from_token": " contents",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              " set",
+              16.49
+            ],
+            [
+              "<|endoftext|>",
+              0.75
+            ],
+            [
+              " size",
+              0.62
+            ],
+            [
+              "\u5bb9\u91cf",
+              -0.13
+            ],
+            [
+              " capacity",
+              -0.19
+            ]
+          ],
+          "losers": [
+            [
+              " contents",
+              -0.69
+            ],
+            [
+              " constraints",
+              -0.88
+            ],
+            [
+              "ier",
+              -1.25
+            ],
+            [
+              "\u88c5",
+              -1.38
+            ],
+            [
+              " ex",
+              -16.11
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "<|endoftext|>",
+          "to_token": " and",
+          "semantic_label": "padding\u2192'and'",
+          "gainers": [
+            [
+              " is",
+              15.75
+            ],
+            [
+              " cannot",
+              14.43
+            ],
+            [
+              " and",
+              1.85
+            ],
+            [
+              " (",
+              1.42
+            ],
+            [
+              ",",
+              1.1
+            ]
+          ],
+          "losers": [
+            [
+              " size",
+              -1.15
+            ],
+            [
+              " with",
+              -1.27
+            ],
+            [
+              "<|endoftext|>",
+              -2.52
+            ],
+            [
+              " set",
+              -16.02
+            ],
+            [
+              " contents",
+              -16.39
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " and",
+          "to_token": "'s",
+          "semantic_label": "content\u2192''s'",
+          "gainers": [
+            [
+              " was",
+              15.46
+            ],
+            [
+              " limit",
+              14.84
+            ],
+            [
+              " only",
+              1.78
+            ],
+            [
+              " is",
+              1.65
+            ],
+            [
+              "'s",
+              1.09
+            ]
+          ],
+          "losers": [
+            [
+              ",",
+              -1.1
+            ],
+            [
+              " and",
+              -2.53
+            ],
+            [
+              " (",
+              -2.66
+            ],
+            [
+              " with",
+              -14.31
+            ],
+            [
+              "<|endoftext|>",
+              -15.93
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": "'s",
+          "to_token": " is",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " would",
+              15.65
+            ],
+            [
+              " had",
+              14.65
+            ],
+            [
+              " could",
+              12.53
+            ],
+            [
+              " has",
+              2.35
+            ],
+            [
+              " was",
+              1.97
+            ]
+          ],
+          "losers": [
+            [
+              " cannot",
+              -0.78
+            ],
+            [
+              "'s",
+              -1.65
+            ],
+            [
+              " (",
+              -12.55
+            ],
+            [
+              " may",
+              -13.18
+            ],
+            [
+              " can't",
+              -13.43
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -20.557,
+          "target_prob": 0.0,
+          "target_rank": 82966
+        },
+        {
+          "layer": 1,
+          "target_logprob": -19.491,
+          "target_prob": 0.0,
+          "target_rank": 74656
+        },
+        {
+          "layer": 2,
+          "target_logprob": -19.351,
+          "target_prob": 0.0,
+          "target_rank": 70605
+        },
+        {
+          "layer": 3,
+          "target_logprob": -17.177,
+          "target_prob": 0.0,
+          "target_rank": 49575
+        },
+        {
+          "layer": 4,
+          "target_logprob": -16.648,
+          "target_prob": 0.0,
+          "target_rank": 39406
+        },
+        {
+          "layer": 5,
+          "target_logprob": -16.181,
+          "target_prob": 0.0,
+          "target_rank": 33593
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.65,
+          "target_prob": 1e-06,
+          "target_rank": 18088
+        },
+        {
+          "layer": 7,
+          "target_logprob": -13.174,
+          "target_prob": 2e-06,
+          "target_rank": 13354
+        },
+        {
+          "layer": 8,
+          "target_logprob": -12.196,
+          "target_prob": 5e-06,
+          "target_rank": 8712
+        },
+        {
+          "layer": 9,
+          "target_logprob": -12.479,
+          "target_prob": 4e-06,
+          "target_rank": 7440
+        },
+        {
+          "layer": 10,
+          "target_logprob": -13.078,
+          "target_prob": 2e-06,
+          "target_rank": 9770
+        },
+        {
+          "layer": 11,
+          "target_logprob": -11.883,
+          "target_prob": 7e-06,
+          "target_rank": 2766
+        },
+        {
+          "layer": 12,
+          "target_logprob": -11.064,
+          "target_prob": 1.6e-05,
+          "target_rank": 3459
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.981,
+          "target_prob": 1.7e-05,
+          "target_rank": 3070
+        },
+        {
+          "layer": 14,
+          "target_logprob": -8.919,
+          "target_prob": 0.000134,
+          "target_rank": 687
+        },
+        {
+          "layer": 15,
+          "target_logprob": -5.796,
+          "target_prob": 0.00304,
+          "target_rank": 22
+        },
+        {
+          "layer": 16,
+          "target_logprob": -4.255,
+          "target_prob": 0.014199,
+          "target_rank": 5
+        },
+        {
+          "layer": 17,
+          "target_logprob": -2.601,
+          "target_prob": 0.074233,
+          "target_rank": 2
+        },
+        {
+          "layer": 18,
+          "target_logprob": -3.07,
+          "target_prob": 0.046418,
+          "target_rank": 2
+        },
+        {
+          "layer": 19,
+          "target_logprob": -1.196,
+          "target_prob": 0.302507,
+          "target_rank": 1
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.596,
+          "target_prob": 0.550763,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.498,
+          "target_prob": 0.607514,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -0.428,
+          "target_prob": 0.651531,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -0.699,
+          "target_prob": 0.497276,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "target_token": " too",
+      "convergence_layer": 20,
+      "num_decisions": 8,
+      "decisions": [
+        {
+          "from_layer": 3,
+          "to_layer": 4,
+          "from_token": " cur",
+          "to_token": " presumably",
+          "semantic_label": "content\u2192'presumably'",
+          "gainers": [
+            [
+              " \u0431\u044b",
+              15.36
+            ],
+            [
+              " apparent",
+              14.73
+            ],
+            [
+              " glimps",
+              14.67
+            ],
+            [
+              " fin",
+              14.67
+            ],
+            [
+              " generous",
+              14.67
+            ]
+          ],
+          "losers": [
+            [
+              " ras",
+              -13.2
+            ],
+            [
+              " lin",
+              -13.38
+            ],
+            [
+              " isot",
+              -13.45
+            ],
+            [
+              "\ufffd",
+              -13.57
+            ],
+            [
+              " ness",
+              -14.7
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " presumably",
+          "to_token": " fin",
+          "semantic_label": "content\u2192'fin'",
+          "gainers": [
+            [
+              " metaphor",
+              15.35
+            ],
+            [
+              "\u2011",
+              15.28
+            ],
+            [
+              "\u00a0",
+              15.16
+            ],
+            [
+              "<|endoftext|>",
+              1.76
+            ],
+            [
+              " fin",
+              1.32
+            ]
+          ],
+          "losers": [
+            [
+              " presumably",
+              -1.68
+            ],
+            [
+              " \u0431\u044b",
+              -2.37
+            ],
+            [
+              " glimps",
+              -15.47
+            ],
+            [
+              " blind",
+              -15.84
+            ],
+            [
+              " cur",
+              -17.09
+            ]
+          ]
+        },
+        {
+          "from_layer": 9,
+          "to_layer": 10,
+          "from_token": " fin",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              "<|reserved_200016|>",
+              15.12
+            ],
+            [
+              " dec",
+              15.12
+            ],
+            [
+              " pack",
+              14.93
+            ],
+            [
+              "<|endoftext|>",
+              2.19
+            ],
+            [
+              " ex",
+              1.19
+            ]
+          ],
+          "losers": [
+            [
+              " metaphor",
+              -1.5
+            ],
+            [
+              " fin",
+              -2.37
+            ],
+            [
+              " raised",
+              -15.05
+            ],
+            [
+              " predetermined",
+              -15.61
+            ],
+            [
+              "\u00a0",
+              -15.8
+            ]
+          ]
+        },
+        {
+          "from_layer": 11,
+          "to_layer": 12,
+          "from_token": "<|endoftext|>",
+          "to_token": " pack",
+          "semantic_label": "padding\u2192'pack'",
+          "gainers": [
+            [
+              " capacity",
+              15.94
+            ],
+            [
+              " size",
+              15.56
+            ],
+            [
+              "\u88c5",
+              1.65
+            ],
+            [
+              " constraints",
+              1.4
+            ],
+            [
+              "\u2011",
+              0.4
+            ]
+          ],
+          "losers": [
+            [
+              " ex",
+              -0.1
+            ],
+            [
+              " pack",
+              -0.92
+            ],
+            [
+              "<|endoftext|>",
+              -1.98
+            ],
+            [
+              " dec",
+              -15.11
+            ],
+            [
+              " fin",
+              -15.42
+            ]
+          ]
+        },
+        {
+          "from_layer": 14,
+          "to_layer": 15,
+          "from_token": " pack",
+          "to_token": " at",
+          "semantic_label": "content\u2192letter/short",
+          "gainers": [
+            [
+              " (",
+              16.8
+            ],
+            [
+              " the",
+              16.18
+            ],
+            [
+              " R",
+              16.05
+            ],
+            [
+              " set",
+              15.93
+            ],
+            [
+              " in",
+              1.41
+            ]
+          ],
+          "losers": [
+            [
+              " pack",
+              -1.47
+            ],
+            [
+              " ex",
+              -16.08
+            ],
+            [
+              " size",
+              -16.21
+            ],
+            [
+              " mar",
+              -16.21
+            ],
+            [
+              " capacity",
+              -17.27
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": " at",
+          "to_token": " not",
+          "semantic_label": "letter/short\u2192'not'",
+          "gainers": [
+            [
+              " \"",
+              18.01
+            ],
+            [
+              " a",
+              17.57
+            ],
+            [
+              " ",
+              16.88
+            ],
+            [
+              " already",
+              16.38
+            ],
+            [
+              " not",
+              1.64
+            ]
+          ],
+          "losers": [
+            [
+              " at",
+              -0.92
+            ],
+            [
+              " set",
+              -15.93
+            ],
+            [
+              " R",
+              -16.05
+            ],
+            [
+              " pack",
+              -16.61
+            ],
+            [
+              "<|endoftext|>",
+              -16.8
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " not",
+          "to_token": " only",
+          "semantic_label": "content\u2192'only'",
+          "gainers": [
+            [
+              " insufficient",
+              13.81
+            ],
+            [
+              " only",
+              3.11
+            ],
+            [
+              " \"",
+              -0.2
+            ],
+            [
+              " just",
+              -0.2
+            ],
+            [
+              " too",
+              -0.39
+            ]
+          ],
+          "losers": [
+            [
+              " not",
+              -0.64
+            ],
+            [
+              " ",
+              -2.14
+            ],
+            [
+              " the",
+              -2.14
+            ],
+            [
+              " already",
+              -2.14
+            ],
+            [
+              " smaller",
+              -14.26
+            ]
+          ]
+        },
+        {
+          "from_layer": 19,
+          "to_layer": 20,
+          "from_token": " only",
+          "to_token": " too",
+          "semantic_label": "content\u2192'too'",
+          "gainers": [
+            [
+              " limited",
+              11.2
+            ],
+            [
+              " too",
+              1.56
+            ],
+            [
+              " already",
+              0.43
+            ],
+            [
+              " just",
+              -0.82
+            ],
+            [
+              " only",
+              -1.57
+            ]
+          ],
+          "losers": [
+            [
+              " not",
+              -1.94
+            ],
+            [
+              " insufficient",
+              -2.32
+            ],
+            [
+              " a",
+              -2.82
+            ],
+            [
+              " the",
+              -2.82
+            ],
+            [
+              " \"",
+              -13.14
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -16.095,
+          "target_prob": 0.0,
+          "target_rank": 3140
+        },
+        {
+          "layer": 1,
+          "target_logprob": -14.517,
+          "target_prob": 0.0,
+          "target_rank": 1095
+        },
+        {
+          "layer": 2,
+          "target_logprob": -12.663,
+          "target_prob": 3e-06,
+          "target_rank": 409
+        },
+        {
+          "layer": 3,
+          "target_logprob": -12.304,
+          "target_prob": 5e-06,
+          "target_rank": 395
+        },
+        {
+          "layer": 4,
+          "target_logprob": -8.953,
+          "target_prob": 0.000129,
+          "target_rank": 198
+        },
+        {
+          "layer": 5,
+          "target_logprob": -7.701,
+          "target_prob": 0.000452,
+          "target_rank": 116
+        },
+        {
+          "layer": 6,
+          "target_logprob": -7.222,
+          "target_prob": 0.00073,
+          "target_rank": 81
+        },
+        {
+          "layer": 7,
+          "target_logprob": -6.341,
+          "target_prob": 0.001763,
+          "target_rank": 34
+        },
+        {
+          "layer": 8,
+          "target_logprob": -5.802,
+          "target_prob": 0.003022,
+          "target_rank": 26
+        },
+        {
+          "layer": 9,
+          "target_logprob": -5.885,
+          "target_prob": 0.00278,
+          "target_rank": 20
+        },
+        {
+          "layer": 10,
+          "target_logprob": -5.57,
+          "target_prob": 0.00381,
+          "target_rank": 16
+        },
+        {
+          "layer": 11,
+          "target_logprob": -7.206,
+          "target_prob": 0.000742,
+          "target_rank": 42
+        },
+        {
+          "layer": 12,
+          "target_logprob": -5.31,
+          "target_prob": 0.004941,
+          "target_rank": 18
+        },
+        {
+          "layer": 13,
+          "target_logprob": -4.764,
+          "target_prob": 0.008528,
+          "target_rank": 11
+        },
+        {
+          "layer": 14,
+          "target_logprob": -5.167,
+          "target_prob": 0.005703,
+          "target_rank": 21
+        },
+        {
+          "layer": 15,
+          "target_logprob": -4.323,
+          "target_prob": 0.013259,
+          "target_rank": 11
+        },
+        {
+          "layer": 16,
+          "target_logprob": -4.056,
+          "target_prob": 0.017321,
+          "target_rank": 10
+        },
+        {
+          "layer": 17,
+          "target_logprob": -1.051,
+          "target_prob": 0.349474,
+          "target_rank": 1
+        },
+        {
+          "layer": 18,
+          "target_logprob": -1.442,
+          "target_prob": 0.236403,
+          "target_rank": 1
+        },
+        {
+          "layer": 19,
+          "target_logprob": -1.733,
+          "target_prob": 0.176839,
+          "target_rank": 2
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.177,
+          "target_prob": 0.837686,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.114,
+          "target_prob": 0.891917,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -0.138,
+          "target_prob": 0.870742,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -0.793,
+          "target_prob": 0.452392,
+          "target_rank": 0
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "target_token": " small",
+      "convergence_layer": 18,
+      "num_decisions": 12,
+      "decisions": [
+        {
+          "from_layer": 0,
+          "to_layer": 1,
+          "from_token": " medd",
+          "to_token": " don",
+          "semantic_label": "content\u2192'don'",
+          "gainers": [
+            [
+              " quint",
+              17.85
+            ],
+            [
+              " ballistic",
+              15.85
+            ],
+            [
+              " don",
+              1.65
+            ],
+            [
+              " plat",
+              0.65
+            ],
+            [
+              " wild",
+              0.65
+            ]
+          ],
+          "losers": [
+            [
+              "cant",
+              -1.48
+            ],
+            [
+              " fil",
+              -1.6
+            ],
+            [
+              " medd",
+              -2.6
+            ],
+            [
+              "erval",
+              -17.45
+            ],
+            [
+              " lod",
+              -17.45
+            ]
+          ]
+        },
+        {
+          "from_layer": 1,
+          "to_layer": 2,
+          "from_token": " don",
+          "to_token": " quint",
+          "semantic_label": "content\u2192'quint'",
+          "gainers": [
+            [
+              "\n                    \n",
+              16.34
+            ],
+            [
+              " herm",
+              15.84
+            ],
+            [
+              " cushion",
+              15.71
+            ],
+            [
+              "mess",
+              15.59
+            ],
+            [
+              " quint",
+              1.37
+            ]
+          ],
+          "losers": [
+            [
+              " don",
+              -2.13
+            ],
+            [
+              "cant",
+              -15.22
+            ],
+            [
+              " medd",
+              -15.72
+            ],
+            [
+              " ballistic",
+              -15.85
+            ],
+            [
+              " \u0644\u0642",
+              -16.22
+            ]
+          ]
+        },
+        {
+          "from_layer": 4,
+          "to_layer": 5,
+          "from_token": " quint",
+          "to_token": " don",
+          "semantic_label": "content\u2192'don'",
+          "gainers": [
+            [
+              " fest",
+              17.21
+            ],
+            [
+              " sext",
+              15.96
+            ],
+            [
+              " Dop",
+              15.52
+            ],
+            [
+              " firm",
+              1.65
+            ],
+            [
+              " sink",
+              1.52
+            ]
+          ],
+          "losers": [
+            [
+              " wild",
+              -0.35
+            ],
+            [
+              " quint",
+              -1.1
+            ],
+            [
+              "ball",
+              -15.31
+            ],
+            [
+              " cushion",
+              -15.87
+            ],
+            [
+              " pocket",
+              -16.43
+            ]
+          ]
+        },
+        {
+          "from_layer": 5,
+          "to_layer": 6,
+          "from_token": " don",
+          "to_token": " sink",
+          "semantic_label": "content\u2192'sink'",
+          "gainers": [
+            [
+              " fin",
+              17.41
+            ],
+            [
+              " windows",
+              16.78
+            ],
+            [
+              "pot",
+              16.16
+            ],
+            [
+              " inherent",
+              16.16
+            ],
+            [
+              " firm",
+              0.57
+            ]
+          ],
+          "losers": [
+            [
+              " wild",
+              -0.93
+            ],
+            [
+              " Dop",
+              -15.52
+            ],
+            [
+              "(er",
+              -16.33
+            ],
+            [
+              " fest",
+              -17.21
+            ],
+            [
+              " don",
+              -18.21
+            ]
+          ]
+        },
+        {
+          "from_layer": 6,
+          "to_layer": 7,
+          "from_token": " sink",
+          "to_token": " firm",
+          "semantic_label": "content\u2192'firm'",
+          "gainers": [
+            [
+              "\u2011",
+              16.46
+            ],
+            [
+              " drop",
+              16.15
+            ],
+            [
+              " don",
+              16.09
+            ],
+            [
+              " sext",
+              0.37
+            ],
+            [
+              " firm",
+              0.18
+            ]
+          ],
+          "losers": [
+            [
+              " quint",
+              -0.38
+            ],
+            [
+              " fin",
+              -0.75
+            ],
+            [
+              "pot",
+              -16.16
+            ],
+            [
+              " inherent",
+              -16.16
+            ],
+            [
+              " fer",
+              -16.53
+            ]
+          ]
+        },
+        {
+          "from_layer": 7,
+          "to_layer": 8,
+          "from_token": " firm",
+          "to_token": "\u2011",
+          "semantic_label": "content\u2192'\u2011'",
+          "gainers": [
+            [
+              " too",
+              16.99
+            ],
+            [
+              "<|endoftext|>",
+              16.74
+            ],
+            [
+              " pack",
+              16.68
+            ],
+            [
+              "\u2011",
+              0.9
+            ],
+            [
+              " drop",
+              0.4
+            ]
+          ],
+          "losers": [
+            [
+              " quint",
+              -0.79
+            ],
+            [
+              " firm",
+              -0.97
+            ],
+            [
+              " don",
+              -16.09
+            ],
+            [
+              " wild",
+              -16.9
+            ],
+            [
+              " sink",
+              -17.84
+            ]
+          ]
+        },
+        {
+          "from_layer": 12,
+          "to_layer": 13,
+          "from_token": "\u2011",
+          "to_token": " pack",
+          "semantic_label": "content\u2192'pack'",
+          "gainers": [
+            [
+              " inadequate",
+              16.6
+            ],
+            [
+              "<|endoftext|>",
+              16.04
+            ],
+            [
+              " insuff",
+              15.6
+            ],
+            [
+              " pack",
+              2.3
+            ],
+            [
+              " too",
+              0.74
+            ]
+          ],
+          "losers": [
+            [
+              " drop",
+              -0.76
+            ],
+            [
+              "\u2011",
+              -1.58
+            ],
+            [
+              " firm",
+              -15.24
+            ],
+            [
+              " metaphor",
+              -15.56
+            ],
+            [
+              " invers",
+              -16.06
+            ]
+          ]
+        },
+        {
+          "from_layer": 13,
+          "to_layer": 14,
+          "from_token": " pack",
+          "to_token": "<|endoftext|>",
+          "semantic_label": "content\u2192padding",
+          "gainers": [
+            [
+              "ache",
+              16.64
+            ],
+            [
+              " with",
+              15.96
+            ],
+            [
+              "_h",
+              15.96
+            ],
+            [
+              "-",
+              15.64
+            ],
+            [
+              " mar",
+              15.64
+            ]
+          ],
+          "losers": [
+            [
+              " drop",
+              -15.54
+            ],
+            [
+              " insuff",
+              -15.6
+            ],
+            [
+              " size",
+              -15.98
+            ],
+            [
+              " inadequate",
+              -16.6
+            ],
+            [
+              " constraints",
+              -16.92
+            ]
+          ]
+        },
+        {
+          "from_layer": 14,
+          "to_layer": 15,
+          "from_token": "<|endoftext|>",
+          "to_token": "\u2011",
+          "semantic_label": "padding\u2192'\u2011'",
+          "gainers": [
+            [
+              " not",
+              16.21
+            ],
+            [
+              " and",
+              16.15
+            ],
+            [
+              "\u2014",
+              16.03
+            ],
+            [
+              " of",
+              15.96
+            ],
+            [
+              " (",
+              15.71
+            ]
+          ],
+          "losers": [
+            [
+              " mar",
+              -15.64
+            ],
+            [
+              " with",
+              -15.96
+            ],
+            [
+              "_h",
+              -15.96
+            ],
+            [
+              "ache",
+              -16.64
+            ],
+            [
+              " pack",
+              -16.71
+            ]
+          ]
+        },
+        {
+          "from_layer": 15,
+          "to_layer": 16,
+          "from_token": "\u2011",
+          "to_token": " (",
+          "semantic_label": "content\u2192punctuation",
+          "gainers": [
+            [
+              " \"",
+              17.17
+            ],
+            [
+              " ",
+              17.17
+            ],
+            [
+              "\n\n",
+              16.42
+            ],
+            [
+              " (",
+              2.83
+            ],
+            [
+              " not",
+              0.89
+            ]
+          ],
+          "losers": [
+            [
+              " of",
+              -0.11
+            ],
+            [
+              " too",
+              -1.3
+            ],
+            [
+              " dec",
+              -15.78
+            ],
+            [
+              "\u2014",
+              -16.03
+            ],
+            [
+              "\u2011",
+              -18.46
+            ]
+          ]
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 17,
+          "from_token": " (",
+          "to_token": " too",
+          "semantic_label": "punctuation\u2192'too'",
+          "gainers": [
+            [
+              " small",
+              18.05
+            ],
+            [
+              " smaller",
+              17.61
+            ],
+            [
+              " narrow",
+              16.99
+            ],
+            [
+              " short",
+              16.74
+            ],
+            [
+              " close",
+              16.61
+            ]
+          ],
+          "losers": [
+            [
+              " of",
+              -15.85
+            ],
+            [
+              "\n\n",
+              -16.42
+            ],
+            [
+              " and",
+              -16.85
+            ],
+            [
+              "-",
+              -17.29
+            ],
+            [
+              "<|endoftext|>",
+              -17.79
+            ]
+          ]
+        },
+        {
+          "from_layer": 17,
+          "to_layer": 18,
+          "from_token": " too",
+          "to_token": " small",
+          "semantic_label": "content\u2192'small'",
+          "gainers": [
+            [
+              " low",
+              17.27
+            ],
+            [
+              " limited",
+              15.39
+            ],
+            [
+              " much",
+              15.14
+            ],
+            [
+              " small",
+              1.72
+            ],
+            [
+              " short",
+              0.41
+            ]
+          ],
+          "losers": [
+            [
+              " close",
+              -2.72
+            ],
+            [
+              " too",
+              -4.84
+            ],
+            [
+              " (",
+              -15.86
+            ],
+            [
+              " not",
+              -15.99
+            ],
+            [
+              " ",
+              -16.92
+            ]
+          ]
+        }
+      ],
+      "target_trajectory": [
+        {
+          "layer": 0,
+          "target_logprob": -22.988,
+          "target_prob": 0.0,
+          "target_rank": 120692
+        },
+        {
+          "layer": 1,
+          "target_logprob": -21.299,
+          "target_prob": 0.0,
+          "target_rank": 70916
+        },
+        {
+          "layer": 2,
+          "target_logprob": -19.428,
+          "target_prob": 0.0,
+          "target_rank": 42642
+        },
+        {
+          "layer": 3,
+          "target_logprob": -17.502,
+          "target_prob": 0.0,
+          "target_rank": 22118
+        },
+        {
+          "layer": 4,
+          "target_logprob": -16.254,
+          "target_prob": 0.0,
+          "target_rank": 14555
+        },
+        {
+          "layer": 5,
+          "target_logprob": -15.636,
+          "target_prob": 0.0,
+          "target_rank": 11930
+        },
+        {
+          "layer": 6,
+          "target_logprob": -13.782,
+          "target_prob": 1e-06,
+          "target_rank": 6189
+        },
+        {
+          "layer": 7,
+          "target_logprob": -12.254,
+          "target_prob": 5e-06,
+          "target_rank": 3164
+        },
+        {
+          "layer": 8,
+          "target_logprob": -11.478,
+          "target_prob": 1e-05,
+          "target_rank": 3071
+        },
+        {
+          "layer": 9,
+          "target_logprob": -11.011,
+          "target_prob": 1.7e-05,
+          "target_rank": 1537
+        },
+        {
+          "layer": 10,
+          "target_logprob": -10.084,
+          "target_prob": 4.2e-05,
+          "target_rank": 875
+        },
+        {
+          "layer": 11,
+          "target_logprob": -10.596,
+          "target_prob": 2.5e-05,
+          "target_rank": 895
+        },
+        {
+          "layer": 12,
+          "target_logprob": -10.193,
+          "target_prob": 3.7e-05,
+          "target_rank": 1002
+        },
+        {
+          "layer": 13,
+          "target_logprob": -10.552,
+          "target_prob": 2.6e-05,
+          "target_rank": 952
+        },
+        {
+          "layer": 14,
+          "target_logprob": -9.044,
+          "target_prob": 0.000118,
+          "target_rank": 704
+        },
+        {
+          "layer": 15,
+          "target_logprob": -8.661,
+          "target_prob": 0.000173,
+          "target_rank": 361
+        },
+        {
+          "layer": 16,
+          "target_logprob": -8.459,
+          "target_prob": 0.000212,
+          "target_rank": 166
+        },
+        {
+          "layer": 17,
+          "target_logprob": -1.951,
+          "target_prob": 0.142073,
+          "target_rank": 1
+        },
+        {
+          "layer": 18,
+          "target_logprob": -0.23,
+          "target_prob": 0.794408,
+          "target_rank": 0
+        },
+        {
+          "layer": 19,
+          "target_logprob": -0.062,
+          "target_prob": 0.939546,
+          "target_rank": 0
+        },
+        {
+          "layer": 20,
+          "target_logprob": -0.031,
+          "target_prob": 0.969302,
+          "target_rank": 0
+        },
+        {
+          "layer": 21,
+          "target_logprob": -0.006,
+          "target_prob": 0.994203,
+          "target_rank": 0
+        },
+        {
+          "layer": 22,
+          "target_logprob": -0.01,
+          "target_prob": 0.989813,
+          "target_rank": 0
+        },
+        {
+          "layer": 23,
+          "target_logprob": -0.114,
+          "target_prob": 0.892703,
+          "target_rank": 0
+        }
+      ]
+    }
+  ]
+}

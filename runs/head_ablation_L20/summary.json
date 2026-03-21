@@ -1,0 +1,2072 @@
+{
+  "config": {
+    "backend_kind": "gpt_oss_transformers",
+    "backend_params": {
+      "model_name": "openai/gpt-oss-20b"
+    },
+    "tasks": [
+      {
+        "name": "capitalization",
+        "behavior": "capitalization",
+        "cases": [
+          {
+            "case_id": "caps_002",
+            "prompt": "Write the US state in normal headline style: north",
+            "choices": {
+              "A": " Carolina",
+              "B": " carolina"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          },
+          {
+            "case_id": "caps_003",
+            "prompt": "Complete the name of the city: new",
+            "choices": {
+              "A": " York",
+              "B": " york"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "capitalization"
+            }
+          }
+        ],
+        "description": "Formatting behavior: title case and proper noun capitalization."
+      },
+      {
+        "name": "induction",
+        "behavior": "induction",
+        "cases": [
+          {
+            "case_id": "induction_001",
+            "prompt": "A7 B2 C9 D4 A7 B2 C9",
+            "choices": {
+              "A": " D4",
+              "B": " E5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_002",
+            "prompt": "red blue green red blue green red blue",
+            "choices": {
+              "A": " green",
+              "B": " red"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_003",
+            "prompt": "1 2 3 4 1 2 3 4 1 2 3",
+            "choices": {
+              "A": " 4",
+              "B": " 5"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          },
+          {
+            "case_id": "induction_004",
+            "prompt": "alpha beta gamma alpha beta gamma alpha beta",
+            "choices": {
+              "A": " gamma",
+              "B": " delta"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "induction"
+            }
+          }
+        ],
+        "description": "Induction-style copying: repeat a previously observed pattern."
+      },
+      {
+        "name": "coreference",
+        "behavior": "coreference",
+        "cases": [
+          {
+            "case_id": "coref_002",
+            "prompt": "The teacher praised the student because the student got every answer right. Later, the teacher said he would recommend the student for the award. The word 'he' refers to the",
+            "choices": {
+              "A": " teacher",
+              "B": " student"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_003",
+            "prompt": "John called Mary and told her about the meeting. The word 'her' refers to",
+            "choices": {
+              "A": " Mary",
+              "B": " John"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          },
+          {
+            "case_id": "coref_004",
+            "prompt": "The mother picked up the child because she was strong enough to carry him. The word 'she' refers to the",
+            "choices": {
+              "A": " mother",
+              "B": " child"
+            },
+            "expected_label": "A",
+            "metadata": {
+              "phenomenon": "coreference"
+            }
+          }
+        ],
+        "description": "Simple pronoun coreference resolution."
+      }
+    ],
+    "interventions": [
+      {
+        "name": "head_L20_H00",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            0
+          ],
+          "expert_indices": [],
+          "note": "Zero head 0 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 0 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H01",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            1
+          ],
+          "expert_indices": [],
+          "note": "Zero head 1 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 1 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H02",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            2
+          ],
+          "expert_indices": [],
+          "note": "Zero head 2 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 2 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H03",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            3
+          ],
+          "expert_indices": [],
+          "note": "Zero head 3 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 3 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H04",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            4
+          ],
+          "expert_indices": [],
+          "note": "Zero head 4 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 4 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H05",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            5
+          ],
+          "expert_indices": [],
+          "note": "Zero head 5 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 5 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H06",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            6
+          ],
+          "expert_indices": [],
+          "note": "Zero head 6 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 6 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H07",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            7
+          ],
+          "expert_indices": [],
+          "note": "Zero head 7 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 7 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H08",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            8
+          ],
+          "expert_indices": [],
+          "note": "Zero head 8 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 8 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H09",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            9
+          ],
+          "expert_indices": [],
+          "note": "Zero head 9 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 9 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H10",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            10
+          ],
+          "expert_indices": [],
+          "note": "Zero head 10 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 10 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H11",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            11
+          ],
+          "expert_indices": [],
+          "note": "Zero head 11 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 11 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H12",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            12
+          ],
+          "expert_indices": [],
+          "note": "Zero head 12 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 12 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H13",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            13
+          ],
+          "expert_indices": [],
+          "note": "Zero head 13 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 13 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H14",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            14
+          ],
+          "expert_indices": [],
+          "note": "Zero head 14 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 14 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H15",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            15
+          ],
+          "expert_indices": [],
+          "note": "Zero head 15 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 15 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H16",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            16
+          ],
+          "expert_indices": [],
+          "note": "Zero head 16 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 16 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H17",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            17
+          ],
+          "expert_indices": [],
+          "note": "Zero head 17 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 17 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H18",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            18
+          ],
+          "expert_indices": [],
+          "note": "Zero head 18 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 18 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H19",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            19
+          ],
+          "expert_indices": [],
+          "note": "Zero head 19 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 19 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H20",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            20
+          ],
+          "expert_indices": [],
+          "note": "Zero head 20 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 20 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H21",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            21
+          ],
+          "expert_indices": [],
+          "note": "Zero head 21 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 21 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H22",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            22
+          ],
+          "expert_indices": [],
+          "note": "Zero head 22 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 22 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H23",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            23
+          ],
+          "expert_indices": [],
+          "note": "Zero head 23 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 23 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H24",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            24
+          ],
+          "expert_indices": [],
+          "note": "Zero head 24 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 24 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H25",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            25
+          ],
+          "expert_indices": [],
+          "note": "Zero head 25 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 25 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H26",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            26
+          ],
+          "expert_indices": [],
+          "note": "Zero head 26 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 26 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H27",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            27
+          ],
+          "expert_indices": [],
+          "note": "Zero head 27 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 27 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H28",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            28
+          ],
+          "expert_indices": [],
+          "note": "Zero head 28 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 28 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H29",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            29
+          ],
+          "expert_indices": [],
+          "note": "Zero head 29 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 29 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H30",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            30
+          ],
+          "expert_indices": [],
+          "note": "Zero head 30 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 30 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H31",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            31
+          ],
+          "expert_indices": [],
+          "note": "Zero head 31 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 31 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H32",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            32
+          ],
+          "expert_indices": [],
+          "note": "Zero head 32 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 32 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H33",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            33
+          ],
+          "expert_indices": [],
+          "note": "Zero head 33 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 33 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H34",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            34
+          ],
+          "expert_indices": [],
+          "note": "Zero head 34 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 34 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H35",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            35
+          ],
+          "expert_indices": [],
+          "note": "Zero head 35 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 35 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H36",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            36
+          ],
+          "expert_indices": [],
+          "note": "Zero head 36 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 36 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H37",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            37
+          ],
+          "expert_indices": [],
+          "note": "Zero head 37 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 37 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H38",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            38
+          ],
+          "expert_indices": [],
+          "note": "Zero head 38 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 38 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H39",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            39
+          ],
+          "expert_indices": [],
+          "note": "Zero head 39 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 39 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H40",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            40
+          ],
+          "expert_indices": [],
+          "note": "Zero head 40 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 40 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H41",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            41
+          ],
+          "expert_indices": [],
+          "note": "Zero head 41 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 41 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H42",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            42
+          ],
+          "expert_indices": [],
+          "note": "Zero head 42 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 42 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H43",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            43
+          ],
+          "expert_indices": [],
+          "note": "Zero head 43 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 43 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H44",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            44
+          ],
+          "expert_indices": [],
+          "note": "Zero head 44 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 44 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H45",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            45
+          ],
+          "expert_indices": [],
+          "note": "Zero head 45 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 45 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H46",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            46
+          ],
+          "expert_indices": [],
+          "note": "Zero head 46 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 46 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H47",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            47
+          ],
+          "expert_indices": [],
+          "note": "Zero head 47 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 47 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H48",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            48
+          ],
+          "expert_indices": [],
+          "note": "Zero head 48 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 48 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H49",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            49
+          ],
+          "expert_indices": [],
+          "note": "Zero head 49 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 49 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H50",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            50
+          ],
+          "expert_indices": [],
+          "note": "Zero head 50 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 50 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H51",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            51
+          ],
+          "expert_indices": [],
+          "note": "Zero head 51 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 51 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H52",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            52
+          ],
+          "expert_indices": [],
+          "note": "Zero head 52 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 52 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H53",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            53
+          ],
+          "expert_indices": [],
+          "note": "Zero head 53 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 53 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H54",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            54
+          ],
+          "expert_indices": [],
+          "note": "Zero head 54 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 54 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H55",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            55
+          ],
+          "expert_indices": [],
+          "note": "Zero head 55 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 55 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H56",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            56
+          ],
+          "expert_indices": [],
+          "note": "Zero head 56 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 56 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H57",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            57
+          ],
+          "expert_indices": [],
+          "note": "Zero head 57 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 57 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H58",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            58
+          ],
+          "expert_indices": [],
+          "note": "Zero head 58 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 58 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H59",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            59
+          ],
+          "expert_indices": [],
+          "note": "Zero head 59 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 59 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H60",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            60
+          ],
+          "expert_indices": [],
+          "note": "Zero head 60 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 60 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H61",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            61
+          ],
+          "expert_indices": [],
+          "note": "Zero head 61 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 61 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H62",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            62
+          ],
+          "expert_indices": [],
+          "note": "Zero head 62 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 62 at layer 20",
+        "params": {}
+      },
+      {
+        "name": "head_L20_H63",
+        "kind": "head_mask",
+        "target": {
+          "unit": "head",
+          "layer_indices": [
+            20
+          ],
+          "head_indices": [
+            63
+          ],
+          "expert_indices": [],
+          "note": "Zero head 63 at layer 20"
+        },
+        "scales": [
+          0.0
+        ],
+        "description": "Ablate head 63 at layer 20",
+        "params": {}
+      }
+    ],
+    "sweep": {
+      "repeats": 1,
+      "max_examples": null,
+      "record_case_outputs": true
+    },
+    "seed": 7,
+    "experiment_name": "HeadAblation_L20_SoftMain",
+    "output_dir": "./runs/head_ablation_L20",
+    "notes": "Per-head ablation sweep at layer 20 on the soft main-analysis set. Tests the Hydra hypothesis by measuring ablation-effect variance across 64 heads. Expected: tight variance (Hydra active) since gpt-oss-20b is standard-trained."
+  },
+  "summary": {
+    "head_L20_H00@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.686129519140296,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H01@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.714002551368645,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H02@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.71608730830485,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H03@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.692747351183142,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H04@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.721454432703063,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H05@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.697249328206656,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H06@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.637263899387714,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H07@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.646632021619654,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H08@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.650605239918352,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H09@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.662595562620684,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H10@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.697063362484591,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H11@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.684681253103514,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H12@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.689423049454086,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H13@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.747556834575436,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H14@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.769403696483803,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H15@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.752343554340769,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H16@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.630233019577442,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H17@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.706749816764689,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H18@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.674351448092946,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H19@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.699588626872153,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H20@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.608117519861683,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H21@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.68669239016405,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H22@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.7110128467061765,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H23@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.750110563421105,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H24@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.7327051807531255,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H25@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.662715741565787,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H26@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.696731856758965,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H27@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.651527350719941,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H28@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.685802839735213,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H29@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.6921001660456465,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H30@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.733309950330295,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H31@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.774562945670267,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H32@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.72757911128186,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H33@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.638833909010929,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H34@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.738825921421974,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H35@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.717190964474058,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H36@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.6633346317038455,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H37@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.60683354395183,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H38@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.628167543068735,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H39@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.6556642073167795,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H40@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.7053667969820605,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H41@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.676351228560735,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H42@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.645222956680097,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H43@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.752124518599077,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H44@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.683642930713379,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H45@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.732808704397434,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H46@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.684156436043041,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H47@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.722827753326985,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H48@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.643351643333315,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H49@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.688564790238161,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H50@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.6208007872854875,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H51@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.669200953115554,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H52@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.777553936065589,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H53@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.70575634306038,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H54@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.634195833683609,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H55@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.666463082484875,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H56@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.727865100020103,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H57@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.729431335866037,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H58@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.650999554073981,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H59@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.683034713179546,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H60@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.671457389201452,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H61@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.765311926655057,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H62@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.687781847990765,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    },
+    "head_L20_H63@0": {
+      "accuracy": 1.0,
+      "mean_margin": 6.729402242554999,
+      "count": 9,
+      "task_names": [
+        "capitalization",
+        "coreference",
+        "induction"
+      ]
+    }
+  }
+}
