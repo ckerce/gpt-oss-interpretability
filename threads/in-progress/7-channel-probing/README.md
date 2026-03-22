@@ -40,15 +40,30 @@ All 12 promoted channels are head H4 across layers L0–L5, with identical accur
 
 Coreference produces zero promoted channels (top accuracy 0.700 barely exceeds the null ceiling of 0.527), suggesting coreference information is more distributed across channels than recency or induction.
 
+### Per-channel causal analysis — induction (DST-cascade)
+
+Probe-promoted channels (H4) do not predict causal importance:
+
+| Channel | Causal effect | Best scale | Probe accuracy | Promoted? |
+|---------|-------------:|:----------:|---------------:|:---------:|
+| L5 H5 | 2.852 | -8.0 | 0.200 | No |
+| L5 H2 | 2.594 | -8.0 | 0.600 | No |
+| L4 H2 | 1.879 | -8.0 | 0.600 | No |
+| L5 H4 | 0.909 | -8.0 | 0.900 | Yes |
+
+Spearman correlation between probe rank and causal rank: **-0.363**. The channels that best predict the answer sign (H4) are not the channels whose intervention most changes the output (H2, H5). This dissociation suggests that probing identifies readout-correlated channels, while causal intervention reveals channels that actively drive computation — these may be different.
+
+This finding is consistent with the selectivity results in [thread 8](../8-selectivity/): induction steering requires the full vector for best selectivity (channelized/whole ratio = 0.60), unlike recency where a single channel suffices (ratio = 0.99). The induction mechanism appears to be distributed across channels in a way that probing cannot capture.
+
 ## Current state
 - Code is solid (`steering.probing`, `steering.causal`)
-- 7 probe runs completed across 2 models with causal experiments
-- No publication figures yet
+- 7 probe runs completed across 2 models
+- Per-channel causal completed for induction on DST-cascade
+- Probe-causal dissociation is a genuine finding, not just a gap
 
 ## Gaps
-- Missing referenced docs: `CHANNELIZED_XT_INTERVENTION_NOTE.md`, `PER_CHANNEL_XT_INTERVENTION_PLAN.md`
-- Needs figure generation to match other solid threads
-- Limited to recency task family so far
+- Per-channel causal not yet run on recency (where probe and causal may align better)
+- Coreference has zero promoted channels on both models — may need a different decomposition approach
 
 ## Package dependencies
 `steering.probing`, `steering.causal`, `common.artifacts`, `common.io`

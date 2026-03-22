@@ -23,28 +23,55 @@ The selectivity comparison framework — measuring channelized vs whole-vector i
 ## Figures (in `figures/`)
 - `fig7_selectivity_comparison.{pdf,png}`
 
-## Preliminary results (recency_bias, DST-independent model, full comparison)
+## Results
 
 ![Selectivity comparison](../../../figures/fig7_selectivity_comparison.png)
 
-| Case | Channelized selectivity | Whole-vector selectivity | Random-channel | Random-direction | Channelized wins? |
-|------|------------------------:|-------------------------:|---------------:|-----------------:|:-----------------:|
+### Recency bias (DST-independent, 4 LOO folds)
+
+| Case | Channelized | Whole-vector | Random-channel | Random-direction | Channelized wins? |
+|------|------------:|-------------:|---------------:|-----------------:|:-----------------:|
 | recency_001 | 4.031 | 5.871 | 2.616 | 0.134 | No |
 | recency_002 | 3.273 | 2.283 | 2.489 | -0.223 | Yes |
 | recency_003 | 2.214 | 1.829 | 1.544 | -2.020 | Yes |
 | recency_004 | 1.214 | 0.852 | 0.820 | 0.885 | Yes |
 | **Mean** | **2.683** | **2.709** | — | — | **3/4** |
 
-Channelized steering (single channel, `L0 H5 scale=-1.0`) achieves comparable selectivity to whole-vector steering on 3/4 held-out cases, despite using far fewer dimensions. Both methods substantially outperform random-direction baselines, confirming that steering is not a noise artifact.
+### Induction (DST-cascade, 10 LOO folds)
+
+| Case | Channelized | Whole-vector | Random-channel | Random-direction | Channelized wins? |
+|------|------------:|-------------:|---------------:|-----------------:|:-----------------:|
+| induction_001 | 8.754 | 17.495 | 7.347 | 2.121 | No |
+| induction_002 | 19.962 | 28.478 | 16.395 | 5.694 | No |
+| induction_003 | 5.498 | 18.313 | 6.227 | 1.195 | No |
+| induction_004 | 11.006 | 16.063 | 8.724 | 5.051 | No |
+| induction_005 | 15.556 | 27.007 | 13.825 | 5.289 | No |
+| induction_006 | 4.285 | 7.825 | 3.878 | 0.614 | No |
+| induction_007 | 20.889 | 30.200 | 12.889 | 5.541 | No |
+| induction_008 | 14.340 | 22.424 | 12.022 | 3.820 | No |
+| induction_009 | 3.920 | 7.529 | 3.430 | 0.653 | No |
+| induction_010 | 14.668 | 24.213 | 13.345 | 7.128 | Yes |
+| **Mean** | **11.888** | **19.955** | — | — | **1/10** |
+
+### Cross-family comparison
+
+| Family | Model | Folds | Mean channelized | Mean whole-vector | Channelized wins | Channelized/whole ratio |
+|--------|-------|------:|-----------------:|------------------:|-----------------:|------------------------:|
+| Recency bias | DST-independent | 4 | 2.68 | 2.71 | 3/4 | 0.99 |
+| Induction | DST-cascade | 10 | 11.89 | 19.95 | 1/10 | 0.60 |
+
+Recency bias steering is nearly as selective with a single channel as with the full vector (ratio 0.99) — the signal is concentrated. Induction steering requires the full vector for best selectivity (ratio 0.60) — the signal is more distributed across dimensions. Both families substantially outperform random-direction baselines, confirming that steering is not a noise artifact.
+
+This contrast has implications for interpretability methodology: **the right steering granularity is task-dependent**. Recency bias can be steered at the single-channel level with no loss of selectivity, suggesting a sparse, localized mechanism. Induction requires coordinated intervention across multiple channels, consistent with the probe-causal dissociation found in thread 7 (probe-promoted channels H4 are not the causally important channels H2/H5). A single interpretability approach — whether per-channel or whole-vector — will not be equally appropriate for all behaviors. This argues for task-aware intervention strategies rather than a one-size-fits-all methodology.
 
 ## Current state
 - Code is solid (`steering.selectivity` — 33.9 KB, the largest module)
-- 3 selectivity variants compared (full, h5, topheads)
-- Limited to recency task family
+- Two target families tested (recency, induction) with contrasting results
+- Coreference not tested as target — zero promoted channels on both models suggests signal is too distributed for channelized analysis
 
 ## Gaps
-- Needs broader task coverage beyond recency
-- No standalone figure for the main paper
+- Coreference selectivity remains untested (likely requires different approach than per-channel)
+- Only one model per family tested so far
 
 ## Package dependencies
 `steering.selectivity`, `steering.controls`, `steering.interventions`, `common.*`

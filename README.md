@@ -159,9 +159,9 @@ This project is organized as 13 research threads at three maturity levels. See *
 
 | # | Thread | Model | Problem | Contribution | Impact |
 |---|--------|-------|---------|--------------|--------|
-| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis applied to vocabulary steering directions | Tests whether steering signal is sparse or distributed within layers |
-| 8 | [Selectivity](threads/in-progress/8-selectivity/) | DST-independent | Does steering affect only the target behavior? | Compares channelized vs whole-vector selectivity with random baselines | Evaluation metric for whether interventions are mechanistically clean |
-| 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | gpt-oss-20b | Can computational modes be captured as unified feature vectors? | Adapts PLS Tier-2 features for MoE (adds expert routing to ~257D vectors) | Enables clustering and geometric analysis across tasks |
+| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis: probe-promoted channels (H4) do not predict causal importance (H2, H5); Spearman = -0.363 on induction | Probing identifies readout-correlated channels; causal intervention reveals computation-driving channels — these are different |
+| 8 | [Selectivity](threads/in-progress/8-selectivity/) | DST-independent, DST-cascade | Does steering affect only the target behavior? | Cross-family comparison: recency channelized ≈ whole-vector (2.7 vs 2.7); induction whole-vector >> channelized (20.0 vs 11.9) | Recency steering signal is concentrated in few channels; induction is distributed — task-dependent steering granularity |
+| 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | gpt-oss-20b | Can computational modes be captured as unified feature vectors? | 6,425D features across 555 tokens / 5 families; intrinsic dimension ranges from 20 (syntax) to 68 (coreference) | Task-dependent dimensionality — syntax is structured, coreference is distributed |
 | 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | gpt-oss-20b, Gemma-3-1B | Do these findings generalize beyond gpt-oss-20b? | Screening pipeline to evaluate new models for interpretability compatibility | Early infrastructure — one model (Gemma-3-1B) screened so far |
 
 ### Theoretical — framework documented, not yet implemented
