@@ -8,7 +8,20 @@ The first part, developed across three preprints ([inspectable internals via str
 
 This repository takes the **same inspection toolkit** — causal intervention benchmarks, per-layer logit-lens readouts, direct-vocabulary steering, activation capture — and applies it to OpenAI's **gpt-oss-20b** (21B params, 3.6B active), a production MoE transformer trained without any interpretability constraints. The goal is to answer: do the measurement methods transfer, and what do they reveal about a standard model at scale?
 
-## Architecture Target
+## Overview
+
+The methods transfer. Applied to gpt-oss-20b without modification, the same inspection toolkit that revealed mechanistic structure in small controlled models exposes a clear computational geography in a production 21B-parameter MoE: task resolution is depth-stratified, causally concentrated in three late layers, and amenable to targeted intervention via vocabulary-space directions — despite the model exhibiting the extreme head-level redundancy that makes circuit-level analysis difficult in standard transformers.
+
+The findings unfold across four phases of investigation:
+
+- **Phase 1 — Where does computation happen?** Per-layer logit-lens readouts show task-specific convergence depths (L1–2 for capitalization, L5 for coreference, L17+ for induction); layer ablation confirms that L19–21 are causally critical, narrowing the interpretability target from 24 layers to 3.
+- **Phase 2 — How do steering directions arise, and why is head-level intervention hard?** The model's own prediction transitions at decision layers yield self-supervised steering directions. Direct-vocabulary steering succeeds with positional specificity despite the Hydra effect making individual attention heads non-targetable.
+- **Phase 3 — How selective is the steering?** Probing and causal intervention identify different channels — they dissociate. Steering selectivity is task-dependent: recency concentrates in a few channels; induction distributes across many.
+- **Phase 4 — Why does linear steering work geometrically?** Standard transformers have effective rank 8 in 516 dimensions at intermediate layers — linear methods operate in 2% of the available geometry. A cosine diagnostic predicts which layers are safe for linear intervention; stream separation improves conditioning up to 22x.
+
+The architecture of gpt-oss-20b — and two aspects of it in particular — shaped what could be measured and how.
+
+### GPT-OSS-20B Architecture Target
 
 **gpt-oss-20b** (`GptOssForCausalLM`): 24-layer MoE transformer.
 
