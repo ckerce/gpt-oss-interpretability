@@ -8,7 +8,15 @@ The first part, developed across three preprints ([inspectable internals via str
 
 This repository takes the **same inspection toolkit** — causal intervention benchmarks, per-layer logit-lens readouts, direct-vocabulary steering, activation capture — and applies it to OpenAI's **gpt-oss-20b** (21B params, 3.6B active), a production MoE transformer trained without any interpretability constraints. The goal is to answer: do the measurement methods transfer, and what do they reveal about a standard model at scale?
 
-The steering experiments (threads 6–8) additionally use the companion CASCADE architecture models (SS-71, C-71, E2) from the preprint work, where architectural structure enables cleaner steering demonstration.
+The steering experiments (threads 6–8) additionally use companion Dual-Stream Transformer (DST) models from the preprint work, where architectural structure enables cleaner steering demonstration:
+
+| Label | Architecture | Mixing | Params | Description |
+|-------|-------------|--------|-------:|-------------|
+| DST-baseline | Single-stream dense | dns-dns/dns-dns | 71M | Standard transformer baseline (no stream separation) |
+| DST-cascade | CASCADE dual-stream | dns-dns/dns-dns + gated attention | 71M | Dual-stream with frozen symbolic stream; attention output cascades into FFN |
+| DST-independent | Fully independent channels | ind-ind/ind-ind | 22M | Complete channel isolation — maximum interpretability |
+
+The mixing signature `attn-attn/ffn-ffn` describes how heads share information at four mixing points (attention value, attention output, FFN up-projection, FFN down-projection): `dns` = dense (standard), `ind` = independent (no cross-head mixing).
 
 ## Key Findings
 
@@ -145,14 +153,14 @@ This project is organized as 13 research threads at three maturity levels. See *
 | 3 | [Analysis set filtering](threads/solid/3-analysis-set-filtering/) | gpt-oss-20b | Which test cases support honest mechanistic claims? | Systematic 4-way stratification by convergence stability; not aware of prior systematic methodology for this in interpretability | Only 45% of cases pass — sets defensible scope for all downstream threads |
 | 4 | [Decision trajectories](threads/solid/4-decision-trajectories/) | gpt-oss-20b | Can the model's own prediction changes serve as steering directions? | Extracts logit-space directions from prediction-transition layers; not aware of prior work using these as self-supervised steering signals | Provides steering directions without curated contrastive pairs; empirical basis for CASCADE |
 | 5 | [Hydra / head redundancy](threads/solid/5-hydra-head-redundancy/) | gpt-oss-20b | Are individual attention heads specialized or redundant? | Measures the Hydra effect (from companion PLS preprint) at 21B-param production scale | σ=0.042 confirms extreme redundancy — explains why circuit-level interpretation is hard in standard models |
-| 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | CASCADE (SS-71, C-71) | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
+| 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | DST-baseline, DST-cascade | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
 
 ### In progress — code and initial experiments exist
 
 | # | Thread | Model | Problem | Contribution | Impact |
 |---|--------|-------|---------|--------------|--------|
-| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | CASCADE (C-71) | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis applied to vocabulary steering directions | Tests whether steering signal is sparse or distributed within layers |
-| 8 | [Selectivity](threads/in-progress/8-selectivity/) | CASCADE (E2) | Does steering affect only the target behavior? | Compares channelized vs whole-vector selectivity with random baselines | Evaluation metric for whether interventions are mechanistically clean |
+| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis applied to vocabulary steering directions | Tests whether steering signal is sparse or distributed within layers |
+| 8 | [Selectivity](threads/in-progress/8-selectivity/) | DST-independent | Does steering affect only the target behavior? | Compares channelized vs whole-vector selectivity with random baselines | Evaluation metric for whether interventions are mechanistically clean |
 | 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | gpt-oss-20b | Can computational modes be captured as unified feature vectors? | Adapts PLS Tier-2 features for MoE (adds expert routing to ~257D vectors) | Enables clustering and geometric analysis across tasks |
 | 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | gpt-oss-20b, Gemma-3-1B | Do these findings generalize beyond gpt-oss-20b? | Screening pipeline to evaluate new models for interpretability compatibility | Early infrastructure — one model (Gemma-3-1B) screened so far |
 

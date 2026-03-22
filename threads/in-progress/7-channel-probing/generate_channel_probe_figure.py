@@ -92,7 +92,7 @@ def main():
         ax.legend(fontsize=8, loc="upper right")
 
     axes[0].set_ylabel("Held-out sign accuracy")
-    fig.suptitle("Channel Probe: Per-Head Accuracy by Task Family (C-71 model)",
+    fig.suptitle("Channel Probe: Per-Head Accuracy by Task Family (DST-cascade)",
                  fontsize=13, fontweight="bold", y=1.02)
     fig.tight_layout()
     _save(fig, "fig6_channel_probe")

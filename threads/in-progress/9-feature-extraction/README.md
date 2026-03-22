@@ -26,26 +26,30 @@ The extended Tier-2 feature system is **adapted from the companion PLS preprint'
 
 ![Feature PCA](../../../figures/fig8_feature_pca.png)
 
-PCA of 39 tokens across 3 task families in the 257D feature space shows partial task-family clustering along PC1 (74% variance). Induction tokens tend toward negative PC1; recency and syntax tokens toward positive PC1. The separation is suggestive but incomplete — consistent with the thread's early status and the small sample size (12–14 tokens per task).
+PCA of 555 tokens across 5 task families in the 6,425D feature space shows partial but incomplete task-family clustering. PC1 (18.2%) and PC2 (10.4%) together capture less than 30% of variance — the feature space is genuinely high-dimensional with intrinsic dimension 20–68 depending on task family. Capitalization clusters tightly near the center; coreference spreads widely; induction and recency overlap substantially. This is consistent with the expectation that computational modes are not simply task labels but reflect finer-grained processing distinctions.
 
 ### Per-task geometric analysis
 
-| Task | Tokens | Feature dims | Intrinsic dim (90% var) | Mean pairwise dist |
-|------|-------:|-------------:|------------------------:|-------------------:|
-| Induction | 14 | 257 | 9 | 11.50 |
-| Recency | 13 | 257 | 9 | 10.83 |
-| Syntax | 12 | 257 | 8 | 10.21 |
+| Task | Tokens | Feature dims | Intrinsic dim (90% var) | Depth stratification |
+|------|-------:|-------------:|------------------------:|---------------------:|
+| Induction | 114 | 6,425 | 41 | 0.390 |
+| Recency bias | 93 | 6,425 | 38 | 0.530 |
+| Syntax agreement | 81 | 6,425 | 20 | 0.618 |
+| Coreference | 194 | 6,425 | 68 | 0.434 |
+| Capitalization | 73 | 6,425 | 24 | 0.495 |
+
+Syntax agreement has the lowest intrinsic dimension (20) and highest depth stratification (0.618), suggesting the most structured computation. Coreference has the highest intrinsic dimension (68), consistent with it being the most distributed and hardest to decompose (see also thread 7, where coreference produces zero promoted channels).
 
 ## Current state
 - Code is implemented (`features/extractor.py`: 477 lines, `features/geometry.py`: 239 lines)
-- 3 runs completed but thin — 39 total tokens analyzed
-- Feature space is 257D (subset of the full ~7,200D Tier-2 system)
-- PCA shows partial task clustering but sample is too small for confident conclusions
+- 5 families, 36 prompts, 555 tokens analyzed at 6,425D
+- Geometric analysis reveals task-dependent intrinsic dimensionality (20–68)
+- PCA shows partial task clustering but the feature space is high-dimensional — first 2 PCs capture < 30%
 
 ## Gaps
-- Needs larger-scale extraction to validate the 7,200D feature space
-- Geometry analysis (`features/geometry.py`) hasn't been exercised at meaningful scale
 - Connection to downstream tasks (e.g., probing, steering) not yet demonstrated
+- Nonlinear dimensionality reduction (t-SNE, UMAP) may reveal structure PCA misses
+- Cross-model comparison (thread 12) not yet attempted
 
 ## Package dependencies
 `features.extractor`, `features.geometry`, `capture.activation_cache`, `backends.transformers_gpt_oss`

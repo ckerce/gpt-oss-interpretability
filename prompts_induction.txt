@@ -1,0 +1,10 @@
+A7 B2 C9 D4 A7 B2 C9
+red blue green red blue green red blue
+1 2 3 4 1 2 3 4 1 2 3
+alpha beta gamma alpha beta gamma alpha beta
+sun moon star sun moon star sun moon
+2 5 8 2 5 8 2 5
+oak pine cedar oak pine cedar oak pine
+L2 N5 P8 L2 N5 P8 L2 N5
+cat dog bird cat dog bird cat dog
+amber teal silver amber teal silver amber teal

@@ -23,7 +23,7 @@ The selectivity comparison framework — measuring channelized vs whole-vector i
 ## Figures (in `figures/`)
 - `fig7_selectivity_comparison.{pdf,png}`
 
-## Preliminary results (recency_bias, E2 model, full comparison)
+## Preliminary results (recency_bias, DST-independent model, full comparison)
 
 ![Selectivity comparison](../../../figures/fig7_selectivity_comparison.png)
 

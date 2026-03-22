@@ -28,7 +28,7 @@ Per-channel causal intervention on steering directions is **original work** exte
 
 ![Channel probe](../../../figures/fig6_channel_probe.png)
 
-### Channel probe family summaries (C-71 model, phase 1)
+### Channel probe family summaries (DST-cascade model, phase 1)
 
 | Task family | Cases | Promoted channels | Top channel | Top held-out accuracy | Null ceiling |
 |-------------|------:|------------------:|:-----------:|----------------------:|-------------:|

@@ -107,7 +107,7 @@ def main():
         ax2.text(bar.get_width() + 0.05, bar.get_y() + bar.get_height() / 2,
                  f"{means[cond]:.2f}", va="center", fontsize=9)
 
-    fig.suptitle("Steering Selectivity: Channelized vs Whole-Vector (Recency Bias, E2 Model)",
+    fig.suptitle("Steering Selectivity: Channelized vs Whole-Vector (Recency Bias, DST-independent)",
                  fontsize=13, fontweight="bold", y=1.02)
     fig.tight_layout()
     _save(fig, "fig7_selectivity_comparison")
