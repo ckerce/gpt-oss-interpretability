@@ -34,6 +34,19 @@ Causal ablation studies are a standard methodology in mechanistic interpretabili
 
 ## Results
 
+### Illustrative example — what happens when you remove a layer
+
+> **Prompt**: "Alice told Bob that she would leave early. The word 'she' refers to ___"
+>
+> | Condition | Prediction | Margin | What happens |
+> |-----------|:----------:|-------:|-------------|
+> | No ablation | **Alice** | 9.30 | Confident, correct |
+> | Ablate L23 | **Alice** | 1.36 | Still correct but less confident — L23 refines, doesn't decide |
+> | Ablate L20 | **Bob** | 0.95 | **Wrong answer** — the critical computation was destroyed |
+> | Ablate L19 | **Bob** | 0.73 | Wrong, even less confident |
+>
+> The model has 24 layers, but removing just one of layers 19–21 is enough to flip the answer. Removing layer 23 preserves the answer — it contributes margin but not the decision itself.
+
 ![Late-layer ablation](../../../figures/fig2_late_layer_ablation.png)
 
 ### Layer ablation sweep (zeroing layer output, 9-case soft main-analysis set)

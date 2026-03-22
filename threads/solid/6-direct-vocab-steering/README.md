@@ -37,6 +37,46 @@ The use of exact vocabulary-space directions (`W[token_A] - W[token_B]` from the
 
 ## Results
 
+### Illustrative examples
+
+**Coreference steering** (DST-baseline, 71M):
+
+> **Prompt**: "Natalie reminded Jacob that he needed to lock the door. The word 'he' refers to"
+>
+> **Steering direction**: `W[Natalie] - W[Jacob]` (exact unembedding difference)
+>
+> | Condition | Prediction | Gap | Effect |
+> |-----------|:----------:|----:|--------|
+> | Baseline (no intervention) | **Jacob** | +5.24 | — |
+> | Steer at decision position (L5, scale -8.0) | **Natalie** | -3.83 | Flipped |
+> | Steer at token 0 (L0, scale -8.0) | **Jacob** | +2.73 | Minimal change |
+>
+> The same direction, at the same scale, flips the answer only when applied at the decision-relevant position. At token 0 the model barely notices.
+
+**Induction steering** (DST-cascade, 71M):
+
+> **Prompt**: "sun moon star sun moon star sun moon"
+>
+> **Steering direction**: `W[cloud] - W[star]`
+>
+> | Condition | Prediction | Gap |
+> |-----------|:----------:|----:|
+> | Baseline | **star** | +1.82 |
+> | Steer at decision position (L5, scale -8.0) | **cloud** | -0.45 |
+>
+> The model correctly continues the induction pattern ("star"), but a vocabulary-space nudge toward "cloud" at the right layer cleanly overrides it.
+
+**Recency bias steering** (DST-baseline, 71M):
+
+> **Prompt**: "The trophy would not fit in the suitcase because the suitcase was too small. The word 'small' refers to the"
+>
+> **Steering direction**: `W[trophy] - W[suitcase]`
+>
+> | Condition | Prediction | Gap |
+> |-----------|:----------:|----:|
+> | Baseline | **suitcase** | +2.40 |
+> | Steer at decision position (L3, scale -8.0) | **trophy** | -0.66 |
+
 ![Steering heatmaps](../../../figures/fig_matched_pair_heatmaps.png)
 
 *Layer x position steering effect: steering at the decision position in late layers flips the answer; identical steering at token 0 has no effect.*

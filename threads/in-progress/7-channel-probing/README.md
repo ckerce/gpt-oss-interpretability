@@ -53,16 +53,35 @@ Probe-promoted channels (H4) do not predict causal importance:
 
 Spearman correlation between probe rank and causal rank: **-0.363**. The channels that best predict the answer sign (H4) are not the channels whose intervention most changes the output (H2, H5). This dissociation suggests that probing identifies readout-correlated channels, while causal intervention reveals channels that actively drive computation — these may be different.
 
-This finding is consistent with the selectivity results in [thread 8](../8-selectivity/): induction steering requires the full vector for best selectivity (channelized/whole ratio = 0.60), unlike recency where a single channel suffices (ratio = 0.99). The induction mechanism appears to be distributed across channels in a way that probing cannot capture.
+### Per-channel causal analysis — recency (DST-cascade)
+
+| Channel | Causal effect | Best scale | Probe accuracy | Promoted? |
+|---------|-------------:|:----------:|---------------:|:---------:|
+| L5 H5 | 1.450 | +8.0 | 0.000 | No |
+| L5 H2 | 1.192 | -8.0 | 0.250 | No |
+| L4 H5 | 0.918 | +8.0 | 0.000 | No |
+| L5 H4 | 0.853 | -8.0 | 1.000 | Yes |
+
+Spearman correlation between probe rank and causal rank: **-0.060** (near zero — uncorrelated).
+
+### Cross-family causal comparison
+
+| Family | Probe-causal Spearman | Top causal channel | Probe-promoted H4 rank | H4 causal effect |
+|--------|----------------------:|:------------------:|:----------------------:|-----------------:|
+| Recency | -0.060 | L5 H5 (1.450) | 6th (0.853) | Moderate |
+| Induction | -0.363 | L5 H5 (2.852) | ~10th (0.909) | Weak |
+
+The pattern is consistent across both families: **H5 is the top causal channel but is never probe-promoted** (probe accuracy 0.0–0.2). The probe consistently promotes H4 (accuracy 0.9–1.0), which has moderate-to-weak causal effect. Probing identifies readout-correlated channels; causal intervention identifies computation-driving channels — and these are systematically different.
+
+The dissociation is stronger for induction (Spearman = -0.363) than recency (Spearman = -0.060), consistent with the selectivity finding ([thread 8](../8-selectivity/)) that induction steering is more distributed across channels than recency.
 
 ## Current state
 - Code is solid (`steering.probing`, `steering.causal`)
 - 7 probe runs completed across 2 models
-- Per-channel causal completed for induction on DST-cascade
-- Probe-causal dissociation is a genuine finding, not just a gap
+- Per-channel causal completed for both recency and induction on DST-cascade
+- Probe-causal dissociation confirmed across both families — a genuine finding
 
 ## Gaps
-- Per-channel causal not yet run on recency (where probe and causal may align better)
 - Coreference has zero promoted channels on both models — may need a different decomposition approach
 
 ## Package dependencies

@@ -29,6 +29,21 @@ This thread applies the **logit lens** technique (nostalgebraist 2020; formalize
 
 ## Results
 
+### Illustrative example — when does the model "know" the answer?
+
+The logit lens reads off the model's best guess at each layer by projecting the hidden state through the unembedding matrix. For three different tasks, the answer emerges at different depths:
+
+> **Capitalization** — "The lord of the ___" (expects "Rings")
+> - L1: correct answer appears. The model resolves this almost immediately.
+>
+> **Coreference** — "Alice told Bob that she would leave early. The word 'she' refers to ___" (expects "Alice")
+> - L1–4: wrong answer. L5: correct answer appears and holds. Semantic role assignment requires mid-depth processing.
+>
+> **Induction** — "A B C D A B C ___" (expects "D")
+> - L1–16: wrong or uncertain. L17: correct answer appears. Pattern completion requires deep processing through the full attention stack.
+
+The depth at which the correct answer first appears and stabilizes is the **convergence layer** — a fingerprint of how much computation each task type requires.
+
 ![Convergence trajectories](../../../figures/fig1_convergence_trajectories.png)
 
 ### Choice-relative convergence by task

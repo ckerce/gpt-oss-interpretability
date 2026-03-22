@@ -26,6 +26,19 @@ This thread **validates the Hydra hypothesis from the companion PLS preprint** (
 
 ## Results
 
+### Illustrative example — the paradox of critical layers with expendable heads
+
+> **Prompt**: "Alice told Bob that she would leave early. The word 'she' refers to ___"
+>
+> | Intervention | Accuracy | Margin | What happens |
+> |-------------|:--------:|-------:|-------------|
+> | No intervention | 100% | 9.30 | Model confidently predicts "Alice" |
+> | Ablate head H20 at L20 | 100% | 9.16 | Still predicts "Alice" — barely notices |
+> | Ablate head H52 at L20 | 100% | 9.45 | Still correct — margin actually *increases* |
+> | Ablate **all of L20** | 44% | 0.95 | Collapses — the layer is critical |
+>
+> Every single head is expendable. The layer is not. This is the Hydra effect: computation is maximally distributed *within* layers but concentrated *across* layers. You cannot find "the coreference head" because all 64 heads contribute equally to coreference.
+
 ![Hydra variance](../../../figures/fig5_hydra_variance.png)
 
 ### Per-head ablation at L20 (64 heads, 9-case soft main-analysis set)

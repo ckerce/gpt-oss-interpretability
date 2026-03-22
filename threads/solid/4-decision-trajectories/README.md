@@ -23,6 +23,24 @@ The decision trajectory extraction — identifying layers where the model's top-
 
 ## Results
 
+### Illustrative example — what the model "thinks" layer by layer
+
+> **Prompt**: "The trophy would not fit in the suitcase because the suitcase was too ___"
+>
+> At each layer, the model's top-1 prediction for the final token changes. Reading these transitions tells us *when* and *how* the model arrives at its answer:
+>
+> | Layer | Prediction | What's happening |
+> |------:|:----------:|-----------------|
+> | L0 | noise | Random initialization, no semantic content |
+> | L8 | `‑` | Punctuation — the model hasn't engaged with the question yet |
+> | L13 | `pack` | First content word — the model knows a verb is coming |
+> | L14 | `<eos>` | Brief hesitation |
+> | L16 | `(` | Syntactic framing attempt |
+> | L17 | `too` | The model recognizes the "too ___" construction |
+> | **L18** | **`small`** | **Final answer — the model resolves the recency bias** |
+>
+> The logit-space difference at L17→L18 (from "too" to "small") is a self-supervised steering direction: it encodes the model's own decision to resolve the sentence toward size, with no external labeling required.
+
 ![Decision trajectories](../../../figures/fig4_decision_trajectories.png)
 
 ### Decision trajectory summary across 3 task families

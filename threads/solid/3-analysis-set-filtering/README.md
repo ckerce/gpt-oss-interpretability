@@ -29,6 +29,20 @@ Uses same configs as thread 2 (soft-main configs)
 
 ## Results
 
+### Illustrative example — clean case vs noisy case
+
+> **Clean case** (induction_002): "A7 B2 C9 D4 A7 B2 C9 ___"
+> - Expected answer: "D4". Model converges at L17 and holds through L23.
+> - Final streak: 7 layers of stable correct prediction. Zero flips.
+> - Classification: **correct, late-stable** — safe for mechanistic claims.
+>
+> **Noisy case** (recency_004): "The painting was too large for the wall because the wall was too ___"
+> - Expected answer: "wall" (recency bias). Model flips 8 times between choices across layers.
+> - Final streak: 1 layer. Prediction is unstable throughout.
+> - Classification: **correct, late-unstable** — the model gets the right answer but its internal computation is noisy and unreliable for causal analysis.
+
+Running ablation or steering experiments on noisy cases like recency_004 produces unreliable results — you can't distinguish "the intervention changed the computation" from "the computation was already flickering."
+
 ![Analysis set stratification](../../../figures/fig3_analysis_set_stratification.png)
 
 ### 4-way stratification by convergence stability (soft rule, final streak >= 4)
