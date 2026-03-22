@@ -80,18 +80,7 @@ Three task families with very different selectivity outcomes in thread 8 form a 
 
 Thread 7 adds a finer-grained reading: the probe-causal dissociation (H4 probes well but H5 drives causally) is a signature of H having a dominant eigenspace that does not align with the steering direction — exactly what low cosine(v, Hv) would predict.
 
-### What the conditioning runs will actually quantify
-
-The Bregman runner will compute these quantities directly, replacing the qualitative predictions above with layer-by-layer numbers:
-
-```
-| Layer | Samples | Trace | Effective Rank | Cond. Median | Mass Covered | Cosine |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 0 | N | ... | ... | ... | ... | — |
-| ...
-```
-
-The companion paper's symbolic-model results predict: effective rank rises as the model converges on a decision, condition number falls at layers identified as convergence layers (threads 1 and 4), and cosine similarity to the steering direction approaches 1 only near those convergence layers — and is lower for induction than recency at matched convergence depth.
+The companion paper's symbolic-model results predict that effective rank rises and condition number falls at convergence layers (threads 1 and 4), and that cosine similarity to the steering direction is lower for induction than recency at matched convergence depth — consistent with the selectivity ratios above.
 
 ## Gaps
 - No causal validation: Euclidean-vs-dual intervention benchmark not yet implemented
