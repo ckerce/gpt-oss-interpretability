@@ -37,3 +37,11 @@ This thread is **original infrastructure work** — building a screening pipelin
 ## Related threads
 - [12-geometric-framework](../../theoretical/12-geometric-framework/) — principled metrics for cross-model comparison
 - [11-cascade-distillation](../../theoretical/11-cascade-distillation/) — CASCADE targets used in bridge experiments
+
+## References
+
+Cross-model comparison in interpretability is an open problem. Most mechanistic interpretability work studies a single model; comparing computational organization across architectures requires metrics that are invariant to model-specific details:
+
+- [Elhage et al. 2022 — "Toy Models of Superposition"](../../../doc/references/papers/t02-t05-t07-elhage-toy_models_of_superposition.pdf) — The superposition hypothesis implies that models with different architectures may organize the same information differently. Cross-model comparison requires disentangling representation format from computational content.
+
+This thread is early-stage infrastructure. The screening pipeline tests whether convergence patterns, attention structure, and routing behavior are compatible with the interpretability analyses developed on gpt-oss-20b, before committing to full experiments on a new model.

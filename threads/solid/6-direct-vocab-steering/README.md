@@ -69,3 +69,13 @@ The use of exact vocabulary-space directions (`W[token_A] - W[token_B]` from the
 - [4-decision-trajectories](../4-decision-trajectories/) — self-supervised source of steering directions
 - [11-cascade-distillation](../../theoretical/11-cascade-distillation/) — automates direction extraction
 - [7-channel-probing](../../in-progress/7-channel-probing/) — per-channel analysis of steering effects
+
+## References
+
+Direct vocabulary steering sits within a broader family of activation steering methods, but differs in using exact unembedding directions rather than learned or averaged vectors:
+
+- [Turner et al. 2023 — "Activation Addition: Steering Language Models Without Optimization"](../../../doc/references/papers/t06-turner-activation_addition.pdf) — Introduces the idea of adding a fixed direction to hidden states to shift model behavior. Uses mean-difference vectors computed from contrastive prompts. Our approach replaces learned directions with raw vocabulary differences (`W[A] - W[B]`), eliminating the training step entirely.
+- [Rimsky et al. 2023 — "Steering Llama 2 via Contrastive Activation Addition"](../../../doc/references/papers/t04-t06-rimsky-contrastive_activation_addition.pdf) — Scales activation addition with curated contrastive datasets (100+ pairs). Demonstrates that steering generalizes across prompts. Our position-specificity finding goes further: we show that *where* in the sequence the direction is applied determines whether it works, ruling out the diffuse perturbation interpretation.
+- [Zou et al. 2023 — "Representation Engineering"](../../../doc/references/papers/t06-zou-representation_engineering.pdf) — Proposes reading and writing to "representation space" as a control interface. Conceptually similar to our approach but uses PCA-derived directions from contrastive pairs rather than exact vocabulary differences.
+
+The key distinction is that vocabulary-space directions are fully interpretable — they are literally the difference between two token embeddings in the model's own vocabulary — whereas learned directions from contrastive methods are opaque vectors that happen to produce desired behavior.

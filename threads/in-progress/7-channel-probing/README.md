@@ -71,3 +71,11 @@ This finding is consistent with the selectivity results in [thread 8](../8-selec
 ## Related threads
 - [6-direct-vocab-steering](../../solid/6-direct-vocab-steering/) — whole-vector steering that this decomposes
 - [8-selectivity](../8-selectivity/) — selectivity metrics for channel-level effects
+
+## References
+
+Per-channel probing connects to two traditions: neuron-level interpretability (identifying what individual units encode) and the superposition hypothesis (whether features are sparse or distributed):
+
+- [Bau et al. 2018 — "GAN Dissection"](../../../doc/references/papers/t07-bau-gan_dissection.pdf) — Establishes the methodology of per-unit causal intervention: activating or suppressing individual neurons to test what they control. Our per-channel causal analysis applies this logic to attention head channels in the context of vocabulary steering.
+- [Gurnee et al. 2023 — "Finding Neurons in a Haystack"](../../../doc/references/papers/t07-gurnee-finding_neurons_in_a_haystack.pdf) — Scales neuron-level probing to large language models, finding that some neurons encode interpretable features while most do not. Our probe-causal dissociation (H4 probes well but H2/H5 are causally important) is consistent with their finding that probing accuracy and causal importance are distinct properties.
+- [Elhage et al. 2022 — "Toy Models of Superposition"](../../../doc/references/papers/t02-t05-t07-elhage-toy_models_of_superposition.pdf) — The superposition hypothesis predicts that features are distributed across neurons/channels rather than localized in individual units. Our finding that coreference has zero promoted channels while recency has 6 is consistent with task-dependent superposition: some computations are sparse enough to localize, others are not.

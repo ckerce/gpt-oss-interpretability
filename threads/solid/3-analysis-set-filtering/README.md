@@ -58,3 +58,11 @@ The 9 "correct, late-stable" cases form the **soft main-analysis set** used by a
 ## Related threads
 - [1-convergence-logit-lens](../1-convergence-logit-lens/) — convergence stability is the filtering criterion
 - [2-late-layer-ablation](../2-late-layer-ablation/) — ablation results use the filtered set
+
+## References
+
+The problem of which examples support clean mechanistic claims is acknowledged in the circuits literature but rarely addressed systematically. Marks et al. note that sparse feature circuits vary in quality across inputs, motivating input-dependent analysis:
+
+- [Marks et al. 2024 — "Sparse Feature Circuits"](../../../doc/references/papers/t03-marks-sparse_feature_circuits.pdf) — Demonstrates that circuit structure is input-dependent, with some inputs activating clean circuits and others producing noisy, entangled computation. This supports the motivation for filtering: not all inputs are equally amenable to mechanistic explanation.
+
+Our stratification approach differs from input-dependent circuit analysis in that we filter *before* any mechanistic claim rather than analyzing circuit quality post hoc. The 4-way classification (correct+stable, correct+unstable, incorrect+early, incorrect+never) provides a pre-registered analysis boundary rather than a retroactive quality assessment.

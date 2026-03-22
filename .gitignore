@@ -78,6 +78,12 @@ Thumbs.db
 *.xz
 *.zip
 
+# Reference paper symlinks (convenience aliases for multi-thread papers)
+doc/references/papers/t05-elhage-*.pdf
+doc/references/papers/t06-rimsky-*.pdf
+doc/references/papers/t07-elhage-*.pdf
+doc/references/papers/t12-hewitt-*.pdf
+
 # Internal process docs (kept on disk, not in repo)
 DOC_INDEX.md
 doc/plans/

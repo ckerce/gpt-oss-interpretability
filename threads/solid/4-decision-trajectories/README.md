@@ -53,3 +53,10 @@ Each transition (`→`) is a decision point where the model's top-1 prediction c
 ## Related threads
 - [6-direct-vocab-steering](../6-direct-vocab-steering/) — decision directions can be used as steering vectors
 - [11-cascade-distillation](../../theoretical/11-cascade-distillation/) — formalizes automatic extraction of these directions
+
+## References
+
+Decision trajectories occupy a middle ground between logit-lens readouts (thread 1) and contrastive steering methods. The key comparison is with CAA, which requires externally curated contrast pairs:
+
+- [Rimsky et al. 2023 — "Steering Llama 2 via Contrastive Activation Addition"](../../../doc/references/papers/t04-t06-rimsky-contrastive_activation_addition.pdf) — CAA computes steering directions as the mean activation difference between 100+ curated positive/negative example pairs. Decision trajectories extract directions from the model's own layer-by-layer prediction changes, eliminating the curation bottleneck. The tradeoff: CAA directions are averaged over many examples and may generalize better; decision directions are per-input and capture the model's specific computational path.
+- [Belrose et al. 2023 — "Eliciting Latent Predictions from Transformers with the Tuned Lens"](../../../doc/references/papers/t01-belrose-logit_lens_formalized.pdf) — The logit lens provides the per-layer predictions that decision trajectories are built from. Decision trajectories extend this by focusing specifically on *transitions* — layers where the prediction changes — rather than the full prediction profile.

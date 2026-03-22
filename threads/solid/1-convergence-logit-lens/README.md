@@ -54,3 +54,11 @@ This thread applies the **logit lens** technique (nostalgebraist 2020; formalize
 ## Related threads
 - [2-late-layer-ablation](../2-late-layer-ablation/) — causal validation of which layers matter
 - [3-analysis-set-filtering](../3-analysis-set-filtering/) — convergence stability defines analysis sets
+
+## References
+
+The logit lens was introduced informally by [nostalgebraist (2020)](https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens) as a way to read off per-layer predictions by projecting hidden states through the unembedding matrix. Belrose et al. formalized this into a family of "tuned lens" variants with theoretical justification for why the approach works in residual-stream architectures:
+
+- [Belrose et al. 2023 — "Eliciting Latent Predictions from Transformers with the Tuned Lens"](../../../doc/references/papers/t01-belrose-logit_lens_formalized.pdf) — Formalizes the logit lens and introduces the tuned lens; shows that intermediate predictions are meaningful and improve monotonically with depth in most models.
+
+This thread applies the logit lens at production MoE scale. The key extension is the **choice-relative convergence metric**, which tracks when the model's prediction first favors the correct choice rather than when the final prediction stabilizes — a distinction that matters for cases where the model oscillates before settling.

@@ -79,3 +79,12 @@ This contrast has implications for interpretability methodology: **the right ste
 ## Related threads
 - [6-direct-vocab-steering](../../solid/6-direct-vocab-steering/) — the interventions being evaluated
 - [7-channel-probing](../7-channel-probing/) — channel-level analysis informs selectivity
+
+## References
+
+Selectivity — measuring whether an intervention affects only the intended behavior — is related to the broader question of intervention specificity in mechanistic interpretability:
+
+- [Li et al. 2023 — "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model"](../../../doc/references/papers/t08-li-inference_time_intervention.pdf) — Introduces targeted activation editing at specific heads during inference. Evaluates both target effect and off-target damage. Our selectivity metric formalizes this tradeoff as the ratio of on-target to off-target effects across task families.
+- [Turner et al. 2023 — "Activation Addition"](../../../doc/references/papers/t06-turner-activation_addition.pdf) — Notes that activation steering can have unintended side effects but does not systematically measure selectivity. Our cross-family comparison (channelized ratio 0.99 on recency vs 0.60 on induction) provides quantitative evidence that selectivity is task-dependent.
+
+The finding that steering granularity should be task-dependent — single-channel for concentrated signals, whole-vector for distributed ones — is not, to our knowledge, established in the prior literature.

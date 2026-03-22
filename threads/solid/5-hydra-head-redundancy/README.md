@@ -70,3 +70,12 @@ All 64 heads maintain 100% accuracy when individually ablated. Margin variation 
 ## Related threads
 - [2-late-layer-ablation](../2-late-layer-ablation/) — layer-level criticality vs head-level redundancy
 - Companion: [PLS preprint](https://arxiv.org/abs/2603.18029)
+
+## References
+
+The Hydra effect is rooted in the superposition hypothesis — the idea that neural networks represent more features than they have dimensions, distributing information redundantly across components:
+
+- [Elhage et al. 2022 — "Toy Models of Superposition"](../../../doc/references/papers/t02-t05-t07-elhage-toy_models_of_superposition.pdf) — Establishes that superposition produces distributed, redundant representations where ablating any single component has minimal effect. The Hydra metaphor (cut off one head, another grows back) follows directly: if all heads encode overlapping information, removing one is compensated by the others.
+- [Kerce & Fox 2026 — "Engineering Verifiable Modularity via Per-Layer Supervision"](../../../doc/references/papers/t05-kerce-engineering_verifiable_modularity.pdf) — The companion PLS preprint that names and measures the Hydra effect. PLS breaks distributed redundancy by forcing head specialization (σ increases from 0.042 to 0.47). This thread validates the PLS paper's Hydra measurement at production scale on gpt-oss-20b.
+
+The production-scale measurement (σ = 0.042, even lower than the PLS paper's 22M-param control at σ = 0.08) suggests that distributed redundancy may *increase* with model scale — a prediction consistent with larger models having more capacity for superposition.

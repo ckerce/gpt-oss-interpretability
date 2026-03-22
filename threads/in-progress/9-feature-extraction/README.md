@@ -57,3 +57,12 @@ Syntax agreement has the lowest intrinsic dimension (20) and highest depth strat
 ## Related threads
 - [12-geometric-framework](../../theoretical/12-geometric-framework/) — theoretical basis for feature-space analysis
 - [1-convergence-logit-lens](../../solid/1-convergence-logit-lens/) — simpler per-layer readouts
+
+## References
+
+Computational-mode feature extraction is related to sparse autoencoder (SAE) approaches that decompose hidden states into interpretable features, and to the broader question of how to represent what a model is "doing" at each token:
+
+- [Cunningham et al. 2023 — "Sparse Autoencoders Find Highly Interpretable Features in Language Models"](../../../doc/references/papers/t09-cunningham-sparse_autoencoders.pdf) — Trains sparse autoencoders on hidden states to extract interpretable features. Our approach differs: rather than learning a decomposition, we construct feature vectors from known quantities (logit trajectories, attention patterns, expert routing) — a hand-crafted feature space that is interpretable by construction but may miss features that SAEs would discover.
+- [Bricken et al. 2023 — "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning"](../../../doc/references/papers/t09-bricken-towards_monosemanticity.pdf) — Demonstrates that dictionary learning on activations can recover monosemantic features at scale. Our feature vectors capture a different level of abstraction: computational modes (how the model processes a token) rather than semantic features (what the model represents). The two approaches are complementary — SAE features could be additional components in our feature vectors.
+
+The task-dependent intrinsic dimensionality we observe (20 for syntax, 68 for coreference) suggests that different behaviors occupy feature subspaces of different complexity, consistent with the intuition that coreference requires richer computation than simple syntactic agreement.

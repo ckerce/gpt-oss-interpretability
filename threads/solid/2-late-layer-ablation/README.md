@@ -61,3 +61,12 @@ Causal ablation studies are a standard methodology in mechanistic interpretabili
 ## Related threads
 - [1-convergence-logit-lens](../1-convergence-logit-lens/) — non-invasive view of the same phenomenon
 - [5-hydra-head-redundancy](../5-hydra-head-redundancy/) — within-layer redundancy complements across-layer criticality
+
+## References
+
+Ablation as a causal methodology for understanding transformer internals originates with Elhage et al.'s work on circuits and superposition, and was systematized for automated circuit discovery by Conmy et al.:
+
+- [Elhage et al. 2022 — "Toy Models of Superposition"](../../../doc/references/papers/t02-t05-t07-elhage-toy_models_of_superposition.pdf) — Introduces the superposition hypothesis and establishes ablation as a primary tool for testing whether individual components carry identifiable functions. The Hydra effect (thread 5) emerges from this framework.
+- [Conmy et al. 2023 — "Towards Automated Circuit Discovery for Mechanistic Interpretability"](../../../doc/references/papers/t02-conmy-towards_automated_circuit_discovery.pdf) — Formalizes path-based ablation for isolating circuits. Our layer-level and component-level ablation is a coarser version of this approach, applied at production MoE scale where full circuit enumeration is impractical.
+
+This thread uses **residual-preserving layer ablation** (zeroing the block delta, not the residual stream), which avoids the distribution-shift artifacts that naive zeroing can produce.
