@@ -19,6 +19,7 @@ Mechanistic interpretability of gpt-oss-20b, organized as 13 research threads at
 
 | # | Thread | Objective | Key Figure | Scripts | Runs | Gap | Directory |
 |---|--------|-----------|------------|---------|------|-----|-----------|
+| 6.5 | [Bregman Conditioning](threads/in-progress/6.5-bregman-conditioning/) | Predict when linear steering is geometrically reliable | — | 1 | 0 | No causal validation yet (Euclidean vs. dual benchmark) | `threads/in-progress/6.5-bregman-conditioning/` |
 | 9 | [Feature Extraction](threads/in-progress/9-feature-extraction/) | Measure computational modes | fig8 | 2 | 3 | Connection to downstream tasks not demonstrated | `threads/in-progress/9-feature-extraction/` |
 | 10 | [Bridge / Cross-Model](threads/in-progress/10-bridge-cross-model/) | Validate cross-model generalization | — | 3 | 5 | Only 1 non-gpt-oss model tested | `threads/in-progress/10-bridge-cross-model/` |
 
