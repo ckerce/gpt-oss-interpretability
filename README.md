@@ -29,7 +29,7 @@ Four instruments are used throughout: **logit-lens readouts** track the model's 
 
 ## Analysis Set Stratification
 
-Not every benchmark case supports a clean mechanistic claim. Before presenting any findings, we separate cases by convergence stability — whether the model's top-1 prediction converges reliably and holds through the final layer.
+Not every benchmark case supports a clean mechanistic claim. Cases are separated by convergence stability — whether the model's top-1 prediction converges reliably and holds through the final layer.
 
 ![Stratification](figures/fig3_analysis_set_stratification.png)
 
@@ -42,11 +42,11 @@ A 4-way stratification yields:
 | Incorrect | 4 / 20 | Model fails; recency bias and syntax agreement largely here |
 | Ambiguous | 3 / 20 | Top-1 oscillates near the decision layer |
 
-Only 9/20 cases (45%) pass the filter. This is a feature, not a bug: it establishes which behaviors are robust enough for downstream intervention claims. Every finding below is scoped to this main analysis set unless otherwise noted. This approach — systematic stratification before claiming mechanism — is not standard in the interpretability literature; we are not aware of a prior explicit methodology for it.
+Only 9/20 cases (45%) pass the filter. This is a feature, not a bug: it establishes which behaviors are robust enough for downstream intervention claims. All mechanistic claims are scoped to this main analysis set unless otherwise noted. This approach — systematic stratification before claiming mechanism — is not standard in the interpretability literature; we are not aware of a prior explicit methodology for it.
 
 ## Key Findings
 
-The nine solid threads form a four-phase argument.
+The nine mature investigation threads (referenced as "solid") demonstrate the following:
 
 ---
 
@@ -121,7 +121,7 @@ Crucially, the effect is **position-specific**: steering at the decision-token p
 
 ### Phase 3 — How selective and channel-specific is the steering?
 
-Threads 7 and 8 require channel-level analysis that is tractable only in architecturally structured companion models, where stream separation makes individual dimensions interpretable. These experiments use three matched 71M–22M DST models from the companion preprint work:
+Channel-level analysis of this kind is tractable only in architecturally structured companion models, where stream separation makes individual dimensions interpretable. These experiments use three matched 71M–22M DST models from the companion preprint work:
 
 | Label | Architecture | Mixing | Params | Description |
 |-------|-------------|--------|-------:|-------------|
@@ -133,7 +133,7 @@ The mixing signature `attn-attn/ffn-ffn` describes how heads share information a
 
 **Finding 6 — Probing and causal intervention dissociate: they identify different channels (Thread 7)**
 
-Given a steering direction, which hidden-state dimensions carry the signal? The naive approach is to probe each channel for answer-predictive content, then intervene on high-probe-weight channels. Thread 7 tests whether this is valid.
+Given a steering direction, which hidden-state dimensions carry the signal? The naive approach is to probe each channel for answer-predictive content, then intervene on high-probe-weight channels. We tested this directly.
 
 Per-channel causal analysis on DST-cascade reveals that the channels that probe well for the answer (H4) are systematically *not* the channels whose intervention most changes the output (H2, H5). Spearman correlation between probe weight and causal effect = **−0.363** on the induction task.
 
@@ -141,7 +141,7 @@ This is the probe-causation dissociation: probing identifies channels whose acti
 
 **Finding 7 — Steering selectivity is task-dependent: recency concentrates, induction distributes (Thread 8)**
 
-Given that steering affects specific channels (not all of them), how broadly does the effect spread across the model? Thread 8 measures selectivity as the ratio of within-target-task effect to cross-task effect.
+Given that steering affects specific channels (not all of them), how broadly does the effect spread across the model? Selectivity is measured as the ratio of within-target-task effect to cross-task effect.
 
 Cross-family comparison on DST-cascade:
 
@@ -156,11 +156,11 @@ Recency steering is spatially concentrated; induction steering is spatially dist
 
 ### Phase 4 — Why does linear steering work geometrically?
 
-Phases 2 and 3 establish that vocabulary-space directions cleanly flip answers at some layers and for some tasks, but not uniformly. Phase 4 provides the geometric explanation.
+Vocabulary-space directions cleanly flip answers at some layers and for some tasks, but not uniformly. The underlying reason is geometric.
 
 **Finding 8 — Standard transformers have low effective rank at intermediate layers; stream separation improves conditioning up to 22x (Thread 14)**
 
-Linear steering methods implicitly assume that the hidden-state geometry is well-conditioned — that a direction in embedding space corresponds to a meaningful direction in the model's internal representation. Thread 14 tests whether this assumption holds.
+Linear steering methods implicitly assume that the hidden-state geometry is well-conditioned — that a direction in embedding space corresponds to a meaningful direction in the model's internal representation. We tested whether this holds.
 
 Using a 2×2 factorial design (stream separation × auxiliary loss) across four matched 45.4M transformers, we extend Park et al.'s output-layer Bregman analysis inward to intermediate layers:
 
@@ -175,7 +175,7 @@ This explains the pattern observed in Phases 2–3 (measured on companion models
 
 ### Summary
 
-The nine solid threads form a coherent argument:
+Across the four phases:
 
 **Phase 1** locates computation by task type (convergence) and confirms causal criticality (ablation), narrowing the interpretability target from 24 layers to 3.
 
