@@ -39,8 +39,11 @@ The logit lens reads off the model's best guess at each layer by projecting the 
 > **Coreference** — "Alice told Bob that she would leave early. The word 'she' refers to ___" (expects "Alice")
 > - L1–4: wrong answer. L5: correct answer appears and holds. Semantic role assignment requires mid-depth processing.
 >
-> **Induction** — "A B C D A B C ___" (expects "D")
-> - L1–16: wrong or uncertain. L17: correct answer appears. Pattern completion requires deep processing through the full attention stack.
+> **Induction** — "D 5 Z 7 B 2 D 5 Z 7 B 2 D 5 Z 7 B ___" (expects "2")
+> - L1–18: wrong or uncertain. L19: correct answer appears. Pattern completion with arbitrary (non-memorizable) tokens requires deep processing through the full attention stack.
+>
+> **Noisy induction** — "D 5 Z 7 B 2 D 5 A 7 B 2 ... D 5 R ___" (expects "7"; position 3 varies each cycle)
+> - L1–19: wrong or uncertain. L20: correct answer appears. The model extracts the stable structure `7 B 2 D 5 [letter]` despite the varying letter — this is structural pattern recognition, not memorization.
 
 The depth at which the correct answer first appears and stabilizes is the **convergence layer** — a fingerprint of how much computation each task type requires.
 

@@ -38,7 +38,19 @@ Per-layer logit-lens readouts with choice-relative convergence show task-specifi
 - **Coreference**: converges mid-depth (L5), requires semantic resolution
 - **Induction**: converges late (L17+), consistent with induction heads as a late-layer phenomenon
 
-### 3. Direct-vocabulary steering works with positional specificity
+### 3. Structural induction survives noise — the model extracts pattern, not memorized sequence
+
+Standard induction benchmarks use sequences like "sun moon star sun moon star sun moon ___" — but these could be memorized from training data. We test with arbitrary tokens that cannot plausibly appear as a memorized sequence:
+
+**Clean structural induction**: `D 5 Z 7 B 2 D 5 Z 7 B 2 D 5 Z 7 B ___`
+- Core pattern: `D 5 Z 7 B 2` repeats 3 times. After "B ", the model predicts **"2"** (converges at L19).
+
+**Noisy structural induction**: `D 5 Z 7 B 2 D 5 A 7 B 2 D 5 W 7 B 2 D 5 X 7 B 2 D 5 Y 7 B 2 D 5 Q 7 B 2 D 5 R ___`
+- Core pattern: `7 B 2 D 5 [letter]` — the letter changes each cycle (Z, A, W, X, Y, Q, R) while the rest repeats. After "R ", the model predicts **"7"** (converges at L20).
+
+The model extracts the stable structural regularity `7 B 2 D 5` despite the varying letter. This is genuine in-context pattern recognition — not retrieval of a memorized sequence. The noisy case requires one additional layer to converge (L20 vs L19), reflecting the extra computation needed to distinguish structure from noise.
+
+### 4. Direct-vocabulary steering works with positional specificity
 
 Exact vocabulary-space directions (`W[token_A] - W[token_B]`) applied in the contextual stream at late layers cleanly flip model answers:
 
@@ -46,7 +58,7 @@ Exact vocabulary-space directions (`W[token_A] - W[token_B]`) applied in the con
 
 Crucially, the effect is **position-specific**: steering at the decision-token position flips answers; identical steering at token 0 produces zero effect. This rules out diffuse perturbation artifacts.
 
-### 4. Decision trajectories reveal self-supervised steering directions
+### 5. Decision trajectories reveal self-supervised steering directions
 
 Each layer where the model's top-1 prediction changes is a "decision point." The logit-space difference at decision layers is a self-supervised steering direction — the model tells you what decision it made, at which layer:
 
@@ -59,7 +71,7 @@ L0: noise → L8: '‑' → L13: 'pack' → L14: <eos> → L16: '(' → L17: 'to
 
 This is fundamentally different from contrastive activation addition (CAA), which requires 100+ curated positive/negative example pairs. CASCADE reads steering directions directly from the model's own computation.
 
-### 5. Per-head Hydra measurement confirms distributed redundancy
+### 6. Per-head Hydra measurement confirms distributed redundancy
 
 Ablating each of 64 heads individually at L20 produces near-identical margins (σ = 0.042) — the model barely notices losing any single head:
 
@@ -67,7 +79,7 @@ Ablating each of 64 heads individually at L20 produces near-identical margins (�
 
 gpt-oss-20b's σ = 0.042 is **half** the PLS-paper control (σ = 0.08) and **11× smaller** than PLS-trained models (σ = 0.47). This directly validates the Hydra hypothesis at production scale: standard training produces extreme distributed redundancy, which per-layer supervision breaks.
 
-### 6. Honest analysis-set stratification
+### 7. Honest analysis-set stratification
 
 Not all benchmark cases support clean mechanistic claims. A 4-way stratification separates cases by convergence stability:
 
@@ -75,7 +87,7 @@ Not all benchmark cases support clean mechanistic claims. A 4-way stratification
 
 Only 9/20 cases (45%) are "correct, late-stable" — the main analysis set. Recency bias and syntax agreement largely fail. This is a feature, not a bug: it tells you where the model's behavior is robust enough for causal claims.
 
-### 7. CASCADE feasibility validated
+### 8. CASCADE feasibility validated
 
 The gauge-safe pseudoinverse CASCADE target (`x_e* = (CW)⁺ · C(log p - Wx_t)`) reconstructs teacher distributions with:
 
@@ -87,7 +99,7 @@ The gauge-safe pseudoinverse CASCADE target (`x_e* = (CW)⁺ · C(log p - Wx_t)`
 
 In the same-model setting, the centered least-squares target is numerically excellent. This validates the mathematical machinery before attempting cross-vocabulary distillation.
 
-### 8. MXFP4 quantization-interpretability tradeoff
+### 9. MXFP4 quantization-interpretability tradeoff
 
 MXFP4 fused kernels bypass Python-level forward hooks on the router module. Router introspection is opaque under quantization — expert masking operates at the MLP output level, not gate-level. This is a concrete example of the quantization-interpretability tradeoff: compression techniques that fuse operations reduce the surface area for mechanistic inspection.
 

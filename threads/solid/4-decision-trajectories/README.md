@@ -43,12 +43,18 @@ The decision trajectory extraction — identifying layers where the model's top-
 
 ![Decision trajectories](../../../figures/fig4_decision_trajectories.png)
 
+**Noisy structural induction** — the model extracts pattern structure despite a varying element:
+
+> **Prompt**: "D 5 Z 7 B 2 D 5 A 7 B 2 D 5 W 7 B 2 D 5 X 7 B 2 D 5 Y 7 B 2 D 5 Q 7 B 2 D 5 R "
+>
+> The core pattern is `7 B 2 D 5 [letter]` — the letter changes each cycle (Z, A, W, X, Y, Q, R) while the rest repeats. After "R ", the model predicts **"7"** (the next stable element), converging at L20. This cannot be memorization — the model must extract the *structural regularity* from the noisy context.
+
 ### Decision trajectory summary across 3 task families
 
 | Task | Prompt (truncated) | Key positions | Convergence layers | Transitions per position |
 |------|-------------------|:-------------:|:------------------:|:------------------------:|
 | Recency | "...suitcase was too" | 5 | L17–L18 | 6–12 |
-| Induction | "A B C D A B C" | 5 | L13–L21 | 5–10 |
+| Induction | "A7 B2 C9 D4 A7 B2 C9" | 5 | L13–L21 | 5–10 |
 | Syntax | "The keys to the cabinet" | 5 | L16–L19 | 5–16 |
 
 ### Example decision arc — recency, position 12 ("suitcase was too ___")
