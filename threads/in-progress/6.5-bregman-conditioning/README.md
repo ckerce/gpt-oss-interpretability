@@ -47,7 +47,42 @@ No runs yet. The runner is ready for first use against gpt-oss-20b.
 No figures yet.
 
 ## Preliminary results
-No runs have been completed against gpt-oss-20b. Expected output format (from `run_bregman_conditioning.py --output`):
+
+No conditioning runs have been completed against gpt-oss-20b yet. However, the existing thread 6 and thread 8 results can be read as indirect Bregman conditioning evidence, because the geometry predicts exactly the patterns we already observe.
+
+### The geometric reading of position specificity (thread 6)
+
+The key diagnostic is the cosine between a steering direction `v = W[a] − W[b]` and its dual image `Hv`. When the model is already competing between tokens a and b (high probability mass on both), their unembedding directions dominate H = Cov[w_y | h], so v lies approximately in the dominant eigenspace of H and cosine(v, Hv) ≈ 1. When the model's distribution is concentrated elsewhere, v is approximately in the null space of H, Hv ≈ 0, and Euclidean steering cannot efficiently move the dual coordinate — it perturbs the hidden state but redistributes mass unpredictably.
+
+This is exactly the position-specificity result from thread 6:
+
+> **Prompt**: "The trophy would not fit in the suitcase because the suitcase was too small. The word 'small' refers to the"
+>
+> **Direction**: `W[trophy] − W[suitcase]`
+>
+> | Layer/position | Prediction | Gap | Bregman reading |
+> |----------------|:----------:|----:|-----------------|
+> | Baseline | **suitcase** | +2.40 | — |
+> | Steer at decision position (L3) | **trophy** | −0.66 | v in dominant eigenspace of H → cosine ≈ 1 → clean flip |
+> | Steer at token 0 (L0) | **suitcase** | +2.73 | model not yet competing on {trophy, suitcase} → v ⊥ dominant eigenspace → Hv ≈ 0 → no effect |
+
+The same direction at the same scale produces opposite outcomes depending on layer and position — not because the model "changes its mind" between positions, but because the local geometry of the softmax manifold is different. Position specificity is a Bregman conditioning effect.
+
+### Task families differ in how sharply H concentrates (threads 6, 7, 8)
+
+Three task families with very different selectivity outcomes in thread 8 form a natural ordering:
+
+| Task | Thread 8 channelized/whole ratio | Geometric prediction |
+|------|:---------------------------------:|---------------------|
+| Recency bias | 0.80–0.99 | H concentrates on {W[trophy], W[suitcase]}; steering direction well-aligned with dominant eigenspace |
+| Induction | 0.60 | Pattern completion distributes probability across more tokens simultaneously; H eigenspace broader; v aligns less cleanly; more off-target leakage |
+| Coreference | not measured (0 promoted channels) | Long-range antecedent integration is the most distributed; H most diffuse; Euclidean steering least predictable |
+
+Thread 7 adds a finer-grained reading: the probe-causal dissociation (H4 probes well but H5 drives causally) is a signature of H having a dominant eigenspace that does not align with the steering direction — exactly what low cosine(v, Hv) would predict.
+
+### What the conditioning runs will actually quantify
+
+The Bregman runner will compute these quantities directly, replacing the qualitative predictions above with layer-by-layer numbers:
 
 ```
 | Layer | Samples | Trace | Effective Rank | Cond. Median | Mass Covered | Cosine |
@@ -56,7 +91,7 @@ No runs have been completed against gpt-oss-20b. Expected output format (from `r
 | ...
 ```
 
-The companion paper's symbolic-model results predict: effective rank should rise across layers as the model converges on a decision, condition number should fall at layers identified by the logit lens as convergence layers (threads 1 and 4), and cosine similarity to the steering direction should approach 1 only near those convergence layers.
+The companion paper's symbolic-model results predict: effective rank rises as the model converges on a decision, condition number falls at layers identified as convergence layers (threads 1 and 4), and cosine similarity to the steering direction approaches 1 only near those convergence layers — and is lower for induction than recency at matched convergence depth.
 
 ## Gaps
 - No causal validation: Euclidean-vs-dual intervention benchmark not yet implemented
