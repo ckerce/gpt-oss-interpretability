@@ -1,6 +1,6 @@
 # Research Thread Map
 
-Mechanistic interpretability of gpt-oss-20b, organized as 13 research threads at three maturity levels.
+Mechanistic interpretability of gpt-oss-20b, organized as 14 research threads at three maturity levels.
 
 ## Solid — publication-ready results
 
@@ -14,6 +14,7 @@ Mechanistic interpretability of gpt-oss-20b, organized as 13 research threads at
 | 6 | [Direct Vocab Steering](threads/solid/6-direct-vocab-steering/) | Validate steering precision | memo figs (4) | 3 | 13 | `threads/solid/6-direct-vocab-steering/` |
 | 7 | [Channel Probing](threads/solid/7-channel-probing/) | Resolve steering to channel level | fig6 | 3 | 9 | `threads/solid/7-channel-probing/` |
 | 8 | [Selectivity](threads/solid/8-selectivity/) | Measure steering specificity | fig7 | 2 | 8 | `threads/solid/8-selectivity/` |
+| 14 | [Bregman Geometry](threads/solid/14-bregman-geometry/) | Measure geometric prerequisites for linear intervention | fig9, fig10, fig11 | 1 | — | `threads/solid/14-bregman-geometry/` |
 
 ## In progress — code exists, experiments need expansion
 

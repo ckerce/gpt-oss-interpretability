@@ -156,7 +156,7 @@ python threads/solid/4-decision-trajectories/generate_decision_figure.py
 
 ## Research Threads
 
-This project is organized as 13 research threads at three maturity levels. See **[THREAD_MAP.md](THREAD_MAP.md)** for the full index with links, run counts, and figures.
+This project is organized as 14 research threads at three maturity levels. See **[THREAD_MAP.md](THREAD_MAP.md)** for the full index with links, run counts, and figures.
 
 ### Solid — completed results
 
@@ -170,6 +170,7 @@ This project is organized as 13 research threads at three maturity levels. See *
 | 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | DST-baseline, DST-cascade | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
 | 7 | [Channel probing](threads/solid/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis: probe-promoted channels (H4) do not predict causal importance (H2, H5); Spearman = -0.363 on induction | Probing identifies readout-correlated channels; causal intervention reveals computation-driving channels — these are different |
 | 8 | [Selectivity](threads/solid/8-selectivity/) | DST-cascade | Does steering affect only the target behavior? | Cross-family comparison: recency channelized/whole ratio 0.80 (recency) vs 0.60 (induction) on same model | Recency steering signal is concentrated in few channels; induction is distributed — task-dependent steering granularity |
+| 14 | [Bregman geometry](threads/solid/14-bregman-geometry/) | 4 matched 45.4M transformers | Are linear interpretability methods geometrically valid at intermediate layers? | Extends Park et al.'s output-layer Bregman analysis inward; 2x2 factorial (stream separation x aux. loss) | Standard transformers have effective rank 8/516 at intermediate layers — linear methods operate in 2% of the geometry; cosine diagnostic predicts steering validity |
 
 ### In progress — code and initial experiments exist
 
@@ -185,9 +186,9 @@ Threads 11–13 (CASCADE distillation, geometric framework, attention path sensi
 ## Repository Structure
 
 ```
-THREAD_MAP.md                    # Index of all 13 research threads
+THREAD_MAP.md                    # Index of all 14 research threads
 threads/                         # Thread-specific scripts, docs, and READMEs
-  solid/                         # 8 publication-ready threads
+  solid/                         # 9 publication-ready threads
   in-progress/                   # 2 threads with code but thin experiments
   theoretical/                   # 3 threads with frameworks but no implementation
 
