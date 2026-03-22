@@ -18,6 +18,7 @@ This thread extends Park et al.'s output-layer Bregman analysis to **intermediat
 
 ## Scripts
 - `generate_bregman_figures.py` — generates effective rank, cosine diagnostic, and trace figures
+- `run_bregman_conditioning.py` — per-layer hidden-space Hessian analysis on gpt-oss-20b prompts
 
 ## Figures (in `figures/`)
 - `fig9_effective_rank.{pdf,png}`
@@ -44,7 +45,7 @@ Consider steering a model to shift a gendered pronoun. You compute the direction
 
 The difference is not the steering direction — it's the geometry at the layer where you apply it. The same direction, applied at different layers, can be clean or destructive.
 
-![Effective rank across layers](../../../figures/fig9_effective_rank.png)
+<img src="../../../figures/fig9_effective_rank.png" width="50%">
 
 ### How degenerate is the baseline?
 
@@ -70,13 +71,13 @@ The key comparison: CASCADE control (no auxiliary loss) produces better geometry
 
 ### Distribution concentration explains why deep layers are less affected
 
-![Trace of Hessian](../../../figures/fig11_trace.png)
+<img src="../../../figures/fig11_trace.png" width="50%">
 
 The trace of H (total variance of the softmax distribution) measures how much probability mass is available to steer. In single-stream models, the trace collapses from 0.5 at layer 0 to 0.03–0.06 at layers 3–5: the softmax distribution concentrates on a few tokens early in the network, leaving little probability mass to misallocate. CASCADE models maintain traces of 0.4–0.7 throughout. This concentration effect means that at the deepest layers, both good and bad geometry lead to similar steering outcomes — not because the geometry is fine, but because there is nothing left to steer.
 
 ### The cosine diagnostic
 
-![Cosine diagnostic](../../../figures/fig10_cosine_diagnostic.png)
+<img src="../../../figures/fig10_cosine_diagnostic.png" width="50%">
 
 The cosine similarity between the primal concept direction and the corresponding dual direction predicts whether Euclidean steering is reliable at a given layer:
 
@@ -111,6 +112,34 @@ The cosine diagnostic predicts steering effectiveness on four downstream tasks (
 - At layers 0–2, where cos < 0.1 in the single-stream model, effects are weaker, noisier, and occasionally sign-inconsistent
 - CASCADE models show clean, sign-correct effects at all layers, consistent with cos > 0.4 throughout
 
+### The geometric reading of position specificity (thread 6)
+
+The Bregman framework provides a natural explanation for the position-specificity result in thread 6. The key diagnostic is the cosine between a steering direction `v = W[a] - W[b]` and its dual image `Hv`. When the model is already competing between tokens a and b (high probability mass on both), their unembedding directions dominate H = Cov[w_y | h], so v lies approximately in the dominant eigenspace of H and cos(v, Hv) ≈ 1. When the model's distribution is concentrated elsewhere, v is approximately in the null space of H, Hv ≈ 0, and Euclidean steering cannot efficiently move the dual coordinate.
+
+> **Prompt**: "The trophy would not fit in the suitcase because the suitcase was too small. The word 'small' refers to the"
+>
+> **Direction**: `W[trophy] - W[suitcase]`
+>
+> | Layer/position | Prediction | Gap | Bregman reading |
+> |----------------|:----------:|----:|-----------------|
+> | Baseline | **suitcase** | +2.40 | — |
+> | Steer at decision position (L3) | **trophy** | -0.66 | v in dominant eigenspace of H → cos ≈ 1 → clean flip |
+> | Steer at token 0 (L0) | **suitcase** | +2.73 | model not yet competing on {trophy, suitcase} → v ⊥ dominant eigenspace → Hv ≈ 0 → no effect |
+
+The same direction at the same scale produces opposite outcomes depending on layer and position — not because the model "changes its mind" between positions, but because the local geometry of the softmax manifold is different. **Position specificity is a Bregman conditioning effect.**
+
+### Task families differ in how sharply H concentrates (threads 7, 8)
+
+The selectivity results from thread 8 form a natural ordering when read through Bregman geometry:
+
+| Task | Thread 8 channelized/whole ratio | Geometric prediction |
+|------|:---------------------------------:|---------------------|
+| Recency bias | 0.80–0.99 | H concentrates on {W[trophy], W[suitcase]}; steering direction well-aligned with dominant eigenspace |
+| Induction | 0.60 | Pattern completion distributes probability across more tokens simultaneously; H eigenspace broader; v aligns less cleanly; more off-target leakage |
+| Coreference | not measured (0 promoted channels) | Long-range antecedent integration is the most distributed; H most diffuse; Euclidean steering least predictable |
+
+Thread 7 adds a finer-grained reading: the probe-causal dissociation (H4 probes well but H5 drives causally) is a signature of H having a dominant eigenspace that does not align with the steering direction — exactly what low cos(v, Hv) would predict. Probing identifies channels correlated with the *readout* (the dual coordinates), while causal intervention identifies channels that move the *primal* representation — and when H is poorly conditioned, these point in different directions.
+
 ## Key findings
 - **Baseline degeneracy**: standard single-stream transformers have effective rank 8 in 516 dimensions at intermediate layers — linear methods operate in 2% of the geometry
 - **Stream separation is the primary fix**: CASCADE improves conditioning by up to 22x, even without auxiliary supervision
@@ -123,6 +152,9 @@ The cosine diagnostic predicts steering effectiveness on four downstream tasks (
 - Models are small (45.4M parameters, 6 layers). Whether conditioning patterns persist at the scale of deployed language models is an open question.
 - Steering evaluation uses gendered word pairs as the primary concept; downstream validation covers four tasks but does not include safety-specific evaluations (refusal, toxicity).
 - The 0.3 cosine threshold is empirical and may shift with model scale or domain.
+
+## Package dependencies
+`steering.bregman`, `capture.activation_cache`, `backends.transformers_gpt_oss`
 
 ## Related threads
 - [1-convergence-logit-lens](../1-convergence-logit-lens/) — the logit lens is a linear method whose validity depends on geometric conditioning

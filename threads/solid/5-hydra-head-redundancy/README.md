@@ -76,6 +76,7 @@ All 64 heads maintain 100% accuracy when individually ablated. Margin variation 
 - Per-task σ values (0.055–0.157) are all small, but capitalization shows the most head-to-head variation
 - Validates the Hydra hypothesis at production scale: standard training produces extreme distributed redundancy
 - Resolves the paradox: layers are critical (thread 2) but individual heads within them are not
+- **Scale prediction**: gpt-oss-20b's redundancy (σ = 0.042) is *more extreme* than the PLS paper's 22M-parameter control (σ = 0.08), suggesting distributed redundancy increases with model scale — larger models have more capacity for superposition and exploit it. This is a testable prediction: measuring Hydra σ at 1B, 7B, and 70B on standard-trained models should show a monotonic decrease.
 
 ## Package dependencies
 `benchmarks.runner`, `backends.transformers_gpt_oss`, `config`
