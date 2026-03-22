@@ -1,6 +1,6 @@
 # Thread 7: Channel-Level Probing
 
-**Status**: In progress — **Objective**: Resolve steering to channel level
+**Status**: Solid — **Objective**: Resolve steering to channel level
 
 ## Problem
 Thread 6 shows that steering works at the whole-vector level: adding a vocabulary-space direction to the full hidden state at the right layer and position flips model answers. But which dimensions of that hidden state are actually carrying the signal? A 4096-dimensional steering vector might have its effect concentrated in a handful of channels, or it might be diffusely spread across all of them. Knowing this determines whether the model has *sparse, interpretable features* at the channel level or whether meaning is encoded in a distributed, superposition-like manner within layers.
@@ -9,7 +9,7 @@ Thread 6 shows that steering works at the whole-vector level: adding a vocabular
 Channel-level decomposition connects mechanistic interpretability to the superposition hypothesis (Elhage et al. 2022): if steering effects concentrate in a few channels, the model may have features that are more interpretable than the Hydra effect (thread 5) would suggest. If effects are distributed across hundreds of channels, that confirms the superposition picture and motivates dictionary-learning approaches. Either answer is informative. Per-channel causal analysis also provides a finer-grained intervention primitive — potentially enabling more selective steering with fewer off-target effects (see thread 8).
 
 ## Contribution
-Per-channel causal intervention on steering directions is **original work** extending the whole-vector steering of thread 6. While per-neuron or per-feature probing is a well-established technique (Bau et al. 2018; Gurnee et al. 2023), applying it specifically to vocabulary-space steering directions in an MoE model and measuring per-channel causal effects is novel. This thread is in progress — the code and initial experiments exist, but broader task coverage and publication figures are needed.
+Per-channel causal intervention on steering directions is **original work** extending the whole-vector steering of thread 6. While per-neuron or per-feature probing is a well-established technique (Bau et al. 2018; Gurnee et al. 2023), applying it specifically to vocabulary-space steering directions in an MoE model and measuring per-channel causal effects is novel. Per-channel causal results on both recency and induction (DST-cascade) confirm the dissociation across task families.
 
 ## Scripts
 - `run_channel_probe.py` — per-channel probing experiments
@@ -24,7 +24,7 @@ Per-channel causal intervention on steering directions is **original work** exte
 ## Figures (in `figures/`)
 - `fig6_channel_probe.{pdf,png}`
 
-## Preliminary results
+## Results
 
 ![Channel probe](../../../figures/fig6_channel_probe.png)
 
@@ -75,21 +75,21 @@ The pattern is consistent across both families: **H5 is the top causal channel b
 
 The dissociation is stronger for induction (Spearman = -0.363) than recency (Spearman = -0.060), consistent with the selectivity finding ([thread 8](../8-selectivity/)) that induction steering is more distributed across channels than recency.
 
-## Current state
-- Code is solid (`steering.probing`, `steering.causal`)
-- 7 probe runs completed across 2 models
-- Per-channel causal completed for both recency and induction on DST-cascade
-- Probe-causal dissociation confirmed across both families — a genuine finding
+## Key findings
+- **Probe-causal dissociation**: channels that best predict the answer (H4, probe accuracy 0.9–1.0) are not the channels that most change the output when intervened on (H2/H5)
+- **Consistent across families**: pattern holds for both recency (Spearman = -0.060) and induction (Spearman = -0.363)
+- **Coreference is too distributed**: zero promoted channels on both models — consistent with superposition hypothesis for this task
+- **H5 is never probe-promoted but always causally dominant**: suggests a systematic separation between readout-correlated and computation-driving channels
 
-## Gaps
-- Coreference has zero promoted channels on both models — may need a different decomposition approach
+## Limitations
+- Coreference has zero promoted channels on both models — may require a different decomposition approach (e.g., dictionary learning)
 
 ## Package dependencies
 `steering.probing`, `steering.causal`, `common.artifacts`, `common.io`
 
 ## Related threads
 - [6-direct-vocab-steering](../../solid/6-direct-vocab-steering/) — whole-vector steering that this decomposes
-- [8-selectivity](../8-selectivity/) — selectivity metrics for channel-level effects
+- [8-selectivity](../8-selectivity/) — selectivity metrics confirm task-dependent channel concentration
 
 ## References
 

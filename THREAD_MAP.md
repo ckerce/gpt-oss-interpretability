@@ -12,14 +12,14 @@ Mechanistic interpretability of gpt-oss-20b, organized as 13 research threads at
 | 4 | [Decision Trajectories](threads/solid/4-decision-trajectories/) | Characterize decision structure | fig4 | 2 | 1 | `threads/solid/4-decision-trajectories/` |
 | 5 | [Hydra / Head Redundancy](threads/solid/5-hydra-head-redundancy/) | Measure head redundancy | fig5 | 1 + shared | 1 | `threads/solid/5-hydra-head-redundancy/` |
 | 6 | [Direct Vocab Steering](threads/solid/6-direct-vocab-steering/) | Validate steering precision | memo figs (4) | 3 | 13 | `threads/solid/6-direct-vocab-steering/` |
+| 7 | [Channel Probing](threads/solid/7-channel-probing/) | Resolve steering to channel level | fig6 | 3 | 9 | `threads/solid/7-channel-probing/` |
+| 8 | [Selectivity](threads/solid/8-selectivity/) | Measure steering specificity | fig7 | 2 | 8 | `threads/solid/8-selectivity/` |
 
 ## In progress — code exists, experiments need expansion
 
 | # | Thread | Objective | Key Figure | Scripts | Runs | Gap | Directory |
 |---|--------|-----------|------------|---------|------|-----|-----------|
-| 7 | [Channel Probing](threads/in-progress/7-channel-probing/) | Resolve steering to channel level | fig6 | 3 | 7 | Limited task coverage | `threads/in-progress/7-channel-probing/` |
-| 8 | [Selectivity](threads/in-progress/8-selectivity/) | Measure steering specificity | fig7 | 2 | 4 | Needs broader task coverage | `threads/in-progress/8-selectivity/` |
-| 9 | [Feature Extraction](threads/in-progress/9-feature-extraction/) | Measure computational modes | fig8 | 2 | 3 | Thin experiments (39 tokens) | `threads/in-progress/9-feature-extraction/` |
+| 9 | [Feature Extraction](threads/in-progress/9-feature-extraction/) | Measure computational modes | fig8 | 2 | 3 | Connection to downstream tasks not demonstrated | `threads/in-progress/9-feature-extraction/` |
 | 10 | [Bridge / Cross-Model](threads/in-progress/10-bridge-cross-model/) | Validate cross-model generalization | — | 3 | 5 | Only 1 non-gpt-oss model tested | `threads/in-progress/10-bridge-cross-model/` |
 
 ## Theoretical — framework documented, implementation incomplete

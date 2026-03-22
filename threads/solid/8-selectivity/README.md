@@ -1,6 +1,6 @@
 # Thread 8: Selectivity
 
-**Status**: In progress — **Objective**: Measure steering specificity
+**Status**: Solid — **Objective**: Measure steering specificity
 
 ## Problem
 A steering intervention that flips the target answer (thread 6) is only useful if it doesn't simultaneously break everything else. If adding a `W["small"] - W["large"]` direction changes the answer from "large" to "small" but also degrades fluency, changes unrelated predictions, or shifts the model's confidence distribution on other tokens, the intervention isn't mechanistically clean — it's more like damage that happens to produce the desired side effect. Selectivity quantifies this: does the intervention affect *only* the intended behavior?
@@ -9,7 +9,7 @@ A steering intervention that flips the target answer (thread 6) is only useful i
 Selectivity is the quality metric for steering. Without it, a 100% steering success rate is meaningless — the intervention might succeed by disrupting the model broadly rather than by engaging a specific circuit. High selectivity supports the mechanistic interpretation; low selectivity suggests the intervention is exploiting model fragility. This distinction matters both for interpretability (are we understanding real circuits?) and for potential applications (can we deploy targeted interventions without side effects?).
 
 ## Contribution
-The selectivity comparison framework — measuring channelized vs whole-vector intervention effects across multiple metrics — is an **original evaluation methodology** developed in this project. Selectivity metrics exist in the broader ML fairness and robustness literatures, but the specific application to mechanistic steering interventions and the comparison between channel-level and whole-vector granularities is novel. This thread is in progress with limited task coverage (recency family only).
+The selectivity comparison framework — measuring channelized vs whole-vector intervention effects across multiple metrics — is an **original evaluation methodology** developed in this project. Selectivity metrics exist in the broader ML fairness and robustness literatures, but the specific application to mechanistic steering interventions and the comparison between channel-level and whole-vector granularities is novel. Same-model (DST-cascade) comparison across recency and induction confirms task-dependent steering granularity.
 
 ## Scripts
 - `run_selectivity_comparison.py` — compares channelized vs whole-vector selectivity
@@ -69,21 +69,21 @@ Recency bias steering is more selective with a single channel relative to the fu
 
 This contrast has implications for interpretability methodology: **the right steering granularity is task-dependent**. Recency bias can be steered at the single-channel level with modest selectivity loss, suggesting a more localized mechanism. Induction requires coordinated intervention across multiple channels. A single interpretability approach — whether per-channel or whole-vector — will not be equally appropriate for all behaviors. This argues for task-aware intervention strategies rather than a one-size-fits-all methodology.
 
-## Current state
-- Code is solid (`steering.selectivity` — 33.9 KB, the largest module)
-- Two target families tested on the same model (DST-cascade) with contrasting results
-- Additional recency comparison on DST-independent confirms the pattern
-- Coreference not tested as target — zero promoted channels on both models suggests signal is too distributed for channelized analysis
+## Key findings
+- **Task-dependent steering granularity**: recency channelized/whole ratio (0.80–0.99) far exceeds induction (0.60) — recency signal concentrates in few channels, induction is distributed
+- **Consistent across models**: DST-independent (0.99) and DST-cascade (0.80) both show higher recency concentration than induction (0.60)
+- **Random baselines confirm signal**: both channelized and whole-vector exceed random-channel and random-direction controls
+- **Implication**: the right steering granularity is task-dependent — a single approach (per-channel or whole-vector) will not be equally appropriate for all behaviors
 
-## Gaps
-- Coreference selectivity remains untested (likely requires different approach than per-channel)
+## Limitations
+- Coreference selectivity remains untested — zero promoted channels on both models suggests the signal is too distributed for channelized analysis (consistent with thread 7's findings)
 
 ## Package dependencies
 `steering.selectivity`, `steering.controls`, `steering.interventions`, `common.*`
 
 ## Related threads
 - [6-direct-vocab-steering](../../solid/6-direct-vocab-steering/) — the interventions being evaluated
-- [7-channel-probing](../7-channel-probing/) — channel-level analysis informs selectivity
+- [7-channel-probing](../7-channel-probing/) — probe-causal dissociation explains why selectivity differs by task
 
 ## References
 

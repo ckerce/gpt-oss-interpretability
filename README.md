@@ -168,13 +168,13 @@ This project is organized as 13 research threads at three maturity levels. See *
 | 4 | [Decision trajectories](threads/solid/4-decision-trajectories/) | gpt-oss-20b | Can the model's own prediction changes serve as steering directions? | Extracts logit-space directions from prediction-transition layers; not aware of prior work using these as self-supervised steering signals | Provides steering directions without curated contrastive pairs; empirical basis for CASCADE |
 | 5 | [Hydra / head redundancy](threads/solid/5-hydra-head-redundancy/) | gpt-oss-20b | Are individual attention heads specialized or redundant? | Measures the Hydra effect (from companion PLS preprint) at 21B-param production scale | σ=0.042 confirms extreme redundancy — explains why circuit-level interpretation is hard in standard models |
 | 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | DST-baseline, DST-cascade | Can exact vocabulary directions flip model answers with positional precision? | Uses raw `W[A]−W[B]` unembedding directions for steering; not aware of prior work using exact vocabulary differences (vs learned directions) | Position specificity distinguishes targeted intervention from diffuse perturbation |
+| 7 | [Channel probing](threads/solid/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis: probe-promoted channels (H4) do not predict causal importance (H2, H5); Spearman = -0.363 on induction | Probing identifies readout-correlated channels; causal intervention reveals computation-driving channels — these are different |
+| 8 | [Selectivity](threads/solid/8-selectivity/) | DST-cascade | Does steering affect only the target behavior? | Cross-family comparison: recency channelized/whole ratio 0.80 (recency) vs 0.60 (induction) on same model | Recency steering signal is concentrated in few channels; induction is distributed — task-dependent steering granularity |
 
 ### In progress — code and initial experiments exist
 
 | # | Thread | Model | Problem | Contribution | Impact |
 |---|--------|-------|---------|--------------|--------|
-| 7 | [Channel probing](threads/in-progress/7-channel-probing/) | DST-cascade | Which hidden-state dimensions carry the steering signal? | Per-channel causal analysis: probe-promoted channels (H4) do not predict causal importance (H2, H5); Spearman = -0.363 on induction | Probing identifies readout-correlated channels; causal intervention reveals computation-driving channels — these are different |
-| 8 | [Selectivity](threads/in-progress/8-selectivity/) | DST-independent, DST-cascade | Does steering affect only the target behavior? | Cross-family comparison: recency channelized ≈ whole-vector (2.7 vs 2.7); induction whole-vector >> channelized (20.0 vs 11.9) | Recency steering signal is concentrated in few channels; induction is distributed — task-dependent steering granularity |
 | 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | gpt-oss-20b | Can computational modes be captured as unified feature vectors? | 6,425D features across 555 tokens / 5 families; intrinsic dimension ranges from 20 (syntax) to 68 (coreference) | Task-dependent dimensionality — syntax is structured, coreference is distributed |
 | 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | gpt-oss-20b, Gemma-3-1B | Do these findings generalize beyond gpt-oss-20b? | Screening pipeline to evaluate new models for interpretability compatibility | Early infrastructure — one model (Gemma-3-1B) screened so far |
 
@@ -187,8 +187,8 @@ Threads 11–13 (CASCADE distillation, geometric framework, attention path sensi
 ```
 THREAD_MAP.md                    # Index of all 13 research threads
 threads/                         # Thread-specific scripts, docs, and READMEs
-  solid/                         # 6 publication-ready threads
-  in-progress/                   # 4 threads with code but thin experiments
+  solid/                         # 8 publication-ready threads
+  in-progress/                   # 2 threads with code but thin experiments
   theoretical/                   # 3 threads with frameworks but no implementation
 
 gpt_oss_interp/                  # Shared Python package (~40 modules)

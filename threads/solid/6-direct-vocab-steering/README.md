@@ -108,7 +108,7 @@ The use of exact vocabulary-space directions (`W[token_A] - W[token_B]` from the
 ## Related threads
 - [4-decision-trajectories](../4-decision-trajectories/) — self-supervised source of steering directions
 - [11-cascade-distillation](../../theoretical/11-cascade-distillation/) — automates direction extraction
-- [7-channel-probing](../../in-progress/7-channel-probing/) — per-channel analysis of steering effects
+- [7-channel-probing](../7-channel-probing/) — per-channel analysis of steering effects
 
 ## References
 
