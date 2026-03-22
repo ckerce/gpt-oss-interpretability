@@ -58,20 +58,25 @@ The selectivity comparison framework — measuring channelized vs whole-vector i
 | Family | Model | Folds | Mean channelized | Mean whole-vector | Channelized wins | Channelized/whole ratio |
 |--------|-------|------:|-----------------:|------------------:|-----------------:|------------------------:|
 | Recency bias | DST-independent | 4 | 2.68 | 2.71 | 3/4 | 0.99 |
+| Recency bias | DST-cascade | 4 | 9.94 | 12.45 | 1/4 | 0.80 |
 | Induction | DST-cascade | 10 | 11.89 | 19.95 | 1/10 | 0.60 |
 
-Recency bias steering is nearly as selective with a single channel as with the full vector (ratio 0.99) — the signal is concentrated. Induction steering requires the full vector for best selectivity (ratio 0.60) — the signal is more distributed across dimensions. Both families substantially outperform random-direction baselines, confirming that steering is not a noise artifact.
+### Same-model comparison (DST-cascade)
 
-This contrast has implications for interpretability methodology: **the right steering granularity is task-dependent**. Recency bias can be steered at the single-channel level with no loss of selectivity, suggesting a sparse, localized mechanism. Induction requires coordinated intervention across multiple channels, consistent with the probe-causal dissociation found in thread 7 (probe-promoted channels H4 are not the causally important channels H2/H5). A single interpretability approach — whether per-channel or whole-vector — will not be equally appropriate for all behaviors. This argues for task-aware intervention strategies rather than a one-size-fits-all methodology.
+The C-71 recency ratio (0.80) is lower than the E2 ratio (0.99), indicating some model dependence. But the key contrast holds on the same model: recency channelized/whole ratio (0.80) exceeds induction (0.60). The task-dependent signal concentration is not a model artifact.
+
+Recency bias steering is more selective with a single channel relative to the full vector than induction steering. This is consistent with the probe-causal dissociation found in thread 7: recency has a weaker dissociation (Spearman = -0.060) while induction has a stronger one (Spearman = -0.363), suggesting recency's steering signal is more concentrated in identifiable channels.
+
+This contrast has implications for interpretability methodology: **the right steering granularity is task-dependent**. Recency bias can be steered at the single-channel level with modest selectivity loss, suggesting a more localized mechanism. Induction requires coordinated intervention across multiple channels. A single interpretability approach — whether per-channel or whole-vector — will not be equally appropriate for all behaviors. This argues for task-aware intervention strategies rather than a one-size-fits-all methodology.
 
 ## Current state
 - Code is solid (`steering.selectivity` — 33.9 KB, the largest module)
-- Two target families tested (recency, induction) with contrasting results
+- Two target families tested on the same model (DST-cascade) with contrasting results
+- Additional recency comparison on DST-independent confirms the pattern
 - Coreference not tested as target — zero promoted channels on both models suggests signal is too distributed for channelized analysis
 
 ## Gaps
 - Coreference selectivity remains untested (likely requires different approach than per-channel)
-- Only one model per family tested so far
 
 ## Package dependencies
 `steering.selectivity`, `steering.controls`, `steering.interventions`, `common.*`

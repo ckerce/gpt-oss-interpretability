@@ -1,0 +1,2232 @@
+{
+  "run_id": "selectivity_c71_recency_full",
+  "model_id": "C-71",
+  "phase": "steering",
+  "schema_version": "1.0.0",
+  "results": [
+    {
+      "heldout_case_id": "recency_001",
+      "selected_channelized_row": {
+        "layer": 5,
+        "head": 3,
+        "scale": -8.0,
+        "train_selectivity": 11.39421453282382,
+        "train_mean_target_local_effect": 1.0411667823791504,
+        "train_mean_off_target_local_effect": 0.0913767929662738,
+        "train_mean_raw_norm": 2.746060927708944
+      },
+      "selected_whole_vector_row": {
+        "layer": 4,
+        "scale": -8.0,
+        "train_selectivity": 14.854193427853692,
+        "train_mean_target_local_effect": 5.7373935381571455,
+        "train_mean_off_target_local_effect": 0.3862473964691162,
+        "train_mean_raw_norm": 7.465893427530925
+      },
+      "channelized": {
+        "condition": "channelized",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_001",
+        "target_local_effect": 0.30602574348449707,
+        "target_total_effect": 0.30602550506591797,
+        "mean_abs_off_target_local_effect": 0.057838264264558494,
+        "non_target_kl": 0.0022605801932513714,
+        "tail_fraction": 7.790807470449468e-07,
+        "raw_norm": 1.3728712797164917,
+        "effect_per_unit_norm": 0.2229092763508708,
+        "selectivity": 5.291060293315549,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.09108304977416992
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.08003115653991699
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.047492027282714844
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.06502628326416016
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.061757802963256836
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.06444311141967773
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.09510040283203125
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.009024620056152344
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.030960559844970703
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.02127361297607422
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.03920125961303711
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.02638840675354004
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.0536494255065918
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.023331165313720703
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.06221199035644531
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.05628204345703125
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.04887795448303223
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.0790863037109375
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.1437058448791504
+          }
+        ],
+        "readout_decomposition": {
+          "combined_effect": -0.30602574348449707,
+          "xt_effect": -0.9927902221679688,
+          "xe_effect": 0.0,
+          "transfer_ratio": 0.0
+        }
+      },
+      "whole_vector": {
+        "condition": "whole_vector",
+        "layer": 4,
+        "scale": -8.0,
+        "head": null,
+        "control_head": null,
+        "heldout_case_id": "recency_001",
+        "target_local_effect": 1.3956108093261719,
+        "target_total_effect": 1.3956098556518555,
+        "mean_abs_off_target_local_effect": 0.3251881850393195,
+        "non_target_kl": 0.15542978048324585,
+        "tail_fraction": 6.833387658765221e-07,
+        "raw_norm": 5.764324188232422,
+        "effect_per_unit_norm": 0.2421117834030295,
+        "selectivity": 4.291702077544497,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 1.1051416397094727
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.29399752616882324
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.5107975006103516
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.4043397903442383
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.5899631977081299
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.23192191123962402
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.5325760841369629
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.21997547149658203
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.38709497451782227
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.31081581115722656
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.199457049369812
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.21602296829223633
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.1941380500793457
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.09122443199157715
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.07829391956329346
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.042823076248168945
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.35311150550842285
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.15505027770996094
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.26183032989501953
+          }
+        ]
+      },
+      "random_channel": {
+        "condition": "random_channel",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": 4,
+        "heldout_case_id": "recency_001",
+        "target_local_effect": 0.3296356201171875,
+        "target_total_effect": 0.3296346664428711,
+        "mean_abs_off_target_local_effect": 0.061034911557247766,
+        "non_target_kl": 0.009651318192481995,
+        "tail_fraction": 2.8931250669035173e-06,
+        "raw_norm": 1.3728713989257812,
+        "effect_per_unit_norm": 0.24010669926922115,
+        "selectivity": 5.400771651942272,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.005554676055908203
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.05399584770202637
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.024407386779785156
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.06244373321533203
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.026342391967773438
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.12712836265563965
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.22395110130310059
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.012973785400390625
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.12195849418640137
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.07725238800048828
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.048474669456481934
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.0371251106262207
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.03659343719482422
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.00953364372253418
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.015147209167480469
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.03838181495666504
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.04564499855041504
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.0027017593383789062
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.19005250930786133
+          }
+        ]
+      },
+      "random_direction": {
+        "condition": "random_direction",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_001",
+        "target_local_effect": 0.013491392135620117,
+        "target_total_effect": 0.013491630554199219,
+        "mean_abs_off_target_local_effect": 0.028451885047711824,
+        "non_target_kl": 0.0004727310733869672,
+        "tail_fraction": 1.767159115006715e-05,
+        "raw_norm": 1.3728713989257812,
+        "effect_per_unit_norm": 0.009827134680041124,
+        "selectivity": 0.4741827162944035,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.051952362060546875
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.028451204299926758
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.0518341064453125
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.0009946823120117188
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.01578354835510254
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.012921571731567383
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.09300875663757324
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.027092933654785156
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.06576991081237793
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.027698516845703125
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.007779061794281006
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.010182857513427734
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.01873040199279785
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.028430461883544922
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.011319756507873535
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.023855924606323242
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.02097940444946289
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.04034137725830078
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.0034589767456054688
+          }
+        ]
+      },
+      "channelized_beats_whole_vector": true,
+      "alignment_checks": [
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_001",
+          "whole_vector_cosine": 0.17666325548330988,
+          "target_head_cosine": 0.2099008931984728
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_002",
+          "whole_vector_cosine": -0.02172075389419149,
+          "target_head_cosine": 0.0294041944925427
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_003",
+          "whole_vector_cosine": -0.1654121755273477,
+          "target_head_cosine": 0.11864482281150779
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_004",
+          "whole_vector_cosine": -0.028373054855154702,
+          "target_head_cosine": -0.04982491627125478
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_005",
+          "whole_vector_cosine": 0.12381586079759786,
+          "target_head_cosine": 0.17852473583100947
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_006",
+          "whole_vector_cosine": -0.2781742451638274,
+          "target_head_cosine": -0.10469929388652886
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_007",
+          "whole_vector_cosine": -0.5807527862049452,
+          "target_head_cosine": 0.14935200921891614
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_008",
+          "whole_vector_cosine": 0.1400739046409799,
+          "target_head_cosine": -0.03558601293482691
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_009",
+          "whole_vector_cosine": -0.3042694064823978,
+          "target_head_cosine": -0.0826023561446437
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "induction_010",
+          "whole_vector_cosine": 0.16771548886382864,
+          "target_head_cosine": 0.03755732734080541
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_001",
+          "whole_vector_cosine": 0.035146250058035934,
+          "target_head_cosine": 0.06272648035580913
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_002",
+          "whole_vector_cosine": 0.0750469592895776,
+          "target_head_cosine": 0.02578339891988459
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_003",
+          "whole_vector_cosine": -0.19741669417843988,
+          "target_head_cosine": -0.04321974756071722
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_004",
+          "whole_vector_cosine": 0.09155889735490831,
+          "target_head_cosine": -0.09425780494856893
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_005",
+          "whole_vector_cosine": 0.16435829338566227,
+          "target_head_cosine": 0.297609753199719
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_006",
+          "whole_vector_cosine": -0.3048288118558345,
+          "target_head_cosine": -0.12720297836898994
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_008",
+          "whole_vector_cosine": -0.2324964412836491,
+          "target_head_cosine": -0.15017241955201277
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_009",
+          "whole_vector_cosine": -0.2743867108901809,
+          "target_head_cosine": -0.09043910748320247
+        },
+        {
+          "source_case_id": "recency_001",
+          "off_target_case_id": "coref_010",
+          "whole_vector_cosine": -0.5153328860361188,
+          "target_head_cosine": -0.2526773209838095
+        }
+      ]
+    },
+    {
+      "heldout_case_id": "recency_002",
+      "selected_channelized_row": {
+        "layer": 5,
+        "head": 3,
+        "scale": -8.0,
+        "train_selectivity": 9.764374592650888,
+        "train_mean_target_local_effect": 0.7097559769948324,
+        "train_mean_off_target_local_effect": 0.0726883191811411,
+        "train_mean_raw_norm": 2.1882392962773642
+      },
+      "selected_whole_vector_row": {
+        "layer": 4,
+        "scale": -8.0,
+        "train_selectivity": 11.599860773999163,
+        "train_mean_target_local_effect": 4.128561178843181,
+        "train_mean_off_target_local_effect": 0.3559147182263826,
+        "train_mean_raw_norm": 6.611766497294108
+      },
+      "channelized": {
+        "condition": "channelized",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_002",
+        "target_local_effect": 1.3002581596374512,
+        "target_total_effect": 1.3002586364746094,
+        "mean_abs_off_target_local_effect": 0.11390368561995656,
+        "non_target_kl": 0.007630444131791592,
+        "tail_fraction": 3.6672485367678337e-07,
+        "raw_norm": 3.0463361740112305,
+        "effect_per_unit_norm": 0.42682687837611505,
+        "selectivity": 11.41541779408092,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.05998802185058594
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.2616231441497803
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.14781951904296875
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.15785789489746094
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.16542935371398926
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.03392457962036133
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.08733582496643066
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.15469074249267578
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.11736631393432617
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.1853342056274414
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.14277219772338867
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.08095836639404297
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.00917673110961914
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.194169282913208
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.01693439483642578
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.07481670379638672
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.13556885719299316
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.06541633605957031
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.07298755645751953
+          }
+        ],
+        "readout_decomposition": {
+          "combined_effect": -1.3002581596374512,
+          "xt_effect": -6.04438591003418,
+          "xe_effect": 0.0,
+          "transfer_ratio": 0.0
+        }
+      },
+      "whole_vector": {
+        "condition": "whole_vector",
+        "layer": 4,
+        "scale": -8.0,
+        "head": null,
+        "control_head": null,
+        "heldout_case_id": "recency_002",
+        "target_local_effect": 6.222107887268066,
+        "target_total_effect": 6.222107887268066,
+        "mean_abs_off_target_local_effect": 0.4161862197675203,
+        "non_target_kl": 0.05058189108967781,
+        "tail_fraction": 0.0,
+        "raw_norm": 8.326704978942871,
+        "effect_per_unit_norm": 0.7472473088698289,
+        "selectivity": 14.950297707463037,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 1.1681079864501953
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.11531496047973633
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 1.5504264831542969
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.4111900329589844
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.06882405281066895
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.639329195022583
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 1.2896370887756348
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 1.0566987991333008
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.004102945327758789
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.1277484893798828
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.34306108951568604
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.02124476432800293
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.1511526107788086
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.09623289108276367
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.18179619312286377
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.40323472023010254
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.16320252418518066
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.10105228424072266
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.01518106460571289
+          }
+        ]
+      },
+      "random_channel": {
+        "condition": "random_channel",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": 4,
+        "heldout_case_id": "recency_002",
+        "target_local_effect": 0.9868011474609375,
+        "target_total_effect": 0.9867997169494629,
+        "mean_abs_off_target_local_effect": 0.11246230727747868,
+        "non_target_kl": 0.0027741114608943462,
+        "tail_fraction": 1.4496472283469818e-06,
+        "raw_norm": 3.0463361740112305,
+        "effect_per_unit_norm": 0.3239304827482575,
+        "selectivity": 8.77450562192539,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.08827495574951172
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.3023667335510254
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.11727142333984375
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.07574176788330078
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.05084705352783203
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.06774067878723145
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.3984489440917969
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.1254415512084961
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.01640176773071289
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.149658203125
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.18408536911010742
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.025506019592285156
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.009476661682128906
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.1788005828857422
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.20757579803466797
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.03995871543884277
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.04304766654968262
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.039752960205078125
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.016386985778808594
+          }
+        ]
+      },
+      "random_direction": {
+        "condition": "random_direction",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_002",
+        "target_local_effect": 0.14860916137695312,
+        "target_total_effect": 0.14860773086547852,
+        "mean_abs_off_target_local_effect": 0.14392556014813876,
+        "non_target_kl": 0.007992351427674294,
+        "tail_fraction": 9.626090555842556e-06,
+        "raw_norm": 3.0463361740112305,
+        "effect_per_unit_norm": 0.04878291589902686,
+        "selectivity": 1.0325418308186096,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.17413663864135742
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.13240909576416016
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.22317981719970703
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.050766944885253906
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.08431506156921387
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.13636207580566406
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.3661015033721924
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.13183879852294922
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.46820688247680664
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.07791709899902344
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.05841672420501709
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.18385744094848633
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.19809770584106445
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.11058163642883301
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.04425668716430664
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.0739893913269043
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.08639073371887207
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.025852680206298828
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.10790872573852539
+          }
+        ]
+      },
+      "channelized_beats_whole_vector": false,
+      "alignment_checks": [
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_001",
+          "whole_vector_cosine": -0.17374338029125372,
+          "target_head_cosine": -0.050299678930049316
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_002",
+          "whole_vector_cosine": 0.051139152775559006,
+          "target_head_cosine": -0.11618552083967838
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_003",
+          "whole_vector_cosine": 0.22118616366327223,
+          "target_head_cosine": 0.12269731866273956
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_004",
+          "whole_vector_cosine": 0.15813398911788396,
+          "target_head_cosine": 0.14930058199361174
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_005",
+          "whole_vector_cosine": -0.0429800935215439,
+          "target_head_cosine": -0.15471178783856798
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_006",
+          "whole_vector_cosine": 0.1371361730741281,
+          "target_head_cosine": -0.05813204833397938
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_007",
+          "whole_vector_cosine": 0.2273988445927492,
+          "target_head_cosine": -0.1120544698955388
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_008",
+          "whole_vector_cosine": -0.19568137196911442,
+          "target_head_cosine": -0.1366786806334339
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_009",
+          "whole_vector_cosine": 0.11906058283469799,
+          "target_head_cosine": -0.08737635768847395
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "induction_010",
+          "whole_vector_cosine": -0.06887969656692063,
+          "target_head_cosine": -0.23497614737805153
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_001",
+          "whole_vector_cosine": 0.023782695971134426,
+          "target_head_cosine": 0.1618164239389686
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_002",
+          "whole_vector_cosine": 0.012867368615188272,
+          "target_head_cosine": 0.091409317914572
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_003",
+          "whole_vector_cosine": 0.1829646776698557,
+          "target_head_cosine": -0.02307642381566136
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_004",
+          "whole_vector_cosine": -0.14305542104567687,
+          "target_head_cosine": -0.11163576745765845
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_005",
+          "whole_vector_cosine": 0.029294771033905286,
+          "target_head_cosine": -0.04313693981289463
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_006",
+          "whole_vector_cosine": 0.1193552574221328,
+          "target_head_cosine": 0.06025471447924689
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_008",
+          "whole_vector_cosine": 0.24696631614497302,
+          "target_head_cosine": 0.12575797836150468
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_009",
+          "whole_vector_cosine": 0.13777739151136442,
+          "target_head_cosine": -0.05235564235125047
+        },
+        {
+          "source_case_id": "recency_002",
+          "off_target_case_id": "coref_010",
+          "whole_vector_cosine": 0.29691103739301394,
+          "target_head_cosine": 0.07005820427198851
+        }
+      ]
+    },
+    {
+      "heldout_case_id": "recency_003",
+      "selected_channelized_row": {
+        "layer": 5,
+        "head": 3,
+        "scale": -8.0,
+        "train_selectivity": 11.153574456467798,
+        "train_mean_target_local_effect": 0.9236376285552979,
+        "train_mean_off_target_local_effect": 0.08281090803313673,
+        "train_mean_raw_norm": 2.452980955441793
+      },
+      "selected_whole_vector_row": {
+        "layer": 4,
+        "scale": -8.0,
+        "train_selectivity": 13.488365871681465,
+        "train_mean_target_local_effect": 4.8536020914713545,
+        "train_mean_off_target_local_effect": 0.35983618309623316,
+        "train_mean_raw_norm": 7.263278643290202
+      },
+      "channelized": {
+        "condition": "channelized",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_003",
+        "target_local_effect": 0.6586132049560547,
+        "target_total_effect": 0.6586122512817383,
+        "mean_abs_off_target_local_effect": 0.08353591906396966,
+        "non_target_kl": 0.0020828989800065756,
+        "tail_fraction": 1.448005734102707e-06,
+        "raw_norm": 2.2521111965179443,
+        "effect_per_unit_norm": 0.29244257831245457,
+        "selectivity": 7.884191762488489,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.1080474853515625
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.2384326457977295
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.005169868469238281
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.023975372314453125
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.05293393135070801
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.06324195861816406
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.2165205478668213
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.09233760833740234
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.03881478309631348
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.23973941802978516
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.052075207233428955
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.02833414077758789
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.0053179264068603516
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.04587888717651367
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.04497063159942627
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.03840136528015137
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.09488153457641602
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.025893211364746094
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.17221593856811523
+          }
+        ],
+        "readout_decomposition": {
+          "combined_effect": -0.6586132049560547,
+          "xt_effect": -3.0839977264404297,
+          "xe_effect": 0.0,
+          "transfer_ratio": 0.0
+        }
+      },
+      "whole_vector": {
+        "condition": "whole_vector",
+        "layer": 4,
+        "scale": -8.0,
+        "head": null,
+        "control_head": null,
+        "heldout_case_id": "recency_003",
+        "target_local_effect": 4.046985149383545,
+        "target_total_effect": 4.046985149383545,
+        "mean_abs_off_target_local_effect": 0.4044218251579686,
+        "non_target_kl": 0.052993349730968475,
+        "tail_fraction": 0.0,
+        "raw_norm": 6.37216854095459,
+        "effect_per_unit_norm": 0.6351032813041825,
+        "selectivity": 10.006841613463315,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.7346301078796387
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.0025693178176879883
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.6141538619995117
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.572075366973877
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.002232789993286133
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.45069193840026855
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 1.3340119123458862
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.15569210052490234
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.014349937438964844
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.30700016021728516
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.4127197265625
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.0826563835144043
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.34212541580200195
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.5905272960662842
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.3193172216415405
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.03520011901855469
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.7018558979034424
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.31539487838745117
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.696810245513916
+          }
+        ]
+      },
+      "random_channel": {
+        "condition": "random_channel",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": 0,
+        "heldout_case_id": "recency_003",
+        "target_local_effect": 0.5728049278259277,
+        "target_total_effect": 0.5728039741516113,
+        "mean_abs_off_target_local_effect": 0.12567487515901266,
+        "non_target_kl": 0.01294318400323391,
+        "tail_fraction": 1.6649226601801279e-06,
+        "raw_norm": 2.2521111965179443,
+        "effect_per_unit_norm": 0.254341317032462,
+        "selectivity": 4.557831683549913,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.13368844985961914
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.022857189178466797
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.009169578552246094
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.1219940185546875
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.12600231170654297
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.12910699844360352
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.41643333435058594
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.1347360610961914
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.02527022361755371
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.023468971252441406
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.07138633728027344
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.06311178207397461
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.16813111305236816
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.020581722259521484
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.06021380424499512
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.13941550254821777
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.27840232849121094
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.12798500061035156
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.31586790084838867
+          }
+        ]
+      },
+      "random_direction": {
+        "condition": "random_direction",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_003",
+        "target_local_effect": 0.026893138885498047,
+        "target_total_effect": 0.02689218521118164,
+        "mean_abs_off_target_local_effect": 0.12818122537512527,
+        "non_target_kl": 0.007703239563852549,
+        "tail_fraction": 3.5462879231164776e-05,
+        "raw_norm": 2.2521111965179443,
+        "effect_per_unit_norm": 0.0119413015339022,
+        "selectivity": 0.20980559989807138,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.11981582641601562
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.25379347801208496
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.033936500549316406
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.05279541015625
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.0070993900299072266
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.0810689926147461
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.2082991600036621
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.0025539398193359375
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.2177567481994629
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.034514427185058594
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.12983286380767822
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.07224154472351074
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.16876745223999023
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.1010127067565918
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.09635567665100098
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.07316708564758301
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.18101835250854492
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.19461822509765625
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.4067955017089844
+          }
+        ]
+      },
+      "channelized_beats_whole_vector": false,
+      "alignment_checks": [
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_001",
+          "whole_vector_cosine": -0.16782916588706254,
+          "target_head_cosine": 0.03353241038748185
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_002",
+          "whole_vector_cosine": -0.0015229096499188594,
+          "target_head_cosine": -0.09460092886383042
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_003",
+          "whole_vector_cosine": 0.15495063676125942,
+          "target_head_cosine": -0.021104944352475462
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_004",
+          "whole_vector_cosine": 0.032693112619631086,
+          "target_head_cosine": -0.14828319089817943
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_005",
+          "whole_vector_cosine": -0.1511513445187096,
+          "target_head_cosine": -0.16485563301046885
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_006",
+          "whole_vector_cosine": 0.1968347735093318,
+          "target_head_cosine": -0.13431052159501103
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_007",
+          "whole_vector_cosine": 0.3570260497821405,
+          "target_head_cosine": -0.12898298892968327
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_008",
+          "whole_vector_cosine": -0.17082753322253244,
+          "target_head_cosine": 0.10790900215937993
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_009",
+          "whole_vector_cosine": 0.23149349959651186,
+          "target_head_cosine": 0.08731100930793062
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "induction_010",
+          "whole_vector_cosine": -0.19777188256625236,
+          "target_head_cosine": -0.26574510259783024
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_001",
+          "whole_vector_cosine": -0.04910623970765183,
+          "target_head_cosine": -0.014474454127887434
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_002",
+          "whole_vector_cosine": -0.04191602900087436,
+          "target_head_cosine": -0.004365065281608631
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_003",
+          "whole_vector_cosine": 0.18522178619814814,
+          "target_head_cosine": -0.023981353409274306
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_004",
+          "whole_vector_cosine": -0.14999708371863854,
+          "target_head_cosine": 0.008628845598765483
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_005",
+          "whole_vector_cosine": -0.15142102511320943,
+          "target_head_cosine": -0.1545826024081397
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_006",
+          "whole_vector_cosine": 0.28233510089712,
+          "target_head_cosine": -0.02626990478224031
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_008",
+          "whole_vector_cosine": 0.24208256284601737,
+          "target_head_cosine": 0.17192140947464415
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_009",
+          "whole_vector_cosine": 0.32127805797208786,
+          "target_head_cosine": -0.06710366003347672
+        },
+        {
+          "source_case_id": "recency_003",
+          "off_target_case_id": "coref_010",
+          "whole_vector_cosine": 0.445755018640892,
+          "target_head_cosine": 0.20137824273523164
+        }
+      ]
+    },
+    {
+      "heldout_case_id": "recency_004",
+      "selected_channelized_row": {
+        "layer": 5,
+        "head": 3,
+        "scale": -8.0,
+        "train_selectivity": 8.872281476680067,
+        "train_mean_target_local_effect": 0.7549657026926676,
+        "train_mean_off_target_local_effect": 0.08509262298282824,
+        "train_mean_raw_norm": 2.223772883415222
+      },
+      "selected_whole_vector_row": {
+        "layer": 4,
+        "scale": -8.0,
+        "train_selectivity": 10.180434828569867,
+        "train_mean_target_local_effect": 3.8882346153259277,
+        "train_mean_off_target_local_effect": 0.3819320766549361,
+        "train_mean_raw_norm": 6.821065902709961
+      },
+      "channelized": {
+        "condition": "channelized",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_004",
+        "target_local_effect": 1.1646289825439453,
+        "target_total_effect": 1.1646284461021423,
+        "mean_abs_off_target_local_effect": 0.07669077421489515,
+        "non_target_kl": 0.003411821788176894,
+        "tail_fraction": 4.606119700870398e-07,
+        "raw_norm": 2.9397354125976562,
+        "effect_per_unit_norm": 0.3961679604066262,
+        "selectivity": 15.186037622733336,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.0860738754272461
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.13392972946166992
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.2001943588256836
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.04381370544433594
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.0861046314239502
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.07530665397644043
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.07977104187011719
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.08662891387939453
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.2257704734802246
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.03280830383300781
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.06499207019805908
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.056377410888671875
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.06015205383300781
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.0022139549255371094
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.07142269611358643
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.0174710750579834
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.09869909286499023
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.009705543518066406
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.025689125061035156
+          }
+        ],
+        "readout_decomposition": {
+          "combined_effect": -1.1646289825439453,
+          "xt_effect": -5.071500778198242,
+          "xe_effect": 0.0,
+          "transfer_ratio": 0.0
+        }
+      },
+      "whole_vector": {
+        "condition": "whole_vector",
+        "layer": 4,
+        "scale": -8.0,
+        "head": null,
+        "control_head": null,
+        "heldout_case_id": "recency_004",
+        "target_local_effect": 6.943087577819824,
+        "target_total_effect": 6.94308340549469,
+        "mean_abs_off_target_local_effect": 0.3381341444818597,
+        "non_target_kl": 0.030680902302265167,
+        "tail_fraction": 6.00932595880298e-07,
+        "raw_norm": 7.6988067626953125,
+        "effect_per_unit_norm": 0.9018394397769097,
+        "selectivity": 20.533529935165447,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.13646268844604492
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.7560373544692993
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.25691795349121094
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.2627420425415039
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.9131171703338623
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.7091999053955078
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.6706633567810059
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.7474098205566406
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.03367161750793457
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.27007102966308594
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.008883833885192871
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.07350015640258789
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.2551589012145996
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.7397480010986328
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.07885921001434326
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.0234067440032959
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.26108789443969727
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.04919099807739258
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.1784200668334961
+          }
+        ]
+      },
+      "random_channel": {
+        "condition": "random_channel",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": 2,
+        "heldout_case_id": "recency_004",
+        "target_local_effect": 0.885655403137207,
+        "target_total_effect": 0.8856576681137085,
+        "mean_abs_off_target_local_effect": 0.13563264043707596,
+        "non_target_kl": 0.0025986400432884693,
+        "tail_fraction": 2.5573950105223345e-06,
+        "raw_norm": 2.9397356510162354,
+        "effect_per_unit_norm": 0.3012704230161121,
+        "selectivity": 6.529810230658224,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.008067607879638672
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.03019118309020996
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.3074626922607422
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.04681682586669922
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.03475213050842285
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.203233003616333
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.29207611083984375
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.08159637451171875
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.05659627914428711
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.10496234893798828
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.18438029289245605
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.17319917678833008
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.0813591480255127
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.13169574737548828
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.09472894668579102
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.12209391593933105
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.2399439811706543
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.1404399871826172
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.2434244155883789
+          }
+        ]
+      },
+      "random_direction": {
+        "condition": "random_direction",
+        "layer": 5,
+        "scale": -8.0,
+        "head": 3,
+        "control_head": null,
+        "heldout_case_id": "recency_004",
+        "target_local_effect": -0.0416412353515625,
+        "target_total_effect": -0.041644394397735596,
+        "mean_abs_off_target_local_effect": 0.12289669952894512,
+        "non_target_kl": 0.0058187274262309074,
+        "tail_fraction": 7.585765668542116e-05,
+        "raw_norm": 2.9397356510162354,
+        "effect_per_unit_norm": -0.014164959130650938,
+        "selectivity": -0.3388311932799708,
+        "cross_family_rows": [
+          {
+            "case_id": "induction_001",
+            "abs_local_shift": 0.1005702018737793
+          },
+          {
+            "case_id": "induction_002",
+            "abs_local_shift": 0.24486947059631348
+          },
+          {
+            "case_id": "induction_003",
+            "abs_local_shift": 0.08994293212890625
+          },
+          {
+            "case_id": "induction_004",
+            "abs_local_shift": 0.0562896728515625
+          },
+          {
+            "case_id": "induction_005",
+            "abs_local_shift": 0.1943187713623047
+          },
+          {
+            "case_id": "induction_006",
+            "abs_local_shift": 0.07039737701416016
+          },
+          {
+            "case_id": "induction_007",
+            "abs_local_shift": 0.37448573112487793
+          },
+          {
+            "case_id": "induction_008",
+            "abs_local_shift": 0.0890359878540039
+          },
+          {
+            "case_id": "induction_009",
+            "abs_local_shift": 0.016471385955810547
+          },
+          {
+            "case_id": "induction_010",
+            "abs_local_shift": 0.0985269546508789
+          },
+          {
+            "case_id": "coref_001",
+            "abs_local_shift": 0.12913554906845093
+          },
+          {
+            "case_id": "coref_002",
+            "abs_local_shift": 0.07131814956665039
+          },
+          {
+            "case_id": "coref_003",
+            "abs_local_shift": 0.07811737060546875
+          },
+          {
+            "case_id": "coref_004",
+            "abs_local_shift": 0.1512908935546875
+          },
+          {
+            "case_id": "coref_005",
+            "abs_local_shift": 0.1444319486618042
+          },
+          {
+            "case_id": "coref_006",
+            "abs_local_shift": 0.00011873245239257812
+          },
+          {
+            "case_id": "coref_008",
+            "abs_local_shift": 0.034958839416503906
+          },
+          {
+            "case_id": "coref_009",
+            "abs_local_shift": 0.07676887512207031
+          },
+          {
+            "case_id": "coref_010",
+            "abs_local_shift": 0.31398844718933105
+          }
+        ]
+      },
+      "channelized_beats_whole_vector": false,
+      "alignment_checks": [
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_001",
+          "whole_vector_cosine": 0.028317628652727977,
+          "target_head_cosine": -0.07648173109538382
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_002",
+          "whole_vector_cosine": 0.004511585898115381,
+          "target_head_cosine": -0.02053004713388596
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_003",
+          "whole_vector_cosine": 0.013341933114990226,
+          "target_head_cosine": 0.15331090143728637
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_004",
+          "whole_vector_cosine": -0.0951153059610921,
+          "target_head_cosine": -0.18377449404767554
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_005",
+          "whole_vector_cosine": -0.05385991012811394,
+          "target_head_cosine": -0.1213392782529203
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_006",
+          "whole_vector_cosine": 0.03707819379522236,
+          "target_head_cosine": 0.043633734570107566
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_007",
+          "whole_vector_cosine": -0.08070217148814371,
+          "target_head_cosine": -0.16742039316662044
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_008",
+          "whole_vector_cosine": -0.04919743104901856,
+          "target_head_cosine": -0.0577570380972249
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_009",
+          "whole_vector_cosine": 0.02820890371597758,
+          "target_head_cosine": -0.1506588005250827
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "induction_010",
+          "whole_vector_cosine": -8.137915021431665e-05,
+          "target_head_cosine": -0.04545583461775479
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_001",
+          "whole_vector_cosine": 0.06469201819820782,
+          "target_head_cosine": 0.11615465124860092
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_002",
+          "whole_vector_cosine": 0.04317694025476117,
+          "target_head_cosine": 0.06241274405947018
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_003",
+          "whole_vector_cosine": 0.03321901427991704,
+          "target_head_cosine": 0.02365807025679034
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_004",
+          "whole_vector_cosine": 0.03371238835819951,
+          "target_head_cosine": 0.041451023746944204
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_005",
+          "whole_vector_cosine": -0.06960197841283265,
+          "target_head_cosine": -0.02802319333546412
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_006",
+          "whole_vector_cosine": 0.04636799134576288,
+          "target_head_cosine": -0.03715803104770974
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_008",
+          "whole_vector_cosine": -0.01721345031324568,
+          "target_head_cosine": -0.05120289603701883
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_009",
+          "whole_vector_cosine": 0.04776810308473093,
+          "target_head_cosine": -0.017393270251868147
+        },
+        {
+          "source_case_id": "recency_004",
+          "off_target_case_id": "coref_010",
+          "whole_vector_cosine": -0.01537009076920088,
+          "target_head_cosine": 0.043936872148112684
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "phase_name": "channelized_vs_whole_vector_selectivity",
+    "target_family": "recency_bias",
+    "off_target_families": [
+      "coreference",
+      "induction"
+    ],
+    "target_case_ids": [
+      "recency_001",
+      "recency_002",
+      "recency_003",
+      "recency_004"
+    ],
+    "off_target_case_ids": [
+      "induction_001",
+      "induction_002",
+      "induction_003",
+      "induction_004",
+      "induction_005",
+      "induction_006",
+      "induction_007",
+      "induction_008",
+      "induction_009",
+      "induction_010",
+      "coref_001",
+      "coref_002",
+      "coref_003",
+      "coref_004",
+      "coref_005",
+      "coref_006",
+      "coref_008",
+      "coref_009",
+      "coref_010"
+    ],
+    "n_off_target_cases": 19,
+    "invalid_cases": [
+      {
+        "task_name": "coreference",
+        "case_id": "coref_007",
+        "reason": "coref_007: choices do not diverge in tokenization"
+      }
+    ],
+    "scales": [
+      -8.0,
+      -4.0,
+      -2.0,
+      -1.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "stream": "x_t",
+    "stage": "post_block",
+    "candidate_layers": null,
+    "candidate_heads": null,
+    "whole_layers": null,
+    "sanity_check": {
+      "n_monotonic_cases": 4,
+      "passes_minimum_bar": true,
+      "per_case": [
+        {
+          "case_id": "recency_001",
+          "scales": [
+            -1.0,
+            -2.0,
+            -4.0,
+            -8.0
+          ],
+          "directed_local_effects": [
+            0.037934303283691406,
+            0.07598304748535156,
+            0.15237832069396973,
+            0.30602574348449707
+          ],
+          "monotonic": true
+        },
+        {
+          "case_id": "recency_002",
+          "scales": [
+            -1.0,
+            -2.0,
+            -4.0,
+            -8.0
+          ],
+          "directed_local_effects": [
+            0.16254138946533203,
+            0.3254084587097168,
+            0.651458740234375,
+            1.3002581596374512
+          ],
+          "monotonic": true
+        },
+        {
+          "case_id": "recency_003",
+          "scales": [
+            -1.0,
+            -2.0,
+            -4.0,
+            -8.0
+          ],
+          "directed_local_effects": [
+            0.07747888565063477,
+            0.1563715934753418,
+            0.31835508346557617,
+            0.6586132049560547
+          ],
+          "monotonic": true
+        },
+        {
+          "case_id": "recency_004",
+          "scales": [
+            -1.0,
+            -2.0,
+            -4.0,
+            -8.0
+          ],
+          "directed_local_effects": [
+            0.1437387466430664,
+            0.2882575988769531,
+            0.5791387557983398,
+            1.1646289825439453
+          ],
+          "monotonic": true
+        }
+      ]
+    },
+    "mean_heldout_channelized_selectivity": 9.944176868154573,
+    "mean_heldout_whole_vector_selectivity": 12.445592833409073,
+    "mean_heldout_random_channel_selectivity": 6.3157297970189505,
+    "mean_heldout_random_direction_selectivity": 0.34442473843277843,
+    "channelized_wins": 1,
+    "n_folds": 4,
+    "global_best_channelized_row": {
+      "condition": "channelized",
+      "layer": 5,
+      "head": 3,
+      "scale": -8.0,
+      "train_mean_target_local_effect": 0.8573815226554871,
+      "train_mean_target_total_effect": 0.857381209731102,
+      "train_mean_off_target_local_effect": 0.08299216079084497,
+      "train_mean_non_target_kl": 0.003846436273306608,
+      "train_mean_tail_fraction": 7.636058262278692e-07,
+      "train_mean_raw_norm": 2.4027635157108307,
+      "train_selectivity": 10.330873596799597,
+      "train_effect_per_unit_norm": 0.35683142225581876
+    }
+  }
+}

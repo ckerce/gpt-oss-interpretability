@@ -20,8 +20,8 @@ FIGS.mkdir(exist_ok=True)
 
 FAMILIES = [
     {
-        "name": "Recency bias\n(DST-independent)",
-        "path": "runs/selectivity_e2_recency_full/selectivity_comparison.json",
+        "name": "Recency bias\n(DST-cascade)",
+        "path": "runs/selectivity_c71_recency_full/selectivity_comparison.json",
     },
     {
         "name": "Induction\n(DST-cascade)",

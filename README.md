@@ -50,6 +50,8 @@ Standard induction benchmarks use sequences like "sun moon star sun moon star su
 
 The model extracts the stable structural regularity `7 B 2 D 5` despite the varying letter. This is genuine in-context pattern recognition — not retrieval of a memorized sequence. The noisy case requires one additional layer to converge (L20 vs L19), reflecting the extra computation needed to distinguish structure from noise.
 
+This result connects to two lines of work. First, Olsson et al. (2022) identified **induction heads** as specific attention circuits that implement match-and-copy behavior, forming through a phase transition in middle-to-late layers — consistent with our observation that structural induction requires deep processing (L19–L20) while simpler tasks like capitalization resolve at L1–2. Second, recent architectural work has shown that early transformer layers primarily perform memorization-like retrieval rather than genuine computation: DeepSeek's **Engram module** (2025) replaces early FFN layers with O(1) hash-based n-gram lookup with no loss in model quality, validating that early layers can be externalized as non-parametric memory. The contrast is stark: the early-layer tasks that Engram can replace (pattern recall, factual retrieval) converge at L1–5 in our logit-lens analysis, while the structural computation that *cannot* be replaced by lookup (noisy induction) converges at L19–L20.
+
 ### 4. Direct-vocabulary steering works with positional specificity
 
 Exact vocabulary-space directions (`W[token_A] - W[token_B]`) applied in the contextual stream at late layers cleanly flip model answers:
