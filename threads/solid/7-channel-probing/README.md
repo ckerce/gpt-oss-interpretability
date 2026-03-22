@@ -1,6 +1,7 @@
 # Thread 7: Channel-Level Probing
 
 **Status**: Solid — **Objective**: Resolve steering to channel level
+**Model**: DST-cascade (companion 71M-parameter dual-stream model) — *not* gpt-oss-20b. Channel-level analysis requires architectural structure that isolates head contributions; gpt-oss-20b's extreme head redundancy (thread 5, σ = 0.042) makes per-channel decomposition uninformative at production scale without first breaking the Hydra effect.
 
 ## Problem
 Thread 6 shows that steering works at the whole-vector level: adding a vocabulary-space direction to the full hidden state at the right layer and position flips model answers. But which dimensions of that hidden state are actually carrying the signal? A 4096-dimensional steering vector might have its effect concentrated in a handful of channels, or it might be diffusely spread across all of them. Knowing this determines whether the model has *sparse, interpretable features* at the channel level or whether meaning is encoded in a distributed, superposition-like manner within layers.

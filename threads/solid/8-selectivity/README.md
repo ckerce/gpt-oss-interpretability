@@ -1,6 +1,7 @@
 # Thread 8: Selectivity
 
 **Status**: Solid — **Objective**: Measure steering specificity
+**Model**: DST-cascade and DST-independent (companion 71M-parameter dual-stream models) — *not* gpt-oss-20b. Selectivity analysis requires architectural structure where channels are separable; results establish the methodology and task-dependent baselines that would apply to any model where head specialization has been induced.
 
 ## Problem
 A steering intervention that flips the target answer (thread 6) is only useful if it doesn't simultaneously break everything else. If adding a `W["small"] - W["large"]` direction changes the answer from "large" to "small" but also degrades fluency, changes unrelated predictions, or shifts the model's confidence distribution on other tokens, the intervention isn't mechanistically clean — it's more like damage that happens to produce the desired side effect. Selectivity quantifies this: does the intervention affect *only* the intended behavior?

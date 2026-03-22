@@ -182,6 +182,19 @@ This project is organized as 13 research threads at three maturity levels. See *
 
 Threads 11–13 (CASCADE distillation, geometric framework, attention path sensitivity) have theoretical specifications but incomplete or stub implementations. See [THREAD_MAP.md](THREAD_MAP.md) for details.
 
+### How the threads fit together
+
+The 8 solid threads form a three-phase argument:
+
+**Phase 1 — What does gpt-oss-20b compute, and where? (Threads 1–3)**
+Thread 1 (convergence) establishes *when* each task gets resolved: capitalization at L1–2, coreference at L5, induction at L17+. Thread 2 (ablation) establishes *which layers are causally critical*: L19–21, not just correlated. Thread 3 (analysis set) establishes *which test cases support clean mechanistic claims*: only 45% pass the convergence-stability filter. These three threads are prerequisites — without them, any downstream intervention claim is ungrounded.
+
+**Phase 2 — Can we steer it, and how do directions arise? (Threads 4–6)**
+Thread 4 (decision trajectories) shows that the model's own layer-by-layer prediction changes are self-supervised steering directions — no curated contrast pairs needed. Thread 5 (Hydra) explains *why* standard models resist head-level intervention: 64 heads at L20 are nearly identical in their effect (σ = 0.042), so no individual head is a lever. Thread 6 (direct vocab steering) shows that despite the Hydra effect, vocabulary-space directions applied at the right layer and position cleanly flip answers — with positional specificity confirming genuine mechanism rather than diffuse perturbation.
+
+**Phase 3 — How selective and channel-specific is the steering? (Threads 7–8)**
+These threads run on DST-cascade companion models (not gpt-oss-20b), where architectural structure makes channel-level analysis tractable. Thread 7 (channel probing) finds that the channels that *probe well* for the answer (H4) are systematically *not* the channels whose intervention most changes the output (H2, H5) — probing and causation dissociate. Thread 8 (selectivity) shows the practical consequence: recency steering concentrates in a few channels (ratio 0.99) while induction is distributed (ratio 0.60), so the right steering granularity is task-dependent.
+
 ## Repository Structure
 
 ```
@@ -227,7 +240,8 @@ This toolkit validates at production scale the same ideas demonstrated at contro
 
 - [**The Dual-Stream Transformer**](https://arxiv.org/abs/2603.07461) — interpretability through stream separation (2.5% loss cost for full decomposition)
 - [**Engineering Verifiable Modularity via Per-Layer Supervision**](https://arxiv.org/abs/2603.18029) — PLS + gated attention yields 5-23x larger ablation effects, exposing hidden modularity
-- [**Interpretable-by-Design Transformers via Architectural Stream Independence**](https://arxiv.org/abs/2603.07482) — delayed position/semantic integration enables surgical intervention with 7x coreference advantage
+- [**Interpretable-by-Design Transformers via Architectural Stream Independence**](https://arxiv.org/abs/2603.07482) — delayed integration concentrates coreference resolution in L3–L4 vs. distributed across layers in standard transformers; targeted head suppression produces 4.25× less collateral damage (Cohen's d: −0.158 vs. −0.672)
+- **Stream Separation Improves Bregman Conditioning in Transformers** (in preparation) — geometric account of why stream separation aids steerability: standard single-stream transformers have effective rank 8 in 516 dimensions at intermediate layers (linear methods operate in 2% of the geometry); stream separation improves conditioning up to 22× without changing the training objective. Provides a cosine diagnostic for predicting which layers are safe for linear intervention.
 
 ## Design Principles
 
