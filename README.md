@@ -85,20 +85,20 @@ For a fast orientation:
 
 1. [FINDINGS.md](FINDINGS.md) — full phase narratives with figures and induction examples
 2. [THREAD_MAP.md](THREAD_MAP.md) — thread inventory, maturity levels, run counts
-3. `threads/solid/1-convergence-logit-lens/` — task-dependent convergence depth
-4. `threads/solid/2-late-layer-ablation/` — causal bottleneck identification
-5. `threads/solid/3-analysis-set-filtering/` — claim scoping and honest-case selection
-6. `threads/solid/5-hydra-head-redundancy/` — production-scale redundancy result
-7. `threads/solid/14-bregman-geometry/` — geometric link to `arXiv:2603.21317`
+3. [threads/solid/1-convergence-logit-lens/](threads/solid/1-convergence-logit-lens/) — task-dependent convergence depth
+4. [threads/solid/2-late-layer-ablation/](threads/solid/2-late-layer-ablation/) — causal bottleneck identification
+5. [threads/solid/3-analysis-set-filtering/](threads/solid/3-analysis-set-filtering/) — claim scoping and honest-case selection
+6. [threads/solid/5-hydra-head-redundancy/](threads/solid/5-hydra-head-redundancy/) — production-scale redundancy result
+7. [threads/solid/14-bregman-geometry/](threads/solid/14-bregman-geometry/) — geometric link to [arXiv:2603.21317](https://arxiv.org/abs/2603.21317)
 
 Key figures:
 
-- `figures/fig1_convergence_trajectories.png`
-- `figures/fig2_late_layer_ablation.png`
-- `figures/fig3_analysis_set_stratification.png`
-- `figures/fig4_decision_trajectories.png`
-- `figures/fig5_hydra_variance.png`
-- `figures/fig_matched_pair_heatmaps.png`
+- [figures/fig1_convergence_trajectories.png](figures/fig1_convergence_trajectories.png)
+- [figures/fig2_late_layer_ablation.png](figures/fig2_late_layer_ablation.png)
+- [figures/fig3_analysis_set_stratification.png](figures/fig3_analysis_set_stratification.png)
+- [figures/fig4_decision_trajectories.png](figures/fig4_decision_trajectories.png)
+- [figures/fig5_hydra_variance.png](figures/fig5_hydra_variance.png)
+- [figures/fig_matched_pair_heatmaps.png](figures/fig_matched_pair_heatmaps.png)
 
 ## Architecture Target
 
@@ -144,32 +144,32 @@ Only `9/20` cases pass the filter. This is a methodological feature, not a bug: 
 
 ## Research Threads
 
-This project is organized as 14 research threads at three maturity levels. See `THREAD_MAP.md` for the full index with links, run counts, and figures.
+This project is organized as 14 research threads at three maturity levels. See [THREAD_MAP.md](THREAD_MAP.md) for the full index with links, run counts, and figures.
 
 ### Solid
 
 | # | Thread | Model | Problem | Contribution | Impact |
 |---|---|---|---|---|---|
-| 1 | `Convergence` | `gpt-oss-20b` | Where in the network does each task get resolved? | Measures task-dependent convergence depth on a production MoE | Locates computation by task type |
-| 2 | `Late-layer ablation` | `gpt-oss-20b` | Which layers are causally critical? | Production-scale ablation with attention-vs-MoE decomposition | Narrows the target from 24 layers to 3 |
-| 3 | `Analysis set filtering` | `gpt-oss-20b` | Which cases support honest mechanistic claims? | Explicit 4-way stratification by convergence stability | Sets defensible scope for downstream claims |
-| 4 | `Decision trajectories` | `gpt-oss-20b` | Can prediction changes serve as steering directions? | Extracts self-supervised logit-space directions | Removes dependence on curated contrastive pairs |
-| 5 | `Hydra / head redundancy` | `gpt-oss-20b` | Are individual heads specialized or redundant? | Measures Hydra at production scale | Explains why head-level targeting is ineffective |
-| 6 | `Direct vocab steering` | `DST-baseline`, `DST-cascade` | Can exact vocabulary directions flip answers precisely? | Uses raw `W[A] - W[B]` directions | Shows position-specific intervention rather than diffuse perturbation |
-| 7 | `Channel probing` | `DST-cascade` | Which channels carry the steering signal? | Per-channel causal analysis and probe comparison | Shows probing and causation identify different channels |
-| 8 | `Selectivity` | `DST-cascade` | Does steering stay within the target behavior? | Cross-family concentration analysis | Shows intervention granularity is task-dependent |
-| 14 | `Bregman geometry` | 2×2 factorial design (stream separation × per-layer supervision), 4 matched `45.4M`-parameter transformers | Are linear methods geometrically valid at intermediate layers? | Measures the Hessian metric at every intermediate layer; cosine diagnostic predicts safe intervention layers | Explains where linear methods are trustworthy and provides a deployable validity check |
+| 1 | [Convergence](threads/solid/1-convergence-logit-lens/) | `gpt-oss-20b` | Where in the network does each task get resolved? | Measures task-dependent convergence depth on a production MoE | Locates computation by task type |
+| 2 | [Late-layer ablation](threads/solid/2-late-layer-ablation/) | `gpt-oss-20b` | Which layers are causally critical? | Production-scale ablation with attention-vs-MoE decomposition | Narrows the target from 24 layers to 3 |
+| 3 | [Analysis set filtering](threads/solid/3-analysis-set-filtering/) | `gpt-oss-20b` | Which cases support honest mechanistic claims? | Explicit 4-way stratification by convergence stability | Sets defensible scope for downstream claims |
+| 4 | [Decision trajectories](threads/solid/4-decision-trajectories/) | `gpt-oss-20b` | Can prediction changes serve as steering directions? | Extracts self-supervised logit-space directions | Removes dependence on curated contrastive pairs |
+| 5 | [Hydra / head redundancy](threads/solid/5-hydra-head-redundancy/) | `gpt-oss-20b` | Are individual heads specialized or redundant? | Measures Hydra at production scale | Explains why head-level targeting is ineffective |
+| 6 | [Direct vocab steering](threads/solid/6-direct-vocab-steering/) | `DST-baseline`, `DST-cascade` | Can exact vocabulary directions flip answers precisely? | Uses raw `W[A] - W[B]` directions | Shows position-specific intervention rather than diffuse perturbation |
+| 7 | [Channel probing](threads/solid/7-channel-probing/) | `DST-cascade` | Which channels carry the steering signal? | Per-channel causal analysis and probe comparison | Shows probing and causation identify different channels |
+| 8 | [Selectivity](threads/solid/8-selectivity/) | `DST-cascade` | Does steering stay within the target behavior? | Cross-family concentration analysis | Shows intervention granularity is task-dependent |
+| 14 | [Bregman geometry](threads/solid/14-bregman-geometry/) | 2×2 factorial design (stream separation × per-layer supervision), 4 matched `45.4M`-parameter transformers | Are linear methods geometrically valid at intermediate layers? | Measures the Hessian metric at every intermediate layer; cosine diagnostic predicts safe intervention layers | Explains where linear methods are trustworthy and provides a deployable validity check |
 
 ### In Progress
 
 | # | Thread | Model | Problem | Contribution | Impact |
 |---|---|---|---|---|---|
-| 9 | `Feature extraction` | `gpt-oss-20b` | Can computational modes be captured as unified feature vectors? | `6,425D` feature extraction across task families | Suggests task-dependent intrinsic dimensionality |
-| 10 | `Bridge / cross-model` | `gpt-oss-20b`, `Gemma-3-1B` | Do the findings transfer beyond one model? | Screening pipeline for new-model compatibility | Early transfer infrastructure |
+| 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | `gpt-oss-20b` | Can computational modes be captured as unified feature vectors? | `6,425D` feature extraction across task families | Suggests task-dependent intrinsic dimensionality |
+| 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | `gpt-oss-20b`, `Gemma-3-1B` | Do the findings transfer beyond one model? | Screening pipeline for new-model compatibility | Early transfer infrastructure |
 
 ### Theoretical
 
-Threads 11-13 are framework-level threads with documented theory but incomplete implementations. See `THREAD_MAP.md` for details.
+Threads 11-13 are framework-level threads with documented theory but incomplete implementations. See [THREAD_MAP.md](THREAD_MAP.md) for details.
 
 ## Addenda
 
