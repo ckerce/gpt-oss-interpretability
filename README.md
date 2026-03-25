@@ -1,10 +1,12 @@
 # gpt-oss-interpretability
 
-Mechanistic interpretability at production scale: `gpt-oss-20b` and dual-stream transformer comparison.
+Mechanistic interpretability research: production-scale analysis of `gpt-oss-20b`, structured comparison with dual-stream transformer (DST) architectures, and shared tooling connecting the two.
 
 ## Scope
 
-Mechanistic interpretability methods are typically developed on small, well-documented models. This repository tests how far those methods carry at production scale, and what additional interpretability becomes possible when architectural constraints — dual-stream decomposition, frozen symbolic stream — are in place. `gpt-oss-20b` provides the production baseline; the companion DST models provide the interpretability-advantaged comparison condition. `gpt-oss-20b` presents properties that complicate standard analysis — MoE routing with MXFP4-quantized expert weights that bypass hook-based router introspection, alternating sliding/full attention, and limited public documentation — making it a harder test of methodology than analyzing a well-documented dense model. Four companion papers develop the DST architectural techniques:
+This repository contains three things: production-scale mechanistic interpretability experiments on `gpt-oss-20b`, structured comparison experiments using dual-stream transformer (DST) models where architectural constraints make individual channels directly accessible, and the shared tooling connecting both.
+
+The central question is how far standard mechanistic interpretability methods carry at production scale, and what additional interpretability becomes possible under architectural constraints. `gpt-oss-20b` is the production baseline — a 21B-parameter MoE transformer chosen deliberately for its analysis-hostile properties: MoE routing with MXFP4-quantized expert weights that bypass hook-based router introspection, alternating sliding/full attention, and limited public documentation. The DST models are the comparison condition, developed in four companion papers:
 
 - [Engineering Verifiable Modularity in Transformers via Per-Layer Supervision](https://arxiv.org/abs/2603.18029)
 - [The Dual-Stream Transformer: Channelized Architecture for Interpretable Language Modeling](https://arxiv.org/abs/2603.07461)
@@ -15,26 +17,31 @@ Those papers establish what is possible when architectural constraints, particul
 
 ## Overview
 
-Applied to `gpt-oss-20b` without modification, the inspection toolkit that revealed mechanistic structure in small controlled models exposes a clear computational geography in a production 21B-parameter MoE: task resolution is depth-stratified, causally concentrated in three late layers, and amenable to targeted intervention via vocabulary-space directions — despite the model exhibiting extreme head-level redundancy that makes circuit-level analysis difficult in standard transformers.
+On `gpt-oss-20b`, the inspection toolkit exposes a clear computational geography in a production 21B-parameter MoE: task resolution is depth-stratified, causally concentrated in three late layers, and amenable to targeted intervention via vocabulary-space directions — despite extreme head-level redundancy that makes circuit-level analysis difficult in standard transformers. Phases 3 and 4 extend the investigation through DST companion models, where architectural structure makes channel-level and geometric analysis tractable.
 
-The findings unfold across four phases of investigation:
+The four phases of investigation:
 
-- **Phase 1 — Where does computation happen?** Per-layer logit-lens readouts show task-specific convergence depths (L1–2 for capitalization, L5 for coreference, L17+ for induction); layer ablation confirms that L19–21 are causally critical, narrowing the interpretability target from 24 layers to 3.
-- **Phase 2 — How do steering directions arise, and why is head-level intervention hard?** The model's own prediction transitions at decision layers yield self-supervised steering directions. Direct-vocabulary steering succeeds with positional specificity despite the Hydra effect making individual attention heads non-targetable.
-- **Phase 3 — How selective is the steering?** Probing and causal intervention identify different channels — they dissociate. Steering selectivity is task-dependent: recency concentrates in a few channels; induction distributes across many.
-- **Phase 4 — Why does linear steering work geometrically?** Standard transformers have effective rank 8 in 516 dimensions at intermediate layers — linear methods operate in 2% of the available geometry. A cosine diagnostic predicts which layers are safe for linear intervention; stream separation improves conditioning up to 22×.
+- **Phase 1 — Where does computation happen?** *(gpt-oss-20b)* Per-layer logit-lens readouts show task-specific convergence depths (L1–2 for capitalization, L5 for coreference, L17+ for induction); layer ablation confirms that L19–21 are causally critical, narrowing the interpretability target from 24 layers to 3.
+- **Phase 2 — How do steering directions arise, and why is head-level intervention hard?** *(gpt-oss-20b)* The model's own prediction transitions at decision layers yield self-supervised steering directions. Direct-vocabulary steering succeeds with positional specificity despite the Hydra effect making individual attention heads non-targetable.
+- **Phase 3 — How selective is the steering?** *(DST companion models)* Probing and causal intervention identify different channels — they dissociate. Steering selectivity is task-dependent: recency concentrates in a few channels; induction distributes across many.
+- **Phase 4 — Why does linear steering work geometrically?** *(DST companion models + geometric analysis)* Standard transformers have effective rank 8 in 516 dimensions at intermediate layers — linear methods operate in 2% of the available geometry. A cosine diagnostic predicts which layers are safe for linear intervention; stream separation improves conditioning up to 22×.
 
 Full phase narratives, figures, and the induction examples are in [FINDINGS.md](FINDINGS.md).
 
-## What This Repository Contributes
+## What This Repo Establishes
 
-Using `gpt-oss-20b`, this repository shows:
+### On gpt-oss-20b
 
 - computation is task-dependent in depth and causally concentrated in `L19-L21`
 - honest mechanistic claims require explicit analysis-set stratification; only `9/20` benchmark cases support stable causal interpretation
 - head-level interventions are ineffective because the model exhibits extreme Hydra-style redundancy (`sigma = 0.042`)
 - exact vocabulary-space directions can still flip answers when applied at the right layer and position
-- probe-promoted channels need not be the causally important channels, so probing alone is not a sufficient basis for intervention
+
+### Via DST companion models
+
+- probe-promoted channels are not the causally important channels; probing alone is not a sufficient basis for intervention (Spearman = −0.363 on induction)
+- steering selectivity is task-dependent: recency concentrates in a few channels; induction distributes across many
+- standard transformers have effective rank 8 in 516 dimensions at intermediate layers; stream separation improves conditioning up to 22×, and a cosine diagnostic predicts which layers are safe for linear intervention
 
 ## Relationship To Companion Work
 
