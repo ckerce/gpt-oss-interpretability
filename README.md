@@ -11,7 +11,7 @@ This repository brings together standard mechanistic interpretability techniques
 - [Interpretable-by-Design Transformers via Architectural Stream Independence](https://arxiv.org/abs/2603.07482)
 - [Stream Separation Improves Bregman Conditioning in Transformers](https://arxiv.org/abs/2603.21317)
 
-Those papers establish what is possible under controlled architectural conditions. This repository shows what the same toolkit reveals in a standard production model without those constraints — where the methods hold, where they break, and what that implies for interpretability practice at scale.
+Those papers establish what is possible when architectural constraints, particularly dual-stream decomposition and the frozen symbolic-stream (CASCADE) variant, make individual channels directly accessible to causal intervention. This repository shows what the same toolkit reveals in a standard production model without those constraints: where the methods hold, where they break, and what that implies for interpretability practice at scale.
 
 ## Overview
 
