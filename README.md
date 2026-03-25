@@ -1,10 +1,10 @@
-# gpt-oss-interp
+# gpt-oss-interpretability
 
-Production-scale causal analysis of `gpt-oss-20b` for mechanistic interpretability.
+Mechanistic interpretability at production scale: `gpt-oss-20b` and dual-stream transformer comparison.
 
 ## Scope
 
-This repository brings together standard mechanistic interpretability techniques — logit-lens convergence mapping, causal ablation, direct-vocabulary steering, hook-based activation capture — and applies them to `gpt-oss-20b` as a coherent measurement program. `gpt-oss-20b` presents properties that complicate standard analysis — MoE routing with MXFP4-quantized expert weights that bypass hook-based router introspection, alternating sliding/full attention, and limited public documentation — making it a harder test of methodology than analyzing a well-documented dense model. It also serves as the production-scale validation ground for a parallel line of work on architectural modifications designed to make mechanistic interpretability lower-friction. Four companion papers develop those techniques:
+Mechanistic interpretability methods are typically developed on small, well-documented models. This repository tests how far those methods carry at production scale, and what additional interpretability becomes possible when architectural constraints — dual-stream decomposition, frozen symbolic stream — are in place. `gpt-oss-20b` provides the production baseline; the companion DST models provide the interpretability-advantaged comparison condition. `gpt-oss-20b` presents properties that complicate standard analysis — MoE routing with MXFP4-quantized expert weights that bypass hook-based router introspection, alternating sliding/full attention, and limited public documentation — making it a harder test of methodology than analyzing a well-documented dense model. Four companion papers develop the DST architectural techniques:
 
 - [Engineering Verifiable Modularity in Transformers via Per-Layer Supervision](https://arxiv.org/abs/2603.18029)
 - [The Dual-Stream Transformer: Channelized Architecture for Interpretable Language Modeling](https://arxiv.org/abs/2603.07461)
@@ -40,7 +40,7 @@ Using `gpt-oss-20b`, this repository shows:
 
 | Artifact | Main contribution | Role in the overall program |
 |---|---|---|
-| `gpt-oss-interp` repo | Production-scale causal analysis on `gpt-oss-20b` | Tests transfer of the toolkit to a real MoE model |
+| `gpt-oss-interpretability` repo | Production-scale causal analysis on `gpt-oss-20b`; DST comparison | Tests transfer of the toolkit to a real MoE model; quantifies interpretability advantages of DST architectures |
 | `Engineering Verifiable Modularity` (`arXiv:2603.18029`) | PLS / modularity / Hydra-breaking in controlled models | Shows how training-time constraints create inspectable internals |
 | Dual-Stream Transformer (`arXiv:2603.07461`) | Channelized architecture with frozen symbolic stream | Shows how stream factorization enables surgical channel-level intervention |
 | Stream Independence (`arXiv:2603.07482`) | Late-fusion architecture; coreference concentrated in L3–L4 | Shows how positional/semantic disentanglement reduces intervention collateral damage |
@@ -252,4 +252,4 @@ doc/references/                  # Literature reviews + academic papers
 
 ## Summary
 
-`gpt-oss-interp` applies causal intervention, convergence mapping, direct-vocabulary steering, and activation analysis to `gpt-oss-20b` to determine which mechanistic interpretability methods transfer to a real production MoE model, where they break, and what that implies for trustworthy intervention at scale. The repository is most relevant in combination with the four companion papers (`arXiv:2603.18029`, `arXiv:2603.07461`, `arXiv:2603.07482`, `arXiv:2603.21317`): those works show how architectural constraints and geometric structure make internal mechanisms more tractable, while this repository shows what remains measurable in a standard model without those constraints.
+`gpt-oss-interpretability` applies causal intervention, convergence mapping, direct-vocabulary steering, and activation analysis to `gpt-oss-20b` to determine which mechanistic interpretability methods transfer to a real production MoE model, where they break, and what that implies for trustworthy intervention at scale. The repository is most relevant in combination with the four companion papers (`arXiv:2603.18029`, `arXiv:2603.07461`, `arXiv:2603.07482`, `arXiv:2603.21317`): those works show how architectural constraints and geometric structure make internal mechanisms more tractable, while this repository shows what remains measurable in a standard model without those constraints.
