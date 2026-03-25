@@ -6,16 +6,16 @@ Production-scale causal analysis of `gpt-oss-20b` for mechanistic interpretabili
 
 This repository brings together standard mechanistic interpretability techniques — logit-lens convergence mapping, causal ablation, direct-vocabulary steering, hook-based activation capture — and applies them to `gpt-oss-20b` as a coherent measurement program. `gpt-oss-20b` presents properties that complicate standard analysis — MoE routing with MXFP4-quantized expert weights that bypass hook-based router introspection, alternating sliding/full attention, and limited public documentation — making it a harder test of methodology than analyzing a well-documented dense model. It also serves as the production-scale validation ground for a parallel line of work on architectural modifications designed to make mechanistic interpretability lower-friction. Four companion papers develop those techniques:
 
-- `Engineering Verifiable Modularity in Transformers via Per-Layer Supervision` (`arXiv:2603.18029`)
-- `The Dual-Stream Transformer: Channelized Architecture for Interpretable Language Modeling` (`arXiv:2603.07461`)
-- `Interpretable-by-Design Transformers via Architectural Stream Independence` (`arXiv:2603.07482`)
-- `Stream Separation Improves Bregman Conditioning in Transformers` (`arXiv:2603.21317`)
+- [Engineering Verifiable Modularity in Transformers via Per-Layer Supervision](https://arxiv.org/abs/2603.18029)
+- [The Dual-Stream Transformer: Channelized Architecture for Interpretable Language Modeling](https://arxiv.org/abs/2603.07461)
+- [Interpretable-by-Design Transformers via Architectural Stream Independence](https://arxiv.org/abs/2603.07482)
+- [Stream Separation Improves Bregman Conditioning in Transformers](https://arxiv.org/abs/2603.21317)
 
 Those papers establish what is possible under controlled architectural conditions. This repository shows what the same toolkit reveals in a standard production model without those constraints — where the methods hold, where they break, and what that implies for interpretability practice at scale.
 
 ## Overview
 
-The methods transfer. Applied to `gpt-oss-20b` without modification, the same inspection toolkit that revealed mechanistic structure in small controlled models exposes a clear computational geography in a production 21B-parameter MoE: task resolution is depth-stratified, causally concentrated in three late layers, and amenable to targeted intervention via vocabulary-space directions — despite the model exhibiting extreme head-level redundancy that makes circuit-level analysis difficult in standard transformers.
+Applied to `gpt-oss-20b` without modification, the inspection toolkit that revealed mechanistic structure in small controlled models exposes a clear computational geography in a production 21B-parameter MoE: task resolution is depth-stratified, causally concentrated in three late layers, and amenable to targeted intervention via vocabulary-space directions — despite the model exhibiting extreme head-level redundancy that makes circuit-level analysis difficult in standard transformers.
 
 The findings unfold across four phases of investigation:
 
