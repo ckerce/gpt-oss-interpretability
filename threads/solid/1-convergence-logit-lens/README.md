@@ -139,6 +139,7 @@ Training converged: mean KL 6.30 → 4.91 nats over 20 epochs.
 | L23   | 0.00          | 0.00            | 0%        |
 
 ![KL gap curve](figures/kl_gap_curve.png)
+![KL reduction per layer](figures/kl_reduction.png)
 
 Key observations:
 - **L0–L11**: Large raw KL (9–17 nats); translators reduce it by 35–66%, showing the
