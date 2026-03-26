@@ -22,6 +22,7 @@ Mechanistic interpretability of gpt-oss-20b, organized as 14 research threads at
 |---|--------|-----------|------------|---------|------|-----|-----------|
 | 9 | [Feature Extraction](threads/in-progress/9-feature-extraction/) | Measure computational modes | fig8 | 2 | 3 | Connection to downstream tasks not demonstrated | `threads/in-progress/9-feature-extraction/` |
 | 10 | [Bridge / Cross-Model](threads/in-progress/10-bridge-cross-model/) | Validate cross-model generalization | — | 3 | 5 | Only 1 non-gpt-oss model tested | `threads/in-progress/10-bridge-cross-model/` |
+| 15 | [MoE Expert Readouts](threads/in-progress/15-expert-readouts/) | Characterise expert specialisation across 768 modules | — | 2 | — | Requires model run; figures not yet generated | `threads/in-progress/15-expert-readouts/` |
 
 ## Theoretical — framework documented, implementation incomplete
 

@@ -92,6 +92,7 @@ For a fast orientation:
 
 1. [FINDINGS.md](FINDINGS.md) — full phase narratives with figures and induction examples
 2. [THREAD_MAP.md](THREAD_MAP.md) — thread inventory, maturity levels, run counts
+3. [RESEARCH_IDEAS.md](RESEARCH_IDEAS.md) — proposed feature extensions (H–L) and new experiment threads (16–24)
 3. [threads/solid/1-convergence-logit-lens/](threads/solid/1-convergence-logit-lens/) — task-dependent convergence depth
 4. [threads/solid/2-late-layer-ablation/](threads/solid/2-late-layer-ablation/) — causal bottleneck identification
 5. [threads/solid/3-analysis-set-filtering/](threads/solid/3-analysis-set-filtering/) — claim scoping and honest-case selection
@@ -173,6 +174,7 @@ This project is organized as 14 research threads at three maturity levels. See [
 |---|---|---|---|---|---|
 | 9 | [Feature extraction](threads/in-progress/9-feature-extraction/) | `gpt-oss-20b` | Can computational modes be captured as unified feature vectors? | `6,425D` feature extraction across task families | Suggests task-dependent intrinsic dimensionality |
 | 10 | [Bridge / cross-model](threads/in-progress/10-bridge-cross-model/) | `gpt-oss-20b`, `Gemma-3-1B` | Do the findings transfer beyond one model? | Screening pipeline for new-model compatibility | Early transfer infrastructure |
+| 15 | [MoE expert readouts](threads/in-progress/15-expert-readouts/) | `gpt-oss-20b` | What do the 768 expert modules specialize in? | Routing entropy, layer logit-delta, per-expert vocabulary profiles via `ExpertCapture` and MoE sidecar | Reveals whether expert selection is interpretably structured or diffuse |
 
 ### Theoretical
 
@@ -202,7 +204,7 @@ huggingface-cli download openai/gpt-oss-20b
 python scripts/run_benchmark.py --config configs/dry_run_recency.py
 
 # Run tests
-pytest tests/gossh/     # gossh package suite (90 tests, no GPU required)
+pytest tests/gossh/     # gossh package suite (101 tests, no GPU required)
 pytest tests/           # full suite including legacy gpt_oss_interp tests
 
 # Intervention benchmark
@@ -230,7 +232,8 @@ gossh/                           # Installable inspectability harness (pip insta
 ├── capture/                     # Activation and routing capture via hooks
 │   ├── activation_cache.py      # ActivationCache — forward-hook hidden-state collector
 │   ├── router_capture.py        # RouterCapture — gate-hook routing capture (non-MXFP4)
-│   └── input_cache.py           # InputCapture — pre-hook capture (MXFP4-safe)
+│   ├── input_cache.py           # InputCapture — pre-hook capture (MXFP4-safe)
+│   └── expert_capture.py        # ExpertCapture — per-expert output hooks (non-quantized)
 ├── sidecar/                     # MoE router sidecar (MXFP4 opacity workaround)
 │   ├── process.py               # MoeSidecar — subprocess client (Unix socket, spawn)
 │   ├── worker.py                # Sidecar subprocess entry point
@@ -279,7 +282,7 @@ configs/                         # 7 benchmark configurations
 runs/                            # 52 experiment output directories
 figures/                         # 16 publication-quality figures (PDF + PNG)
 tests/
-├── gossh/                       # gossh package tests (90 tests, no GPU required)
+├── gossh/                       # gossh package tests (101 tests, no GPU required)
 └── *.py                         # Legacy gpt_oss_interp tests
 doc/references/                  # Literature reviews + academic papers
 ```

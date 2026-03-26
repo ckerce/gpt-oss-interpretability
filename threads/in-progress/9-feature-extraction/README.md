@@ -51,6 +51,22 @@ Syntax agreement has the lowest intrinsic dimension (20) and highest depth strat
 - Nonlinear dimensionality reduction (t-SNE, UMAP) may reveal structure PCA misses
 - Cross-model comparison (thread 12) not yet attempted
 
+## Proposed feature extensions (H–L)
+
+`ExpertCapture` (Thread 15) enables new components not yet in the extractor.
+See [RESEARCH_IDEAS.md](../../../RESEARCH_IDEAS.md) for full motivation.
+
+| ID | Name | Dims | Requires | Cost |
+|----|------|:----:|----------|------|
+| H | Expert Output Norm | `L × top_k = 96` | ExpertCapture; non-quantized | Forward pass |
+| I | Expert Vocab Alignment | `2 × top_k = 8` | ExpertCapture + lm_head; non-quantized | Forward pass |
+| J | Logit Delta | `L = 24` | Component A (already computed) | Free |
+| K | Expert Co-activation | `L × C(top_k,2) = 144` | Routing indices (already available) | Free |
+| L | Expert Routing Persistence | `L − 1 = 23` | Routing indices (already available) | Free |
+
+Adding J, K, L would bring total dimensions to ~6,616 at zero additional forward-pass cost.
+Adding H and I (non-quantized only) would reach ~6,720.
+
 ## Package dependencies
 `features.extractor`, `features.geometry`, `capture.activation_cache`, `backends.transformers_gpt_oss`
 
