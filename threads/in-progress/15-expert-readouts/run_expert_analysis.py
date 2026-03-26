@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Thread 15: MoE expert readout analysis.
 
-Three measurements in priority order:
+Five measurements in priority order:
 
   1. Routing patterns  — sidecar, always works (MXFP4-safe)
   2. Layer logit-delta — ActivationCache + logit-lens projection, always works
   3. Expert vocab profiles — ExpertCapture, non-quantized checkpoints only
+  4. Information-theoretic analysis — KL, JSD, MI over routing data, always works
+  5. Routing capacity budget — I(expert; task) vs I(expert; token surface)
 
-All three write to --output.  Measurements 1 and 2 always run.
-Measurement 3 is silently skipped if no hookable expert modules are found
-(MXFP4 fused model) — a note is printed instead.
+All measurements write to --output.  Measurements 1, 2, 4 always run.
+Measurement 3 is skipped on MXFP4 (prints a note).  Measurement 5 requires
+--task-suite (needs multiple task families for MI estimation).
 
 Usage:
     # All three measurements, single prompt
@@ -41,27 +43,162 @@ from pathlib import Path
 
 import torch
 
-# Representative prompts for each task family used in the main analysis set
+# Representative prompts for each task family used in the main analysis set.
+# Nine families × 15 prompts = 135 total, covering diverse token surfaces,
+# semantic domains, and reasoning types for robust MI(expert; task) estimation.
 TASK_SUITE = {
     "capitalization": [
         "The name of the first president of the United States is george",
         "My favorite city is paris, which is known for",
+        "The capital of france is paris and the capital of germany is berlin",
+        "She was born in london and moved to new york when she was",
+        "The treaty was signed in versailles after the war ended in nineteen",
+        "His full name is john fitzgerald kennedy, the 35th president of the",
+        "The river nile flows through egypt and sudan before reaching the",
+        "The company was founded by steve jobs and steve wozniak in cupertino",
+        "Mount everest, located in the himalayas, was first climbed in",
+        "The ancient city of rome was founded on the banks of the tiber",
+        "The headquarters of the united nations is located in new york city near the",
+        "She studied at oxford university before joining the faculty at cambridge",
+        "The expedition departed from cape town and sailed toward antarctica",
+        "He received the nobel prize in oslo alongside marie curie from",
+        "The amazon river, stretching across brazil, flows into the atlantic",
     ],
     "coreference": [
         "The trophy didn't fit in the suitcase because it was too small. The",
         "The developer argued with the designer because she didn't like the",
+        "The ball rolled off the shelf because it wasn't stable. The",
+        "Paul called Tom because he wanted to ask for advice. He",
+        "The city council refused the demonstrators a permit because they feared violence. They",
+        "The lawyer asked the witness a question, but she was not satisfied with the answer. She",
+        "The scientist told the journalist that she had made an important discovery. She",
+        "The boy chased the dog until it was exhausted. It",
+        "Susan asked Mary to proofread her report before she submitted it. She",
+        "The manager fired the employee because he was unhappy with the performance. He",
+        "The judge warned the defendant that he would be penalized for lying. He",
+        "The doctor advised the patient to rest because she was overworked. She",
+        "Jane told Alice that her proposal was rejected by the board. Her",
+        "The police interviewed the suspect because they had new evidence against him. He",
+        "The coach praised the athlete because her performance exceeded expectations. She",
     ],
     "induction": [
         "The sequence continues: alpha beta gamma alpha beta",
         "In the pattern red blue green red blue",
+        "The series goes: 1 2 3 1 2",
+        "The letters repeat: A B C D A B C D A B C",
+        "The pattern is: cat dog bird cat dog bird cat dog",
+        "The sequence: Monday Tuesday Wednesday Monday Tuesday Wednesday Monday",
+        "Repeating colors: red green blue red green blue red",
+        "The tokens are: X Y Z X Y Z X Y",
+        "The cycle: spring summer autumn winter spring summer autumn",
+        "The digits repeat: 1 4 7 1 4 7 1",
+        "The symbols alternate: circle square triangle circle square triangle circle",
+        "The words cycle: fast slow fast slow fast slow",
+        "The pattern: north south east west north south east",
+        "Repeating: ping pong ping pong ping pong",
+        "The sequence: one two three one two three one two",
     ],
     "syntax_agreement": [
         "The keys to the cabinet",
         "The player with the best statistics on both teams",
+        "The bouquet of yellow flowers",
+        "The committee of senior managers",
+        "The rules of the game",
+        "The list of items on the agenda",
+        "The speed of the cars on the highway",
+        "The behavior of children in classrooms",
+        "The price of houses in the neighborhood",
+        "The impact of policies on local communities",
+        "The collection of rare books in the library",
+        "The group of students studying in the hall",
+        "The number of errors in the report",
+        "The team of engineers working on the bridge",
+        "The quality of decisions made by the board",
     ],
     "recency": [
         "I bought milk, eggs, and bread. Then I bought coffee. And finally I bought",
         "She visited Rome, then Paris, then London. Her last stop was",
+        "The menu listed pasta, pizza, and soup. The waiter recommended the",
+        "He tried the red shirt, then the blue one, then the green one. He chose the",
+        "The countries visited were Spain, Italy, and Greece. The most recent was",
+        "She learned piano, then violin, then guitar. Her current instrument is",
+        "The project phases were planning, design, and implementation. The current phase is",
+        "They discussed the proposal, the budget, and the timeline. The last topic was",
+        "The ingredients are flour, sugar, butter. The last item is",
+        "We reviewed chapter one, chapter two, and chapter three. The final chapter was",
+        "The runners finished in positions first, second, and third. The last to cross was",
+        "He watched a documentary, then a comedy, then a thriller. His final choice was",
+        "She drafted an email, then a memo, then a report. Her most recent document was",
+        "The train stopped at Berlin, Warsaw, then Moscow. The last city was",
+        "They built the foundation, the walls, and the roof. The last stage was",
+    ],
+    "arithmetic": [
+        "What is 3 plus 5? The answer is",
+        "If you have 12 apples and eat 4, you have",
+        "Seven times eight equals",
+        "The square root of 144 is",
+        "100 divided by 4 equals",
+        "If a train travels 60 miles per hour for 2 hours, it covers",
+        "What is 15 percent of 200? The answer is",
+        "9 squared equals",
+        "The sum of 47 and 53 is",
+        "What is 1000 minus 337? The answer is",
+        "If x equals 5 and y equals 3, then x times y equals",
+        "The product of 11 and 11 is",
+        "24 divided by 6 equals",
+        "What is 2 to the power of 8? The answer is",
+        "If one kilogram equals 2.2 pounds, then 5 kilograms equals",
+    ],
+    "factual_recall": [
+        "The chemical symbol for water is",
+        "The speed of light in a vacuum is approximately",
+        "William Shakespeare was born in the year",
+        "The largest planet in our solar system is",
+        "The human body has approximately",
+        "The French Revolution began in the year",
+        "DNA stands for",
+        "The atomic number of carbon is",
+        "The Great Wall of China was primarily built during the",
+        "Albert Einstein published his special theory of relativity in",
+        "The capital city of Japan is",
+        "The element with the highest atomic number that occurs naturally is",
+        "Photosynthesis converts sunlight into",
+        "The Battle of Waterloo took place in the year",
+        "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals",
+    ],
+    "code_completion": [
+        "def factorial(n):\n    if n == 0:\n        return",
+        "import numpy as np\nnp.array([1, 2, 3]).mean() ==",
+        "for i in range(10):\n    if i % 2 == 0:\n        print(",
+        "x = {'a': 1, 'b': 2}\nx.get('c', 0) ==",
+        "def fibonacci(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b,",
+        "s = 'hello world'\ns.split()[1] ==",
+        "lst = [3, 1, 4, 1, 5]\nsorted(lst)[0] ==",
+        "class Counter:\n    def __init__(self):\n        self.count =",
+        "try:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result =",
+        "import re\nre.match(r'\\d+', '123abc').group() ==",
+        "def is_prime(n):\n    if n < 2: return False\n    for i in range(2, int(n**0.5)+1):\n        if n % i == 0: return",
+        "d = {}\nfor k, v in [('a', 1), ('b', 2)]:\n    d[k] =",
+        "stack = []\nstack.append(1)\nstack.append(2)\nstack.pop() ==",
+        "words = ['cat', 'elephant', 'dog']\nmax(words, key=len) ==",
+        "n = 256\nwhile n > 1:\n    n //=",
+    ],
+    "analogy": [
+        "King is to queen as man is to",
+        "Paris is to France as Rome is to",
+        "Hot is to cold as day is to",
+        "Doctor is to hospital as teacher is to",
+        "Fish is to water as bird is to",
+        "Glove is to hand as shoe is to",
+        "Author is to book as composer is to",
+        "Puppy is to dog as kitten is to",
+        "Thick is to thin as heavy is to",
+        "Chef is to kitchen as pilot is to",
+        "Pen is to write as brush is to",
+        "Hearing is to ears as sight is to",
+        "Planet is to solar system as cell is to",
+        "Smile is to happiness as frown is to",
+        "Architect is to building as sculptor is to",
     ],
 }
 
@@ -102,10 +239,12 @@ def measure_routing_patterns(
             for prompt in prompts:
                 decisions = backend.capture_routing(prompt)
                 for d in decisions:
-                    for token_experts in d.selected_experts.tolist():
-                        for ei in token_experts:
-                            task_counts[d.layer_idx][ei] += 1
-                            combined_counts[d.layer_idx][ei] += 1
+                    # selected_experts may be [seq_len, top_k], [top_k], or
+                    # [batch, seq_len, top_k] — flatten to [N, top_k]
+                    se = d.selected_experts.reshape(-1, d.selected_experts.shape[-1])
+                    for ei in se.reshape(-1).tolist():
+                        task_counts[d.layer_idx][int(ei)] += 1
+                        combined_counts[d.layer_idx][int(ei)] += 1
                 print(".", end="", flush=True)
 
             token_counts[task_name] = {
@@ -350,6 +489,202 @@ def measure_expert_vocab_profiles(
 
 
 ###############################################################################
+# Measurement 4: Information-theoretic routing analysis
+###############################################################################
+
+def _kl_div(p: list[float], q: list[float]) -> float:
+    """D_KL(P ‖ Q) in nats. Clips to avoid log(0)."""
+    eps = 1e-12
+    return sum(
+        pi * math.log((pi + eps) / (qi + eps))
+        for pi, qi in zip(p, q)
+        if pi > eps
+    )
+
+
+def _jsd(p: list[float], q: list[float]) -> float:
+    """Jensen-Shannon divergence JSD(P, Q) in nats. Symmetric, bounded [0, ln2]."""
+    m = [(pi + qi) / 2 for pi, qi in zip(p, q)]
+    return 0.5 * _kl_div(p, m) + 0.5 * _kl_div(q, m)
+
+
+def _entropy(p: list[float]) -> float:
+    eps = 1e-12
+    return -sum(pi * math.log(pi + eps) for pi in p if pi > eps)
+
+
+def measure_information_theory(routing_data: dict) -> dict:
+    """Compute KL, JSD, MI, and routing velocity from routing_data.
+
+    All quantities derived from the token counts already collected in
+    Measurement 1 — no additional forward passes required.
+
+    Returns dict with keys:
+      kl_from_uniform     {layer: float}   — specialization gain (nats)
+      routing_velocity    {layer: float}   — D_KL(routing_l ‖ routing_{l-1})
+      jsd_cross_task      {layer: {task_a: {task_b: float}}}  — pairwise JSD
+      mi_task             {layer: float}   — I(expert; task_family)
+      mi_interpretation   str              — plain-English summary
+    """
+    if not routing_data:
+        print("\n=== Measurement 4: Information-theoretic analysis ===")
+        print("  No routing data available — skipping.")
+        return {}
+
+    print("\n=== Measurement 4: Information-theoretic routing analysis ===")
+
+    by_task: dict[str, dict[str, dict]] = routing_data.get("by_task", {})
+    combined: dict[str, dict] = routing_data.get("combined", {})
+    n_experts: int = routing_data.get("n_experts", 32)
+    max_entropy: float = routing_data.get("max_entropy", math.log(n_experts))
+    task_names = sorted(by_task.keys())
+    all_layers = sorted(int(k) for k in combined.keys())
+
+    # Helper: normalise raw count dict to probability list over [0, n_experts)
+    def to_probs(counts: dict, n: int) -> list[float]:
+        total = sum(counts.values()) or 1
+        return [counts.get(e, 0) / total for e in range(n)]
+
+    uniform = [1.0 / n_experts] * n_experts
+
+    # --- Specialization gain: D_KL(routing_l ‖ uniform) ---
+    kl_from_uniform: dict[int, float] = {}
+    entropy_by_layer: dict[int, float] = {int(k): v for k, v in routing_data.get("entropy_by_layer", {}).items()}
+    for li in all_layers:
+        # Specialization gain = log(n_experts) - H(routing_l)
+        kl_from_uniform[li] = max_entropy - entropy_by_layer.get(li, max_entropy)
+
+    # --- Routing velocity: D_KL(routing_l ‖ routing_{l-1}) ---
+    routing_velocity: dict[int, float] = {}
+    prev_probs = None
+    for li in all_layers:
+        probs = to_probs(combined.get(str(li), {}), n_experts)
+        if prev_probs is not None:
+            routing_velocity[li] = _kl_div(probs, prev_probs)
+        prev_probs = probs
+
+    # --- Cross-task JSD matrix per layer ---
+    jsd_cross_task: dict[int, dict[str, dict[str, float]]] = {}
+    for li in all_layers:
+        task_probs = {
+            t: to_probs(by_task.get(t, {}).get(str(li), {}), n_experts)
+            for t in task_names
+        }
+        jsd_matrix: dict[str, dict[str, float]] = {}
+        for ta in task_names:
+            jsd_matrix[ta] = {}
+            for tb in task_names:
+                if ta == tb:
+                    jsd_matrix[ta][tb] = 0.0
+                else:
+                    jsd_matrix[ta][tb] = _jsd(task_probs[ta], task_probs[tb])
+        jsd_cross_task[li] = jsd_matrix
+
+    # --- Task routing mutual information: I(expert; task_family) ---
+    # I(E; T) = H(E) - H(E|T) = H(T) - H(T|E)
+    # Using: I(E;T) = sum_{e,t} p(e,t) * log(p(e,t) / (p(e)*p(t)))
+    n_tasks = len(task_names)
+    mi_task: dict[int, float] = {}
+    for li in all_layers:
+        # Build joint distribution p(expert_e, task_t)
+        # Each task contributes equally (uniform task prior)
+        joint: list[list[float]] = []
+        task_marginal_counts = []
+        for t in task_names:
+            counts = by_task.get(t, {}).get(str(li), {})
+            total = sum(counts.values()) or 1
+            task_marginal_counts.append([counts.get(e, 0) / total for e in range(n_experts)])
+
+        # p(e, t) = (1/n_tasks) * p(e | t)
+        # p(e) = sum_t p(e, t) = (1/n_tasks) * sum_t p(e|t)
+        # p(t) = 1/n_tasks  (uniform task prior)
+        expert_marginal = [
+            sum(task_marginal_counts[ti][e] for ti in range(n_tasks)) / n_tasks
+            for e in range(n_experts)
+        ]
+        task_prior = 1.0 / n_tasks
+
+        mi = 0.0
+        for ti in range(n_tasks):
+            for e in range(n_experts):
+                p_et = task_prior * task_marginal_counts[ti][e]
+                p_e = expert_marginal[e]
+                if p_et > 1e-12 and p_e > 1e-12:
+                    mi += p_et * math.log(p_et / (p_e * task_prior))
+        mi_task[li] = max(0.0, mi)  # numerical floor
+
+    # --- Print summaries ---
+    print(f"\n  Specialization gain D_KL(routing ‖ uniform) per layer:")
+    print(f"  (nats saved by knowing routing policy vs. guessing uniform)")
+    for li in all_layers:
+        gain = kl_from_uniform[li]
+        pct = 100 * gain / max_entropy if max_entropy > 0 else 0
+        bar = "▓" * int(gain / max_entropy * 40)
+        print(f"    L{li:02d}  {gain:.4f} nats ({pct:.1f}%)  {bar}")
+
+    print(f"\n  Routing velocity D_KL(routing_l ‖ routing_{{l-1}}) — phase transition detection:")
+    for li in sorted(routing_velocity):
+        vel = routing_velocity[li]
+        bar = "▓" * min(40, int(vel * 200))
+        print(f"    L{li:02d}→L{li:02d}  {vel:.5f} nats  {bar}")
+
+    if len(task_names) >= 2:
+        print(f"\n  Task routing mutual information I(expert; task_family) per layer:")
+        print(f"  (nats of task identity encoded in the routing decision)")
+        print(f"  Task families: {', '.join(task_names)}")
+        peak_mi_layer = max(mi_task, key=mi_task.get) if mi_task else None
+        for li in all_layers:
+            mi = mi_task[li]
+            bar = "▓" * min(40, int(mi * 1000))
+            marker = " ← PEAK" if li == peak_mi_layer else ""
+            print(f"    L{li:02d}  {mi:.5f} nats  {bar}{marker}")
+
+        peak_mi = mi_task.get(peak_mi_layer, 0) if peak_mi_layer is not None else 0
+        routing_capacity_bits = math.log2(
+            # C(n_experts, top_k) — approximated as n_experts^top_k / top_k! for large n
+            1  # placeholder; exact computation below
+        )
+        # Exact: log2(C(32,4)) = log2(35960)
+        try:
+            from math import comb
+            top_k = routing_data.get("top_k", 4)
+            capacity_bits = math.log2(comb(n_experts, top_k))
+        except Exception:
+            capacity_bits = 15.13  # log2(C(32,4))
+
+        efficiency = peak_mi / (capacity_bits * math.log(2)) * 100 if capacity_bits > 0 else 0
+        print(f"\n  Routing capacity budget at peak MI layer (L{peak_mi_layer}):")
+        print(f"    Theoretical capacity:          {capacity_bits:.2f} bits = {capacity_bits * math.log(2):.3f} nats")
+        print(f"    I(expert; task) at peak:       {peak_mi:.5f} nats ({efficiency:.2f}% of capacity)")
+        print(f"    Specialization gain at peak:   {kl_from_uniform.get(peak_mi_layer, 0):.4f} nats")
+        print(f"    Interpretation: task-discriminating routing uses {efficiency:.1f}% of routing capacity")
+
+        # JSD cross-task at bottleneck layer (last third of layers)
+        late_layers = [li for li in all_layers if li >= max(all_layers) * 2 // 3]
+        if late_layers:
+            probe_layer = late_layers[len(late_layers) // 2]
+            print(f"\n  Cross-task JSD matrix at L{probe_layer} (0 = identical, {math.log(2):.3f} nats = disjoint):")
+            header = f"  {'':12s}" + "".join(f"  {t[:8]:>8s}" for t in task_names)
+            print(header)
+            for ta in task_names:
+                row = f"  {ta[:12]:12s}" + "".join(
+                    f"  {jsd_cross_task[probe_layer][ta][tb]:8.4f}"
+                    for tb in task_names
+                )
+                print(row)
+
+    return {
+        "kl_from_uniform": {str(k): v for k, v in kl_from_uniform.items()},
+        "routing_velocity": {str(k): v for k, v in routing_velocity.items()},
+        "jsd_cross_task": {str(li): mat for li, mat in jsd_cross_task.items()},
+        "mi_task": {str(k): v for k, v in mi_task.items()},
+        "routing_capacity_bits": capacity_bits if len(task_names) >= 2 else None,
+        "peak_mi_layer": peak_mi_layer,
+        "peak_mi_nats": peak_mi if len(task_names) >= 2 else None,
+    }
+
+
+###############################################################################
 # Report generation
 ###############################################################################
 
@@ -358,6 +693,7 @@ def write_report(
     routing_data: dict,
     delta_data: dict,
     profile_data: dict | None,
+    info_data: dict,
     prompts_by_task: dict[str, list[str]],
 ) -> None:
     lines = [
@@ -423,6 +759,82 @@ def write_report(
                 lines.append(f"| E{ei_str} | {info['tokens_routed']} | {tokens} |")
             lines.append("")
 
+    # Measurement 4: information-theoretic routing analysis
+    if info_data:
+        kl = info_data.get("kl_from_uniform", {})
+        vel = info_data.get("routing_velocity", {})
+        mi = info_data.get("mi_task", {})
+        peak_layer = info_data.get("peak_mi_layer")
+        peak_mi = info_data.get("peak_mi_nats", 0) or 0
+        capacity = info_data.get("routing_capacity_bits")
+
+        lines += [
+            "## Measurement 4: Information-Theoretic Routing Analysis",
+            "",
+            "### 4a — Specialization gain D_KL(routing ‖ uniform)",
+            "",
+            "_Nats saved by knowing the routing policy vs. guessing uniform._",
+            "_Higher = more structured routing at this layer._",
+            "",
+            "| Layer | Spec. gain (nats) | % of max entropy |",
+            "| ---: | ---: | ---: |",
+        ]
+        max_ent = routing_data.get("max_entropy", math.log(32))
+        for li_str in sorted(kl.keys(), key=int):
+            gain = kl[li_str]
+            pct = 100 * gain / max_ent if max_ent > 0 else 0
+            lines.append(f"| L{li_str} | {gain:.4f} | {pct:.1f}% |")
+        lines.append("")
+
+        lines += [
+            "### 4b — Routing velocity D_KL(routing_l ‖ routing_{l-1})",
+            "",
+            "_Extra nats burned encoding layer l's routing using layer l-1's codebook._",
+            "_A spike marks a routing phase transition — where policy changes fastest._",
+            "",
+            "| Layer pair | Velocity (nats) |",
+            "| ---: | ---: |",
+        ]
+        peak_vel_layer = max(vel, key=vel.get) if vel else None
+        for li_str in sorted(vel.keys(), key=int):
+            v = vel[li_str]
+            marker = " ← PHASE TRANSITION" if li_str == str(peak_vel_layer) else ""
+            lines.append(f"| L{int(li_str)-1}→L{li_str} | {v:.5f}{marker} |")
+        lines.append("")
+
+        if mi:
+            lines += [
+                "### 4c — Task routing mutual information I(expert; task_family)",
+                "",
+                "_Nats of task identity encoded in the routing decision at each layer._",
+                "_Near-zero = routing is task-agnostic. Peak = routing encodes task structure._",
+                "",
+                "| Layer | I(expert; task) (nats) |",
+                "| ---: | ---: |",
+            ]
+            for li_str in sorted(mi.keys(), key=int):
+                m = mi[li_str]
+                marker = " ← PEAK" if li_str == str(peak_layer) else ""
+                lines.append(f"| L{li_str} | {m:.5f}{marker} |")
+            lines.append("")
+
+            if capacity is not None:
+                capacity_nats = capacity * math.log(2)
+                efficiency = 100 * peak_mi / capacity_nats if capacity_nats > 0 else 0
+                lines += [
+                    "### 4d — Routing capacity budget",
+                    "",
+                    f"- Theoretical routing capacity: log₂(C(32,4)) = {capacity:.2f} bits = {capacity_nats:.3f} nats",
+                    f"- Peak I(expert; task): {peak_mi:.5f} nats at L{peak_layer} ({efficiency:.2f}% of capacity)",
+                    "",
+                    f"**Interpretation**: At the peak task-routing alignment layer, only {efficiency:.1f}% of the "
+                    f"routing mechanism's combinatorial capacity is used for task-discriminating computation. "
+                    f"The remainder encodes token surface form, positional context, and other signals not captured "
+                    f"by the 5-family task taxonomy. This does not mean routing is inefficient — it means routing "
+                    f"is a multi-purpose mechanism, most of whose capacity serves non-task purposes.",
+                    "",
+                ]
+
     report = "\n".join(lines) + "\n"
     (output_dir / "expert_readout_report.md").write_text(report)
     print(f"\nReport written to {output_dir / 'expert_readout_report.md'}")
@@ -478,6 +890,7 @@ def main() -> int:
         measure_expert_vocab_profiles(backend, all_prompts, top_k=args.top_k)
         if args.expert_profiles else None
     )
+    info_data = measure_information_theory(routing_data)
 
     if not args.expert_profiles:
         print("\n(Skipping measurement 3. Pass --expert-profiles to enable.)")
@@ -485,12 +898,28 @@ def main() -> int:
     # Save outputs
     if routing_data:
         (out_dir / "routing_patterns.json").write_text(json.dumps(routing_data, indent=2))
+        (out_dir / "routing_entropy.json").write_text(
+            json.dumps(routing_data.get("entropy_by_layer", {}), indent=2)
+        )
     if delta_data:
         (out_dir / "layer_logit_delta.json").write_text(json.dumps(delta_data, indent=2))
     if profile_data is not None:
         (out_dir / "expert_vocab_profiles.json").write_text(json.dumps(profile_data, indent=2))
+    if info_data:
+        (out_dir / "routing_kl_from_uniform.json").write_text(
+            json.dumps(info_data.get("kl_from_uniform", {}), indent=2)
+        )
+        (out_dir / "routing_velocity.json").write_text(
+            json.dumps(info_data.get("routing_velocity", {}), indent=2)
+        )
+        (out_dir / "routing_jsd_matrix.json").write_text(
+            json.dumps(info_data.get("jsd_cross_task", {}), indent=2)
+        )
+        (out_dir / "routing_mi_task.json").write_text(
+            json.dumps(info_data.get("mi_task", {}), indent=2)
+        )
 
-    write_report(out_dir, routing_data, delta_data, profile_data, prompts_by_task)
+    write_report(out_dir, routing_data, delta_data, profile_data, info_data, prompts_by_task)
 
     print(f"\nAll outputs written to {out_dir}/")
     return 0

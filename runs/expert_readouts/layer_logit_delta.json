@@ -1,0 +1,1980 @@
+{
+  "1": {
+    "promoted": [
+      {
+        "token": "cue",
+        "token_id": 22824,
+        "delta": 19.680864334106445
+      },
+      {
+        "token": " XL",
+        "token_id": 43617,
+        "delta": 19.294145584106445
+      },
+      {
+        "token": "olg",
+        "token_id": 68429,
+        "delta": 17.137895584106445
+      },
+      {
+        "token": "ikul",
+        "token_id": 103556,
+        "delta": 17.012895584106445
+      },
+      {
+        "token": " Lak",
+        "token_id": 57056,
+        "delta": 16.989458084106445
+      },
+      {
+        "token": " unto",
+        "token_id": 47329,
+        "delta": 16.856645584106445
+      },
+      {
+        "token": " Nid",
+        "token_id": 159779,
+        "delta": 16.825395584106445
+      },
+      {
+        "token": " KC",
+        "token_id": 46060,
+        "delta": 16.794145584106445
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " Ocean",
+        "token_id": 29504,
+        "delta": 2.640597343444824
+      },
+      {
+        "token": " Kiss",
+        "token_id": 72193,
+        "delta": 2.675753593444824
+      },
+      {
+        "token": " Ruff",
+        "token_id": 186300,
+        "delta": 2.695284843444824
+      },
+      {
+        "token": "vv",
+        "token_id": 37313,
+        "delta": 2.7652969360351562
+      },
+      {
+        "token": " m\u00e9d",
+        "token_id": 13387,
+        "delta": 2.7711572647094727
+      },
+      {
+        "token": "cour",
+        "token_id": 118675,
+        "delta": 2.7890357971191406
+      },
+      {
+        "token": "-uns",
+        "token_id": 196738,
+        "delta": 2.7945938110351562
+      },
+      {
+        "token": " Ten",
+        "token_id": 21104,
+        "delta": 2.8202857971191406
+      }
+    ]
+  },
+  "2": {
+    "promoted": [
+      {
+        "token": " betre",
+        "token_id": 31518,
+        "delta": 11.76803970336914
+      },
+      {
+        "token": " robin",
+        "token_id": 189697,
+        "delta": 11.545692443847656
+      },
+      {
+        "token": " Pur",
+        "token_id": 22952,
+        "delta": 11.414960861206055
+      },
+      {
+        "token": " don",
+        "token_id": 1700,
+        "delta": 11.346471786499023
+      },
+      {
+        "token": " divid",
+        "token_id": 29269,
+        "delta": 11.201942443847656
+      },
+      {
+        "token": "\u5fa1",
+        "token_id": 107436,
+        "delta": 11.100378036499023
+      },
+      {
+        "token": " bac",
+        "token_id": 49290,
+        "delta": 11.032018661499023
+      },
+      {
+        "token": " kite",
+        "token_id": 61101,
+        "delta": 10.858192443847656
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "_fin",
+        "token_id": 95242,
+        "delta": 1.1734733581542969
+      },
+      {
+        "token": "bie",
+        "token_id": 23376,
+        "delta": 1.2017936706542969
+      },
+      {
+        "token": "\u606f",
+        "token_id": 12815,
+        "delta": 1.3082389831542969
+      },
+      {
+        "token": "odor",
+        "token_id": 64212,
+        "delta": 1.3453483581542969
+      },
+      {
+        "token": " fellow",
+        "token_id": 19807,
+        "delta": 1.3765983581542969
+      },
+      {
+        "token": " minut",
+        "token_id": 53352,
+        "delta": 1.4117546081542969
+      },
+      {
+        "token": "_attr",
+        "token_id": 24178,
+        "delta": 1.5719108581542969
+      },
+      {
+        "token": "34",
+        "token_id": 3020,
+        "delta": 1.5797233581542969
+      }
+    ]
+  },
+  "3": {
+    "promoted": [
+      {
+        "token": "/forums",
+        "token_id": 196020,
+        "delta": 11.836322784423828
+      },
+      {
+        "token": " Junge",
+        "token_id": 148103,
+        "delta": 11.648822784423828
+      },
+      {
+        "token": " fore",
+        "token_id": 3728,
+        "delta": 11.484760284423828
+      },
+      {
+        "token": " Beverly",
+        "token_id": 89562,
+        "delta": 11.273822784423828
+      },
+      {
+        "token": "olos",
+        "token_id": 52551,
+        "delta": 11.211322784423828
+      },
+      {
+        "token": "OPT",
+        "token_id": 52935,
+        "delta": 11.148822784423828
+      },
+      {
+        "token": "_FIL",
+        "token_id": 148255,
+        "delta": 11.023822784423828
+      },
+      {
+        "token": "694",
+        "token_id": 49555,
+        "delta": 11.023822784423828
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " land",
+        "token_id": 4583,
+        "delta": 1.6144580841064453
+      },
+      {
+        "token": " outlets",
+        "token_id": 47866,
+        "delta": 1.6242237091064453
+      },
+      {
+        "token": "occup",
+        "token_id": 37913,
+        "delta": 1.6398487091064453
+      },
+      {
+        "token": " mur",
+        "token_id": 11426,
+        "delta": 1.6554737091064453
+      },
+      {
+        "token": " perimeter",
+        "token_id": 89600,
+        "delta": 1.7492246627807617
+      },
+      {
+        "token": " utmost",
+        "token_id": 69842,
+        "delta": 1.7882862091064453
+      },
+      {
+        "token": " crack",
+        "token_id": 29931,
+        "delta": 1.8039112091064453
+      },
+      {
+        "token": " hybrid",
+        "token_id": 32881,
+        "delta": 1.8312549591064453
+      }
+    ]
+  },
+  "4": {
+    "promoted": [
+      {
+        "token": " Boyd",
+        "token_id": 130673,
+        "delta": 9.931587219238281
+      },
+      {
+        "token": " mine",
+        "token_id": 13336,
+        "delta": 9.931587219238281
+      },
+      {
+        "token": "Af",
+        "token_id": 34468,
+        "delta": 9.837837219238281
+      },
+      {
+        "token": "483",
+        "token_id": 40681,
+        "delta": 9.572212219238281
+      },
+      {
+        "token": "Ug",
+        "token_id": 122394,
+        "delta": 9.486274719238281
+      },
+      {
+        "token": " dar",
+        "token_id": 5653,
+        "delta": 9.433053970336914
+      },
+      {
+        "token": "itti",
+        "token_id": 34203,
+        "delta": 9.246177673339844
+      },
+      {
+        "token": " squeez",
+        "token_id": 83049,
+        "delta": 9.19599723815918
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " unders",
+        "token_id": 35769,
+        "delta": 3.0085220336914062
+      },
+      {
+        "token": " Underground",
+        "token_id": 91465,
+        "delta": 3.0397720336914062
+      },
+      {
+        "token": "alsa",
+        "token_id": 46642,
+        "delta": 3.08273983001709
+      },
+      {
+        "token": " Russo",
+        "token_id": 173190,
+        "delta": 3.1022720336914062
+      },
+      {
+        "token": " DAN",
+        "token_id": 106300,
+        "delta": 3.1022720336914062
+      },
+      {
+        "token": " UND",
+        "token_id": 133283,
+        "delta": 3.13352108001709
+      },
+      {
+        "token": " congestion",
+        "token_id": 94337,
+        "delta": 3.1930923461914062
+      },
+      {
+        "token": "amah",
+        "token_id": 59559,
+        "delta": 3.211740493774414
+      }
+    ]
+  },
+  "5": {
+    "promoted": [
+      {
+        "token": " Rek",
+        "token_id": 67584,
+        "delta": 9.96864128112793
+      },
+      {
+        "token": " Sinclair",
+        "token_id": 158407,
+        "delta": 9.65614128112793
+      },
+      {
+        "token": "enk",
+        "token_id": 17039,
+        "delta": 9.57020378112793
+      },
+      {
+        "token": "trx",
+        "token_id": 169669,
+        "delta": 9.402235984802246
+      },
+      {
+        "token": "regen",
+        "token_id": 45377,
+        "delta": 9.312389373779297
+      },
+      {
+        "token": "colo",
+        "token_id": 64101,
+        "delta": 9.163954734802246
+      },
+      {
+        "token": " h\u00f8",
+        "token_id": 35143,
+        "delta": 9.101454734802246
+      },
+      {
+        "token": "Edad",
+        "token_id": 164217,
+        "delta": 9.090864181518555
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "Rede",
+        "token_id": 138764,
+        "delta": 1.6159992218017578
+      },
+      {
+        "token": " vat",
+        "token_id": 42536,
+        "delta": 1.6355304718017578
+      },
+      {
+        "token": "olk",
+        "token_id": 48668,
+        "delta": 1.6628742218017578
+      },
+      {
+        "token": " reps",
+        "token_id": 77237,
+        "delta": 1.6648273468017578
+      },
+      {
+        "token": "EMS",
+        "token_id": 114789,
+        "delta": 1.6809759140014648
+      },
+      {
+        "token": " fixture",
+        "token_id": 25272,
+        "delta": 1.6843948364257812
+      },
+      {
+        "token": " freely",
+        "token_id": 42545,
+        "delta": 1.7019367218017578
+      },
+      {
+        "token": "trap",
+        "token_id": 74519,
+        "delta": 1.7122268676757812
+      }
+    ]
+  },
+  "6": {
+    "promoted": [
+      {
+        "token": "NOR",
+        "token_id": 182861,
+        "delta": 10.81732177734375
+      },
+      {
+        "token": " Weiss",
+        "token_id": 116394,
+        "delta": 10.770444869995117
+      },
+      {
+        "token": " iceberg",
+        "token_id": 173390,
+        "delta": 10.62982177734375
+      },
+      {
+        "token": " continental",
+        "token_id": 70467,
+        "delta": 10.31732177734375
+      },
+      {
+        "token": " pessim",
+        "token_id": 132382,
+        "delta": 10.263120651245117
+      },
+      {
+        "token": " repe",
+        "token_id": 11805,
+        "delta": 10.10638427734375
+      },
+      {
+        "token": " nond",
+        "token_id": 174085,
+        "delta": 10.02044677734375
+      },
+      {
+        "token": " Griffin",
+        "token_id": 89596,
+        "delta": 9.790231704711914
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " compet",
+        "token_id": 5452,
+        "delta": 2.3414268493652344
+      },
+      {
+        "token": "cr",
+        "token_id": 798,
+        "delta": 2.3492393493652344
+      },
+      {
+        "token": " fl",
+        "token_id": 1548,
+        "delta": 2.360957145690918
+      },
+      {
+        "token": "PLC",
+        "token_id": 134429,
+        "delta": 2.3902549743652344
+      },
+      {
+        "token": "acul",
+        "token_id": 88658,
+        "delta": 2.3961143493652344
+      },
+      {
+        "token": ".cr",
+        "token_id": 38964,
+        "delta": 2.4156455993652344
+      },
+      {
+        "token": " conflicting",
+        "token_id": 103913,
+        "delta": 2.4459190368652344
+      },
+      {
+        "token": "dep",
+        "token_id": 27480,
+        "delta": 2.4586143493652344
+      }
+    ]
+  },
+  "7": {
+    "promoted": [
+      {
+        "token": "chron",
+        "token_id": 12214,
+        "delta": 6.193300247192383
+      },
+      {
+        "token": " TY",
+        "token_id": 98961,
+        "delta": 5.730171203613281
+      },
+      {
+        "token": " Mead",
+        "token_id": 189706,
+        "delta": 5.670225143432617
+      },
+      {
+        "token": "lech",
+        "token_id": 44367,
+        "delta": 5.577098846435547
+      },
+      {
+        "token": " massively",
+        "token_id": 129164,
+        "delta": 5.560892105102539
+      },
+      {
+        "token": "cite",
+        "token_id": 97965,
+        "delta": 5.53424072265625
+      },
+      {
+        "token": "Pais",
+        "token_id": 138915,
+        "delta": 5.451475143432617
+      },
+      {
+        "token": " Oceans",
+        "token_id": 180154,
+        "delta": 5.451047897338867
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "622",
+        "token_id": 39589,
+        "delta": 0.6493940353393555
+      },
+      {
+        "token": ".as",
+        "token_id": 9416,
+        "delta": 0.6493940353393555
+      },
+      {
+        "token": " asymmetric",
+        "token_id": 181192,
+        "delta": 0.6650190353393555
+      },
+      {
+        "token": " inverted",
+        "token_id": 96179,
+        "delta": 0.6806440353393555
+      },
+      {
+        "token": " short",
+        "token_id": 4022,
+        "delta": 0.6806440353393555
+      },
+      {
+        "token": "495",
+        "token_id": 36491,
+        "delta": 0.7587690353393555
+      },
+      {
+        "token": "546",
+        "token_id": 43112,
+        "delta": 0.8456821441650391
+      },
+      {
+        "token": ".j",
+        "token_id": 1760,
+        "delta": 0.8837690353393555
+      }
+    ]
+  },
+  "8": {
+    "promoted": [
+      {
+        "token": " Nad",
+        "token_id": 47861,
+        "delta": 8.958690643310547
+      },
+      {
+        "token": " matric",
+        "token_id": 90143,
+        "delta": 8.958690643310547
+      },
+      {
+        "token": "metic",
+        "token_id": 27781,
+        "delta": 8.896190643310547
+      },
+      {
+        "token": " Sty",
+        "token_id": 74921,
+        "delta": 8.864940643310547
+      },
+      {
+        "token": "Late",
+        "token_id": 77156,
+        "delta": 8.759471893310547
+      },
+      {
+        "token": "her",
+        "token_id": 999,
+        "delta": 8.739940643310547
+      },
+      {
+        "token": "mes",
+        "token_id": 4613,
+        "delta": 8.708690643310547
+      },
+      {
+        "token": "elly",
+        "token_id": 18808,
+        "delta": 8.646190643310547
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " PU",
+        "token_id": 61453,
+        "delta": 1.0241775512695312
+      },
+      {
+        "token": " Motiv",
+        "token_id": 99117,
+        "delta": 1.0398025512695312
+      },
+      {
+        "token": " verke",
+        "token_id": 64876,
+        "delta": 1.0437088012695312
+      },
+      {
+        "token": " d\u00e9r",
+        "token_id": 75583,
+        "delta": 1.0554275512695312
+      },
+      {
+        "token": " reb",
+        "token_id": 16286,
+        "delta": 1.0632390975952148
+      },
+      {
+        "token": " PF",
+        "token_id": 52605,
+        "delta": 1.1179275512695312
+      },
+      {
+        "token": " Exc",
+        "token_id": 52167,
+        "delta": 1.2331619262695312
+      },
+      {
+        "token": " cycl",
+        "token_id": 27789,
+        "delta": 1.3366765975952148
+      }
+    ]
+  },
+  "9": {
+    "promoted": [
+      {
+        "token": "erton",
+        "token_id": 61120,
+        "delta": 8.2889404296875
+      },
+      {
+        "token": " NTN",
+        "token_id": 134842,
+        "delta": 7.952914237976074
+      },
+      {
+        "token": " Revenge",
+        "token_id": 176065,
+        "delta": 7.636507987976074
+      },
+      {
+        "token": "lat",
+        "token_id": 8100,
+        "delta": 7.4608154296875
+      },
+      {
+        "token": "semble",
+        "token_id": 17213,
+        "delta": 7.3826904296875
+      },
+      {
+        "token": " surfer",
+        "token_id": 196773,
+        "delta": 7.284945487976074
+      },
+      {
+        "token": "ofy",
+        "token_id": 125487,
+        "delta": 7.159945487976074
+      },
+      {
+        "token": " Nazar",
+        "token_id": 174087,
+        "delta": 6.898226737976074
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "ainte",
+        "token_id": 48434,
+        "delta": -0.8763713836669922
+      },
+      {
+        "token": "tings",
+        "token_id": 3305,
+        "delta": -0.8509807586669922
+      },
+      {
+        "token": " transformation",
+        "token_id": 26242,
+        "delta": -0.7533245086669922
+      },
+      {
+        "token": "embangan",
+        "token_id": 103791,
+        "delta": -0.7406291961669922
+      },
+      {
+        "token": " SDR",
+        "token_id": 162583,
+        "delta": -0.7376995086669922
+      },
+      {
+        "token": "aiti",
+        "token_id": 50200,
+        "delta": -0.7298870086669922
+      },
+      {
+        "token": " overs",
+        "token_id": 23473,
+        "delta": -0.7220745086669922
+      },
+      {
+        "token": "iong",
+        "token_id": 101866,
+        "delta": -0.7213420867919922
+      }
+    ]
+  },
+  "10": {
+    "promoted": [
+      {
+        "token": "room",
+        "token_id": 3332,
+        "delta": 8.877931594848633
+      },
+      {
+        "token": "Asp",
+        "token_id": 89182,
+        "delta": 8.373056411743164
+      },
+      {
+        "token": "macher",
+        "token_id": 186302,
+        "delta": 8.255868911743164
+      },
+      {
+        "token": " irin",
+        "token_id": 68513,
+        "delta": 8.22845458984375
+      },
+      {
+        "token": "Cot",
+        "token_id": 108693,
+        "delta": 8.201181411743164
+      },
+      {
+        "token": "DCF",
+        "token_id": 162937,
+        "delta": 8.12305736541748
+      },
+      {
+        "token": "stri",
+        "token_id": 163283,
+        "delta": 8.059542655944824
+      },
+      {
+        "token": "lent",
+        "token_id": 139172,
+        "delta": 8.058490753173828
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " Through",
+        "token_id": 20684,
+        "delta": 2.010204315185547
+      },
+      {
+        "token": "LV",
+        "token_id": 50866,
+        "delta": 2.023876190185547
+      },
+      {
+        "token": " Breda",
+        "token_id": 169026,
+        "delta": 2.051219940185547
+      },
+      {
+        "token": ".std",
+        "token_id": 42485,
+        "delta": 2.090282440185547
+      },
+      {
+        "token": " calibre",
+        "token_id": 135837,
+        "delta": 2.144969940185547
+      },
+      {
+        "token": " g\u00e9n",
+        "token_id": 15330,
+        "delta": 2.394969940185547
+      },
+      {
+        "token": " piv",
+        "token_id": 61546,
+        "delta": 2.457469940185547
+      },
+      {
+        "token": ".update",
+        "token_id": 8689,
+        "delta": 2.883572578430176
+      }
+    ]
+  },
+  "11": {
+    "promoted": [
+      {
+        "token": "-enh",
+        "token_id": 154319,
+        "delta": 6.200117111206055
+      },
+      {
+        "token": "Kt",
+        "token_id": 148310,
+        "delta": 6.174802780151367
+      },
+      {
+        "token": ".decorate",
+        "token_id": 171398,
+        "delta": 6.036054611206055
+      },
+      {
+        "token": " evenings",
+        "token_id": 69036,
+        "delta": 5.990362167358398
+      },
+      {
+        "token": ".make",
+        "token_id": 15909,
+        "delta": 5.934492111206055
+      },
+      {
+        "token": " behaviours",
+        "token_id": 117617,
+        "delta": 5.660749435424805
+      },
+      {
+        "token": "IDES",
+        "token_id": 196428,
+        "delta": 5.624697685241699
+      },
+      {
+        "token": " shaking",
+        "token_id": 74588,
+        "delta": 5.606367111206055
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " today",
+        "token_id": 4044,
+        "delta": -1.509902000427246
+      },
+      {
+        "token": " mixing",
+        "token_id": 38917,
+        "delta": -1.494277000427246
+      },
+      {
+        "token": "-con",
+        "token_id": 21675,
+        "delta": -1.478652000427246
+      },
+      {
+        "token": " multip",
+        "token_id": 17524,
+        "delta": -1.447402000427246
+      },
+      {
+        "token": "_eng",
+        "token_id": 160091,
+        "delta": -1.447402000427246
+      },
+      {
+        "token": " ed",
+        "token_id": 1648,
+        "delta": -1.447402000427246
+      },
+      {
+        "token": " office",
+        "token_id": 6885,
+        "delta": -1.416152000427246
+      },
+      {
+        "token": "_micro",
+        "token_id": 195093,
+        "delta": -1.384902000427246
+      }
+    ]
+  },
+  "12": {
+    "promoted": [
+      {
+        "token": "ostat",
+        "token_id": 49237,
+        "delta": 10.703079223632812
+      },
+      {
+        "token": "huk",
+        "token_id": 181186,
+        "delta": 10.578079223632812
+      },
+      {
+        "token": " c\u00e1",
+        "token_id": 25230,
+        "delta": 10.248117446899414
+      },
+      {
+        "token": "gir",
+        "token_id": 115195,
+        "delta": 10.203079223632812
+      },
+      {
+        "token": "ylon",
+        "token_id": 34783,
+        "delta": 10.169992446899414
+      },
+      {
+        "token": "pd",
+        "token_id": 26980,
+        "delta": 10.156204223632812
+      },
+      {
+        "token": "hub",
+        "token_id": 32849,
+        "delta": 10.109329223632812
+      },
+      {
+        "token": "pons",
+        "token_id": 2987,
+        "delta": 10.031204223632812
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "Cos",
+        "token_id": 60815,
+        "delta": 3.271146774291992
+      },
+      {
+        "token": "ily",
+        "token_id": 1810,
+        "delta": 3.271146774291992
+      },
+      {
+        "token": "nr",
+        "token_id": 33357,
+        "delta": 3.286771774291992
+      },
+      {
+        "token": "proc",
+        "token_id": 35874,
+        "delta": 3.333646774291992
+      },
+      {
+        "token": "reem",
+        "token_id": 117278,
+        "delta": 3.333646774291992
+      },
+      {
+        "token": ".Exchange",
+        "token_id": 189449,
+        "delta": 3.333646774291992
+      },
+      {
+        "token": ".Det",
+        "token_id": 174895,
+        "delta": 3.3422298431396484
+      },
+      {
+        "token": ".Design",
+        "token_id": 160434,
+        "delta": 3.3422298431396484
+      }
+    ]
+  },
+  "13": {
+    "promoted": [
+      {
+        "token": " Pee",
+        "token_id": 162842,
+        "delta": 6.063634872436523
+      },
+      {
+        "token": "roj",
+        "token_id": 44603,
+        "delta": 5.719694137573242
+      },
+      {
+        "token": " $?",
+        "token_id": 140683,
+        "delta": 5.625944137573242
+      },
+      {
+        "token": " ju",
+        "token_id": 6522,
+        "delta": 5.450082778930664
+      },
+      {
+        "token": " PRIOR",
+        "token_id": 191934,
+        "delta": 5.438634872436523
+      },
+      {
+        "token": "Rev",
+        "token_id": 46580,
+        "delta": 5.430631637573242
+      },
+      {
+        "token": "LAB",
+        "token_id": 43230,
+        "delta": 5.407384872436523
+      },
+      {
+        "token": " (\u00a7",
+        "token_id": 195451,
+        "delta": 5.323741912841797
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "_topics",
+        "token_id": 172609,
+        "delta": -1.96112060546875
+      },
+      {
+        "token": "Topics",
+        "token_id": 74880,
+        "delta": -1.96112060546875
+      },
+      {
+        "token": "pre",
+        "token_id": 2235,
+        "delta": -1.94549560546875
+      },
+      {
+        "token": " meetings",
+        "token_id": 23277,
+        "delta": -1.52362060546875
+      },
+      {
+        "token": "topics",
+        "token_id": 125920,
+        "delta": -1.46112060546875
+      },
+      {
+        "token": " Agenda",
+        "token_id": 79967,
+        "delta": -1.3986210823059082
+      },
+      {
+        "token": "Agenda",
+        "token_id": 102530,
+        "delta": -0.9611210823059082
+      },
+      {
+        "token": " topics",
+        "token_id": 15083,
+        "delta": -0.7736210823059082
+      }
+    ]
+  },
+  "14": {
+    "promoted": [
+      {
+        "token": " Gug",
+        "token_id": 197871,
+        "delta": 10.073780059814453
+      },
+      {
+        "token": " (!)",
+        "token_id": 130820,
+        "delta": 9.698780059814453
+      },
+      {
+        "token": " Shay",
+        "token_id": 121936,
+        "delta": 9.448780059814453
+      },
+      {
+        "token": " Steiner",
+        "token_id": 191610,
+        "delta": 9.355030059814453
+      },
+      {
+        "token": " down",
+        "token_id": 1917,
+        "delta": 9.28471565246582
+      },
+      {
+        "token": " ab",
+        "token_id": 692,
+        "delta": 9.26909065246582
+      },
+      {
+        "token": " baj",
+        "token_id": 29227,
+        "delta": 9.261280059814453
+      },
+      {
+        "token": "-scal",
+        "token_id": 163261,
+        "delta": 9.213905334472656
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "hrer",
+        "token_id": 134884,
+        "delta": 1.7069721221923828
+      },
+      {
+        "token": "iver",
+        "token_id": 1788,
+        "delta": 1.7147846221923828
+      },
+      {
+        "token": "usz",
+        "token_id": 91335,
+        "delta": 1.7225971221923828
+      },
+      {
+        "token": "omet",
+        "token_id": 6545,
+        "delta": 1.7284564971923828
+      },
+      {
+        "token": "alt",
+        "token_id": 3271,
+        "delta": 1.7772855758666992
+      },
+      {
+        "token": "itur",
+        "token_id": 13862,
+        "delta": 1.7850971221923828
+      },
+      {
+        "token": "issa",
+        "token_id": 13528,
+        "delta": 1.8163471221923828
+      },
+      {
+        "token": "itel",
+        "token_id": 17229,
+        "delta": 1.9179105758666992
+      }
+    ]
+  },
+  "15": {
+    "promoted": [
+      {
+        "token": "Kev",
+        "token_id": 62861,
+        "delta": 6.988527297973633
+      },
+      {
+        "token": "BRO",
+        "token_id": 176148,
+        "delta": 5.972902297973633
+      },
+      {
+        "token": "\u00e9f",
+        "token_id": 126246,
+        "delta": 5.949463844299316
+      },
+      {
+        "token": " Personally",
+        "token_id": 95501,
+        "delta": 5.894777297973633
+      },
+      {
+        "token": " stuff",
+        "token_id": 9350,
+        "delta": 5.838017463684082
+      },
+      {
+        "token": "aster",
+        "token_id": 3588,
+        "delta": 5.824463844299316
+      },
+      {
+        "token": " Sun",
+        "token_id": 11628,
+        "delta": 5.775517463684082
+      },
+      {
+        "token": "KER",
+        "token_id": 124435,
+        "delta": 5.750245094299316
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " however",
+        "token_id": 6726,
+        "delta": -1.5613079071044922
+      },
+      {
+        "token": " along",
+        "token_id": 4251,
+        "delta": -1.5456829071044922
+      },
+      {
+        "token": " within",
+        "token_id": 3518,
+        "delta": -1.4831829071044922
+      },
+      {
+        "token": " barely",
+        "token_id": 35815,
+        "delta": -1.4050579071044922
+      },
+      {
+        "token": " across",
+        "token_id": 5251,
+        "delta": -1.3581829071044922
+      },
+      {
+        "token": " =",
+        "token_id": 314,
+        "delta": -0.5935473442077637
+      },
+      {
+        "token": "\\",
+        "token_id": 59,
+        "delta": -0.46854734420776367
+      },
+      {
+        "token": " //",
+        "token_id": 602,
+        "delta": -0.39372730255126953
+      }
+    ]
+  },
+  "16": {
+    "promoted": [
+      {
+        "token": " cult",
+        "token_id": 4685,
+        "delta": 8.309822082519531
+      },
+      {
+        "token": " tint",
+        "token_id": 47513,
+        "delta": 8.091072082519531
+      },
+      {
+        "token": " BUT",
+        "token_id": 21371,
+        "delta": 7.885180473327637
+      },
+      {
+        "token": " Felt",
+        "token_id": 162133,
+        "delta": 7.548473358154297
+      },
+      {
+        "token": " Pob",
+        "token_id": 166265,
+        "delta": 7.434822082519531
+      },
+      {
+        "token": "ACY",
+        "token_id": 79728,
+        "delta": 7.384410858154297
+      },
+      {
+        "token": "Elt",
+        "token_id": 168261,
+        "delta": 7.340141296386719
+      },
+      {
+        "token": " tostring",
+        "token_id": 188211,
+        "delta": 7.309822082519531
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " bowed",
+        "token_id": 175809,
+        "delta": -0.21236228942871094
+      },
+      {
+        "token": " MUST",
+        "token_id": 52178,
+        "delta": -0.18501853942871094
+      },
+      {
+        "token": " VERY",
+        "token_id": 65923,
+        "delta": -0.15767478942871094
+      },
+      {
+        "token": " reminded",
+        "token_id": 45522,
+        "delta": -0.024862289428710938
+      },
+      {
+        "token": "/mo",
+        "token_id": 107133,
+        "delta": -0.017049789428710938
+      },
+      {
+        "token": " alumin",
+        "token_id": 98775,
+        "delta": 0.010957717895507812
+      },
+      {
+        "token": " ya",
+        "token_id": 2289,
+        "delta": 0.010957717895507812
+      },
+      {
+        "token": " puna",
+        "token_id": 147485,
+        "delta": 0.010957717895507812
+      }
+    ]
+  },
+  "17": {
+    "promoted": [
+      {
+        "token": " Done",
+        "token_id": 46776,
+        "delta": 6.613880157470703
+      },
+      {
+        "token": " specials",
+        "token_id": 75525,
+        "delta": 5.9854254722595215
+      },
+      {
+        "token": " oms",
+        "token_id": 62155,
+        "delta": 5.768026351928711
+      },
+      {
+        "token": "ALLY",
+        "token_id": 43316,
+        "delta": 5.716907501220703
+      },
+      {
+        "token": " south",
+        "token_id": 15019,
+        "delta": 5.705420970916748
+      },
+      {
+        "token": " pach",
+        "token_id": 107296,
+        "delta": 5.685657501220703
+      },
+      {
+        "token": "////",
+        "token_id": 1426,
+        "delta": 5.641712188720703
+      },
+      {
+        "token": "jw",
+        "token_id": 181155,
+        "delta": 5.607532501220703
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " Thirty",
+        "token_id": 121203,
+        "delta": -4.825373649597168
+      },
+      {
+        "token": " Fif",
+        "token_id": 37631,
+        "delta": -4.781728744506836
+      },
+      {
+        "token": " Dw",
+        "token_id": 92046,
+        "delta": -4.699697494506836
+      },
+      {
+        "token": " Initial",
+        "token_id": 9209,
+        "delta": -4.45651912689209
+      },
+      {
+        "token": " Eight",
+        "token_id": 72687,
+        "delta": -4.430166244506836
+      },
+      {
+        "token": "\u30bc",
+        "token_id": 81212,
+        "delta": -4.425268173217773
+      },
+      {
+        "token": " INITIAL",
+        "token_id": 112695,
+        "delta": -4.14401912689209
+      },
+      {
+        "token": " nul",
+        "token_id": 64435,
+        "delta": -4.144018173217773
+      }
+    ]
+  },
+  "18": {
+    "promoted": [
+      {
+        "token": " top",
+        "token_id": 2344,
+        "delta": 9.932914733886719
+      },
+      {
+        "token": " now",
+        "token_id": 1954,
+        "delta": 9.761039733886719
+      },
+      {
+        "token": " strong",
+        "token_id": 5532,
+        "delta": 9.387016296386719
+      },
+      {
+        "token": " role",
+        "token_id": 5430,
+        "delta": 9.253227233886719
+      },
+      {
+        "token": " dedicated",
+        "token_id": 14024,
+        "delta": 9.147758483886719
+      },
+      {
+        "token": " full",
+        "token_id": 3149,
+        "delta": 9.128227233886719
+      },
+      {
+        "token": " standard",
+        "token_id": 7024,
+        "delta": 9.120414733886719
+      },
+      {
+        "token": " titular",
+        "token_id": 56768,
+        "delta": 9.120414733886719
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " having",
+        "token_id": 4566,
+        "delta": -5.267239570617676
+      },
+      {
+        "token": " your",
+        "token_id": 634,
+        "delta": -5.267239570617676
+      },
+      {
+        "token": " blinking",
+        "token_id": 169914,
+        "delta": -5.157865524291992
+      },
+      {
+        "token": " putting",
+        "token_id": 16019,
+        "delta": -5.150052070617676
+      },
+      {
+        "token": " her",
+        "token_id": 1335,
+        "delta": -5.142239570617676
+      },
+      {
+        "token": " sw",
+        "token_id": 2766,
+        "delta": -4.837553024291992
+      },
+      {
+        "token": "its",
+        "token_id": 1348,
+        "delta": -4.767239570617676
+      },
+      {
+        "token": "their",
+        "token_id": 90587,
+        "delta": -4.089506149291992
+      }
+    ]
+  },
+  "19": {
+    "promoted": [
+      {
+        "token": " sculpt",
+        "token_id": 34050,
+        "delta": 15.217920303344727
+      },
+      {
+        "token": " cat",
+        "token_id": 9059,
+        "delta": 14.941370964050293
+      },
+      {
+        "token": " sculpture",
+        "token_id": 71856,
+        "delta": 14.342920303344727
+      },
+      {
+        "token": " statue",
+        "token_id": 66114,
+        "delta": 13.65541934967041
+      },
+      {
+        "token": " water",
+        "token_id": 3411,
+        "delta": 13.577224731445312
+      },
+      {
+        "token": " cats",
+        "token_id": 28854,
+        "delta": 13.566370964050293
+      },
+      {
+        "token": " feline",
+        "token_id": 174475,
+        "delta": 13.441370964050293
+      },
+      {
+        "token": " statues",
+        "token_id": 110303,
+        "delta": 13.15541934967041
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " true",
+        "token_id": 1343,
+        "delta": -6.119694232940674
+      },
+      {
+        "token": " falso",
+        "token_id": 136495,
+        "delta": -6.088443756103516
+      },
+      {
+        "token": ":false",
+        "token_id": 43895,
+        "delta": -5.963444709777832
+      },
+      {
+        "token": ".False",
+        "token_id": 131359,
+        "delta": -5.791568756103516
+      },
+      {
+        "token": "(false",
+        "token_id": 6216,
+        "delta": -5.557194709777832
+      },
+      {
+        "token": "_false",
+        "token_id": 96094,
+        "delta": -5.338444709777832
+      },
+      {
+        "token": ".false",
+        "token_id": 196992,
+        "delta": -5.080631256103516
+      },
+      {
+        "token": "false",
+        "token_id": 7556,
+        "delta": -4.807194709777832
+      }
+    ]
+  },
+  "20": {
+    "promoted": [
+      {
+        "token": " night",
+        "token_id": 4856,
+        "delta": 10.525376319885254
+      },
+      {
+        "token": "hein",
+        "token_id": 51385,
+        "delta": 10.14434814453125
+      },
+      {
+        "token": " night's",
+        "token_id": 116018,
+        "delta": 9.775375366210938
+      },
+      {
+        "token": " UNO",
+        "token_id": 184818,
+        "delta": 9.5587158203125
+      },
+      {
+        "token": " nw",
+        "token_id": 45462,
+        "delta": 9.509262084960938
+      },
+      {
+        "token": "/night",
+        "token_id": 130364,
+        "delta": 9.478500366210938
+      },
+      {
+        "token": "nite",
+        "token_id": 57923,
+        "delta": 9.431625366210938
+      },
+      {
+        "token": "eka",
+        "token_id": 17209,
+        "delta": 9.31622314453125
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " ...\"\n",
+        "token_id": 147100,
+        "delta": 0.3064689636230469
+      },
+      {
+        "token": " \u2026..",
+        "token_id": 167064,
+        "delta": 0.3377189636230469
+      },
+      {
+        "token": " ................",
+        "token_id": 194820,
+        "delta": 0.3689689636230469
+      },
+      {
+        "token": " gewesen",
+        "token_id": 68273,
+        "delta": 0.5723037719726562
+      },
+      {
+        "token": " hab\u00edan",
+        "token_id": 65929,
+        "delta": 0.6196670532226562
+      },
+      {
+        "token": " ....\n",
+        "token_id": 152075,
+        "delta": 0.7439689636230469
+      },
+      {
+        "token": " ...\"",
+        "token_id": 119163,
+        "delta": 0.7439689636230469
+      },
+      {
+        "token": "\u2019avait",
+        "token_id": 97497,
+        "delta": 0.7598037719726562
+      }
+    ]
+  },
+  "21": {
+    "promoted": [
+      {
+        "token": " fast",
+        "token_id": 5661,
+        "delta": 20.266048431396484
+      },
+      {
+        "token": "_fast",
+        "token_id": 87593,
+        "delta": 19.437923431396484
+      },
+      {
+        "token": " slow",
+        "token_id": 9800,
+        "delta": 19.328548431396484
+      },
+      {
+        "token": "fast",
+        "token_id": 10472,
+        "delta": 19.031673431396484
+      },
+      {
+        "token": ".fast",
+        "token_id": 68087,
+        "delta": 18.578548431396484
+      },
+      {
+        "token": "slow",
+        "token_id": 69974,
+        "delta": 18.187923431396484
+      },
+      {
+        "token": " pong",
+        "token_id": 109872,
+        "delta": 18.091711044311523
+      },
+      {
+        "token": " ping",
+        "token_id": 30868,
+        "delta": 18.060461044311523
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "\u5927\u962a",
+        "token_id": 136632,
+        "delta": -0.9743900299072266
+      },
+      {
+        "token": " Tokio",
+        "token_id": 174810,
+        "delta": -0.9743900299072266
+      },
+      {
+        "token": "\u6771\u4eac\u90fd",
+        "token_id": 123558,
+        "delta": -0.8181400299072266
+      },
+      {
+        "token": "(tok",
+        "token_id": 182089,
+        "delta": -0.8181400299072266
+      },
+      {
+        "token": " TOK",
+        "token_id": 133802,
+        "delta": -0.7556400299072266
+      },
+      {
+        "token": "hiro",
+        "token_id": 105513,
+        "delta": -0.7556400299072266
+      },
+      {
+        "token": "24",
+        "token_id": 1494,
+        "delta": -0.7026309967041016
+      },
+      {
+        "token": " YY",
+        "token_id": 45694,
+        "delta": -0.6635684967041016
+      }
+    ]
+  },
+  "22": {
+    "promoted": [
+      {
+        "token": "\"><?=$",
+        "token_id": 157699,
+        "delta": 12.308605194091797
+      },
+      {
+        "token": "/'.$",
+        "token_id": 51382,
+        "delta": 12.246105194091797
+      },
+      {
+        "token": "/')",
+        "token_id": 195611,
+        "delta": 12.214855194091797
+      },
+      {
+        "token": "'],$",
+        "token_id": 115441,
+        "delta": 12.183605194091797
+      },
+      {
+        "token": "(\"${",
+        "token_id": 67972,
+        "delta": 12.058605194091797
+      },
+      {
+        "token": "ANSI",
+        "token_id": 140740,
+        "delta": 12.022174835205078
+      },
+      {
+        "token": "heg",
+        "token_id": 134081,
+        "delta": 11.991949081420898
+      },
+      {
+        "token": "bj",
+        "token_id": 80099,
+        "delta": 11.929449081420898
+      }
+    ],
+    "suppressed": [
+      {
+        "token": " Dy",
+        "token_id": 53349,
+        "delta": 1.10186767578125
+      },
+      {
+        "token": ".\n\n\n\n\n",
+        "token_id": 73676,
+        "delta": 1.11358642578125
+      },
+      {
+        "token": "halter",
+        "token_id": 148043,
+        "delta": 1.1643714904785156
+      },
+      {
+        "token": ".\u201d\n\n",
+        "token_id": 4249,
+        "delta": 1.19171142578125
+      },
+      {
+        "token": " They've",
+        "token_id": 152758,
+        "delta": 1.19561767578125
+      },
+      {
+        "token": ".\"\n\n",
+        "token_id": 6635,
+        "delta": 1.19561767578125
+      },
+      {
+        "token": " they've",
+        "token_id": 51676,
+        "delta": 1.32843017578125
+      },
+      {
+        "token": " they're",
+        "token_id": 18940,
+        "delta": 1.38311767578125
+      }
+    ]
+  },
+  "23": {
+    "promoted": [
+      {
+        "token": "ajat",
+        "token_id": 77819,
+        "delta": 16.628963470458984
+      },
+      {
+        "token": "argos",
+        "token_id": 149147,
+        "delta": 16.566463470458984
+      },
+      {
+        "token": "ocat",
+        "token_id": 85324,
+        "delta": 16.441463470458984
+      },
+      {
+        "token": "bels",
+        "token_id": 195736,
+        "delta": 16.441463470458984
+      },
+      {
+        "token": "UPC",
+        "token_id": 163535,
+        "delta": 16.441463470458984
+      },
+      {
+        "token": "gred",
+        "token_id": 22181,
+        "delta": 16.378963470458984
+      },
+      {
+        "token": "laub",
+        "token_id": 23899,
+        "delta": 16.378963470458984
+      },
+      {
+        "token": "jik",
+        "token_id": 134332,
+        "delta": 16.378963470458984
+      }
+    ],
+    "suppressed": [
+      {
+        "token": "holder",
+        "token_id": 7166,
+        "delta": 0.7471189498901367
+      },
+      {
+        "token": " shall",
+        "token_id": 8712,
+        "delta": 0.7494912147521973
+      },
+      {
+        "token": "\u00a0",
+        "token_id": 5310,
+        "delta": 0.759068489074707
+      },
+      {
+        "token": ".",
+        "token_id": 13,
+        "delta": 0.7795548439025879
+      },
+      {
+        "token": ".\n",
+        "token_id": 558,
+        "delta": 0.7807412147521973
+      },
+      {
+        "token": "$.",
+        "token_id": 25507,
+        "delta": 0.7924594879150391
+      },
+      {
+        "token": "\\,",
+        "token_id": 40037,
+        "delta": 0.803107738494873
+      },
+      {
+        "token": " sat",
+        "token_id": 10139,
+        "delta": 0.805943489074707
+      }
+    ]
+  }
+}
