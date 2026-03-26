@@ -3,26 +3,37 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gpt-oss-interp"
-version = "0.2.0"
-description = "Mechanistic interpretability toolkit for OpenAI gpt-oss models"
+name = "gossh"
+version = "1.0.0a1"
+description = "gpt-oss-inspectability-harness: mechanistic interpretability toolkit for gpt-oss-20b and gpt-oss-120b"
 requires-python = ">=3.10"
 dependencies = [
     "torch>=2.0",
     "transformers>=4.40",
     "safetensors",
     "accelerate",
+    "msgpack>=1.0",
+    "pyyaml>=6.0",
 ]
 
 [project.optional-dependencies]
+mxfp4 = [
+    "kernels",
+]
+sidecar = [
+    "msgpack>=1.0",
+]
 dev = [
     "pytest",
     "ruff",
 ]
+
+[project.scripts]
+gossh-benchmark = "gossh.benchmarks.runner:main"
 
 [tool.setuptools]
 package-dir = {"" = "."}
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["gpt_oss_interp*"]
+include = ["gossh*", "gpt_oss_interp*"]
