@@ -685,6 +685,190 @@ Thread 25 is literally free — it's a relabelling of Thread 15's `routing_entro
 
 ---
 
+## Part V — Routing as a Data-Organization Lens
+
+*Grounded in the lit review synthesised March 2026.*
+
+The literature establishes three tiers of evidence that MoE routing is fundamentally a
+data-clustering mechanism, not merely a load-balancer:
+
+**Foundational (1991–1995)**: Jacobs et al. (1991), Jordan & Jacobs (1994), and Xu et al.
+(1995) show that gating networks perform competitive learning over the input distribution —
+mathematically identical to EM-based Gaussian mixture clustering.  Routing an input to an
+expert is assigning it to a cluster.
+
+**Theoretical proof (2022–2025)**: Chen et al. (NeurIPS 2022) proved that under gradient
+descent, MoE routers learn cluster-center features.  Dikkala et al. (EMNLP 2023) proved
+routers recover Gaussian mixture assignments.  Kawata et al. (ICML 2025) proved MoE detects
+latent cluster structure that dense networks *provably cannot* — the router is the mechanism
+by which MoE outperforms dense models on clustered input distributions.
+
+**Empirical exploitation (2021–2025)**: V-MoE (2021) shows routing recovers ImageNet
+semantic classes in deep layers.  ST-MoE (2022) and OpenMoE (2024) find token-surface
+categories (punctuation, digits, function words) emerge as routing clusters.  HMOE (2022)
+uses routing for label-free domain discovery, finding learned clusters more coherent than
+human labels.  Li & Zhou (ICLR 2025) show routing-weight vectors are off-the-shelf
+embeddings competitive on MTEB.  Nikolic et al. (2025) show unsupervised routing discovers
+sub-categorical structure *beyond* human-defined class boundaries.
+
+### How our empirical results fit
+
+| Our finding | Literature connection | Interpretation |
+|---|---|---|
+| MI(expert; task) peaks at L12, not L19–21 | OpenMoE #11: "routing determined early, stable thereafter" | Routing encodes cluster membership mid-network; late layers execute, not decide |
+| Code JSD 0.39–0.51 vs. natural language | ST-MoE, OpenMoE: token-surface drives early routing | Code's distinct BPE surface creates a near-disjoint cluster from the start |
+| Analogy/coreference/recency cluster (JSD 0.04–0.09) | HMOE: clusters more coherent than human labels | Router groups by shared computation (antecedent resolution), not surface domain |
+| 4.4% task capacity budget | Li & Zhou: routing = high-level semantics; rest = surface | Task identity is a thin semantic slice of the full routing capacity |
+| Routing sub-uniform all layers | Chen et al.: router recovers cluster centers under gradient descent | Load-balancing suppresses but cannot eliminate specialization |
+
+### Three unexploited analyses on existing data
+
+All three can be run against `runs/expert_readouts/routing_patterns.json`
+*today* — no new model forward passes needed.
+
+---
+
+#### Thread 30 — Routing-Weight Embeddings and Task Geometry
+
+**Core reference**: Li & Zhou, ICLR 2025 ("Your MoE LLM Is Secretly an Embedding Model For Free")
+
+**Question**: Does the routing-weight vector across layers encode task structure that is
+(a) discriminative without any fine-tuning, and (b) complementary to hidden-state embeddings?
+
+**What the routing-weight vector is**:
+For each prompt, the sidecar captures per-layer routing decisions.  Aggregating across the
+24 MoE layers, we can form a vector `r ∈ ℝ^{24 × 32}` where `r[l, e]` is the fraction of
+tokens routed to expert `e` at layer `l`.  This is a 768-dimensional embedding derived
+purely from routing decisions — no hidden states required.
+
+**Measurements**:
+
+1. **UMAP/t-SNE projection** (Nikolic 2025 methodology):
+   - Project 135 routing-weight vectors (one per prompt) into 2D
+   - Color by task family
+   - Expected: code_completion separates first; analogy/coreference/recency cluster together
+   - Key question: does unsupervised layout recover the JSD dendrogram?
+
+2. **Routing-weight vs. hidden-state similarity** (Li & Zhou methodology):
+   - For each prompt pair, compute:
+     - `sim_routing(i, j) = cosine(r_i, r_j)` — routing-weight similarity
+     - `sim_hidden(i, j) = cosine(h_i, h_j)` — last-token hidden-state similarity at L20
+   - Compare the two similarity matrices via Mantel test (correlation of pairwise distances)
+   - Expected: high within-family similarity in both; routing-weight similarity decorrelates
+     more across certain task pairs (code vs. NL) while hidden-state similarity decorrelates
+     more for others (e.g., factual recall prompts with shared surface forms)
+
+3. **Hierarchical clustering dendrogram** (HMOE methodology):
+   - Use the empirical JSD matrix (`routing_jsd_matrix.json`, already computed) as a
+     distance metric
+   - Produce a dendrogram over 9 task families
+   - Compare to: (a) human intuitions about task relatedness, (b) NLP benchmark correlation
+     matrices from SuperGLUE / BIG-Bench
+   - Expected dendrogram: `{code} | {arithmetic | factual_recall} | {analogy | coreference |
+     recency | syntax | capitalization | induction}` — three broad clusters
+
+4. **Routing clusters vs. human labels** (Nikolic 2025 key result):
+   - Run k-means (k = 5, 9, 15) on the 135 routing-weight vectors
+   - Compute adjusted Rand index between k-means assignments and true task labels
+   - Expected: ARI is highest at k ≈ 9 (matching our 9 families), but the unsupervised
+     clusters at k = 9 may not perfectly align with task labels — code/arithmetic may split,
+     while analogy/coreference/recency may merge into one cluster
+
+**Tooling**: `routing_patterns.json` (on disk), `sklearn.manifold.UMAP`, `scipy.cluster.hierarchy`
+**New model runs required**: None
+**Expected effort**: 1 day (analysis script + 3–4 figures)
+
+**Connection to feature system**: The 768D routing-weight vector is a new candidate feature
+component (Component M) — complementary to the existing 160D Component E (which captures
+per-token routing weights, not prompt-aggregate statistics).  If Li & Zhou's finding holds
+for gpt-oss-20b, Component M would be the single most semantically informative feature in
+the entire 6,700D vector.
+
+---
+
+#### Thread 31 — Sub-Categorical Structure Discovery
+
+**Core reference**: Nikolic et al. 2025 ("unsupervised routing consistently achieves superior
+reconstruction performance… experts learn sub-categorical structures that transcend human-defined
+class boundaries")
+
+**Question**: Are there meaningful sub-categories *within* our human-defined task families that
+routing discovers but we haven't labelled?
+
+**Motivation**: Our 9-family taxonomy is human-imposed.  The HMOE and Nikolic results suggest
+routing may identify finer-grained structure — e.g., within "arithmetic," routing might separate
+word-problem arithmetic from symbolic arithmetic; within "coreference," it might separate
+subject-role ambiguity from object-role ambiguity.
+
+**Measurement**:
+1. Run k-means on routing-weight vectors with k > 9 (try k = 12, 15, 20)
+2. Inspect which prompts fall into "extra" clusters that split a single task family
+3. For each extra cluster, compute the routing-weight centroid — what is distinctive about
+   this sub-group's routing pattern?
+4. Run HMOE's "interpretability check": for each cluster, what is the most human-interpretable
+   description of the shared property?
+
+**Expected finding**: Within code_completion, functional-style code (no class/state) and
+OOP-style code (class definitions, self.x) may route differently.  Within arithmetic, digit
+tokens route differently from word-form arithmetic tokens.  Within analogy, relational analogies
+("King : Queen :: Man : ?") may route differently from categorical analogies
+("Paris : France :: Rome : ?").
+
+**Tooling**: `routing_patterns.json`, `sklearn`, manual annotation of cluster members
+**New model runs required**: None (for k-means); optional (more diverse prompts to populate
+sub-categories)
+**Expected effort**: 1–2 days
+
+---
+
+#### Thread 32 — Token-Surface vs. Semantic Routing Crossover
+
+**Core reference**: OpenMoE (2024): routing is "predominantly based on token IDs, with minimal
+context relevance"; also Section 4d of Part III above.
+
+**Question**: At what depth does the routing signal transition from token-surface-driven
+to task-context-driven?  Our MI(expert; task) data partially answers this, but we haven't
+measured the complementary quantity `I(expert; token_BPE_id)`.
+
+**Measurement**:
+1. For each token in our 135 prompts, record: (a) BPE token id, (b) task family,
+   (c) routing decision at each layer
+2. Compute `I(expert_l; token_BPE_id)` — how much does knowing the BPE token predict
+   the routing decision at each layer?
+3. Compute `I(expert_l; task_family)` — already in `routing_mi_task.json`
+4. Plot both curves on the same axis across 24 layers
+5. Identify the crossover depth: `min l s.t. I(expert_l; task) > I(expert_l; token_surface)`
+
+**Expected finding (from OpenMoE and our L12 MI result)**: `I(expert; token_surface)` is
+high in L0–8 and declines slowly.  `I(expert; task)` is low in L0–8 and peaks at L12.
+The crossover (if it exists) is likely in L8–12 — this would be the depth at which routing
+shifts from surface-form partitioning to semantic partitioning.  If no crossover exists —
+if `I(expert; token_surface) > I(expert; task)` at all layers — routing is predominantly
+a surface tokenizer throughout the network, which is the OpenMoE conclusion and implies
+the L12 task MI peak is driven by surface-form correlates of task identity (e.g., question
+marks for arithmetic prompts, colons for syntax prompts).
+
+**Tooling**: `routing_patterns.json`, `tokenizer.encode()` to recover BPE ids
+**New model runs required**: None (routing data on disk; BPE ids from tokenizer)
+**Expected effort**: 1 day
+
+---
+
+### Literature citations to add to Thread 15 README
+
+The following papers are directly relevant to Thread 15 findings and should be cited:
+
+| Result | Paper | Key claim |
+|---|---|---|
+| Routing encodes task structure | Li & Zhou, ICLR 2025 | Routing weights are off-the-shelf semantic embeddings |
+| L12 MI peak (early routing commitment) | Xue et al. (OpenMoE), ICML 2024 | "Early Routing Learning": assignments fixed early in training |
+| Code cluster separation | Zoph et al. (ST-MoE), 2022 | Experts specialize by syntactic/surface token category |
+| Analogy/coref/recency grouping | Qu et al. (HMOE), 2022 | Routing discovers clusters more coherent than human labels |
+| Sub-uniform routing all layers | Chen et al., NeurIPS 2022 | Gradient descent causes routers to recover cluster-center features |
+| 4.4% capacity budget | Kawata et al., ICML 2025 | MoE detects latent structure that dense networks cannot |
+
+---
+
 ## Part IV — Full Summary Table
 
 | Thread | Title | Type | Effort | Priority |
@@ -700,8 +884,18 @@ Thread 25 is literally free — it's a relabelling of Thread 15's `routing_entro
 | 23 | Cross-layer routing correlation matrix | Measurement | 2 days | Medium |
 | 24 | SAE features as feature-vector components | Theoretical | — | Low |
 
+| 25 | Routing specialization gain trajectory | Analysis (free) | 0.5 day | **High** |
+| 26 | Cross-task JSD distinguishability matrix | Measurement | 1 day | **High** |
+| 27 | Task routing mutual information curve | Measurement | 1 day | **High** |
+| 28 | Routing velocity and phase transitions | Measurement | 1 day | High |
+| 29 | Routing capacity budget decomposition | Measurement | 2 days | Medium |
+| 30 | Routing-weight embeddings and task geometry | Analysis (free) | 1 day | **High** |
+| 31 | Sub-categorical structure discovery | Analysis (free) | 1–2 days | High |
+| 32 | Token-surface vs. semantic routing crossover | Analysis (free) | 1 day | **High** |
+
 **Immediate recommendations**:
 1. Add Component J (logit delta) to `gossh/features/extractor.py` — it's free and directly connects Thread 9 to Thread 15
 2. Add Components K and L (co-activation + persistence) — also free from existing routing data
-3. Run Thread 18 next — uses only the sidecar + existing analysis-set prompts, directly strengthens the Thread 2 causal bottleneck result
-4. Then Thread 16 — sliding/full attention specialization directly tests the most structurally distinctive property of gpt-oss-20b's architecture
+3. Run Thread 30 next — UMAP + dendrogram on `routing_patterns.json` requires zero new model runs, produces publication-quality figures, and directly connects to the Li & Zhou ICLR 2025 result
+4. Run Thread 32 in parallel — BPE-id MI vs. task-family MI crossover depth directly tests the OpenMoE "context-independent routing" claim on gpt-oss-20b
+5. Run Thread 18 — late-layer expert identity for the clean analysis set, directly strengthens the Thread 2 causal bottleneck result
