@@ -102,5 +102,6 @@ doc/reports/READOUT_DECOMPOSITION_REPORT.md
 doc/reports/WRONG_POSITION_CONTROL_REPORT.md
 doc/reports/XT_XE_INTERVENTION_REPORT.md
 
-# Keep analysis outputs under runs/ tracked by default.
+# Exclude generated run outputs (large artifacts, not source code).
+runs/
 scaffold_refactor.py

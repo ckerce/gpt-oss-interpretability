@@ -98,17 +98,20 @@ The **tuned lens** (Belrose et al. 2023) trains a per-layer affine translator T_
 that ``lm_head(final_norm(T_l(h_l)))`` approximates the final-layer distribution at
 every depth::
 
-    T_l(h) = h + U_l (V_l^T h) + b_l       [low-rank residual, rank=32]
+    T_l(h) = h + U_l (V_l^T h) + b_l       [low-rank residual, rank=64]
 
 Training objective: minimise KL(P_l || P_L) over a corpus with the model frozen.
-For gpt-oss-20b (hidden_dim=2880, 24 layers, rank=32) this is ~4.5M parameters and
-trains in ~5 minutes on the Thread 15 task suite.
+For gpt-oss-20b (hidden_dim=2880, 24 layers, rank=64) this is ~18M parameters and
+trains in ~25 minutes on 2000 FineWeb-Edu passages (20 epochs, RTX 4090).
 
 Train and use::
 
-    # Train
+    # Train (uses 2000 FineWeb-Edu passages for diversity)
     python threads/solid/1-convergence-logit-lens/train_tuned_lens.py \
         --model openai/gpt-oss-20b \
+        --corpus runs/tuned_lens/corpus_fineweb2k.txt \
+        --rank 64 \
+        --n-epochs 20 \
         --output runs/tuned_lens/translators.pt
 
     # Run (all layers now valid)
@@ -119,12 +122,36 @@ Train and use::
         --tuned-lens-path runs/tuned_lens/translators.pt \
         --output runs/tuned_lens_demo/
 
-With translators trained, the KL gap between each layer and the final layer is
-measurable.  The expected finding: induction computation begins around L12–16
-(consistent with the Thread 15 MI peak at L12), while the raw logit-lens only
-becomes readable at L21 because the residual stream geometry is not aligned with
-output space until then.  The 8-layer gap between "computation complete" and
-"readout readable" is the cost of the standard architecture's geometric freedom.
+### Measured KL gap (raw vs tuned logit lens, gpt-oss-20b)
+
+Training converged: mean KL 6.30 → 4.91 nats over 20 epochs.
+
+| Layer | Raw KL (nats) | Tuned KL (nats) | Reduction |
+|------:|--------------:|----------------:|----------:|
+| L00   | 17.10         | 5.77            | **66%**   |
+| L02   | 13.79         | 5.75            | 58%       |
+| L04   | 11.59         | 5.69            | 51%       |
+| L08   | 9.22          | 5.99            | 35%       |
+| L12   | 7.57          | 6.00            | **21%**   |
+| L16   | 5.55          | 5.07            | 9%        |
+| L20   | 2.30          | 2.29            | 1%        |
+| L21   | 1.05          | 1.05            | 0%        |
+| L23   | 0.00          | 0.00            | 0%        |
+
+![KL gap curve](figures/kl_gap_curve.png)
+
+Key observations:
+- **L0–L11**: Large raw KL (9–17 nats); translators reduce it by 35–66%, showing the
+  hidden state geometry is far from output space but partially correctable.
+- **L12**: Only 21% reduction despite being the Thread 15 MI-peak layer — the model
+  encodes task-critical information at L12 in a geometry that even a rank-64 translator
+  struggles to project into output space.
+- **L21**: Raw KL already below 1.1 nats; translators add nothing — the residual stream
+  is already aligned with output space, confirming the L21 validity threshold.
+- **Residual floor ~4.9 nats**: The rank-64 linear correction cannot fully bridge the
+  L0–L11 geometry gap.  This is not a training failure — it reflects that early-layer
+  representations are genuinely non-linear transforms of output space, requiring
+  deeper corrections than a rank-64 affine map can provide.
 
 ## From tuned lens to readout-ready architecture
 

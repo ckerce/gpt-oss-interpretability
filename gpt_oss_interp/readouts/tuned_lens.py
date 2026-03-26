@@ -112,9 +112,11 @@ class TunedLensTranslators(nn.Module):
         U = self.U[layer_idx]   # [hidden_dim, rank]
         V = self.V[layer_idx]   # [hidden_dim, rank]
         b = self.b[layer_idx]   # [hidden_dim]
-        projected = hidden @ V  # [..., rank]
+        # Cast to parameter dtype (float32) to handle bfloat16 model hidden states
+        h = hidden.to(U.dtype)
+        projected = h @ V       # [..., rank]
         correction = projected @ U.T  # [..., hidden_dim]
-        return hidden + correction + b
+        return hidden + correction.to(hidden.dtype) + b.to(hidden.dtype)
 
     # ------------------------------------------------------------------
     # Persistence
@@ -431,8 +433,9 @@ def measure_translation_gap(
             with torch.no_grad():
                 logits_raw = lm_head(norm(h_l.to(norm_device)))
                 p_raw = F.softmax(logits_raw.float(), dim=-1)
+                # batchmean: divide by seq_len only (not seq_len*vocab_size)
                 kl_raw = float(F.kl_div(
-                    p_raw.log(), p_final, reduction="mean", log_target=False
+                    p_raw.log(), p_final, reduction="batchmean", log_target=False
                 ).item())
                 raw_kl_sums[l] += kl_raw * h_l.shape[0]
                 counts[l] += h_l.shape[0]
@@ -443,7 +446,7 @@ def measure_translation_gap(
                     logits_t = lm_head(norm(h_t.to(norm_device)))
                     p_t = F.softmax(logits_t.float(), dim=-1)
                     kl_t = float(F.kl_div(
-                        p_t.log(), p_final, reduction="mean", log_target=False
+                        p_t.log(), p_final, reduction="batchmean", log_target=False
                     ).item())
                     tuned_kl_sums[l] += kl_t * h_l.shape[0]
 
