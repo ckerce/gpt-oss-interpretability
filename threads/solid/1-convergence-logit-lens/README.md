@@ -12,8 +12,9 @@ If different tasks converge at different depths, that tells us the model has a s
 This thread applies the **logit lens** technique (nostalgebraist 2020; formalized by Belrose et al. 2023) to a production-scale MoE transformer. The logit lens itself is prior work — the contribution here is **empirical validation at MoE scale** and the demonstration that task-dependent convergence depth is a robust organizing principle in gpt-oss-20b. The choice-relative convergence metric (tracking when the correct choice first dominates, not just when the final prediction stabilizes) is a minor methodological extension.
 
 ## Scripts
-- `run_logit_lens.py` — per-layer token prediction readouts with choice-relative convergence
+- `run_logit_lens.py` — per-layer token prediction readouts (logit lens or tuned lens)
 - `calibrate_convergence.py` — convergence metric calibration across tasks
+- `train_tuned_lens.py` — train per-layer translators to extend readout validity to all layers
 
 ## Configs
 - `configs/dry_run_recency.py` — smoke test (synthetic backend)
@@ -66,12 +67,98 @@ The depth at which the correct answer first appears and stabilizes is the **conv
 - **Recency bias** and **syntax agreement** largely fail to converge to the correct answer — only 25% and 50% final correct rates, respectively
 - Task-dependent convergence depth is a fundamental organizing principle of gpt-oss-20b's computation
 
+## Limitation of the raw logit lens
+
+The logit lens applies ``final_norm + lm_head`` *directly* to intermediate hidden states.
+This is valid only when those states are geometrically aligned with output space — which, for
+gpt-oss-20b, only holds from **L21 onward** (empirically validated in
+``runs/unembedding_validation/``).
+
+The rank of the expected continuation token under the raw logit lens:
+
+| Layer | Mean rank (induction, period 1) |
+|------:|--------------------------------:|
+| L0 | ~90,000 |
+| L8 | ~10,600 |
+| L17 | ~7,200 |
+| L19 | ~474 |
+| L20 | ~118 |
+| **L21** | **0 (top-1)** |
+| L23 | 0 (top-1, prob 0.91) |
+
+The first seventeen layers are not invisible — they are doing real work — but
+``final_norm + lm_head`` is not a valid decoder for that work.  The convergence
+depths reported above (e.g. capitalization at L1–2, induction at L19) should therefore
+be interpreted as lower bounds set by readout alignment, not as the layers where
+computation actually completes.
+
+## The tuned lens
+
+The **tuned lens** (Belrose et al. 2023) trains a per-layer affine translator T_l such
+that ``lm_head(final_norm(T_l(h_l)))`` approximates the final-layer distribution at
+every depth::
+
+    T_l(h) = h + U_l (V_l^T h) + b_l       [low-rank residual, rank=32]
+
+Training objective: minimise KL(P_l || P_L) over a corpus with the model frozen.
+For gpt-oss-20b (hidden_dim=2880, 24 layers, rank=32) this is ~4.5M parameters and
+trains in ~5 minutes on the Thread 15 task suite.
+
+Train and use::
+
+    # Train
+    python threads/solid/1-convergence-logit-lens/train_tuned_lens.py \
+        --model openai/gpt-oss-20b \
+        --output runs/tuned_lens/translators.pt
+
+    # Run (all layers now valid)
+    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
+        --model openai/gpt-oss-20b \
+        --prompt "D 5 Z 7 B 2 D 5 Z 7 B 2 D 5 Z 7 B" \
+        --lens tuned \
+        --tuned-lens-path runs/tuned_lens/translators.pt \
+        --output runs/tuned_lens_demo/
+
+With translators trained, the KL gap between each layer and the final layer is
+measurable.  The expected finding: induction computation begins around L12–16
+(consistent with the Thread 15 MI peak at L12), while the raw logit-lens only
+becomes readable at L21 because the residual stream geometry is not aligned with
+output space until then.  The 8-layer gap between "computation complete" and
+"readout readable" is the cost of the standard architecture's geometric freedom.
+
+## From tuned lens to readout-ready architecture
+
+The tuned lens is a post-hoc correction for a design choice: in a standard transformer,
+intermediate hidden states are free to occupy any geometry, and output-space alignment
+is only enforced at the final layer.  The translators T_l bridge that gap after the fact.
+
+The **Dual-Stream PLS Transformer** (DST, Threads 13–14) inverts this by construction.
+The Partial Least Squares decomposition enforces that every layer's hidden state lives in
+a subspace that is interpretable *without* a trained corrector.  There is no gap to bridge
+because the architecture was designed so that ``final_norm + lm_head`` is a valid readout
+operator at every depth, from L0.
+
+Concretely: on the DST companion models, the logit lens achieves high inspectability at
+every layer (Thread 14).  On gpt-oss-20b, it requires 21 layers of processing before the
+representation crosses the output-alignment threshold.  The tuned-lens KL gap is the
+quantitative measure of that architectural difference — and the motivation for the DST
+design.
+
+| Property | gpt-oss-20b (standard) | DST |
+|---|---|---|
+| Logit-lens valid from | L21 | L0 |
+| Tuned lens needed | Yes | No |
+| Inspectability (Thread 14 metric) | Low in early layers | High throughout |
+| Interpretability cost | Post-hoc training | Architectural constraint |
+
 ## Package dependencies
-`readouts.logit_lens`, `backends.transformers_gpt_oss`, `benchmarks.tasks`
+`readouts.logit_lens`, `readouts.tuned_lens`, `backends.transformers_gpt_oss`, `benchmarks.tasks`
 
 ## Related threads
 - [2-late-layer-ablation](../2-late-layer-ablation/) — causal validation of which layers matter
 - [3-analysis-set-filtering](../3-analysis-set-filtering/) — convergence stability defines analysis sets
+- [13-dst-geometry](../13-dst-geometry/) — DST companion models with readout-ready architecture
+- [14-dst-bregman](../14-dst-bregman/) — Bregman geometry and inspectability of DST models
 
 ## References
 

@@ -499,8 +499,17 @@ class GPTOSSTransformersBackend(BaseBackend):
         top_k: int = 5,
         target_ids: torch.Tensor | None = None,
         positions: list[int] | None = None,
+        translators=None,
     ):
-        """Run a logit-lens pass on a prompt and return per-layer predictions."""
+        """Run a logit-lens (or tuned-lens) pass on a prompt.
+
+        Parameters
+        ----------
+        translators : TunedLensTranslators | None
+            If provided, apply per-layer translator T_l before the
+            ``final_norm + lm_head`` projection.  Produces valid readouts
+            at all layers.  Train with ``train_tuned_lens.py``.
+        """
         from gpt_oss_interp.readouts.logit_lens import run_logit_lens
 
         prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.device)
@@ -514,6 +523,7 @@ class GPTOSSTransformersBackend(BaseBackend):
             top_k=top_k,
             target_ids=target_ids,
             positions=positions,
+            translators=translators,
         )
 
     def capture_activations(self, prompt: str, layer_indices: list[int] | None = None):

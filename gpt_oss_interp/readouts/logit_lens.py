@@ -75,6 +75,7 @@ def run_logit_lens(
     top_k: int = 5,
     target_ids: torch.Tensor | None = None,
     positions: list[int] | None = None,
+    translators: "Any | None" = None,
 ) -> LogitLensResult:
     """Run a logit-lens pass over all transformer blocks.
 
@@ -161,9 +162,16 @@ def run_logit_lens(
             continue
         hidden = record.tensor  # [1, seq_len, hidden_dim], on CPU
 
-        # Project through final norm and lm_head
+        # Project through (optional translator +) final norm and lm_head
         with torch.no_grad():
-            normed = final_norm(hidden.to(next(final_norm.parameters()).device))
+            h = hidden  # [1, seq_len, hidden_dim]
+            if translators is not None and layer_idx < translators.n_layers:
+                # Apply tuned-lens translator: T_l(h) = h + U(V^T h) + b
+                t_dev = translators.U[layer_idx].device
+                h_flat = h[0].to(t_dev)  # [seq_len, hidden_dim]
+                h_flat = translators.translate(h_flat, layer_idx)
+                h = h_flat.unsqueeze(0).cpu()
+            normed = final_norm(h.to(next(final_norm.parameters()).device))
             logits = lm_head(normed).cpu().float()  # [1, seq_len, vocab]
             log_probs = torch.log_softmax(logits[0], dim=-1)
 

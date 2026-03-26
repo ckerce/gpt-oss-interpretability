@@ -1,20 +1,35 @@
 #!/usr/bin/env python3
-"""Run a logit-lens analysis on gpt-oss-20b.
+"""Run a logit-lens or tuned-lens analysis on gpt-oss-20b.
 
 Produces per-layer next-token predictions showing when the model
 "knows" the answer across layers.
 
-Usage:
-    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
-        --model openai/gpt-oss-20b \
-        --prompt "The capital of France is" \
+The **logit lens** applies ``final_norm + lm_head`` directly to each
+layer's hidden state.  Empirically valid only from L21 onward for
+gpt-oss-20b (see runs/unembedding_validation/).
+
+The **tuned lens** applies a trained per-layer translator T_l first,
+extending readout validity to all 24 layers.  Train translators with::
+
+    python threads/solid/1-convergence-logit-lens/train_tuned_lens.py \\
+        --model openai/gpt-oss-20b \\
+        --output runs/tuned_lens/translators.pt
+
+Usage::
+
+    # Raw logit lens (valid L21+)
+    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \\
+        --model openai/gpt-oss-20b \\
+        --prompt "The capital of France is" \\
         --output runs/logit_lens_demo/
 
-    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \
-        --model openai/gpt-oss-20b \
-        --prompt "The trophy would not fit in the suitcase because the suitcase was too" \
-        --top_k 10 \
-        --output runs/logit_lens_demo/
+    # Tuned lens (valid all layers)
+    python threads/solid/1-convergence-logit-lens/run_logit_lens.py \\
+        --model openai/gpt-oss-20b \\
+        --prompt "The capital of France is" \\
+        --lens tuned \\
+        --tuned-lens-path runs/tuned_lens/translators.pt \\
+        --output runs/tuned_lens_demo/
 """
 
 from __future__ import annotations
@@ -45,8 +60,27 @@ def main() -> int:
         default=None,
         help="Optional comma-separated token positions to analyze; default is all positions",
     )
+    parser.add_argument(
+        "--lens",
+        default="logit",
+        choices=["logit", "tuned"],
+        help=(
+            "logit: raw final_norm+lm_head readout (valid L21+ only); "
+            "tuned: apply trained per-layer translators (valid all layers). "
+            "Train translators with train_tuned_lens.py first."
+        ),
+    )
+    parser.add_argument(
+        "--tuned-lens-path",
+        default=None,
+        help="Path to translators.pt produced by train_tuned_lens.py. "
+             "Required when --lens tuned.",
+    )
     parser.add_argument("--output", default=None, help="Output directory for reports")
     args = parser.parse_args()
+
+    if args.lens == "tuned" and not args.tuned_lens_path:
+        parser.error("--tuned-lens-path is required when --lens tuned")
 
     from gpt_oss_interp.backends.transformers_gpt_oss import GPTOSSTransformersBackend
     from gpt_oss_interp.readouts.logit_lens import format_logit_lens_table
@@ -54,9 +88,19 @@ def main() -> int:
     print(f"Initializing backend: {args.model}")
     backend = GPTOSSTransformersBackend(model_name=args.model)
 
-    print(f"\nRunning logit lens on: {args.prompt!r}")
+    lens_label = "logit lens"
+    translators = None
+    if args.lens == "tuned":
+        from gpt_oss_interp.readouts.tuned_lens import TunedLensTranslators
+        print(f"Loading tuned-lens translators from {args.tuned_lens_path}")
+        translators = TunedLensTranslators.load(args.tuned_lens_path)
+        lens_label = "tuned lens"
+
+    print(f"\nRunning {lens_label} on: {args.prompt!r}")
     positions = _parse_positions(args.positions)
-    result = backend.run_logit_lens(args.prompt, top_k=args.top_k, positions=positions)
+    result = backend.run_logit_lens(
+        args.prompt, top_k=args.top_k, positions=positions, translators=translators
+    )
 
     table = format_logit_lens_table(result, last_n_positions=args.last_n)
     print(f"\n{table}")
