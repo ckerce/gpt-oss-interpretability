@@ -1,13 +1,14 @@
 """HuggingFace transformers backend for gpt-oss models."""
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any, Optional
 
 import torch
 import torch.nn as nn
 
 from gossh.backends.base import BaseBackend, BackendScore
 from gossh.backends.structure import ModelStructure
+from gossh.capture.router_capture import RouterCapture, RouterDecision
 from gossh.config import InterventionKind, InterventionSpec, PromptCase, TargetUnit
 from gossh.interventions.hooks import (
     expert_output_scale_hook,
@@ -16,6 +17,9 @@ from gossh.interventions.hooks import (
     temperature_hook,
 )
 from gossh.model_registry import get_arch_spec
+
+if TYPE_CHECKING:
+    from gossh.sidecar.process import MoeSidecar
 
 
 class GPTOSSTransformersBackend(BaseBackend):
@@ -54,6 +58,7 @@ class GPTOSSTransformersBackend(BaseBackend):
         self._arch = get_arch_spec(model_name)
         self._load_model(dtype)
         self.structure = ModelStructure(self.model)
+        self._sidecar: Optional["MoeSidecar"] = None
         print(self.structure.summary())
 
     def _load_model(self, dtype: str) -> None:
@@ -77,6 +82,43 @@ class GPTOSSTransformersBackend(BaseBackend):
         self.model.eval()
         print(f"Model loaded. Device map: {getattr(self.model, 'hf_device_map', 'single device')}")
 
+    # ── Sidecar management ────────────────────────────────────────────────────
+
+    def attach_sidecar(self, sidecar: "MoeSidecar") -> None:
+        """Attach a running MoeSidecar for MXFP4-safe routing capture (path 0).
+
+        The sidecar must already be started (i.e. used as a context manager or
+        ``sidecar.start()`` called).  Call ``detach_sidecar()`` before stopping it.
+        """
+        if not sidecar.is_running():
+            raise RuntimeError("Sidecar is not running — start it before attaching.")
+        self._sidecar = sidecar
+
+    def detach_sidecar(self) -> None:
+        """Remove the sidecar reference; routing falls back to paths 1–3."""
+        self._sidecar = None
+
+    def _capture_routing_via_sidecar(self, input_ids: torch.Tensor) -> list[RouterDecision]:
+        """Path 0: capture routing via the MoE sidecar subprocess.
+
+        Captures hidden states entering each MoE/MLP block via pre-hooks
+        (which fire before the fused MXFP4 kernel), then sends them to the
+        sidecar for routing.
+        """
+        from gossh.capture.input_cache import InputCapture
+
+        capture = InputCapture()
+        capture.register(self.model, self.structure.mlp_names)
+        try:
+            with torch.no_grad():
+                self.model(input_ids)
+        finally:
+            capture.remove_hooks()
+
+        if not capture.captured:
+            return []
+        return self._sidecar.route(capture.captured)  # type: ignore[union-attr]
+
     ###########################################################################
     # Scoring
     ###########################################################################
@@ -99,7 +141,7 @@ class GPTOSSTransformersBackend(BaseBackend):
         return total
 
     def _choice_logprob_by_layer(self, prompt: str, choice_text: str) -> dict[int, float]:
-        from gpt_oss_interp.capture.activation_cache import ActivationCache
+        from gossh.capture.activation_cache import ActivationCache
 
         full_ids, choice_start = self._encode_prompt_with_completion(prompt, choice_text)
         input_ids = torch.tensor([full_ids], device=self.device)
@@ -228,7 +270,7 @@ class GPTOSSTransformersBackend(BaseBackend):
         positions: list[int] | None = None,
     ):
         """Run a logit-lens pass on a prompt and return per-layer predictions."""
-        from gpt_oss_interp.readouts.logit_lens import run_logit_lens
+        from gossh.readouts.logit_lens import run_logit_lens
 
         prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.device)
         return run_logit_lens(
@@ -245,7 +287,7 @@ class GPTOSSTransformersBackend(BaseBackend):
 
     def capture_activations(self, prompt: str, layer_indices: list[int] | None = None):
         """Run a forward pass and return activation records for specified layers."""
-        from gpt_oss_interp.capture.activation_cache import ActivationCache
+        from gossh.capture.activation_cache import ActivationCache
 
         cache = ActivationCache()
         indices = layer_indices if layer_indices is not None else list(range(self.structure.num_layers))
@@ -265,14 +307,24 @@ class GPTOSSTransformersBackend(BaseBackend):
     def capture_routing(self, prompt: str):
         """Run a forward pass and return MoE routing decisions.
 
-        For MXFP4-quantized models the fused kernel bypasses Python-level
-        router hooks.  This method first tries ``output_router_logits=True``
-        (works if the model exposes it), then falls back to hook-based capture
-        (works for non-quantized checkpoints).
-        """
-        from gpt_oss_interp.capture.router_capture import RouterCapture, RouterDecision
+        Routing capture is attempted in priority order:
 
+        - **Path 0 (sidecar)**: If a ``MoeSidecar`` is attached, capture hidden
+          states via pre-hooks and route through the sidecar's bf16 gate clones.
+          This is the only path that works correctly under MXFP4 quantization.
+        - **Path 1 (output_router_logits)**: Ask the model to return router
+          logits directly.  Works for non-MXFP4 checkpoints.
+        - **Path 2 (hook-based)**: Register forward hooks on gate modules.
+          Works for non-quantized checkpoints where the gate is a Python module.
+        - **Path 3 (unavailable)**: MXFP4 fused kernels — emit an informative
+          message and return an empty list.
+        """
         input_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.device)
+
+        # Path 0: sidecar (MXFP4-safe)
+        if self._sidecar is not None:
+            return self._capture_routing_via_sidecar(input_ids)
+
         with torch.no_grad():
             out = self.model(input_ids, output_router_logits=True)
 

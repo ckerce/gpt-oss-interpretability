@@ -198,11 +198,12 @@ pip install kernels
 # Download model (~13 GB)
 huggingface-cli download openai/gpt-oss-20b
 
-# Smoke test
+# Smoke test (no model required)
 python scripts/run_benchmark.py --config configs/dry_run_recency.py
 
 # Run tests
-pytest tests/
+pytest tests/gossh/     # gossh package suite (90 tests, no GPU required)
+pytest tests/           # full suite including legacy gpt_oss_interp tests
 
 # Intervention benchmark
 python scripts/run_benchmark.py --config configs/head_ablation_L20.py
@@ -218,24 +219,68 @@ threads/                         # Thread-specific scripts, docs, and READMEs
   in-progress/                   # 2 threads with code but thin experiments
   theoretical/                   # 3 threads with frameworks but no implementation
 
-gpt_oss_interp/                  # Shared Python package (~40 modules)
-├── config.py                    # Dataclasses: tasks, interventions, benchmarks
-├── backends/                    # Model execution (dry_run + real gpt-oss-20b)
-├── benchmarks/                  # Task library (5 families, 36 cases), runner, pools
+gossh/                           # Installable inspectability harness (pip install -e .)
+                                 # → gossh/README.md for full API reference
+├── config.py                    # Config types: PromptCase, InterventionSpec, BenchmarkConfig
+├── model_registry.py            # ModelArchSpec: gpt-oss-20b/120b arch constants
+├── backends/                    # Model execution
+│   ├── dry_run.py               # DryRunBackend (no GPU required, for CI)
+│   ├── gpt_oss.py               # GPTOSSTransformersBackend (HuggingFace)
+│   └── structure.py             # ModelStructure: block/attn/mlp/gate name discovery
 ├── capture/                     # Activation and routing capture via hooks
-├── features/                    # Feature extraction + geometry
-├── readouts/                    # Per-layer logit-lens readouts
-├── interventions/               # Intervention sweep expansion
-├── steering/                    # Probing, causal analysis, selectivity
+│   ├── activation_cache.py      # ActivationCache — forward-hook hidden-state collector
+│   ├── router_capture.py        # RouterCapture — gate-hook routing capture (non-MXFP4)
+│   └── input_cache.py           # InputCapture — pre-hook capture (MXFP4-safe)
+├── sidecar/                     # MoE router sidecar (MXFP4 opacity workaround)
+│   ├── process.py               # MoeSidecar — subprocess client (Unix socket, spawn)
+│   ├── worker.py                # Sidecar subprocess entry point
+│   ├── dequant.py               # RouterWeightExtractor + RouterSidecarModel
+│   ├── protocol.py              # Length-prefixed msgpack IPC protocol
+│   └── validation.py           # 3-layer sidecar validation (numerical/sensitivity/cross)
+├── readouts/                    # Per-layer model readouts
+│   └── logit_lens.py            # run_logit_lens, LayerPrediction, LogitLensResult
+├── features/                    # Feature extraction and geometric analysis
+│   ├── extractor.py             # MoEFeatureExtractor, FeatureConfig (7-component, 6425D)
+│   └── geometry.py              # analyze_geometry, compute_inspectability, GeometricSummary
+├── steering/                    # Steering diagnostics
+│   └── bregman.py               # Softmax Hessian, BregmanMetrics, effective rank
+├── interventions/               # Intervention specification and hooks
+│   ├── hooks.py                 # Pure hook factories: head_mask, expert_mask, layer_scale
+│   └── specs.py                 # InterventionRun, expand_runs
+├── benchmarks/                  # Benchmark runner
+│   └── runner.py                # BenchmarkRunner, YAML/dict/Python config loading
+├── common/                      # Shared utilities
+│   ├── artifacts.py             # RunArtifact schema
+│   └── io.py                    # load_json, save_json
+└── reports/                     # Output writers
+    └── writers.py               # write_case_csv, write_json, write_markdown
+
+gpt_oss_interp/                  # Original research package (kept for thread scripts)
+├── config.py                    # Legacy config types
+├── backends/                    # Legacy backends
+├── benchmarks/                  # Task library (5 families, 36 cases)
+├── capture/                     # Legacy capture
+├── features/                    # Legacy feature extraction
+├── readouts/                    # Legacy logit-lens
+├── interventions/               # Legacy intervention specs
+├── steering/                    # Probing, causal analysis, selectivity, Bregman
 ├── distillation/                # CASCADE workflows (stubs)
-├── common/                      # Shared utilities (artifacts, I/O)
-└── reports/                     # CSV, JSON, Markdown output
+├── common/                      # Legacy artifacts / I/O
+└── reports/                     # Legacy writers
+
+examples/                        # HOW-TO scripts (no GPU needed to read; model needed to run)
+├── howto_logit_lens.py          # Task-dependent convergence depth (capitalization vs induction)
+├── howto_layer_ablation.py      # L19–21 causal bottleneck + Hydra head-redundancy measurement
+├── howto_moe_routing.py         # MXFP4-safe routing capture via the MoE sidecar
+└── howto_bregman_conditioning.py # When does linear steering work? (effective rank, cosine test)
 
 scripts/                         # Shared CLI tools (4 cross-thread scripts + one_off/)
 configs/                         # 7 benchmark configurations
 runs/                            # 52 experiment output directories
 figures/                         # 16 publication-quality figures (PDF + PNG)
-tests/                           # pytest suite
+tests/
+├── gossh/                       # gossh package tests (90 tests, no GPU required)
+└── *.py                         # Legacy gpt_oss_interp tests
 doc/references/                  # Literature reviews + academic papers
 ```
 
