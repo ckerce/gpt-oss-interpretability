@@ -131,6 +131,13 @@ def main(argv: list[str] | None = None) -> int:
         help="Path to pre-trained translators (skip training, go to gap measurement).",
     )
     parser.add_argument(
+        "--base-translators",
+        default=None,
+        help="Path to frozen base translators to apply before training new ones. "
+             "Trains a residual correction on top of the base — use to test whether "
+             "the KL floor is rank-limited or genuinely nonlinear.",
+    )
+    parser.add_argument(
         "--measure-gap-only",
         action="store_true",
         help="Skip training; only measure KL gap (requires --load).",
@@ -160,6 +167,12 @@ def main(argv: list[str] | None = None) -> int:
         prompts = DEFAULT_CORPUS_PROMPTS
         print(f"Using built-in corpus: {len(prompts)} prompts")
 
+    # ── load base translators (for residual experiment) ────────────────────
+    base_translators = None
+    if args.base_translators:
+        print(f"Loading base translators from {args.base_translators}")
+        base_translators = TunedLensTranslators.load(args.base_translators)
+
     # ── load or train ─────────────────────────────────────────────────────
     if args.load:
         print(f"Loading translators from {args.load}")
@@ -168,17 +181,25 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("--measure-gap-only requires --load")
         return 1
     else:
-        print(
-            f"\nTraining tuned-lens translators "
-            f"(rank={args.rank}, epochs={args.n_epochs}, lr={args.lr})"
-        )
-        print("Training objective: KL(T_l(h_l) || h_L) minimised per layer.\n")
+        if base_translators is not None:
+            print(
+                f"\nTraining residual translators on top of frozen base "
+                f"(rank={args.rank}, epochs={args.n_epochs}, lr={args.lr})"
+            )
+            print("Objective: KL(T2_l(T1_l(h_l)) || h_L) — T1 frozen.\n")
+        else:
+            print(
+                f"\nTraining tuned-lens translators "
+                f"(rank={args.rank}, epochs={args.n_epochs}, lr={args.lr})"
+            )
+            print("Training objective: KL(T_l(h_l) || h_L) minimised per layer.\n")
         translators = train_tuned_lens(
             backend,
             prompts,
             rank=args.rank,
             n_epochs=args.n_epochs,
             lr=args.lr,
+            base_translators=base_translators,
             verbose=True,
         )
         out_path = Path(args.output)
@@ -186,17 +207,41 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nTranslators saved to {out_path}")
 
     # ── measure gap ───────────────────────────────────────────────────────
-    print("\nMeasuring KL gap (raw logit-lens vs tuned-lens) per layer ...")
-    gap = measure_translation_gap(backend, prompts[:20], translators=translators)
+    # If base_translators provided, measure the full chain T1→T2
+    measure_translators = translators
+    if base_translators is not None:
+        from gpt_oss_interp.readouts.tuned_lens import make_chained_translator
+        measure_translators = make_chained_translator(base_translators, translators)
+        print("\nMeasuring KL gap (raw / T1 / T1+T2 chained) per layer ...")
+    else:
+        print("\nMeasuring KL gap (raw logit-lens vs tuned-lens) per layer ...")
 
-    print(
-        f"\n{'Layer':>6}  {'Raw KL':>10}  {'Tuned KL':>10}  {'Reduction':>10}"
+    gap = measure_translation_gap(backend, prompts[:20], translators=measure_translators)
+    gap_base = (
+        measure_translation_gap(backend, prompts[:20], translators=base_translators)
+        if base_translators is not None else None
     )
-    print("-" * 44)
-    for l, (raw, tuned) in enumerate(zip(gap["raw"], gap.get("tuned", []))):
-        reduction = (raw - tuned) / (raw + 1e-12) * 100
-        marker = " ◀" if raw > 1.0 else ""
-        print(f"  L{l:02d}  {raw:10.4f}  {tuned:10.4f}  {reduction:9.1f}%{marker}")
+
+    if gap_base is not None:
+        print(
+            f"\n{'Layer':>6}  {'Raw KL':>10}  {'T1 KL':>10}  {'T1+T2 KL':>10}  {'Extra reduction':>15}"
+        )
+        print("-" * 60)
+        for l, (raw, t1, t2) in enumerate(zip(
+            gap["raw"], gap_base.get("tuned", []), gap.get("tuned", [])
+        )):
+            extra = (t1 - t2) / (t1 + 1e-12) * 100
+            marker = " ◀" if raw > 1.0 else ""
+            print(f"  L{l:02d}  {raw:10.4f}  {t1:10.4f}  {t2:10.4f}  {extra:14.1f}%{marker}")
+    else:
+        print(
+            f"\n{'Layer':>6}  {'Raw KL':>10}  {'Tuned KL':>10}  {'Reduction':>10}"
+        )
+        print("-" * 44)
+        for l, (raw, tuned) in enumerate(zip(gap["raw"], gap.get("tuned", []))):
+            reduction = (raw - tuned) / (raw + 1e-12) * 100
+            marker = " ◀" if raw > 1.0 else ""
+            print(f"  L{l:02d}  {raw:10.4f}  {tuned:10.4f}  {reduction:9.1f}%{marker}")
 
     if args.gap_output:
         gap_path = Path(args.gap_output)

@@ -112,11 +112,12 @@ class TunedLensTranslators(nn.Module):
         U = self.U[layer_idx]   # [hidden_dim, rank]
         V = self.V[layer_idx]   # [hidden_dim, rank]
         b = self.b[layer_idx]   # [hidden_dim]
-        # Cast to parameter dtype (float32) to handle bfloat16 model hidden states
-        h = hidden.to(U.dtype)
-        projected = h @ V       # [..., rank]
-        correction = projected @ U.T  # [..., hidden_dim]
-        return hidden + correction.to(hidden.dtype) + b.to(hidden.dtype)
+        # Compute on parameter device+dtype; return on input device+dtype.
+        # hidden.to(U) matches both dtype and device of U.
+        h = hidden.to(U)
+        projected = h @ V
+        correction = projected @ U.T
+        return (h + correction + b).to(hidden)
 
     # ------------------------------------------------------------------
     # Persistence
@@ -146,6 +147,203 @@ class TunedLensTranslators(nn.Module):
 
 
 # ---------------------------------------------------------------------------
+# Chaining helper
+# ---------------------------------------------------------------------------
+
+def make_chained_translator(
+    t1: TunedLensTranslators,
+    t2: TunedLensTranslators,
+) -> "ChainedTranslators":
+    return ChainedTranslators(t1, t2)
+
+
+class ChainedTranslators:
+    """Apply t1 then t2 sequentially. Used for residual-correction experiments."""
+
+    def __init__(self, t1: TunedLensTranslators, t2: TunedLensTranslators) -> None:
+        self.t1 = t1
+        self.t2 = t2
+        self.n_layers = min(t1.n_layers, t2.n_layers)
+
+    def translate(self, hidden: torch.Tensor, layer_idx: int) -> torch.Tensor:
+        h = self.t1.translate(hidden, layer_idx)
+        h = self.t2.translate(h, layer_idx)
+        return h
+
+    def to(self, device: Any) -> "ChainedTranslators":
+        self.t1 = self.t1.to(device)
+        self.t2 = self.t2.to(device)
+        return self
+
+
+# ---------------------------------------------------------------------------
+# MLP translator (single layer, nonlinear)
+# ---------------------------------------------------------------------------
+
+class MLPTranslator(nn.Module):
+    """Nonlinear per-layer translator for linearity ablation experiments.
+
+    Tests whether the residual KL floor from affine translators is due to
+    insufficient rank (linear, capacity-limited) or genuine nonlinearity.
+
+    Architecture (residual bottleneck MLP)::
+
+        T(h) = h + W2 * GELU(W1 * h + b1) + b2
+
+    where W1 ∈ R^{bottleneck × hidden_dim}, W2 ∈ R^{hidden_dim × bottleneck}.
+    Initialised so T starts as identity (W1=0, W2=0, b=0).
+
+    Train one per target layer, not all 24 — use for L0 and L12 probes first.
+    """
+
+    def __init__(self, hidden_dim: int, bottleneck: int = 256) -> None:
+        super().__init__()
+        self.hidden_dim = hidden_dim
+        self.bottleneck = bottleneck
+        self.W1 = nn.Parameter(torch.zeros(bottleneck, hidden_dim))
+        self.b1 = nn.Parameter(torch.zeros(bottleneck))
+        self.W2 = nn.Parameter(torch.zeros(hidden_dim, bottleneck))
+        self.b2 = nn.Parameter(torch.zeros(hidden_dim))
+
+    def forward(self, hidden: torch.Tensor) -> torch.Tensor:
+        # Compute on parameter device+dtype; return on input device+dtype.
+        h = hidden.to(self.W1)
+        mid = F.gelu(h @ self.W1.T + self.b1)   # [..., bottleneck]
+        correction = mid @ self.W2.T + self.b2   # [..., hidden_dim]
+        return (h + correction).to(hidden)
+
+    def save(self, path: str | Path) -> None:
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        meta = {"hidden_dim": self.hidden_dim, "bottleneck": self.bottleneck}
+        torch.save({"meta": meta, "state_dict": self.state_dict()}, path)
+
+    @classmethod
+    def load(cls, path: str | Path, map_location: str = "cpu") -> "MLPTranslator":
+        payload = torch.load(path, map_location=map_location, weights_only=False)
+        meta = payload["meta"]
+        obj = cls(hidden_dim=meta["hidden_dim"], bottleneck=meta["bottleneck"])
+        obj.load_state_dict(payload["state_dict"])
+        return obj
+
+
+def train_mlp_translator(
+    backend: Any,
+    prompts: Sequence[str],
+    layer_idx: int,
+    *,
+    bottleneck: int = 256,
+    n_epochs: int = 20,
+    lr: float = 2e-3,
+    weight_decay: float = 1e-4,
+    device: str | None = None,
+    verbose: bool = True,
+) -> MLPTranslator:
+    """Train a single-layer MLP translator.
+
+    Trains only for *layer_idx* — call separately for each target layer.
+    Memory-efficient: only stores activations for one layer at a time.
+
+    Parameters
+    ----------
+    layer_idx : int
+        Which layer to train the translator for.
+    bottleneck : int
+        MLP hidden width.  Default 256 keeps memory tight on 24 GB GPUs
+        when the 20B model occupies ~22 GB.
+    """
+    from gpt_oss_interp.capture.activation_cache import ActivationCache
+
+    model = backend.model
+    structure = backend.structure
+    tokenizer = backend.tokenizer
+    model_device = next(model.parameters()).device
+    work_device = torch.device(device) if device else model_device
+
+    hidden_dim = model.config.hidden_size
+    block_name = structure.block_names[layer_idx]
+
+    translator = MLPTranslator(hidden_dim=hidden_dim, bottleneck=bottleneck)
+    translator = translator.to(work_device)
+
+    optimizer = torch.optim.Adam(
+        translator.parameters(), lr=lr, weight_decay=weight_decay
+    )
+
+    norm = structure.final_norm
+    lm_head = structure.lm_head
+    norm_device = next(norm.parameters()).device
+
+    # Freeze norm and lm_head — avoids allocating ~1 GB lm_head gradient
+    for p in norm.parameters():
+        p.requires_grad_(False)
+    for p in lm_head.parameters():
+        p.requires_grad_(False)
+
+    # Also need final-layer block name for target distribution
+    final_block = structure.block_names[-1]
+
+    for epoch in range(n_epochs):
+        epoch_loss = 0.0
+        epoch_steps = 0
+
+        for prompt in prompts:
+            ids = tokenizer.encode(prompt, add_special_tokens=True)
+            if len(ids) < 2:
+                continue
+            input_ids = torch.tensor([ids], device=model_device)
+
+            # Capture only the target layer + final layer (memory efficient)
+            cache = ActivationCache(detach=True, to_cpu=False)
+            handles = cache.register(model, [block_name, final_block])
+            try:
+                with torch.no_grad():
+                    model(input_ids)
+            finally:
+                for h in handles:
+                    h.remove()
+
+            rec_l = cache.last(block_name)
+            rec_final = cache.last(final_block)
+            if rec_l is None or rec_final is None:
+                continue
+
+            h_l = rec_l.tensor[0].to(work_device)        # [seq_len, hidden_dim]
+            h_final = rec_final.tensor[0].to(work_device)
+
+            with torch.no_grad():
+                logits_final = lm_head(norm(h_final.to(norm_device))).to(work_device)
+                target_logprobs = F.log_softmax(logits_final[:-1].float(), dim=-1).detach()
+
+            optimizer.zero_grad()
+            translated = translator(h_l)
+            logits_l = lm_head(norm(translated.to(norm_device))).to(work_device)
+            pred_logprobs = F.log_softmax(logits_l[:-1].float(), dim=-1)
+
+            loss = F.kl_div(
+                pred_logprobs,
+                target_logprobs.exp(),
+                reduction="batchmean",
+                log_target=False,
+            )
+            loss.backward()
+            nn.utils.clip_grad_norm_(translator.parameters(), 1.0)
+            optimizer.step()
+
+            epoch_loss += float(loss.item())
+            epoch_steps += 1
+
+        if verbose and epoch_steps > 0:
+            print(
+                f"  [mlp_translator L{layer_idx:02d}] epoch {epoch + 1}/{n_epochs}  "
+                f"mean_kl={epoch_loss / epoch_steps:.4f}  steps={epoch_steps}",
+                flush=True,
+            )
+
+    return translator.cpu()
+
+
+# ---------------------------------------------------------------------------
 # Training
 # ---------------------------------------------------------------------------
 
@@ -158,6 +356,7 @@ def train_tuned_lens(
     lr: float = 2e-3,
     weight_decay: float = 1e-4,
     device: str | None = None,
+    base_translators: "TunedLensTranslators | None" = None,
     verbose: bool = True,
 ) -> TunedLensTranslators:
     """Train per-layer translators on a corpus of prompts.
@@ -185,6 +384,14 @@ def train_tuned_lens(
         Training epochs over the corpus.
     lr : float
         Adam learning rate.
+    base_translators : TunedLensTranslators or None
+        If provided, apply these frozen translators before training the new
+        ones.  The new translators learn to correct the *residual* after
+        base_translators.  Used to test whether the KL floor is capacity-
+        limited (linear but insufficient rank) vs. genuinely nonlinear:
+        if training on the residual further reduces KL, the floor is rank-
+        limited; if it plateaus at the same value, the geometry gap is
+        nonlinear.
     verbose : bool
         Print per-epoch loss.
 
@@ -213,6 +420,18 @@ def train_tuned_lens(
 
     norm = structure.final_norm
     lm_head = structure.lm_head
+
+    # Freeze norm and lm_head — we only train the translators.
+    # Without this, backward() allocates ~1 GB of gradients for lm_head.weight
+    # ([vocab_size × hidden_dim]) that are never used, causing memory pressure.
+    for p in norm.parameters():
+        p.requires_grad_(False)
+    for p in lm_head.parameters():
+        p.requires_grad_(False)
+
+    # Move base translators to work_device to avoid CPU↔GPU transfers per step
+    if base_translators is not None:
+        base_translators = base_translators.to(work_device)
 
     total_steps = 0
     for epoch in range(n_epochs):
@@ -259,6 +478,11 @@ def train_tuned_lens(
             for l, h_l in enumerate(hiddens[:-1]):  # skip final layer (identity)
                 optimizer.zero_grad()
 
+                # Apply frozen base translators first (residual experiment)
+                if base_translators is not None and l < base_translators.n_layers:
+                    with torch.no_grad():
+                        h_l = base_translators.translate(h_l, l)
+
                 translated = translators.translate(h_l.to(work_device), l)
                 norm_device = next(norm.parameters()).device
                 logits_l = lm_head(norm(translated.to(norm_device))).to(work_device)
@@ -283,7 +507,8 @@ def train_tuned_lens(
             print(
                 f"  [tuned_lens] epoch {epoch + 1}/{n_epochs}  "
                 f"mean_kl={epoch_loss / epoch_steps:.4f}  "
-                f"steps={epoch_steps}"
+                f"steps={epoch_steps}",
+                flush=True,
             )
 
     return translators.cpu()
@@ -350,8 +575,7 @@ def layer_log_probs_with_tuned_lens(
         with torch.no_grad():
             # Apply translator if available for this layer
             if layer_idx < translators.n_layers:
-                h = hidden[0, -1].to(translators.U[layer_idx].device)
-                h = translators.translate(h, layer_idx)
+                h = translators.translate(hidden[0, -1], layer_idx)
                 h = h.unsqueeze(0)  # [1, hidden_dim]
             else:
                 h = hidden[0, -1:].to(norm_device)
@@ -372,7 +596,7 @@ def layer_log_probs_with_tuned_lens(
 def measure_translation_gap(
     backend: Any,
     prompts: Sequence[str],
-    translators: TunedLensTranslators | None = None,
+    translators: Any | None = None,
 ) -> dict[str, list[float]]:
     """Measure mean KL(P_l || P_L) before and after tuned-lens correction.
 
@@ -393,6 +617,11 @@ def measure_translation_gap(
     norm = structure.final_norm
     lm_head = structure.lm_head
     n_layers = len(structure.block_names)
+
+    # Move translators to model device so translate() doesn't cross device boundaries.
+    # Supports TunedLensTranslators (nn.Module .to()) and ChainedTranslators (.to()).
+    if translators is not None and hasattr(translators, "to"):
+        translators = translators.to(model_device)
 
     raw_kl_sums = [0.0] * n_layers
     tuned_kl_sums = [0.0] * (n_layers if translators else 0)
@@ -441,8 +670,7 @@ def measure_translation_gap(
                 counts[l] += h_l.shape[0]
 
                 if translators and l < translators.n_layers:
-                    t_device = translators.U[l].device
-                    h_t = translators.translate(h_l.to(t_device), l)
+                    h_t = translators.translate(h_l, l)
                     logits_t = lm_head(norm(h_t.to(norm_device)))
                     p_t = F.softmax(logits_t.float(), dim=-1)
                     kl_t = float(F.kl_div(
